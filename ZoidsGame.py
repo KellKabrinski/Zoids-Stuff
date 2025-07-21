@@ -245,7 +245,7 @@ def game_loop(z1, z2, battle_type):
             print(f"\n{zoid.name} is in {range} range of {enemy.name}.")
             if not zoid.can_attack(distance):
                 print(f"{zoid.name} cannot attack {enemy.name} from {range} range!")
-                if not zoid.did_move:
+                if not did_move:
                     attack = input("  Do you want to move instead? (y/n): ")
                     if attack.lower().startswith('y'):
                         continue
@@ -280,7 +280,7 @@ def game_loop(z1, z2, battle_type):
                                 enemy.shieldDisabled=True
                                 print(f"{enemy.name}'s shield is disabled!")
                         else:
-                            toughness_roll = random.randint(1, 20) + enemy.toughness
+                            toughness_roll = random.randint(1, 20) + enemy.toughness - enemy.dents
                             damageDifference = damage + 15 - toughness_roll
                             if damageDifference <=0:
                                 print(f"{enemy.name} successfully defends against the attack!")
@@ -306,6 +306,8 @@ def game_loop(z1, z2, battle_type):
                                 print(f"{enemy.name} receives a DENT! (Total dents: {enemy.dents})")
                                 print(f"{enemy.name} is now DEFEATED! ")
                                 enemy.status = "defeated"
+                    else:
+                        print(f"{zoid.name} misses the attack on {enemy.name}!")
                     did_attack = True
 
         # End of turn status logic
