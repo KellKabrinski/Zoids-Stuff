@@ -1,0 +1,38 @@
+Name: Command Wolf
+
+Stats:
+  Fighting: 7
+  Strength: 4
+  Dexterity: 9
+  Agility: 7
+  Awareness: 9
+
+Defenses:
+  Toughness: 3
+  Parry: 7
+  Dodge: 7
+
+Powers:
+  - Type: Melee
+    Damage: 4
+    Power Points: 0
+  - Type: Close-Range
+    Damage: 4
+    Extras: Increased Range
+    Power Points: 8
+  - Type: Armor
+    Protection: 3
+    Power Points: 3
+  - Type: Concealment
+    Senses: Visual
+    Rank: 6
+    Power Points: 3.0
+
+Movement:
+  Land: 350.0 m/6s
+  Water: 0.0 m/6s
+  Air: 0.0 m/6s
+
+Total Power Points: 86.0
+Power Level: 13
+Power Level Source(s): Dexterity + Ranged

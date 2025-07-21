@@ -1,0 +1,42 @@
+Name: Geno Saurer
+
+Stats:
+  Fighting: 6
+  Strength: 7
+  Dexterity: 9
+  Agility: 7
+  Awareness: 7
+
+Defenses:
+  Toughness: 6
+  Parry: 6
+  Dodge: 7
+
+Powers:
+  - Type: Melee
+    Damage: 7
+    Power Points: 0
+  - Type: Close-Range
+    Damage: 9
+    Extras: Increased Range
+    Power Points: 18
+  - Type: Mid-Range
+    Damage: 7
+    Extras: Increased Range, Extended Range 1
+    Power Points: 19
+  - Type: Armor
+    Protection: 6
+    Power Points: 6
+  - Type: Concealment
+    Senses: Visual
+    Rank: 3
+    Power Points: 1.5
+
+Movement:
+  Land: 433.3 m/6s
+  Water: 0.0 m/6s
+  Air: 0.0 m/6s
+
+Total Power Points: 116.5
+Power Level: 18
+Power Level Source(s): Dexterity + Ranged

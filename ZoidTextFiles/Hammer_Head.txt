@@ -1,0 +1,42 @@
+Name: Hammer Head
+
+Stats:
+  Fighting: 4
+  Strength: 2
+  Dexterity: 5
+  Agility: 5
+  Awareness: 5
+
+Defenses:
+  Toughness: 7
+  Parry: 4
+  Dodge: 5
+
+Powers:
+  - Type: Melee
+    Damage: 2
+    Power Points: 0
+  - Type: Close-Range
+    Damage: 5
+    Extras: Increased Range
+    Power Points: 10
+  - Type: Mid-Range
+    Damage: 5
+    Extras: Increased Range, Extended Range 1
+    Power Points: 11
+  - Type: Armor
+    Protection: 7
+    Power Points: 7
+  - Type: Concealment
+    Senses: Visual
+    Rank: 9
+    Power Points: 4.5
+
+Movement:
+  Land: 0.0 m/6s
+  Water: 200.6 m/6s
+  Air: 571.7 m/6s
+
+Total Power Points: 74.5
+Power Level: 12
+Power Level Source(s): Agility + Toughness

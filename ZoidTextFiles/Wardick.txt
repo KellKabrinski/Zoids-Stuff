@@ -1,0 +1,42 @@
+Name: Wardick
+
+Stats:
+  Fighting: 4
+  Strength: 3
+  Dexterity: 5
+  Agility: 5
+  Awareness: 5
+
+Defenses:
+  Toughness: 6
+  Parry: 4
+  Dodge: 5
+
+Powers:
+  - Type: Melee
+    Damage: 3
+    Power Points: 0
+  - Type: Close-Range
+    Damage: 6
+    Extras: Increased Range
+    Power Points: 12
+  - Type: Mid-Range
+    Damage: 6
+    Extras: Increased Range, Extended Range 1
+    Power Points: 13
+  - Type: Armor
+    Protection: 6
+    Power Points: 6
+  - Type: Concealment
+    Senses: Visual
+    Rank: 9
+    Power Points: 4.5
+
+Movement:
+  Land: 116.7 m/6s
+  Water: 200.6 m/6s
+  Air: 0.0 m/6s
+
+Total Power Points: 79.5
+Power Level: 11
+Power Level Source(s): Dexterity + Ranged, Agility + Toughness

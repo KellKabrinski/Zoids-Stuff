@@ -1,0 +1,46 @@
+Name: Gojulas The Ogre
+
+Stats:
+  Fighting: 7
+  Strength: 10
+  Dexterity: 11
+  Agility: 7
+  Awareness: 5
+
+Defenses:
+  Toughness: 8
+  Parry: 7
+  Dodge: 7
+
+Powers:
+  - Type: Melee
+    Damage: 10
+    Power Points: 0
+  - Type: Close-Range
+    Damage: 8
+    Extras: Increased Range
+    Power Points: 16
+  - Type: Mid-Range
+    Damage: 10
+    Extras: Increased Range, Extended Range 1
+    Power Points: 17
+  - Type: Long-Range
+    Damage: 10
+    Extras: Increased Range, Extended Range 2
+    Power Points: 18
+  - Type: Armor
+    Protection: 8
+    Power Points: 8
+  - Type: Concealment
+    Senses: Visual
+    Rank: 1
+    Power Points: 0.5
+
+Movement:
+  Land: 208.3 m/6s
+  Water: 0.0 m/6s
+  Air: 0.0 m/6s
+
+Total Power Points: 139.5
+Power Level: 21
+Power Level Source(s): Dexterity + Ranged

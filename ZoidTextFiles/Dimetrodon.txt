@@ -1,0 +1,42 @@
+Name: Dimetrodon
+
+Stats:
+  Fighting: 4
+  Strength: 4
+  Dexterity: 2
+  Agility: 4
+  Awareness: 12
+
+Defenses:
+  Toughness: 6
+  Parry: 4
+  Dodge: 4
+
+Powers:
+  - Type: Melee
+    Damage: 4
+    Power Points: 0
+  - Type: Close-Range
+    Damage: 4
+    Extras: Increased Range
+    Power Points: 8
+  - Type: Armor
+    Protection: 6
+    Power Points: 6
+  - Type: Concealment
+    Senses: Visual
+    Rank: 3
+    Power Points: 1.5
+  - Type: Concealment
+    Senses: Sensor
+    Rank: 10
+    Power Points: 5.0
+
+Movement:
+  Land: 250.0 m/6s
+  Water: 0.0 m/6s
+  Air: 0.0 m/6s
+
+Total Power Points: 72.5
+Power Level: 10
+Power Level Source(s): Agility + Toughness, Fighting + Toughness

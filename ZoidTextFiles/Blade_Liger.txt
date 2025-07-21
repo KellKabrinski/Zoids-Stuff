@@ -1,0 +1,42 @@
+Name: Blade Liger
+
+Stats:
+  Fighting: 6
+  Strength: 8
+  Dexterity: 10
+  Agility: 5
+  Awareness: 7
+
+Defenses:
+  Toughness: 5
+  Parry: 6
+  Dodge: 5
+
+Powers:
+  - Type: Melee
+    Damage: 8
+    Power Points: 0
+  - Type: Close-Range
+    Damage: 5
+    Extras: Increased Range
+    Power Points: 10
+  - Type: Armor
+    Protection: 5
+    Power Points: 5
+  - Type: Create (E-Shield)
+    Rank: 8
+    Extras: Tethered, Limited to hemisphere in front of Zoid, Limited (Damage remains after dismissing)
+    Power Points: 8
+  - Type: Concealment
+    Senses: Visual
+    Rank: 4
+    Power Points: 2.0
+
+Movement:
+  Land: 508.3 m/6s
+  Water: 0.0 m/6s
+  Air: 0.0 m/6s
+
+Total Power Points: 97.0
+Power Level: 15
+Power Level Source(s): Dexterity + Ranged

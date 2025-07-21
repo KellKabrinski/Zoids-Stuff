@@ -1,0 +1,34 @@
+Name: Gustav MS
+
+Stats:
+  Fighting: 4
+  Strength: 2
+  Dexterity: 2
+  Agility: 3
+  Awareness: 9
+
+Defenses:
+  Toughness: 10
+  Parry: 4
+  Dodge: 3
+
+Powers:
+  - Type: Melee
+    Damage: 2
+    Power Points: 0
+  - Type: Armor
+    Protection: 10
+    Power Points: 10
+  - Type: Concealment
+    Senses: Visual
+    Rank: 2
+    Power Points: 1.0
+
+Movement:
+  Land: 225.0 m/6s
+  Water: 0.0 m/6s
+  Air: 0.0 m/6s
+
+Total Power Points: 51.0
+Power Level: 14
+Power Level Source(s): Fighting + Toughness

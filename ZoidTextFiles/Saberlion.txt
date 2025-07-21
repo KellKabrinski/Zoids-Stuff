@@ -1,0 +1,34 @@
+Name: Saberlion
+
+Stats:
+  Fighting: 8
+  Strength: 4
+  Dexterity: 11
+  Agility: 6
+  Awareness: 5
+
+Defenses:
+  Toughness: 2
+  Parry: 8
+  Dodge: 6
+
+Powers:
+  - Type: Melee
+    Damage: 4
+    Power Points: 0
+  - Type: Armor
+    Protection: 2
+    Power Points: 2
+  - Type: Concealment
+    Senses: Visual
+    Rank: 5
+    Power Points: 2.5
+
+Movement:
+  Land: 425.0 m/6s
+  Water: 0.0 m/6s
+  Air: 0.0 m/6s
+
+Total Power Points: 72.5
+Power Level: 12
+Power Level Source(s): Fighting + Melee

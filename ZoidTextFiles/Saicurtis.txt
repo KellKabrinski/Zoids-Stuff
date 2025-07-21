@@ -1,0 +1,38 @@
+Name: Saicurtis
+
+Stats:
+  Fighting: 5
+  Strength: 2
+  Dexterity: 10
+  Agility: 5
+  Awareness: 8
+
+Defenses:
+  Toughness: 2
+  Parry: 5
+  Dodge: 5
+
+Powers:
+  - Type: Melee
+    Damage: 2
+    Power Points: 0
+  - Type: Close-Range
+    Damage: 2
+    Extras: Increased Range
+    Power Points: 4
+  - Type: Armor
+    Protection: 2
+    Power Points: 2
+  - Type: Concealment
+    Senses: Visual
+    Rank: 4
+    Power Points: 2.0
+
+Movement:
+  Land: 0.0 m/6s
+  Water: 0.0 m/6s
+  Air: 180.1 m/6s
+
+Total Power Points: 68.0
+Power Level: 12
+Power Level Source(s): Dexterity + Ranged

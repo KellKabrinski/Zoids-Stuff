@@ -1,0 +1,4904 @@
+[
+    {
+        "Name": "Arosaurer",
+        "Stats": {
+            "Fighting": 6,
+            "Strength": 5,
+            "Dexterity": 9,
+            "Agility": 6,
+            "Awareness": 5
+        },
+        "Defenses": {
+            "Toughness": 4,
+            "Parry": 6,
+            "Dodge": 6
+        },
+        "Powers": [
+            {
+                "Type": "Melee",
+                "Damage": 5,
+                "Power Points": 0
+            },
+            {
+                "Type": "Close-Range",
+                "Damage": 4,
+                "Extras": [
+                    "Increased Range"
+                ],
+                "Power Points": 8
+            },
+            {
+                "Type": "Armor",
+                "Protection": 4,
+                "Power Points": 4
+            },
+            {
+                "Type": "Concealment",
+                "Senses": [
+                    "Visual"
+                ],
+                "Rank": 2,
+                "Power Points": 1.0
+            }
+        ],
+        "Movement": {
+            "Land": 283.3,
+            "Water": 0.0,
+            "Air": 0.0
+        },
+        "Total Power Points": 75.0,
+        "Power Level": 13,
+        "Power Level Source": [
+            "Dexterity + Ranged"
+        ]
+    },
+    {
+        "Name": "Barigator",
+        "Stats": {
+            "Fighting": 4,
+            "Strength": 3,
+            "Dexterity": 3,
+            "Agility": 4,
+            "Awareness": 2
+        },
+        "Defenses": {
+            "Toughness": 3,
+            "Parry": 4,
+            "Dodge": 4
+        },
+        "Powers": [
+            {
+                "Type": "Melee",
+                "Damage": 3,
+                "Power Points": 0
+            },
+            {
+                "Type": "Close-Range",
+                "Damage": 2,
+                "Extras": [
+                    "Increased Range"
+                ],
+                "Power Points": 4
+            },
+            {
+                "Type": "Armor",
+                "Protection": 3,
+                "Power Points": 3
+            },
+            {
+                "Type": "Concealment",
+                "Senses": [
+                    "Visual"
+                ],
+                "Rank": 6,
+                "Power Points": 3.0
+            }
+        ],
+        "Movement": {
+            "Land": 250.0,
+            "Water": 108.0,
+            "Air": 0.0
+        },
+        "Total Power Points": 42.0,
+        "Power Level": 7,
+        "Power Level Source": [
+            "Fighting + Melee",
+            "Agility + Toughness",
+            "Fighting + Toughness"
+        ]
+    },
+    {
+        "Name": "Bearfighter",
+        "Stats": {
+            "Fighting": 6,
+            "Strength": 5,
+            "Dexterity": 8,
+            "Agility": 6,
+            "Awareness": 5
+        },
+        "Defenses": {
+            "Toughness": 6,
+            "Parry": 6,
+            "Dodge": 6
+        },
+        "Powers": [
+            {
+                "Type": "Melee",
+                "Damage": 5,
+                "Power Points": 0
+            },
+            {
+                "Type": "Close-Range",
+                "Damage": 5,
+                "Extras": [
+                    "Increased Range"
+                ],
+                "Power Points": 10
+            },
+            {
+                "Type": "Armor",
+                "Protection": 6,
+                "Power Points": 6
+            },
+            {
+                "Type": "Concealment",
+                "Senses": [
+                    "Visual"
+                ],
+                "Rank": 5,
+                "Power Points": 2.5
+            }
+        ],
+        "Movement": {
+            "Land": 333.3,
+            "Water": 0.0,
+            "Air": 0.0
+        },
+        "Total Power Points": 78.5,
+        "Power Level": 13,
+        "Power Level Source": [
+            "Dexterity + Ranged"
+        ]
+    },
+    {
+        "Name": "Berserk Fuhrer",
+        "Stats": {
+            "Fighting": 7,
+            "Strength": 8,
+            "Dexterity": 9,
+            "Agility": 7,
+            "Awareness": 7
+        },
+        "Defenses": {
+            "Toughness": 7,
+            "Parry": 7,
+            "Dodge": 7
+        },
+        "Powers": [
+            {
+                "Type": "Melee",
+                "Damage": 8,
+                "Power Points": 0
+            },
+            {
+                "Type": "Close-Range",
+                "Damage": 9,
+                "Extras": [
+                    "Increased Range"
+                ],
+                "Power Points": 18
+            },
+            {
+                "Type": "Mid-Range",
+                "Damage": 8,
+                "Extras": [
+                    "Increased Range",
+                    "Extended Range 1"
+                ],
+                "Power Points": 19
+            },
+            {
+                "Type": "Armor",
+                "Protection": 7,
+                "Power Points": 7
+            },
+            {
+                "Type": "Create (E-Shield)",
+                "Rank": 8,
+                "Extras": [
+                    "Tethered",
+                    "Limited to hemisphere in front of Zoid",
+                    "Limited (Damage remains after dismissing)"
+                ],
+                "Power Points": 8
+            },
+            {
+                "Type": "Concealment",
+                "Senses": [
+                    "Visual"
+                ],
+                "Rank": 2,
+                "Power Points": 1.0
+            }
+        ],
+        "Movement": {
+            "Land": 566.7,
+            "Water": 0.0,
+            "Air": 0.0
+        },
+        "Total Power Points": 129.0,
+        "Power Level": 18,
+        "Power Level Source": [
+            "Dexterity + Ranged"
+        ]
+    },
+    {
+        "Name": "Black Rhimos",
+        "Stats": {
+            "Fighting": 6,
+            "Strength": 5,
+            "Dexterity": 7,
+            "Agility": 6,
+            "Awareness": 5
+        },
+        "Defenses": {
+            "Toughness": 6,
+            "Parry": 6,
+            "Dodge": 6
+        },
+        "Powers": [
+            {
+                "Type": "Melee",
+                "Damage": 5,
+                "Power Points": 0
+            },
+            {
+                "Type": "Close-Range",
+                "Damage": 5,
+                "Extras": [
+                    "Increased Range"
+                ],
+                "Power Points": 10
+            },
+            {
+                "Type": "Mid-Range",
+                "Damage": 3,
+                "Extras": [
+                    "Increased Range",
+                    "Extended Range 1"
+                ],
+                "Power Points": 11
+            },
+            {
+                "Type": "Armor",
+                "Protection": 6,
+                "Power Points": 6
+            },
+            {
+                "Type": "Concealment",
+                "Senses": [
+                    "Visual"
+                ],
+                "Rank": 4,
+                "Power Points": 2.0
+            }
+        ],
+        "Movement": {
+            "Land": 300.0,
+            "Water": 0.0,
+            "Air": 0.0
+        },
+        "Total Power Points": 87.0,
+        "Power Level": 12,
+        "Power Level Source": [
+            "Dexterity + Ranged",
+            "Agility + Toughness",
+            "Fighting + Toughness"
+        ]
+    },
+    {
+        "Name": "Blade Liger",
+        "Stats": {
+            "Fighting": 6,
+            "Strength": 8,
+            "Dexterity": 10,
+            "Agility": 5,
+            "Awareness": 7
+        },
+        "Defenses": {
+            "Toughness": 5,
+            "Parry": 6,
+            "Dodge": 5
+        },
+        "Powers": [
+            {
+                "Type": "Melee",
+                "Damage": 8,
+                "Power Points": 0
+            },
+            {
+                "Type": "Close-Range",
+                "Damage": 5,
+                "Extras": [
+                    "Increased Range"
+                ],
+                "Power Points": 10
+            },
+            {
+                "Type": "Armor",
+                "Protection": 5,
+                "Power Points": 5
+            },
+            {
+                "Type": "Create (E-Shield)",
+                "Rank": 8,
+                "Extras": [
+                    "Tethered",
+                    "Limited to hemisphere in front of Zoid",
+                    "Limited (Damage remains after dismissing)"
+                ],
+                "Power Points": 8
+            },
+            {
+                "Type": "Concealment",
+                "Senses": [
+                    "Visual"
+                ],
+                "Rank": 4,
+                "Power Points": 2.0
+            }
+        ],
+        "Movement": {
+            "Land": 508.3,
+            "Water": 0.0,
+            "Air": 0.0
+        },
+        "Total Power Points": 97.0,
+        "Power Level": 15,
+        "Power Level Source": [
+            "Dexterity + Ranged"
+        ]
+    },
+    {
+        "Name": "Brachios",
+        "Stats": {
+            "Fighting": 4,
+            "Strength": 4,
+            "Dexterity": 4,
+            "Agility": 4,
+            "Awareness": 5
+        },
+        "Defenses": {
+            "Toughness": 5,
+            "Parry": 4,
+            "Dodge": 4
+        },
+        "Powers": [
+            {
+                "Type": "Melee",
+                "Damage": 4,
+                "Power Points": 0
+            },
+            {
+                "Type": "Close-Range",
+                "Damage": 5,
+                "Extras": [
+                    "Increased Range"
+                ],
+                "Power Points": 10
+            },
+            {
+                "Type": "Mid-Range",
+                "Damage": 5,
+                "Extras": [
+                    "Increased Range",
+                    "Extended Range 1"
+                ],
+                "Power Points": 11
+            },
+            {
+                "Type": "Armor",
+                "Protection": 5,
+                "Power Points": 5
+            },
+            {
+                "Type": "Concealment",
+                "Senses": [
+                    "Visual"
+                ],
+                "Rank": 5,
+                "Power Points": 2.5
+            }
+        ],
+        "Movement": {
+            "Land": 233.3,
+            "Water": 0.0,
+            "Air": 0.0
+        },
+        "Total Power Points": 70.5,
+        "Power Level": 9,
+        "Power Level Source": [
+            "Dexterity + Ranged",
+            "Agility + Toughness",
+            "Fighting + Toughness"
+        ]
+    },
+    {
+        "Name": "Cannon Tortoise",
+        "Stats": {
+            "Fighting": 4,
+            "Strength": 1,
+            "Dexterity": 2,
+            "Agility": 6,
+            "Awareness": 5
+        },
+        "Defenses": {
+            "Toughness": 6,
+            "Parry": 4,
+            "Dodge": 6
+        },
+        "Powers": [
+            {
+                "Type": "Melee",
+                "Damage": 1,
+                "Power Points": 0
+            },
+            {
+                "Type": "Close-Range",
+                "Damage": 2,
+                "Extras": [
+                    "Increased Range"
+                ],
+                "Power Points": 4
+            },
+            {
+                "Type": "Mid-Range",
+                "Damage": 7,
+                "Extras": [
+                    "Increased Range",
+                    "Extended Range 1"
+                ],
+                "Power Points": 5
+            },
+            {
+                "Type": "Long-Range",
+                "Damage": 7,
+                "Extras": [
+                    "Increased Range",
+                    "Extended Range 2"
+                ],
+                "Power Points": 6
+            },
+            {
+                "Type": "Armor",
+                "Protection": 6,
+                "Power Points": 6
+            },
+            {
+                "Type": "Concealment",
+                "Senses": [
+                    "Visual"
+                ],
+                "Rank": 2,
+                "Power Points": 1.0
+            }
+        ],
+        "Movement": {
+            "Land": 166.7,
+            "Water": 0.0,
+            "Air": 0.0
+        },
+        "Total Power Points": 58.0,
+        "Power Level": 12,
+        "Power Level Source": [
+            "Agility + Toughness"
+        ]
+    },
+    {
+        "Name": "Command Wolf",
+        "Stats": {
+            "Fighting": 7,
+            "Strength": 4,
+            "Dexterity": 9,
+            "Agility": 7,
+            "Awareness": 9
+        },
+        "Defenses": {
+            "Toughness": 3,
+            "Parry": 7,
+            "Dodge": 7
+        },
+        "Powers": [
+            {
+                "Type": "Melee",
+                "Damage": 4,
+                "Power Points": 0
+            },
+            {
+                "Type": "Close-Range",
+                "Damage": 4,
+                "Extras": [
+                    "Increased Range"
+                ],
+                "Power Points": 8
+            },
+            {
+                "Type": "Armor",
+                "Protection": 3,
+                "Power Points": 3
+            },
+            {
+                "Type": "Concealment",
+                "Senses": [
+                    "Visual"
+                ],
+                "Rank": 6,
+                "Power Points": 3.0
+            }
+        ],
+        "Movement": {
+            "Land": 350.0,
+            "Water": 0.0,
+            "Air": 0.0
+        },
+        "Total Power Points": 86.0,
+        "Power Level": 13,
+        "Power Level Source": [
+            "Dexterity + Ranged"
+        ]
+    },
+    {
+        "Name": "Command Wolf AC",
+        "Stats": {
+            "Fighting": 6,
+            "Strength": 4,
+            "Dexterity": 7,
+            "Agility": 6,
+            "Awareness": 8
+        },
+        "Defenses": {
+            "Toughness": 3,
+            "Parry": 6,
+            "Dodge": 6
+        },
+        "Powers": [
+            {
+                "Type": "Melee",
+                "Damage": 4,
+                "Power Points": 0
+            },
+            {
+                "Type": "Close-Range",
+                "Damage": 6,
+                "Extras": [
+                    "Increased Range"
+                ],
+                "Power Points": 12
+            },
+            {
+                "Type": "Mid-Range",
+                "Damage": 5,
+                "Extras": [
+                    "Increased Range",
+                    "Extended Range 1"
+                ],
+                "Power Points": 13
+            },
+            {
+                "Type": "Armor",
+                "Protection": 3,
+                "Power Points": 3
+            },
+            {
+                "Type": "Concealment",
+                "Senses": [
+                    "Visual"
+                ],
+                "Rank": 6,
+                "Power Points": 3.0
+            }
+        ],
+        "Movement": {
+            "Land": 333.3,
+            "Water": 0.0,
+            "Air": 0.0
+        },
+        "Total Power Points": 93.0,
+        "Power Level": 13,
+        "Power Level Source": [
+            "Dexterity + Ranged"
+        ]
+    },
+    {
+        "Name": "Command Wolf IS",
+        "Stats": {
+            "Fighting": 5,
+            "Strength": 4,
+            "Dexterity": 7,
+            "Agility": 6,
+            "Awareness": 8
+        },
+        "Defenses": {
+            "Toughness": 3,
+            "Parry": 5,
+            "Dodge": 6
+        },
+        "Powers": [
+            {
+                "Type": "Melee",
+                "Damage": 4,
+                "Power Points": 0
+            },
+            {
+                "Type": "Close-Range",
+                "Damage": 6,
+                "Extras": [
+                    "Increased Range"
+                ],
+                "Power Points": 12
+            },
+            {
+                "Type": "Mid-Range",
+                "Damage": 6,
+                "Extras": [
+                    "Increased Range",
+                    "Extended Range 1"
+                ],
+                "Power Points": 13
+            },
+            {
+                "Type": "Armor",
+                "Protection": 3,
+                "Power Points": 3
+            },
+            {
+                "Type": "Concealment",
+                "Senses": [
+                    "Visual"
+                ],
+                "Rank": 5,
+                "Power Points": 2.5
+            }
+        ],
+        "Movement": {
+            "Land": 333.3,
+            "Water": 0.0,
+            "Air": 0.0
+        },
+        "Total Power Points": 90.5,
+        "Power Level": 13,
+        "Power Level Source": [
+            "Dexterity + Ranged"
+        ]
+    },
+    {
+        "Name": "Dark Spiner",
+        "Stats": {
+            "Fighting": 6,
+            "Strength": 7,
+            "Dexterity": 8,
+            "Agility": 6,
+            "Awareness": 9
+        },
+        "Defenses": {
+            "Toughness": 6,
+            "Parry": 6,
+            "Dodge": 6
+        },
+        "Powers": [
+            {
+                "Type": "Melee",
+                "Damage": 7,
+                "Power Points": 0
+            },
+            {
+                "Type": "Close-Range",
+                "Damage": 5,
+                "Extras": [
+                    "Increased Range"
+                ],
+                "Power Points": 10
+            },
+            {
+                "Type": "Armor",
+                "Protection": 6,
+                "Power Points": 6
+            },
+            {
+                "Type": "Concealment",
+                "Senses": [
+                    "Visual"
+                ],
+                "Rank": 3,
+                "Power Points": 1.5
+            },
+            {
+                "Type": "Concealment",
+                "Senses": [
+                    "Sensor"
+                ],
+                "Rank": 12,
+                "Power Points": 6.0
+            }
+        ],
+        "Movement": {
+            "Land": 400.0,
+            "Water": 0.0,
+            "Air": 0.0
+        },
+        "Total Power Points": 95.5,
+        "Power Level": 13,
+        "Power Level Source": [
+            "Fighting + Melee",
+            "Dexterity + Ranged"
+        ]
+    },
+    {
+        "Name": "Death Saurer",
+        "Stats": {
+            "Fighting": 7,
+            "Strength": 11,
+            "Dexterity": 7,
+            "Agility": 7,
+            "Awareness": 5
+        },
+        "Defenses": {
+            "Toughness": 11,
+            "Parry": 7,
+            "Dodge": 7
+        },
+        "Powers": [
+            {
+                "Type": "Melee",
+                "Damage": 11,
+                "Power Points": 0
+            },
+            {
+                "Type": "Close-Range",
+                "Damage": 11,
+                "Extras": [
+                    "Increased Range"
+                ],
+                "Power Points": 22
+            },
+            {
+                "Type": "Mid-Range",
+                "Damage": 10,
+                "Extras": [
+                    "Increased Range",
+                    "Extended Range 1"
+                ],
+                "Power Points": 23
+            },
+            {
+                "Type": "Armor",
+                "Protection": 11,
+                "Power Points": 11
+            },
+            {
+                "Type": "Concealment",
+                "Senses": [
+                    "Visual"
+                ],
+                "Rank": 1,
+                "Power Points": 0.5
+            }
+        ],
+        "Movement": {
+            "Land": 150.0,
+            "Water": 0.0,
+            "Air": 0.0
+        },
+        "Total Power Points": 130.5,
+        "Power Level": 18,
+        "Power Level Source": [
+            "Fighting + Melee",
+            "Dexterity + Ranged",
+            "Agility + Toughness",
+            "Fighting + Toughness"
+        ]
+    },
+    {
+        "Name": "Death Stinger",
+        "Stats": {
+            "Fighting": 7,
+            "Strength": 11,
+            "Dexterity": 11,
+            "Agility": 7,
+            "Awareness": 9
+        },
+        "Defenses": {
+            "Toughness": 10,
+            "Parry": 7,
+            "Dodge": 7
+        },
+        "Powers": [
+            {
+                "Type": "Melee",
+                "Damage": 11,
+                "Power Points": 0
+            },
+            {
+                "Type": "Close-Range",
+                "Damage": 10,
+                "Extras": [
+                    "Increased Range"
+                ],
+                "Power Points": 20
+            },
+            {
+                "Type": "Mid-Range",
+                "Damage": 9,
+                "Extras": [
+                    "Increased Range",
+                    "Extended Range 1"
+                ],
+                "Power Points": 21
+            },
+            {
+                "Type": "Armor",
+                "Protection": 10,
+                "Power Points": 10
+            },
+            {
+                "Type": "Create (E-Shield)",
+                "Rank": 11,
+                "Extras": [
+                    "Tethered",
+                    "Limited to hemisphere in front of Zoid",
+                    "Limited (Damage remains after dismissing)"
+                ],
+                "Power Points": 11
+            },
+            {
+                "Type": "Concealment",
+                "Senses": [
+                    "Visual"
+                ],
+                "Rank": 9,
+                "Power Points": 4.5
+            }
+        ],
+        "Movement": {
+            "Land": 308.3,
+            "Water": 222.2,
+            "Air": 0.0
+        },
+        "Total Power Points": 156.5,
+        "Power Level": 21,
+        "Power Level Source": [
+            "Dexterity + Ranged"
+        ]
+    },
+    {
+        "Name": "Demantis",
+        "Stats": {
+            "Fighting": 5,
+            "Strength": 3,
+            "Dexterity": 6,
+            "Agility": 4,
+            "Awareness": 5
+        },
+        "Defenses": {
+            "Toughness": 1,
+            "Parry": 5,
+            "Dodge": 4
+        },
+        "Powers": [
+            {
+                "Type": "Melee",
+                "Damage": 3,
+                "Power Points": 0
+            },
+            {
+                "Type": "Close-Range",
+                "Damage": 2,
+                "Extras": [
+                    "Increased Range"
+                ],
+                "Power Points": 4
+            },
+            {
+                "Type": "Armor",
+                "Protection": 1,
+                "Power Points": 1
+            },
+            {
+                "Type": "Concealment",
+                "Senses": [
+                    "Visual"
+                ],
+                "Rank": 5,
+                "Power Points": 2.5
+            }
+        ],
+        "Movement": {
+            "Land": 616.7,
+            "Water": 0.0,
+            "Air": 0.0
+        },
+        "Total Power Points": 53.5,
+        "Power Level": 8,
+        "Power Level Source": [
+            "Fighting + Melee",
+            "Dexterity + Ranged"
+        ]
+    },
+    {
+        "Name": "Dibison",
+        "Stats": {
+            "Fighting": 6,
+            "Strength": 7,
+            "Dexterity": 5,
+            "Agility": 7,
+            "Awareness": 7
+        },
+        "Defenses": {
+            "Toughness": 7,
+            "Parry": 6,
+            "Dodge": 7
+        },
+        "Powers": [
+            {
+                "Type": "Melee",
+                "Damage": 7,
+                "Power Points": 0
+            },
+            {
+                "Type": "Close-Range",
+                "Damage": 9,
+                "Extras": [
+                    "Increased Range"
+                ],
+                "Power Points": 18
+            },
+            {
+                "Type": "Mid-Range",
+                "Damage": 9,
+                "Extras": [
+                    "Increased Range",
+                    "Extended Range 1"
+                ],
+                "Power Points": 19
+            },
+            {
+                "Type": "Armor",
+                "Protection": 7,
+                "Power Points": 7
+            },
+            {
+                "Type": "Concealment",
+                "Senses": [
+                    "Visual"
+                ],
+                "Rank": 3,
+                "Power Points": 1.5
+            }
+        ],
+        "Movement": {
+            "Land": 216.7,
+            "Water": 0.0,
+            "Air": 0.0
+        },
+        "Total Power Points": 109.5,
+        "Power Level": 14,
+        "Power Level Source": [
+            "Dexterity + Ranged",
+            "Agility + Toughness"
+        ]
+    },
+    {
+        "Name": "Diloforce",
+        "Stats": {
+            "Fighting": 5,
+            "Strength": 4,
+            "Dexterity": 7,
+            "Agility": 5,
+            "Awareness": 4
+        },
+        "Defenses": {
+            "Toughness": 2,
+            "Parry": 5,
+            "Dodge": 5
+        },
+        "Powers": [
+            {
+                "Type": "Melee",
+                "Damage": 4,
+                "Power Points": 0
+            },
+            {
+                "Type": "Close-Range",
+                "Damage": 4,
+                "Extras": [
+                    "Increased Range"
+                ],
+                "Power Points": 8
+            },
+            {
+                "Type": "Armor",
+                "Protection": 2,
+                "Power Points": 2
+            },
+            {
+                "Type": "Create (E-Shield)",
+                "Rank": 4,
+                "Extras": [
+                    "Tethered",
+                    "Limited to hemisphere in front of Zoid",
+                    "Limited (Damage remains after dismissing)"
+                ],
+                "Power Points": 4
+            },
+            {
+                "Type": "Concealment",
+                "Senses": [
+                    "Visual"
+                ],
+                "Rank": 5,
+                "Power Points": 2.5
+            }
+        ],
+        "Movement": {
+            "Land": 500.0,
+            "Water": 0.0,
+            "Air": 0.0
+        },
+        "Total Power Points": 66.5,
+        "Power Level": 11,
+        "Power Level Source": [
+            "Dexterity + Ranged"
+        ]
+    },
+    {
+        "Name": "Dimetrodon",
+        "Stats": {
+            "Fighting": 4,
+            "Strength": 4,
+            "Dexterity": 2,
+            "Agility": 4,
+            "Awareness": 12
+        },
+        "Defenses": {
+            "Toughness": 6,
+            "Parry": 4,
+            "Dodge": 4
+        },
+        "Powers": [
+            {
+                "Type": "Melee",
+                "Damage": 4,
+                "Power Points": 0
+            },
+            {
+                "Type": "Close-Range",
+                "Damage": 4,
+                "Extras": [
+                    "Increased Range"
+                ],
+                "Power Points": 8
+            },
+            {
+                "Type": "Armor",
+                "Protection": 6,
+                "Power Points": 6
+            },
+            {
+                "Type": "Concealment",
+                "Senses": [
+                    "Visual"
+                ],
+                "Rank": 3,
+                "Power Points": 1.5
+            },
+            {
+                "Type": "Concealment",
+                "Senses": [
+                    "Sensor"
+                ],
+                "Rank": 10,
+                "Power Points": 5.0
+            }
+        ],
+        "Movement": {
+            "Land": 250.0,
+            "Water": 0.0,
+            "Air": 0.0
+        },
+        "Total Power Points": 72.5,
+        "Power Level": 10,
+        "Power Level Source": [
+            "Agility + Toughness",
+            "Fighting + Toughness"
+        ]
+    },
+    {
+        "Name": "Double Sworder",
+        "Stats": {
+            "Fighting": 7,
+            "Strength": 3,
+            "Dexterity": 10,
+            "Agility": 6,
+            "Awareness": 8
+        },
+        "Defenses": {
+            "Toughness": 2,
+            "Parry": 7,
+            "Dodge": 6
+        },
+        "Powers": [
+            {
+                "Type": "Melee",
+                "Damage": 3,
+                "Power Points": 0
+            },
+            {
+                "Type": "Close-Range",
+                "Damage": 2,
+                "Extras": [
+                    "Increased Range"
+                ],
+                "Power Points": 4
+            },
+            {
+                "Type": "Armor",
+                "Protection": 2,
+                "Power Points": 2
+            },
+            {
+                "Type": "Concealment",
+                "Senses": [
+                    "Visual"
+                ],
+                "Rank": 4,
+                "Power Points": 2.0
+            }
+        ],
+        "Movement": {
+            "Land": 0.0,
+            "Water": 0.0,
+            "Air": 188.7
+        },
+        "Total Power Points": 76.0,
+        "Power Level": 12,
+        "Power Level Source": [
+            "Dexterity + Ranged"
+        ]
+    },
+    {
+        "Name": "Elephander",
+        "Stats": {
+            "Fighting": 6,
+            "Strength": 7,
+            "Dexterity": 6,
+            "Agility": 6,
+            "Awareness": 8
+        },
+        "Defenses": {
+            "Toughness": 9,
+            "Parry": 6,
+            "Dodge": 6
+        },
+        "Powers": [
+            {
+                "Type": "Melee",
+                "Damage": 7,
+                "Power Points": 0
+            },
+            {
+                "Type": "Close-Range",
+                "Damage": 6,
+                "Extras": [
+                    "Increased Range"
+                ],
+                "Power Points": 12
+            },
+            {
+                "Type": "Mid-Range",
+                "Damage": 6,
+                "Extras": [
+                    "Increased Range",
+                    "Extended Range 1"
+                ],
+                "Power Points": 13
+            },
+            {
+                "Type": "Armor",
+                "Protection": 9,
+                "Power Points": 9
+            },
+            {
+                "Type": "Create (E-Shield)",
+                "Rank": 8,
+                "Extras": [
+                    "Tethered",
+                    "Limited to hemisphere in front of Zoid",
+                    "Limited (Damage remains after dismissing)"
+                ],
+                "Power Points": 8
+            },
+            {
+                "Type": "Concealment",
+                "Senses": [
+                    "Visual"
+                ],
+                "Rank": 3,
+                "Power Points": 1.5
+            }
+        ],
+        "Movement": {
+            "Land": 216.7,
+            "Water": 0.0,
+            "Air": 0.0
+        },
+        "Total Power Points": 109.5,
+        "Power Level": 15,
+        "Power Level Source": [
+            "Agility + Toughness",
+            "Fighting + Toughness"
+        ]
+    },
+    {
+        "Name": "Energy Liger",
+        "Stats": {
+            "Fighting": 8,
+            "Strength": 10,
+            "Dexterity": 11,
+            "Agility": 8,
+            "Awareness": 6
+        },
+        "Defenses": {
+            "Toughness": 8,
+            "Parry": 8,
+            "Dodge": 8
+        },
+        "Powers": [
+            {
+                "Type": "Melee",
+                "Damage": 10,
+                "Power Points": 0
+            },
+            {
+                "Type": "Close-Range",
+                "Damage": 10,
+                "Extras": [
+                    "Increased Range"
+                ],
+                "Power Points": 20
+            },
+            {
+                "Type": "Mid-Range",
+                "Damage": 9,
+                "Extras": [
+                    "Increased Range",
+                    "Extended Range 1"
+                ],
+                "Power Points": 21
+            },
+            {
+                "Type": "Armor",
+                "Protection": 8,
+                "Power Points": 8
+            },
+            {
+                "Type": "Concealment",
+                "Senses": [
+                    "Visual"
+                ],
+                "Rank": 4,
+                "Power Points": 2.0
+            }
+        ],
+        "Movement": {
+            "Land": 1100.0,
+            "Water": 0.0,
+            "Air": 0.0
+        },
+        "Total Power Points": 137.0,
+        "Power Level": 21,
+        "Power Level Source": [
+            "Dexterity + Ranged"
+        ]
+    },
+    {
+        "Name": "Gairyuki",
+        "Stats": {
+            "Fighting": 7,
+            "Strength": 8,
+            "Dexterity": 9,
+            "Agility": 8,
+            "Awareness": 5
+        },
+        "Defenses": {
+            "Toughness": 11,
+            "Parry": 7,
+            "Dodge": 8
+        },
+        "Powers": [
+            {
+                "Type": "Melee",
+                "Damage": 8,
+                "Power Points": 0
+            },
+            {
+                "Type": "Close-Range",
+                "Damage": 11,
+                "Extras": [
+                    "Increased Range"
+                ],
+                "Power Points": 22
+            },
+            {
+                "Type": "Armor",
+                "Protection": 11,
+                "Power Points": 11
+            },
+            {
+                "Type": "Concealment",
+                "Senses": [
+                    "Visual"
+                ],
+                "Rank": 3,
+                "Power Points": 1.5
+            }
+        ],
+        "Movement": {
+            "Land": 483.3,
+            "Water": 0.0,
+            "Air": 0.0
+        },
+        "Total Power Points": 108.5,
+        "Power Level": 20,
+        "Power Level Source": [
+            "Dexterity + Ranged"
+        ]
+    },
+    {
+        "Name": "Gator",
+        "Stats": {
+            "Fighting": 3,
+            "Strength": 1,
+            "Dexterity": 2,
+            "Agility": 3,
+            "Awareness": 9
+        },
+        "Defenses": {
+            "Toughness": 2,
+            "Parry": 3,
+            "Dodge": 3
+        },
+        "Powers": [
+            {
+                "Type": "Melee",
+                "Damage": 1,
+                "Power Points": 0
+            },
+            {
+                "Type": "Close-Range",
+                "Damage": 2,
+                "Extras": [
+                    "Increased Range"
+                ],
+                "Power Points": 4
+            },
+            {
+                "Type": "Armor",
+                "Protection": 2,
+                "Power Points": 2
+            },
+            {
+                "Type": "Concealment",
+                "Senses": [
+                    "Visual"
+                ],
+                "Rank": 5,
+                "Power Points": 2.5
+            },
+            {
+                "Type": "Concealment",
+                "Senses": [
+                    "Sensor"
+                ],
+                "Rank": 7,
+                "Power Points": 3.5
+            }
+        ],
+        "Movement": {
+            "Land": 333.3,
+            "Water": 0.0,
+            "Air": 0.0
+        },
+        "Total Power Points": 48.0,
+        "Power Level": 5,
+        "Power Level Source": [
+            "Agility + Toughness",
+            "Fighting + Toughness"
+        ]
+    },
+    {
+        "Name": "Geno Breaker",
+        "Stats": {
+            "Fighting": 7,
+            "Strength": 9,
+            "Dexterity": 11,
+            "Agility": 7,
+            "Awareness": 7
+        },
+        "Defenses": {
+            "Toughness": 8,
+            "Parry": 7,
+            "Dodge": 7
+        },
+        "Powers": [
+            {
+                "Type": "Melee",
+                "Damage": 9,
+                "Power Points": 0
+            },
+            {
+                "Type": "Close-Range",
+                "Damage": 9,
+                "Extras": [
+                    "Increased Range"
+                ],
+                "Power Points": 18
+            },
+            {
+                "Type": "Mid-Range",
+                "Damage": 8,
+                "Extras": [
+                    "Increased Range",
+                    "Extended Range 1"
+                ],
+                "Power Points": 19
+            },
+            {
+                "Type": "Armor",
+                "Protection": 8,
+                "Power Points": 8
+            },
+            {
+                "Type": "Concealment",
+                "Senses": [
+                    "Visual"
+                ],
+                "Rank": 3,
+                "Power Points": 1.5
+            }
+        ],
+        "Movement": {
+            "Land": 575.0,
+            "Water": 0.0,
+            "Air": 0.0
+        },
+        "Total Power Points": 128.5,
+        "Power Level": 20,
+        "Power Level Source": [
+            "Dexterity + Ranged"
+        ]
+    },
+    {
+        "Name": "Geno Saurer",
+        "Stats": {
+            "Fighting": 6,
+            "Strength": 7,
+            "Dexterity": 9,
+            "Agility": 7,
+            "Awareness": 7
+        },
+        "Defenses": {
+            "Toughness": 6,
+            "Parry": 6,
+            "Dodge": 7
+        },
+        "Powers": [
+            {
+                "Type": "Melee",
+                "Damage": 7,
+                "Power Points": 0
+            },
+            {
+                "Type": "Close-Range",
+                "Damage": 9,
+                "Extras": [
+                    "Increased Range"
+                ],
+                "Power Points": 18
+            },
+            {
+                "Type": "Mid-Range",
+                "Damage": 7,
+                "Extras": [
+                    "Increased Range",
+                    "Extended Range 1"
+                ],
+                "Power Points": 19
+            },
+            {
+                "Type": "Armor",
+                "Protection": 6,
+                "Power Points": 6
+            },
+            {
+                "Type": "Concealment",
+                "Senses": [
+                    "Visual"
+                ],
+                "Rank": 3,
+                "Power Points": 1.5
+            }
+        ],
+        "Movement": {
+            "Land": 433.3,
+            "Water": 0.0,
+            "Air": 0.0
+        },
+        "Total Power Points": 116.5,
+        "Power Level": 18,
+        "Power Level Source": [
+            "Dexterity + Ranged"
+        ]
+    },
+    {
+        "Name": "Glaive Quama",
+        "Stats": {
+            "Fighting": 6,
+            "Strength": 4,
+            "Dexterity": 9,
+            "Agility": 6,
+            "Awareness": 7
+        },
+        "Defenses": {
+            "Toughness": 3,
+            "Parry": 6,
+            "Dodge": 6
+        },
+        "Powers": [
+            {
+                "Type": "Melee",
+                "Damage": 4,
+                "Power Points": 0
+            },
+            {
+                "Type": "Close-Range",
+                "Damage": 4,
+                "Extras": [
+                    "Increased Range"
+                ],
+                "Power Points": 8
+            },
+            {
+                "Type": "Armor",
+                "Protection": 3,
+                "Power Points": 3
+            },
+            {
+                "Type": "Concealment",
+                "Senses": [
+                    "Visual"
+                ],
+                "Rank": 5,
+                "Power Points": 2.5
+            }
+        ],
+        "Movement": {
+            "Land": 0.0,
+            "Water": 0.0,
+            "Air": 1429.2
+        },
+        "Total Power Points": 77.5,
+        "Power Level": 13,
+        "Power Level Source": [
+            "Dexterity + Ranged"
+        ]
+    },
+    {
+        "Name": "Godos",
+        "Stats": {
+            "Fighting": 5,
+            "Strength": 3,
+            "Dexterity": 7,
+            "Agility": 5,
+            "Awareness": 3
+        },
+        "Defenses": {
+            "Toughness": 3,
+            "Parry": 5,
+            "Dodge": 5
+        },
+        "Powers": [
+            {
+                "Type": "Melee",
+                "Damage": 3,
+                "Power Points": 0
+            },
+            {
+                "Type": "Close-Range",
+                "Damage": 3,
+                "Extras": [
+                    "Increased Range"
+                ],
+                "Power Points": 6
+            },
+            {
+                "Type": "Armor",
+                "Protection": 3,
+                "Power Points": 3
+            },
+            {
+                "Type": "Concealment",
+                "Senses": [
+                    "Visual"
+                ],
+                "Rank": 2,
+                "Power Points": 1.0
+            }
+        ],
+        "Movement": {
+            "Land": 250.0,
+            "Water": 0.0,
+            "Air": 0.0
+        },
+        "Total Power Points": 56.0,
+        "Power Level": 10,
+        "Power Level Source": [
+            "Dexterity + Ranged"
+        ]
+    },
+    {
+        "Name": "Gojulas",
+        "Stats": {
+            "Fighting": 5,
+            "Strength": 9,
+            "Dexterity": 6,
+            "Agility": 5,
+            "Awareness": 6
+        },
+        "Defenses": {
+            "Toughness": 7,
+            "Parry": 5,
+            "Dodge": 5
+        },
+        "Powers": [
+            {
+                "Type": "Melee",
+                "Damage": 9,
+                "Power Points": 0
+            },
+            {
+                "Type": "Close-Range",
+                "Damage": 7,
+                "Extras": [
+                    "Increased Range"
+                ],
+                "Power Points": 14
+            },
+            {
+                "Type": "Armor",
+                "Protection": 7,
+                "Power Points": 7
+            },
+            {
+                "Type": "Concealment",
+                "Senses": [
+                    "Visual"
+                ],
+                "Rank": 2,
+                "Power Points": 1.0
+            }
+        ],
+        "Movement": {
+            "Land": 125.0,
+            "Water": 0.0,
+            "Air": 0.0
+        },
+        "Total Power Points": 84.0,
+        "Power Level": 14,
+        "Power Level Source": [
+            "Fighting + Melee"
+        ]
+    },
+    {
+        "Name": "Gojulas The Ogre",
+        "Stats": {
+            "Fighting": 7,
+            "Strength": 10,
+            "Dexterity": 11,
+            "Agility": 7,
+            "Awareness": 5
+        },
+        "Defenses": {
+            "Toughness": 8,
+            "Parry": 7,
+            "Dodge": 7
+        },
+        "Powers": [
+            {
+                "Type": "Melee",
+                "Damage": 10,
+                "Power Points": 0
+            },
+            {
+                "Type": "Close-Range",
+                "Damage": 8,
+                "Extras": [
+                    "Increased Range"
+                ],
+                "Power Points": 16
+            },
+            {
+                "Type": "Mid-Range",
+                "Damage": 10,
+                "Extras": [
+                    "Increased Range",
+                    "Extended Range 1"
+                ],
+                "Power Points": 17
+            },
+            {
+                "Type": "Long-Range",
+                "Damage": 10,
+                "Extras": [
+                    "Increased Range",
+                    "Extended Range 2"
+                ],
+                "Power Points": 18
+            },
+            {
+                "Type": "Armor",
+                "Protection": 8,
+                "Power Points": 8
+            },
+            {
+                "Type": "Concealment",
+                "Senses": [
+                    "Visual"
+                ],
+                "Rank": 1,
+                "Power Points": 0.5
+            }
+        ],
+        "Movement": {
+            "Land": 208.3,
+            "Water": 0.0,
+            "Air": 0.0
+        },
+        "Total Power Points": 139.5,
+        "Power Level": 21,
+        "Power Level Source": [
+            "Dexterity + Ranged"
+        ]
+    },
+    {
+        "Name": "Gojulasgiga",
+        "Stats": {
+            "Fighting": 8,
+            "Strength": 11,
+            "Dexterity": 9,
+            "Agility": 8,
+            "Awareness": 6
+        },
+        "Defenses": {
+            "Toughness": 10,
+            "Parry": 8,
+            "Dodge": 8
+        },
+        "Powers": [
+            {
+                "Type": "Melee",
+                "Damage": 11,
+                "Power Points": 0
+            },
+            {
+                "Type": "Close-Range",
+                "Damage": 12,
+                "Extras": [
+                    "Increased Range"
+                ],
+                "Power Points": 24
+            },
+            {
+                "Type": "Armor",
+                "Protection": 10,
+                "Power Points": 10
+            },
+            {
+                "Type": "Create (E-Shield)",
+                "Rank": 10,
+                "Extras": [
+                    "Tethered",
+                    "Limited to hemisphere in front of Zoid",
+                    "Limited (Damage remains after dismissing)"
+                ],
+                "Power Points": 10
+            },
+            {
+                "Type": "Concealment",
+                "Senses": [
+                    "Visual"
+                ],
+                "Rank": 2,
+                "Power Points": 1.0
+            }
+        ],
+        "Movement": {
+            "Land": 300.0,
+            "Water": 0.0,
+            "Air": 0.0
+        },
+        "Total Power Points": 129.0,
+        "Power Level": 21,
+        "Power Level Source": [
+            "Dexterity + Ranged"
+        ]
+    },
+    {
+        "Name": "Gordos",
+        "Stats": {
+            "Fighting": 4,
+            "Strength": 3,
+            "Dexterity": 1,
+            "Agility": 5,
+            "Awareness": 11
+        },
+        "Defenses": {
+            "Toughness": 5,
+            "Parry": 4,
+            "Dodge": 5
+        },
+        "Powers": [
+            {
+                "Type": "Melee",
+                "Damage": 3,
+                "Power Points": 0
+            },
+            {
+                "Type": "Close-Range",
+                "Damage": 5,
+                "Extras": [
+                    "Increased Range"
+                ],
+                "Power Points": 10
+            },
+            {
+                "Type": "Mid-Range",
+                "Damage": 8,
+                "Extras": [
+                    "Increased Range",
+                    "Extended Range 1"
+                ],
+                "Power Points": 11
+            },
+            {
+                "Type": "Armor",
+                "Protection": 5,
+                "Power Points": 5
+            },
+            {
+                "Type": "Concealment",
+                "Senses": [
+                    "Visual"
+                ],
+                "Rank": 2,
+                "Power Points": 1.0
+            },
+            {
+                "Type": "Concealment",
+                "Senses": [
+                    "Sensor"
+                ],
+                "Rank": 9,
+                "Power Points": 4.5
+            }
+        ],
+        "Movement": {
+            "Land": 133.3,
+            "Water": 0.0,
+            "Air": 0.0
+        },
+        "Total Power Points": 79.5,
+        "Power Level": 10,
+        "Power Level Source": [
+            "Agility + Toughness"
+        ]
+    },
+    {
+        "Name": "Gorhecks",
+        "Stats": {
+            "Fighting": 4,
+            "Strength": 1,
+            "Dexterity": 3,
+            "Agility": 5,
+            "Awareness": 11
+        },
+        "Defenses": {
+            "Toughness": 3,
+            "Parry": 4,
+            "Dodge": 5
+        },
+        "Powers": [
+            {
+                "Type": "Melee",
+                "Damage": 1,
+                "Power Points": 0
+            },
+            {
+                "Type": "Close-Range",
+                "Damage": 3,
+                "Extras": [
+                    "Increased Range"
+                ],
+                "Power Points": 6
+            },
+            {
+                "Type": "Mid-Range",
+                "Damage": 2,
+                "Extras": [
+                    "Increased Range",
+                    "Extended Range 1"
+                ],
+                "Power Points": 7
+            },
+            {
+                "Type": "Armor",
+                "Protection": 3,
+                "Power Points": 3
+            },
+            {
+                "Type": "Concealment",
+                "Senses": [
+                    "Visual"
+                ],
+                "Rank": 5,
+                "Power Points": 2.5
+            },
+            {
+                "Type": "Concealment",
+                "Senses": [
+                    "Sensor"
+                ],
+                "Rank": 10,
+                "Power Points": 5.0
+            }
+        ],
+        "Movement": {
+            "Land": 200.0,
+            "Water": 0.0,
+            "Air": 0.0
+        },
+        "Total Power Points": 71.5,
+        "Power Level": 8,
+        "Power Level Source": [
+            "Agility + Toughness"
+        ]
+    },
+    {
+        "Name": "Grounchar",
+        "Stats": {
+            "Fighting": 3,
+            "Strength": 4,
+            "Dexterity": 2,
+            "Agility": 3,
+            "Awareness": 8
+        },
+        "Defenses": {
+            "Toughness": 3,
+            "Parry": 3,
+            "Dodge": 3
+        },
+        "Powers": [
+            {
+                "Type": "Melee",
+                "Damage": 4,
+                "Power Points": 0
+            },
+            {
+                "Type": "Close-Range",
+                "Damage": 4,
+                "Extras": [
+                    "Increased Range"
+                ],
+                "Power Points": 8
+            },
+            {
+                "Type": "Armor",
+                "Protection": 3,
+                "Power Points": 3
+            },
+            {
+                "Type": "Concealment",
+                "Senses": [
+                    "Visual"
+                ],
+                "Rank": 9,
+                "Power Points": 4.5
+            },
+            {
+                "Type": "Concealment",
+                "Senses": [
+                    "Sensor"
+                ],
+                "Rank": 9,
+                "Power Points": 4.5
+            }
+        ],
+        "Movement": {
+            "Land": 200.0,
+            "Water": 0.0,
+            "Air": 0.0
+        },
+        "Total Power Points": 60.0,
+        "Power Level": 7,
+        "Power Level Source": [
+            "Fighting + Melee"
+        ]
+    },
+    {
+        "Name": "Gun Sniper",
+        "Stats": {
+            "Fighting": 6,
+            "Strength": 4,
+            "Dexterity": 8,
+            "Agility": 6,
+            "Awareness": 4
+        },
+        "Defenses": {
+            "Toughness": 3,
+            "Parry": 6,
+            "Dodge": 6
+        },
+        "Powers": [
+            {
+                "Type": "Melee",
+                "Damage": 4,
+                "Power Points": 0
+            },
+            {
+                "Type": "Close-Range",
+                "Damage": 5,
+                "Extras": [
+                    "Increased Range"
+                ],
+                "Power Points": 10
+            },
+            {
+                "Type": "Mid-Range",
+                "Damage": 3,
+                "Extras": [
+                    "Increased Range",
+                    "Extended Range 1"
+                ],
+                "Power Points": 11
+            },
+            {
+                "Type": "Armor",
+                "Protection": 3,
+                "Power Points": 3
+            },
+            {
+                "Type": "Concealment",
+                "Senses": [
+                    "Visual"
+                ],
+                "Rank": 2,
+                "Power Points": 1.0
+            }
+        ],
+        "Movement": {
+            "Land": 333.3,
+            "Water": 0.0,
+            "Air": 0.0
+        },
+        "Total Power Points": 81.0,
+        "Power Level": 13,
+        "Power Level Source": [
+            "Dexterity + Ranged"
+        ]
+    },
+    {
+        "Name": "Gunbluster",
+        "Stats": {
+            "Fighting": 5,
+            "Strength": 5,
+            "Dexterity": 2,
+            "Agility": 7,
+            "Awareness": 6
+        },
+        "Defenses": {
+            "Toughness": 7,
+            "Parry": 5,
+            "Dodge": 7
+        },
+        "Powers": [
+            {
+                "Type": "Melee",
+                "Damage": 5,
+                "Power Points": 0
+            },
+            {
+                "Type": "Close-Range",
+                "Damage": 10,
+                "Extras": [
+                    "Increased Range"
+                ],
+                "Power Points": 20
+            },
+            {
+                "Type": "Mid-Range",
+                "Damage": 11,
+                "Extras": [
+                    "Increased Range",
+                    "Extended Range 1"
+                ],
+                "Power Points": 21
+            },
+            {
+                "Type": "Long-Range",
+                "Damage": 9,
+                "Extras": [
+                    "Increased Range",
+                    "Extended Range 2"
+                ],
+                "Power Points": 22
+            },
+            {
+                "Type": "Armor",
+                "Protection": 7,
+                "Power Points": 7
+            },
+            {
+                "Type": "Create (E-Shield)",
+                "Rank": 8,
+                "Extras": [
+                    "Tethered",
+                    "Limited to hemisphere in front of Zoid",
+                    "Limited (Damage remains after dismissing)"
+                ],
+                "Power Points": 8
+            },
+            {
+                "Type": "Concealment",
+                "Senses": [
+                    "Visual"
+                ],
+                "Rank": 4,
+                "Power Points": 2.0
+            }
+        ],
+        "Movement": {
+            "Land": 200.0,
+            "Water": 0.0,
+            "Air": 0.0
+        },
+        "Total Power Points": 130.0,
+        "Power Level": 14,
+        "Power Level Source": [
+            "Agility + Toughness"
+        ]
+    },
+    {
+        "Name": "Guntiger",
+        "Stats": {
+            "Fighting": 7,
+            "Strength": 3,
+            "Dexterity": 10,
+            "Agility": 7,
+            "Awareness": 5
+        },
+        "Defenses": {
+            "Toughness": 2,
+            "Parry": 7,
+            "Dodge": 7
+        },
+        "Powers": [
+            {
+                "Type": "Melee",
+                "Damage": 3,
+                "Power Points": 0
+            },
+            {
+                "Type": "Close-Range",
+                "Damage": 4,
+                "Extras": [
+                    "Increased Range"
+                ],
+                "Power Points": 8
+            },
+            {
+                "Type": "Armor",
+                "Protection": 2,
+                "Power Points": 2
+            },
+            {
+                "Type": "Concealment",
+                "Senses": [
+                    "Visual"
+                ],
+                "Rank": 5,
+                "Power Points": 2.5
+            }
+        ],
+        "Movement": {
+            "Land": 450.0,
+            "Water": 0.0,
+            "Air": 0.0
+        },
+        "Total Power Points": 76.5,
+        "Power Level": 14,
+        "Power Level Source": [
+            "Dexterity + Ranged"
+        ]
+    },
+    {
+        "Name": "Gustav MS",
+        "Stats": {
+            "Fighting": 4,
+            "Strength": 2,
+            "Dexterity": 2,
+            "Agility": 3,
+            "Awareness": 9
+        },
+        "Defenses": {
+            "Toughness": 10,
+            "Parry": 4,
+            "Dodge": 3
+        },
+        "Powers": [
+            {
+                "Type": "Melee",
+                "Damage": 2,
+                "Power Points": 0
+            },
+            {
+                "Type": "Armor",
+                "Protection": 10,
+                "Power Points": 10
+            },
+            {
+                "Type": "Concealment",
+                "Senses": [
+                    "Visual"
+                ],
+                "Rank": 2,
+                "Power Points": 1.0
+            }
+        ],
+        "Movement": {
+            "Land": 225.0,
+            "Water": 0.0,
+            "Air": 0.0
+        },
+        "Total Power Points": 51.0,
+        "Power Level": 14,
+        "Power Level Source": [
+            "Fighting + Toughness"
+        ]
+    },
+    {
+        "Name": "Guysack",
+        "Stats": {
+            "Fighting": 5,
+            "Strength": 2,
+            "Dexterity": 6,
+            "Agility": 5,
+            "Awareness": 3
+        },
+        "Defenses": {
+            "Toughness": 2,
+            "Parry": 5,
+            "Dodge": 5
+        },
+        "Powers": [
+            {
+                "Type": "Melee",
+                "Damage": 2,
+                "Power Points": 0
+            },
+            {
+                "Type": "Close-Range",
+                "Damage": 3,
+                "Extras": [
+                    "Increased Range"
+                ],
+                "Power Points": 6
+            },
+            {
+                "Type": "Armor",
+                "Protection": 2,
+                "Power Points": 2
+            },
+            {
+                "Type": "Concealment",
+                "Senses": [
+                    "Visual"
+                ],
+                "Rank": 8,
+                "Power Points": 4.0
+            }
+        ],
+        "Movement": {
+            "Land": 200.0,
+            "Water": 0.0,
+            "Air": 0.0
+        },
+        "Total Power Points": 54.0,
+        "Power Level": 9,
+        "Power Level Source": [
+            "Dexterity + Ranged"
+        ]
+    },
+    {
+        "Name": "Hammer Head",
+        "Stats": {
+            "Fighting": 4,
+            "Strength": 2,
+            "Dexterity": 5,
+            "Agility": 5,
+            "Awareness": 5
+        },
+        "Defenses": {
+            "Toughness": 7,
+            "Parry": 4,
+            "Dodge": 5
+        },
+        "Powers": [
+            {
+                "Type": "Melee",
+                "Damage": 2,
+                "Power Points": 0
+            },
+            {
+                "Type": "Close-Range",
+                "Damage": 5,
+                "Extras": [
+                    "Increased Range"
+                ],
+                "Power Points": 10
+            },
+            {
+                "Type": "Mid-Range",
+                "Damage": 5,
+                "Extras": [
+                    "Increased Range",
+                    "Extended Range 1"
+                ],
+                "Power Points": 11
+            },
+            {
+                "Type": "Armor",
+                "Protection": 7,
+                "Power Points": 7
+            },
+            {
+                "Type": "Concealment",
+                "Senses": [
+                    "Visual"
+                ],
+                "Rank": 9,
+                "Power Points": 4.5
+            }
+        ],
+        "Movement": {
+            "Land": 0.0,
+            "Water": 200.6,
+            "Air": 571.7
+        },
+        "Total Power Points": 74.5,
+        "Power Level": 12,
+        "Power Level Source": [
+            "Agility + Toughness"
+        ]
+    },
+    {
+        "Name": "Hammer Rock",
+        "Stats": {
+            "Fighting": 7,
+            "Strength": 4,
+            "Dexterity": 9,
+            "Agility": 6,
+            "Awareness": 4
+        },
+        "Defenses": {
+            "Toughness": 4,
+            "Parry": 7,
+            "Dodge": 6
+        },
+        "Powers": [
+            {
+                "Type": "Melee",
+                "Damage": 4,
+                "Power Points": 0
+            },
+            {
+                "Type": "Close-Range",
+                "Damage": 3,
+                "Extras": [
+                    "Increased Range"
+                ],
+                "Power Points": 6
+            },
+            {
+                "Type": "Armor",
+                "Protection": 4,
+                "Power Points": 4
+            },
+            {
+                "Type": "Concealment",
+                "Senses": [
+                    "Visual"
+                ],
+                "Rank": 4,
+                "Power Points": 2.0
+            }
+        ],
+        "Movement": {
+            "Land": 300.0,
+            "Water": 0.0,
+            "Air": 0.0
+        },
+        "Total Power Points": 72.0,
+        "Power Level": 12,
+        "Power Level Source": [
+            "Dexterity + Ranged"
+        ]
+    },
+    {
+        "Name": "Hel Digunner",
+        "Stats": {
+            "Fighting": 3,
+            "Strength": 3,
+            "Dexterity": 3,
+            "Agility": 4,
+            "Awareness": 5
+        },
+        "Defenses": {
+            "Toughness": 3,
+            "Parry": 3,
+            "Dodge": 4
+        },
+        "Powers": [
+            {
+                "Type": "Melee",
+                "Damage": 3,
+                "Power Points": 0
+            },
+            {
+                "Type": "Close-Range",
+                "Damage": 5,
+                "Extras": [
+                    "Increased Range"
+                ],
+                "Power Points": 10
+            },
+            {
+                "Type": "Mid-Range",
+                "Damage": 5,
+                "Extras": [
+                    "Increased Range",
+                    "Extended Range 1"
+                ],
+                "Power Points": 11
+            },
+            {
+                "Type": "Armor",
+                "Protection": 3,
+                "Power Points": 3
+            },
+            {
+                "Type": "Concealment",
+                "Senses": [
+                    "Visual"
+                ],
+                "Rank": 6,
+                "Power Points": 3.0
+            }
+        ],
+        "Movement": {
+            "Land": 216.7,
+            "Water": 0.0,
+            "Air": 0.0
+        },
+        "Total Power Points": 63.0,
+        "Power Level": 8,
+        "Power Level Source": [
+            "Dexterity + Ranged"
+        ]
+    },
+    {
+        "Name": "Helcat",
+        "Stats": {
+            "Fighting": 6,
+            "Strength": 3,
+            "Dexterity": 9,
+            "Agility": 6,
+            "Awareness": 7
+        },
+        "Defenses": {
+            "Toughness": 2,
+            "Parry": 6,
+            "Dodge": 6
+        },
+        "Powers": [
+            {
+                "Type": "Melee",
+                "Damage": 3,
+                "Power Points": 0
+            },
+            {
+                "Type": "Close-Range",
+                "Damage": 3,
+                "Extras": [
+                    "Increased Range"
+                ],
+                "Power Points": 6
+            },
+            {
+                "Type": "Armor",
+                "Protection": 2,
+                "Power Points": 2
+            },
+            {
+                "Type": "Concealment",
+                "Senses": [
+                    "Visual"
+                ],
+                "Rank": 8,
+                "Power Points": 4.0
+            }
+        ],
+        "Movement": {
+            "Land": 333.3,
+            "Water": 0.0,
+            "Air": 0.0
+        },
+        "Total Power Points": 74.0,
+        "Power Level": 12,
+        "Power Level Source": [
+            "Dexterity + Ranged"
+        ]
+    },
+    {
+        "Name": "Iguan",
+        "Stats": {
+            "Fighting": 5,
+            "Strength": 3,
+            "Dexterity": 8,
+            "Agility": 5,
+            "Awareness": 3
+        },
+        "Defenses": {
+            "Toughness": 3,
+            "Parry": 5,
+            "Dodge": 5
+        },
+        "Powers": [
+            {
+                "Type": "Melee",
+                "Damage": 3,
+                "Power Points": 0
+            },
+            {
+                "Type": "Close-Range",
+                "Damage": 3,
+                "Extras": [
+                    "Increased Range"
+                ],
+                "Power Points": 6
+            },
+            {
+                "Type": "Armor",
+                "Protection": 3,
+                "Power Points": 3
+            },
+            {
+                "Type": "Concealment",
+                "Senses": [
+                    "Visual"
+                ],
+                "Rank": 2,
+                "Power Points": 1.0
+            }
+        ],
+        "Movement": {
+            "Land": 333.3,
+            "Water": 0.0,
+            "Air": 0.0
+        },
+        "Total Power Points": 58.0,
+        "Power Level": 11,
+        "Power Level Source": [
+            "Dexterity + Ranged"
+        ]
+    },
+    {
+        "Name": "Iron Kong",
+        "Stats": {
+            "Fighting": 8,
+            "Strength": 8,
+            "Dexterity": 8,
+            "Agility": 8,
+            "Awareness": 8
+        },
+        "Defenses": {
+            "Toughness": 8,
+            "Parry": 8,
+            "Dodge": 8
+        },
+        "Powers": [
+            {
+                "Type": "Melee",
+                "Damage": 8,
+                "Power Points": 0
+            },
+            {
+                "Type": "Close-Range",
+                "Damage": 8,
+                "Extras": [
+                    "Increased Range"
+                ],
+                "Power Points": 16
+            },
+            {
+                "Type": "Mid-Range",
+                "Damage": 8,
+                "Extras": [
+                    "Increased Range",
+                    "Extended Range 1"
+                ],
+                "Power Points": 17
+            },
+            {
+                "Type": "Long-Range",
+                "Damage": 8,
+                "Extras": [
+                    "Increased Range",
+                    "Extended Range 2"
+                ],
+                "Power Points": 18
+            },
+            {
+                "Type": "Armor",
+                "Protection": 8,
+                "Power Points": 8
+            },
+            {
+                "Type": "Concealment",
+                "Senses": [
+                    "Visual"
+                ],
+                "Rank": 3,
+                "Power Points": 1.5
+            }
+        ],
+        "Movement": {
+            "Land": 250.0,
+            "Water": 0.0,
+            "Air": 0.0
+        },
+        "Total Power Points": 140.5,
+        "Power Level": 16,
+        "Power Level Source": [
+            "Fighting + Melee",
+            "Dexterity + Ranged",
+            "Agility + Toughness",
+            "Fighting + Toughness"
+        ]
+    },
+    {
+        "Name": "Iron Kong PK",
+        "Stats": {
+            "Fighting": 8,
+            "Strength": 8,
+            "Dexterity": 9,
+            "Agility": 8,
+            "Awareness": 9
+        },
+        "Defenses": {
+            "Toughness": 8,
+            "Parry": 8,
+            "Dodge": 8
+        },
+        "Powers": [
+            {
+                "Type": "Melee",
+                "Damage": 8,
+                "Power Points": 0
+            },
+            {
+                "Type": "Close-Range",
+                "Damage": 9,
+                "Extras": [
+                    "Increased Range"
+                ],
+                "Power Points": 18
+            },
+            {
+                "Type": "Mid-Range",
+                "Damage": 9,
+                "Extras": [
+                    "Increased Range",
+                    "Extended Range 1"
+                ],
+                "Power Points": 19
+            },
+            {
+                "Type": "Long-Range",
+                "Damage": 9,
+                "Extras": [
+                    "Increased Range",
+                    "Extended Range 2"
+                ],
+                "Power Points": 20
+            },
+            {
+                "Type": "Armor",
+                "Protection": 8,
+                "Power Points": 8
+            },
+            {
+                "Type": "Concealment",
+                "Senses": [
+                    "Visual"
+                ],
+                "Rank": 2,
+                "Power Points": 1.0
+            }
+        ],
+        "Movement": {
+            "Land": 283.3,
+            "Water": 0.0,
+            "Air": 0.0
+        },
+        "Total Power Points": 150.0,
+        "Power Level": 18,
+        "Power Level Source": [
+            "Dexterity + Ranged"
+        ]
+    },
+    {
+        "Name": "Killer Dome",
+        "Stats": {
+            "Fighting": 4,
+            "Strength": 4,
+            "Dexterity": 4,
+            "Agility": 5,
+            "Awareness": 8
+        },
+        "Defenses": {
+            "Toughness": 7,
+            "Parry": 4,
+            "Dodge": 5
+        },
+        "Powers": [
+            {
+                "Type": "Melee",
+                "Damage": 4,
+                "Power Points": 0
+            },
+            {
+                "Type": "Close-Range",
+                "Damage": 6,
+                "Extras": [
+                    "Increased Range"
+                ],
+                "Power Points": 12
+            },
+            {
+                "Type": "Armor",
+                "Protection": 7,
+                "Power Points": 7
+            },
+            {
+                "Type": "Concealment",
+                "Senses": [
+                    "Visual"
+                ],
+                "Rank": 5,
+                "Power Points": 2.5
+            },
+            {
+                "Type": "Concealment",
+                "Senses": [
+                    "Sensor"
+                ],
+                "Rank": 7,
+                "Power Points": 3.5
+            }
+        ],
+        "Movement": {
+            "Land": 250.0,
+            "Water": 117.3,
+            "Air": 0.0
+        },
+        "Total Power Points": 75.0,
+        "Power Level": 12,
+        "Power Level Source": [
+            "Agility + Toughness"
+        ]
+    },
+    {
+        "Name": "Konig Wolf",
+        "Stats": {
+            "Fighting": 9,
+            "Strength": 7,
+            "Dexterity": 11,
+            "Agility": 9,
+            "Awareness": 9
+        },
+        "Defenses": {
+            "Toughness": 6,
+            "Parry": 9,
+            "Dodge": 9
+        },
+        "Powers": [
+            {
+                "Type": "Melee",
+                "Damage": 7,
+                "Power Points": 0
+            },
+            {
+                "Type": "Close-Range",
+                "Damage": 8,
+                "Extras": [
+                    "Increased Range"
+                ],
+                "Power Points": 16
+            },
+            {
+                "Type": "Mid-Range",
+                "Damage": 8,
+                "Extras": [
+                    "Increased Range",
+                    "Extended Range 1"
+                ],
+                "Power Points": 17
+            },
+            {
+                "Type": "Armor",
+                "Protection": 6,
+                "Power Points": 6
+            },
+            {
+                "Type": "Concealment",
+                "Senses": [
+                    "Visual"
+                ],
+                "Rank": 8,
+                "Power Points": 4.0
+            }
+        ],
+        "Movement": {
+            "Land": 483.3,
+            "Water": 0.0,
+            "Air": 0.0
+        },
+        "Total Power Points": 133.0,
+        "Power Level": 19,
+        "Power Level Source": [
+            "Dexterity + Ranged"
+        ]
+    },
+    {
+        "Name": "Liger Zero",
+        "Stats": {
+            "Fighting": 8,
+            "Strength": 7,
+            "Dexterity": 11,
+            "Agility": 7,
+            "Awareness": 7
+        },
+        "Defenses": {
+            "Toughness": 6,
+            "Parry": 8,
+            "Dodge": 7
+        },
+        "Powers": [
+            {
+                "Type": "Melee",
+                "Damage": 7,
+                "Power Points": 0
+            },
+            {
+                "Type": "Close-Range",
+                "Damage": 4,
+                "Extras": [
+                    "Increased Range"
+                ],
+                "Power Points": 8
+            },
+            {
+                "Type": "Armor",
+                "Protection": 6,
+                "Power Points": 6
+            },
+            {
+                "Type": "Concealment",
+                "Senses": [
+                    "Visual"
+                ],
+                "Rank": 4,
+                "Power Points": 2.0
+            }
+        ],
+        "Movement": {
+            "Land": 511.7,
+            "Water": 0.0,
+            "Air": 0.0
+        },
+        "Total Power Points": 96.0,
+        "Power Level": 15,
+        "Power Level Source": [
+            "Fighting + Melee",
+            "Dexterity + Ranged"
+        ]
+    },
+    {
+        "Name": "Liger Zero Jager",
+        "Stats": {
+            "Fighting": 8,
+            "Strength": 7,
+            "Dexterity": 12,
+            "Agility": 7,
+            "Awareness": 7
+        },
+        "Defenses": {
+            "Toughness": 4,
+            "Parry": 8,
+            "Dodge": 7
+        },
+        "Powers": [
+            {
+                "Type": "Melee",
+                "Damage": 7,
+                "Power Points": 0
+            },
+            {
+                "Type": "Close-Range",
+                "Damage": 4,
+                "Extras": [
+                    "Increased Range"
+                ],
+                "Power Points": 8
+            },
+            {
+                "Type": "Armor",
+                "Protection": 4,
+                "Power Points": 4
+            },
+            {
+                "Type": "Concealment",
+                "Senses": [
+                    "Visual"
+                ],
+                "Rank": 6,
+                "Power Points": 3.0
+            }
+        ],
+        "Movement": {
+            "Land": 550.0,
+            "Water": 0.0,
+            "Air": 0.0
+        },
+        "Total Power Points": 97.0,
+        "Power Level": 16,
+        "Power Level Source": [
+            "Dexterity + Ranged"
+        ]
+    },
+    {
+        "Name": "Liger Zero Panzer",
+        "Stats": {
+            "Fighting": 5,
+            "Strength": 6,
+            "Dexterity": 5,
+            "Agility": 6,
+            "Awareness": 7
+        },
+        "Defenses": {
+            "Toughness": 8,
+            "Parry": 5,
+            "Dodge": 6
+        },
+        "Powers": [
+            {
+                "Type": "Melee",
+                "Damage": 6,
+                "Power Points": 0
+            },
+            {
+                "Type": "Close-Range",
+                "Damage": 8,
+                "Extras": [
+                    "Increased Range"
+                ],
+                "Power Points": 16
+            },
+            {
+                "Type": "Mid-Range",
+                "Damage": 9,
+                "Extras": [
+                    "Increased Range",
+                    "Extended Range 1"
+                ],
+                "Power Points": 17
+            },
+            {
+                "Type": "Long-Range",
+                "Damage": 6,
+                "Extras": [
+                    "Increased Range",
+                    "Extended Range 2"
+                ],
+                "Power Points": 18
+            },
+            {
+                "Type": "Armor",
+                "Protection": 8,
+                "Power Points": 8
+            },
+            {
+                "Type": "Concealment",
+                "Senses": [
+                    "Visual"
+                ],
+                "Rank": 3,
+                "Power Points": 1.5
+            }
+        ],
+        "Movement": {
+            "Land": 475.0,
+            "Water": 0.0,
+            "Air": 0.0
+        },
+        "Total Power Points": 118.5,
+        "Power Level": 14,
+        "Power Level Source": [
+            "Dexterity + Ranged",
+            "Agility + Toughness"
+        ]
+    },
+    {
+        "Name": "Liger Zero Phoenix",
+        "Stats": {
+            "Fighting": 7,
+            "Strength": 8,
+            "Dexterity": 11,
+            "Agility": 7,
+            "Awareness": 7
+        },
+        "Defenses": {
+            "Toughness": 6,
+            "Parry": 7,
+            "Dodge": 7
+        },
+        "Powers": [
+            {
+                "Type": "Melee",
+                "Damage": 8,
+                "Power Points": 0
+            },
+            {
+                "Type": "Close-Range",
+                "Damage": 6,
+                "Extras": [
+                    "Increased Range"
+                ],
+                "Power Points": 12
+            },
+            {
+                "Type": "Mid-Range",
+                "Damage": 6,
+                "Extras": [
+                    "Increased Range",
+                    "Extended Range 1"
+                ],
+                "Power Points": 13
+            },
+            {
+                "Type": "Armor",
+                "Protection": 6,
+                "Power Points": 6
+            },
+            {
+                "Type": "Concealment",
+                "Senses": [
+                    "Visual"
+                ],
+                "Rank": 2,
+                "Power Points": 1.0
+            }
+        ],
+        "Movement": {
+            "Land": 566.7,
+            "Water": 0.0,
+            "Air": 1143.3
+        },
+        "Total Power Points": 112.0,
+        "Power Level": 17,
+        "Power Level Source": [
+            "Dexterity + Ranged"
+        ]
+    },
+    {
+        "Name": "Liger Zero Schneider",
+        "Stats": {
+            "Fighting": 9,
+            "Strength": 9,
+            "Dexterity": 11,
+            "Agility": 7,
+            "Awareness": 6
+        },
+        "Defenses": {
+            "Toughness": 5,
+            "Parry": 9,
+            "Dodge": 7
+        },
+        "Powers": [
+            {
+                "Type": "Melee",
+                "Damage": 9,
+                "Power Points": 0
+            },
+            {
+                "Type": "Close-Range",
+                "Damage": 4,
+                "Extras": [
+                    "Increased Range"
+                ],
+                "Power Points": 8
+            },
+            {
+                "Type": "Armor",
+                "Protection": 5,
+                "Power Points": 5
+            },
+            {
+                "Type": "Create (E-Shield)",
+                "Rank": 9,
+                "Extras": [
+                    "Tethered",
+                    "Limited to hemisphere in front of Zoid",
+                    "Limited (Damage remains after dismissing)"
+                ],
+                "Power Points": 9
+            },
+            {
+                "Type": "Concealment",
+                "Senses": [
+                    "Visual"
+                ],
+                "Rank": 4,
+                "Power Points": 2.0
+            }
+        ],
+        "Movement": {
+            "Land": 516.7,
+            "Water": 0.0,
+            "Air": 0.0
+        },
+        "Total Power Points": 108.0,
+        "Power Level": 18,
+        "Power Level Source": [
+            "Fighting + Melee"
+        ]
+    },
+    {
+        "Name": "Liger Zero X",
+        "Stats": {
+            "Fighting": 8,
+            "Strength": 8,
+            "Dexterity": 11,
+            "Agility": 8,
+            "Awareness": 7
+        },
+        "Defenses": {
+            "Toughness": 5,
+            "Parry": 8,
+            "Dodge": 8
+        },
+        "Powers": [
+            {
+                "Type": "Melee",
+                "Damage": 8,
+                "Power Points": 0
+            },
+            {
+                "Type": "Close-Range",
+                "Damage": 8,
+                "Extras": [
+                    "Increased Range"
+                ],
+                "Power Points": 16
+            },
+            {
+                "Type": "Mid-Range",
+                "Damage": 7,
+                "Extras": [
+                    "Increased Range",
+                    "Extended Range 1"
+                ],
+                "Power Points": 17
+            },
+            {
+                "Type": "Armor",
+                "Protection": 5,
+                "Power Points": 5
+            },
+            {
+                "Type": "Concealment",
+                "Senses": [
+                    "Visual"
+                ],
+                "Rank": 12,
+                "Power Points": 6.0
+            }
+        ],
+        "Movement": {
+            "Land": 525.0,
+            "Water": 0.0,
+            "Air": 0.0
+        },
+        "Total Power Points": 128.0,
+        "Power Level": 19,
+        "Power Level Source": [
+            "Dexterity + Ranged"
+        ]
+    },
+    {
+        "Name": "Lightning Saix",
+        "Stats": {
+            "Fighting": 7,
+            "Strength": 6,
+            "Dexterity": 11,
+            "Agility": 7,
+            "Awareness": 8
+        },
+        "Defenses": {
+            "Toughness": 5,
+            "Parry": 7,
+            "Dodge": 7
+        },
+        "Powers": [
+            {
+                "Type": "Melee",
+                "Damage": 6,
+                "Power Points": 0
+            },
+            {
+                "Type": "Close-Range",
+                "Damage": 6,
+                "Extras": [
+                    "Increased Range"
+                ],
+                "Power Points": 12
+            },
+            {
+                "Type": "Mid-Range",
+                "Damage": 6,
+                "Extras": [
+                    "Increased Range",
+                    "Extended Range 1"
+                ],
+                "Power Points": 13
+            },
+            {
+                "Type": "Armor",
+                "Protection": 5,
+                "Power Points": 5
+            },
+            {
+                "Type": "Concealment",
+                "Senses": [
+                    "Visual"
+                ],
+                "Rank": 7,
+                "Power Points": 3.5
+            }
+        ],
+        "Movement": {
+            "Land": 541.7,
+            "Water": 0.0,
+            "Air": 0.0
+        },
+        "Total Power Points": 111.5,
+        "Power Level": 17,
+        "Power Level Source": [
+            "Dexterity + Ranged"
+        ]
+    },
+    {
+        "Name": "Maccurtis",
+        "Stats": {
+            "Fighting": 5,
+            "Strength": 3,
+            "Dexterity": 6,
+            "Agility": 5,
+            "Awareness": 5
+        },
+        "Defenses": {
+            "Toughness": 5,
+            "Parry": 5,
+            "Dodge": 5
+        },
+        "Powers": [
+            {
+                "Type": "Melee",
+                "Damage": 3,
+                "Power Points": 0
+            },
+            {
+                "Type": "Close-Range",
+                "Damage": 3,
+                "Extras": [
+                    "Increased Range"
+                ],
+                "Power Points": 6
+            },
+            {
+                "Type": "Armor",
+                "Protection": 5,
+                "Power Points": 5
+            },
+            {
+                "Type": "Concealment",
+                "Senses": [
+                    "Visual"
+                ],
+                "Rank": 8,
+                "Power Points": 4.0
+            }
+        ],
+        "Movement": {
+            "Land": 200.0,
+            "Water": 98.8,
+            "Air": 0.0
+        },
+        "Total Power Points": 63.0,
+        "Power Level": 10,
+        "Power Level Source": [
+            "Agility + Toughness",
+            "Fighting + Toughness"
+        ]
+    },
+    {
+        "Name": "Madthunder",
+        "Stats": {
+            "Fighting": 8,
+            "Strength": 12,
+            "Dexterity": 6,
+            "Agility": 7,
+            "Awareness": 9
+        },
+        "Defenses": {
+            "Toughness": 12,
+            "Parry": 8,
+            "Dodge": 7
+        },
+        "Powers": [
+            {
+                "Type": "Melee",
+                "Damage": 12,
+                "Power Points": 0
+            },
+            {
+                "Type": "Close-Range",
+                "Damage": 9,
+                "Extras": [
+                    "Increased Range"
+                ],
+                "Power Points": 18
+            },
+            {
+                "Type": "Mid-Range",
+                "Damage": 8,
+                "Extras": [
+                    "Increased Range",
+                    "Extended Range 1"
+                ],
+                "Power Points": 19
+            },
+            {
+                "Type": "Armor",
+                "Protection": 12,
+                "Power Points": 12
+            },
+            {
+                "Type": "Create (E-Shield)",
+                "Rank": 11,
+                "Extras": [
+                    "Tethered",
+                    "Limited to hemisphere in front of Zoid",
+                    "Limited (Damage remains after dismissing)"
+                ],
+                "Power Points": 11
+            },
+            {
+                "Type": "Concealment",
+                "Senses": [
+                    "Visual"
+                ],
+                "Rank": 1,
+                "Power Points": 0.5
+            }
+        ],
+        "Movement": {
+            "Land": 166.7,
+            "Water": 0.0,
+            "Air": 0.0
+        },
+        "Total Power Points": 144.5,
+        "Power Level": 20,
+        "Power Level Source": [
+            "Fighting + Melee",
+            "Fighting + Toughness"
+        ]
+    },
+    {
+        "Name": "Megaleon",
+        "Stats": {
+            "Fighting": 3,
+            "Strength": 1,
+            "Dexterity": 2,
+            "Agility": 4,
+            "Awareness": 5
+        },
+        "Defenses": {
+            "Toughness": 3,
+            "Parry": 3,
+            "Dodge": 4
+        },
+        "Powers": [
+            {
+                "Type": "Melee",
+                "Damage": 1,
+                "Power Points": 0
+            },
+            {
+                "Type": "Close-Range",
+                "Damage": 4,
+                "Extras": [
+                    "Increased Range"
+                ],
+                "Power Points": 8
+            },
+            {
+                "Type": "Mid-Range",
+                "Damage": 4,
+                "Extras": [
+                    "Increased Range",
+                    "Extended Range 1"
+                ],
+                "Power Points": 9
+            },
+            {
+                "Type": "Armor",
+                "Protection": 3,
+                "Power Points": 3
+            },
+            {
+                "Type": "Concealment",
+                "Senses": [
+                    "Visual"
+                ],
+                "Rank": 11,
+                "Power Points": 5.5
+            }
+        ],
+        "Movement": {
+            "Land": 133.3,
+            "Water": 0.0,
+            "Air": 0.0
+        },
+        "Total Power Points": 55.5,
+        "Power Level": 7,
+        "Power Level Source": [
+            "Agility + Toughness"
+        ]
+    },
+    {
+        "Name": "Molga",
+        "Stats": {
+            "Fighting": 4,
+            "Strength": 2,
+            "Dexterity": 4,
+            "Agility": 5,
+            "Awareness": 2
+        },
+        "Defenses": {
+            "Toughness": 4,
+            "Parry": 4,
+            "Dodge": 5
+        },
+        "Powers": [
+            {
+                "Type": "Melee",
+                "Damage": 2,
+                "Power Points": 0
+            },
+            {
+                "Type": "Close-Range",
+                "Damage": 3,
+                "Extras": [
+                    "Increased Range"
+                ],
+                "Power Points": 6
+            },
+            {
+                "Type": "Mid-Range",
+                "Damage": 2,
+                "Extras": [
+                    "Increased Range",
+                    "Extended Range 1"
+                ],
+                "Power Points": 7
+            },
+            {
+                "Type": "Armor",
+                "Protection": 4,
+                "Power Points": 4
+            },
+            {
+                "Type": "Concealment",
+                "Senses": [
+                    "Visual"
+                ],
+                "Rank": 4,
+                "Power Points": 2.0
+            }
+        ],
+        "Movement": {
+            "Land": 333.3,
+            "Water": 0.0,
+            "Air": 0.0
+        },
+        "Total Power Points": 53.0,
+        "Power Level": 9,
+        "Power Level Source": [
+            "Agility + Toughness"
+        ]
+    },
+    {
+        "Name": "Pteras",
+        "Stats": {
+            "Fighting": 6,
+            "Strength": 1,
+            "Dexterity": 9,
+            "Agility": 6,
+            "Awareness": 7
+        },
+        "Defenses": {
+            "Toughness": 2,
+            "Parry": 6,
+            "Dodge": 6
+        },
+        "Powers": [
+            {
+                "Type": "Melee",
+                "Damage": 1,
+                "Power Points": 0
+            },
+            {
+                "Type": "Close-Range",
+                "Damage": 2,
+                "Extras": [
+                    "Increased Range"
+                ],
+                "Power Points": 4
+            },
+            {
+                "Type": "Armor",
+                "Protection": 2,
+                "Power Points": 2
+            },
+            {
+                "Type": "Concealment",
+                "Senses": [
+                    "Visual"
+                ],
+                "Rank": 5,
+                "Power Points": 2.5
+            }
+        ],
+        "Movement": {
+            "Land": 0.0,
+            "Water": 0.0,
+            "Air": 1143.3
+        },
+        "Total Power Points": 66.5,
+        "Power Level": 11,
+        "Power Level Source": [
+            "Dexterity + Ranged"
+        ]
+    },
+    {
+        "Name": "Raynos",
+        "Stats": {
+            "Fighting": 7,
+            "Strength": 5,
+            "Dexterity": 9,
+            "Agility": 7,
+            "Awareness": 9
+        },
+        "Defenses": {
+            "Toughness": 3,
+            "Parry": 7,
+            "Dodge": 7
+        },
+        "Powers": [
+            {
+                "Type": "Melee",
+                "Damage": 5,
+                "Power Points": 0
+            },
+            {
+                "Type": "Close-Range",
+                "Damage": 6,
+                "Extras": [
+                    "Increased Range"
+                ],
+                "Power Points": 12
+            },
+            {
+                "Type": "Armor",
+                "Protection": 3,
+                "Power Points": 3
+            },
+            {
+                "Type": "Concealment",
+                "Senses": [
+                    "Visual"
+                ],
+                "Rank": 5,
+                "Power Points": 2.5
+            }
+        ],
+        "Movement": {
+            "Land": 0.0,
+            "Water": 0.0,
+            "Air": 1886.5
+        },
+        "Total Power Points": 91.5,
+        "Power Level": 15,
+        "Power Level Source": [
+            "Dexterity + Ranged"
+        ]
+    },
+    {
+        "Name": "Red Horn",
+        "Stats": {
+            "Fighting": 7,
+            "Strength": 6,
+            "Dexterity": 7,
+            "Agility": 8,
+            "Awareness": 6
+        },
+        "Defenses": {
+            "Toughness": 7,
+            "Parry": 7,
+            "Dodge": 8
+        },
+        "Powers": [
+            {
+                "Type": "Melee",
+                "Damage": 6,
+                "Power Points": 0
+            },
+            {
+                "Type": "Close-Range",
+                "Damage": 7,
+                "Extras": [
+                    "Increased Range"
+                ],
+                "Power Points": 14
+            },
+            {
+                "Type": "Mid-Range",
+                "Damage": 7,
+                "Extras": [
+                    "Increased Range",
+                    "Extended Range 1"
+                ],
+                "Power Points": 15
+            },
+            {
+                "Type": "Long-Range",
+                "Damage": 4,
+                "Extras": [
+                    "Increased Range",
+                    "Extended Range 2"
+                ],
+                "Power Points": 16
+            },
+            {
+                "Type": "Armor",
+                "Protection": 7,
+                "Power Points": 7
+            },
+            {
+                "Type": "Concealment",
+                "Senses": [
+                    "Visual"
+                ],
+                "Rank": 3,
+                "Power Points": 1.5
+            }
+        ],
+        "Movement": {
+            "Land": 216.7,
+            "Water": 0.0,
+            "Air": 0.0
+        },
+        "Total Power Points": 121.5,
+        "Power Level": 15,
+        "Power Level Source": [
+            "Agility + Toughness"
+        ]
+    },
+    {
+        "Name": "Redler",
+        "Stats": {
+            "Fighting": 7,
+            "Strength": 6,
+            "Dexterity": 7,
+            "Agility": 6,
+            "Awareness": 7
+        },
+        "Defenses": {
+            "Toughness": 3,
+            "Parry": 7,
+            "Dodge": 6
+        },
+        "Powers": [
+            {
+                "Type": "Melee",
+                "Damage": 6,
+                "Power Points": 0
+            },
+            {
+                "Type": "Close-Range",
+                "Damage": 4,
+                "Extras": [
+                    "Increased Range"
+                ],
+                "Power Points": 8
+            },
+            {
+                "Type": "Armor",
+                "Protection": 3,
+                "Power Points": 3
+            },
+            {
+                "Type": "Concealment",
+                "Senses": [
+                    "Visual"
+                ],
+                "Rank": 5,
+                "Power Points": 2.5
+            }
+        ],
+        "Movement": {
+            "Land": 0.0,
+            "Water": 0.0,
+            "Air": 1600.7
+        },
+        "Total Power Points": 79.5,
+        "Power Level": 13,
+        "Power Level Source": [
+            "Fighting + Melee"
+        ]
+    },
+    {
+        "Name": "Rev Rapter",
+        "Stats": {
+            "Fighting": 6,
+            "Strength": 5,
+            "Dexterity": 9,
+            "Agility": 5,
+            "Awareness": 4
+        },
+        "Defenses": {
+            "Toughness": 4,
+            "Parry": 6,
+            "Dodge": 5
+        },
+        "Powers": [
+            {
+                "Type": "Melee",
+                "Damage": 5,
+                "Power Points": 0
+            },
+            {
+                "Type": "Armor",
+                "Protection": 4,
+                "Power Points": 4
+            },
+            {
+                "Type": "Concealment",
+                "Senses": [
+                    "Visual"
+                ],
+                "Rank": 2,
+                "Power Points": 1.0
+            }
+        ],
+        "Movement": {
+            "Land": 350.0,
+            "Water": 0.0,
+            "Air": 0.0
+        },
+        "Total Power Points": 63.0,
+        "Power Level": 11,
+        "Power Level Source": [
+            "Fighting + Melee"
+        ]
+    },
+    {
+        "Name": "Saber Tiger",
+        "Stats": {
+            "Fighting": 7,
+            "Strength": 6,
+            "Dexterity": 9,
+            "Agility": 7,
+            "Awareness": 6
+        },
+        "Defenses": {
+            "Toughness": 5,
+            "Parry": 7,
+            "Dodge": 7
+        },
+        "Powers": [
+            {
+                "Type": "Melee",
+                "Damage": 6,
+                "Power Points": 0
+            },
+            {
+                "Type": "Close-Range",
+                "Damage": 5,
+                "Extras": [
+                    "Increased Range"
+                ],
+                "Power Points": 10
+            },
+            {
+                "Type": "Armor",
+                "Protection": 5,
+                "Power Points": 5
+            },
+            {
+                "Type": "Concealment",
+                "Senses": [
+                    "Visual"
+                ],
+                "Rank": 3,
+                "Power Points": 1.5
+            }
+        ],
+        "Movement": {
+            "Land": 400.0,
+            "Water": 0.0,
+            "Air": 0.0
+        },
+        "Total Power Points": 86.5,
+        "Power Level": 14,
+        "Power Level Source": [
+            "Dexterity + Ranged"
+        ]
+    },
+    {
+        "Name": "Saberlion",
+        "Stats": {
+            "Fighting": 8,
+            "Strength": 4,
+            "Dexterity": 11,
+            "Agility": 6,
+            "Awareness": 5
+        },
+        "Defenses": {
+            "Toughness": 2,
+            "Parry": 8,
+            "Dodge": 6
+        },
+        "Powers": [
+            {
+                "Type": "Melee",
+                "Damage": 4,
+                "Power Points": 0
+            },
+            {
+                "Type": "Armor",
+                "Protection": 2,
+                "Power Points": 2
+            },
+            {
+                "Type": "Concealment",
+                "Senses": [
+                    "Visual"
+                ],
+                "Rank": 5,
+                "Power Points": 2.5
+            }
+        ],
+        "Movement": {
+            "Land": 425.0,
+            "Water": 0.0,
+            "Air": 0.0
+        },
+        "Total Power Points": 72.5,
+        "Power Level": 12,
+        "Power Level Source": [
+            "Fighting + Melee"
+        ]
+    },
+    {
+        "Name": "Saicurtis",
+        "Stats": {
+            "Fighting": 5,
+            "Strength": 2,
+            "Dexterity": 10,
+            "Agility": 5,
+            "Awareness": 8
+        },
+        "Defenses": {
+            "Toughness": 2,
+            "Parry": 5,
+            "Dodge": 5
+        },
+        "Powers": [
+            {
+                "Type": "Melee",
+                "Damage": 2,
+                "Power Points": 0
+            },
+            {
+                "Type": "Close-Range",
+                "Damage": 2,
+                "Extras": [
+                    "Increased Range"
+                ],
+                "Power Points": 4
+            },
+            {
+                "Type": "Armor",
+                "Protection": 2,
+                "Power Points": 2
+            },
+            {
+                "Type": "Concealment",
+                "Senses": [
+                    "Visual"
+                ],
+                "Rank": 4,
+                "Power Points": 2.0
+            }
+        ],
+        "Movement": {
+            "Land": 0.0,
+            "Water": 0.0,
+            "Air": 180.1
+        },
+        "Total Power Points": 68.0,
+        "Power Level": 12,
+        "Power Level Source": [
+            "Dexterity + Ranged"
+        ]
+    },
+    {
+        "Name": "Salamander",
+        "Stats": {
+            "Fighting": 6,
+            "Strength": 5,
+            "Dexterity": 7,
+            "Agility": 6,
+            "Awareness": 7
+        },
+        "Defenses": {
+            "Toughness": 6,
+            "Parry": 6,
+            "Dodge": 6
+        },
+        "Powers": [
+            {
+                "Type": "Melee",
+                "Damage": 5,
+                "Power Points": 0
+            },
+            {
+                "Type": "Close-Range",
+                "Damage": 6,
+                "Extras": [
+                    "Increased Range"
+                ],
+                "Power Points": 12
+            },
+            {
+                "Type": "Mid-Range",
+                "Damage": 6,
+                "Extras": [
+                    "Increased Range",
+                    "Extended Range 1"
+                ],
+                "Power Points": 13
+            },
+            {
+                "Type": "Armor",
+                "Protection": 6,
+                "Power Points": 6
+            },
+            {
+                "Type": "Concealment",
+                "Senses": [
+                    "Visual"
+                ],
+                "Rank": 5,
+                "Power Points": 2.5
+            }
+        ],
+        "Movement": {
+            "Land": 0.0,
+            "Water": 0.0,
+            "Air": 1143.3
+        },
+        "Total Power Points": 95.5,
+        "Power Level": 13,
+        "Power Level Source": [
+            "Dexterity + Ranged"
+        ]
+    },
+    {
+        "Name": "Seismosaurus",
+        "Stats": {
+            "Fighting": 5,
+            "Strength": 7,
+            "Dexterity": 4,
+            "Agility": 7,
+            "Awareness": 6
+        },
+        "Defenses": {
+            "Toughness": 10,
+            "Parry": 5,
+            "Dodge": 7
+        },
+        "Powers": [
+            {
+                "Type": "Melee",
+                "Damage": 7,
+                "Power Points": 0
+            },
+            {
+                "Type": "Close-Range",
+                "Damage": 12,
+                "Extras": [
+                    "Increased Range"
+                ],
+                "Power Points": 24
+            },
+            {
+                "Type": "Mid-Range",
+                "Damage": 12,
+                "Extras": [
+                    "Increased Range",
+                    "Extended Range 1"
+                ],
+                "Power Points": 25
+            },
+            {
+                "Type": "Long-Range",
+                "Damage": 12,
+                "Extras": [
+                    "Increased Range",
+                    "Extended Range 2"
+                ],
+                "Power Points": 26
+            },
+            {
+                "Type": "Armor",
+                "Protection": 10,
+                "Power Points": 10
+            },
+            {
+                "Type": "Concealment",
+                "Senses": [
+                    "Visual"
+                ],
+                "Rank": 2,
+                "Power Points": 1.0
+            }
+        ],
+        "Movement": {
+            "Land": 116.7,
+            "Water": 0.0,
+            "Air": 0.0
+        },
+        "Total Power Points": 144.0,
+        "Power Level": 17,
+        "Power Level Source": [
+            "Agility + Toughness"
+        ]
+    },
+    {
+        "Name": "Shadow Fox",
+        "Stats": {
+            "Fighting": 8,
+            "Strength": 5,
+            "Dexterity": 10,
+            "Agility": 8,
+            "Awareness": 10
+        },
+        "Defenses": {
+            "Toughness": 5,
+            "Parry": 8,
+            "Dodge": 8
+        },
+        "Powers": [
+            {
+                "Type": "Melee",
+                "Damage": 5,
+                "Power Points": 0
+            },
+            {
+                "Type": "Close-Range",
+                "Damage": 5,
+                "Extras": [
+                    "Increased Range"
+                ],
+                "Power Points": 10
+            },
+            {
+                "Type": "Armor",
+                "Protection": 5,
+                "Power Points": 5
+            },
+            {
+                "Type": "Concealment",
+                "Senses": [
+                    "Visual"
+                ],
+                "Rank": 9,
+                "Power Points": 4.5
+            }
+        ],
+        "Movement": {
+            "Land": 483.3,
+            "Water": 0.0,
+            "Air": 0.0
+        },
+        "Total Power Points": 101.5,
+        "Power Level": 15,
+        "Power Level Source": [
+            "Dexterity + Ranged"
+        ]
+    },
+    {
+        "Name": "Shield Liger",
+        "Stats": {
+            "Fighting": 7,
+            "Strength": 6,
+            "Dexterity": 9,
+            "Agility": 7,
+            "Awareness": 7
+        },
+        "Defenses": {
+            "Toughness": 5,
+            "Parry": 7,
+            "Dodge": 7
+        },
+        "Powers": [
+            {
+                "Type": "Melee",
+                "Damage": 6,
+                "Power Points": 0
+            },
+            {
+                "Type": "Close-Range",
+                "Damage": 5,
+                "Extras": [
+                    "Increased Range"
+                ],
+                "Power Points": 10
+            },
+            {
+                "Type": "Armor",
+                "Protection": 5,
+                "Power Points": 5
+            },
+            {
+                "Type": "Create (E-Shield)",
+                "Rank": 5,
+                "Extras": [
+                    "Tethered",
+                    "Limited to hemisphere in front of Zoid",
+                    "Limited (Damage remains after dismissing)"
+                ],
+                "Power Points": 5
+            },
+            {
+                "Type": "Concealment",
+                "Senses": [
+                    "Visual"
+                ],
+                "Rank": 4,
+                "Power Points": 2.0
+            }
+        ],
+        "Movement": {
+            "Land": 416.7,
+            "Water": 0.0,
+            "Air": 0.0
+        },
+        "Total Power Points": 94.0,
+        "Power Level": 14,
+        "Power Level Source": [
+            "Dexterity + Ranged"
+        ]
+    },
+    {
+        "Name": "Shield Liger DCS-J",
+        "Stats": {
+            "Fighting": 5,
+            "Strength": 6,
+            "Dexterity": 10,
+            "Agility": 6,
+            "Awareness": 7
+        },
+        "Defenses": {
+            "Toughness": 5,
+            "Parry": 5,
+            "Dodge": 6
+        },
+        "Powers": [
+            {
+                "Type": "Melee",
+                "Damage": 6,
+                "Power Points": 0
+            },
+            {
+                "Type": "Close-Range",
+                "Damage": 7,
+                "Extras": [
+                    "Increased Range"
+                ],
+                "Power Points": 14
+            },
+            {
+                "Type": "Mid-Range",
+                "Damage": 7,
+                "Extras": [
+                    "Increased Range",
+                    "Extended Range 1"
+                ],
+                "Power Points": 15
+            },
+            {
+                "Type": "Armor",
+                "Protection": 5,
+                "Power Points": 5
+            },
+            {
+                "Type": "Create (E-Shield)",
+                "Rank": 6,
+                "Extras": [
+                    "Tethered",
+                    "Limited to hemisphere in front of Zoid",
+                    "Limited (Damage remains after dismissing)"
+                ],
+                "Power Points": 6
+            },
+            {
+                "Type": "Concealment",
+                "Senses": [
+                    "Visual"
+                ],
+                "Rank": 4,
+                "Power Points": 2.0
+            }
+        ],
+        "Movement": {
+            "Land": 475.0,
+            "Water": 0.0,
+            "Air": 0.0
+        },
+        "Total Power Points": 110.0,
+        "Power Level": 17,
+        "Power Level Source": [
+            "Dexterity + Ranged"
+        ]
+    },
+    {
+        "Name": "Sinker",
+        "Stats": {
+            "Fighting": 4,
+            "Strength": 1,
+            "Dexterity": 6,
+            "Agility": 5,
+            "Awareness": 5
+        },
+        "Defenses": {
+            "Toughness": 2,
+            "Parry": 4,
+            "Dodge": 5
+        },
+        "Powers": [
+            {
+                "Type": "Melee",
+                "Damage": 1,
+                "Power Points": 0
+            },
+            {
+                "Type": "Close-Range",
+                "Damage": 3,
+                "Extras": [
+                    "Increased Range"
+                ],
+                "Power Points": 6
+            },
+            {
+                "Type": "Mid-Range",
+                "Damage": 4,
+                "Extras": [
+                    "Increased Range",
+                    "Extended Range 1"
+                ],
+                "Power Points": 7
+            },
+            {
+                "Type": "Armor",
+                "Protection": 2,
+                "Power Points": 2
+            },
+            {
+                "Type": "Concealment",
+                "Senses": [
+                    "Visual"
+                ],
+                "Rank": 9,
+                "Power Points": 4.5
+            }
+        ],
+        "Movement": {
+            "Land": 0.0,
+            "Water": 185.2,
+            "Air": 514.5
+        },
+        "Total Power Points": 61.5,
+        "Power Level": 10,
+        "Power Level Source": [
+            "Dexterity + Ranged"
+        ]
+    },
+    {
+        "Name": "Snipe Master",
+        "Stats": {
+            "Fighting": 7,
+            "Strength": 5,
+            "Dexterity": 9,
+            "Agility": 7,
+            "Awareness": 5
+        },
+        "Defenses": {
+            "Toughness": 3,
+            "Parry": 7,
+            "Dodge": 7
+        },
+        "Powers": [
+            {
+                "Type": "Melee",
+                "Damage": 5,
+                "Power Points": 0
+            },
+            {
+                "Type": "Close-Range",
+                "Damage": 2,
+                "Extras": [
+                    "Increased Range"
+                ],
+                "Power Points": 4
+            },
+            {
+                "Type": "Mid-Range",
+                "Damage": 5,
+                "Extras": [
+                    "Increased Range",
+                    "Extended Range 1"
+                ],
+                "Power Points": 5
+            },
+            {
+                "Type": "Armor",
+                "Protection": 3,
+                "Power Points": 3
+            },
+            {
+                "Type": "Concealment",
+                "Senses": [
+                    "Visual"
+                ],
+                "Rank": 2,
+                "Power Points": 1.0
+            }
+        ],
+        "Movement": {
+            "Land": 325.0,
+            "Water": 0.0,
+            "Air": 0.0
+        },
+        "Total Power Points": 79.0,
+        "Power Level": 14,
+        "Power Level Source": [
+            "Dexterity + Ranged"
+        ]
+    },
+    {
+        "Name": "Spinosapper",
+        "Stats": {
+            "Fighting": 4,
+            "Strength": 2,
+            "Dexterity": 5,
+            "Agility": 4,
+            "Awareness": 4
+        },
+        "Defenses": {
+            "Toughness": 4,
+            "Parry": 4,
+            "Dodge": 4
+        },
+        "Powers": [
+            {
+                "Type": "Melee",
+                "Damage": 2,
+                "Power Points": 0
+            },
+            {
+                "Type": "Close-Range",
+                "Damage": 2,
+                "Extras": [
+                    "Increased Range"
+                ],
+                "Power Points": 4
+            },
+            {
+                "Type": "Armor",
+                "Protection": 4,
+                "Power Points": 4
+            },
+            {
+                "Type": "Concealment",
+                "Senses": [
+                    "Visual"
+                ],
+                "Rank": 2,
+                "Power Points": 1.0
+            }
+        ],
+        "Movement": {
+            "Land": 175.0,
+            "Water": 0.0,
+            "Air": 0.0
+        },
+        "Total Power Points": 47.0,
+        "Power Level": 8,
+        "Power Level Source": [
+            "Agility + Toughness",
+            "Fighting + Toughness"
+        ]
+    },
+    {
+        "Name": "Stealth Viper",
+        "Stats": {
+            "Fighting": 6,
+            "Strength": 4,
+            "Dexterity": 9,
+            "Agility": 5,
+            "Awareness": 3
+        },
+        "Defenses": {
+            "Toughness": 3,
+            "Parry": 6,
+            "Dodge": 5
+        },
+        "Powers": [
+            {
+                "Type": "Melee",
+                "Damage": 4,
+                "Power Points": 0
+            },
+            {
+                "Type": "Close-Range",
+                "Damage": 2,
+                "Extras": [
+                    "Increased Range"
+                ],
+                "Power Points": 4
+            },
+            {
+                "Type": "Mid-Range",
+                "Damage": 2,
+                "Extras": [
+                    "Increased Range",
+                    "Extended Range 1"
+                ],
+                "Power Points": 5
+            },
+            {
+                "Type": "Armor",
+                "Protection": 3,
+                "Power Points": 3
+            },
+            {
+                "Type": "Concealment",
+                "Senses": [
+                    "Visual"
+                ],
+                "Rank": 8,
+                "Power Points": 4.0
+            }
+        ],
+        "Movement": {
+            "Land": 300.0,
+            "Water": 0.0,
+            "Air": 0.0
+        },
+        "Total Power Points": 70.0,
+        "Power Level": 11,
+        "Power Level Source": [
+            "Dexterity + Ranged"
+        ]
+    },
+    {
+        "Name": "Storch",
+        "Stats": {
+            "Fighting": 6,
+            "Strength": 2,
+            "Dexterity": 10,
+            "Agility": 7,
+            "Awareness": 7
+        },
+        "Defenses": {
+            "Toughness": 3,
+            "Parry": 6,
+            "Dodge": 7
+        },
+        "Powers": [
+            {
+                "Type": "Melee",
+                "Damage": 2,
+                "Power Points": 0
+            },
+            {
+                "Type": "Close-Range",
+                "Damage": 3,
+                "Extras": [
+                    "Increased Range"
+                ],
+                "Power Points": 6
+            },
+            {
+                "Type": "Mid-Range",
+                "Damage": 5,
+                "Extras": [
+                    "Increased Range",
+                    "Extended Range 1"
+                ],
+                "Power Points": 7
+            },
+            {
+                "Type": "Armor",
+                "Protection": 3,
+                "Power Points": 3
+            },
+            {
+                "Type": "Concealment",
+                "Senses": [
+                    "Visual"
+                ],
+                "Rank": 3,
+                "Power Points": 1.5
+            }
+        ],
+        "Movement": {
+            "Land": 0.0,
+            "Water": 0.0,
+            "Air": 1200.5
+        },
+        "Total Power Points": 81.5,
+        "Power Level": 15,
+        "Power Level Source": [
+            "Dexterity + Ranged"
+        ]
+    },
+    {
+        "Name": "Storm Sworder",
+        "Stats": {
+            "Fighting": 6,
+            "Strength": 7,
+            "Dexterity": 9,
+            "Agility": 5,
+            "Awareness": 7
+        },
+        "Defenses": {
+            "Toughness": 5,
+            "Parry": 6,
+            "Dodge": 5
+        },
+        "Powers": [
+            {
+                "Type": "Melee",
+                "Damage": 7,
+                "Power Points": 0
+            },
+            {
+                "Type": "Close-Range",
+                "Damage": 4,
+                "Extras": [
+                    "Increased Range"
+                ],
+                "Power Points": 8
+            },
+            {
+                "Type": "Armor",
+                "Protection": 5,
+                "Power Points": 5
+            },
+            {
+                "Type": "Concealment",
+                "Senses": [
+                    "Visual"
+                ],
+                "Rank": 5,
+                "Power Points": 2.5
+            }
+        ],
+        "Movement": {
+            "Land": 0.0,
+            "Water": 0.0,
+            "Air": 1829.3
+        },
+        "Total Power Points": 83.5,
+        "Power Level": 13,
+        "Power Level Source": [
+            "Fighting + Melee",
+            "Dexterity + Ranged"
+        ]
+    },
+    {
+        "Name": "Ultra Saurus",
+        "Stats": {
+            "Fighting": 4,
+            "Strength": 8,
+            "Dexterity": 1,
+            "Agility": 5,
+            "Awareness": 9
+        },
+        "Defenses": {
+            "Toughness": 9,
+            "Parry": 4,
+            "Dodge": 5
+        },
+        "Powers": [
+            {
+                "Type": "Melee",
+                "Damage": 8,
+                "Power Points": 0
+            },
+            {
+                "Type": "Close-Range",
+                "Damage": 10,
+                "Extras": [
+                    "Increased Range"
+                ],
+                "Power Points": 20
+            },
+            {
+                "Type": "Mid-Range",
+                "Damage": 11,
+                "Extras": [
+                    "Increased Range",
+                    "Extended Range 1"
+                ],
+                "Power Points": 21
+            },
+            {
+                "Type": "Long-Range",
+                "Damage": 10,
+                "Extras": [
+                    "Increased Range",
+                    "Extended Range 2"
+                ],
+                "Power Points": 22
+            },
+            {
+                "Type": "Armor",
+                "Protection": 9,
+                "Power Points": 9
+            },
+            {
+                "Type": "Concealment",
+                "Senses": [
+                    "Visual"
+                ],
+                "Rank": 1,
+                "Power Points": 0.5
+            }
+        ],
+        "Movement": {
+            "Land": 83.3,
+            "Water": 145.1,
+            "Air": 0.0
+        },
+        "Total Power Points": 126.5,
+        "Power Level": 14,
+        "Power Level Source": [
+            "Agility + Toughness"
+        ]
+    },
+    {
+        "Name": "Wardick",
+        "Stats": {
+            "Fighting": 4,
+            "Strength": 3,
+            "Dexterity": 5,
+            "Agility": 5,
+            "Awareness": 5
+        },
+        "Defenses": {
+            "Toughness": 6,
+            "Parry": 4,
+            "Dodge": 5
+        },
+        "Powers": [
+            {
+                "Type": "Melee",
+                "Damage": 3,
+                "Power Points": 0
+            },
+            {
+                "Type": "Close-Range",
+                "Damage": 6,
+                "Extras": [
+                    "Increased Range"
+                ],
+                "Power Points": 12
+            },
+            {
+                "Type": "Mid-Range",
+                "Damage": 6,
+                "Extras": [
+                    "Increased Range",
+                    "Extended Range 1"
+                ],
+                "Power Points": 13
+            },
+            {
+                "Type": "Armor",
+                "Protection": 6,
+                "Power Points": 6
+            },
+            {
+                "Type": "Concealment",
+                "Senses": [
+                    "Visual"
+                ],
+                "Rank": 9,
+                "Power Points": 4.5
+            }
+        ],
+        "Movement": {
+            "Land": 116.7,
+            "Water": 200.6,
+            "Air": 0.0
+        },
+        "Total Power Points": 79.5,
+        "Power Level": 11,
+        "Power Level Source": [
+            "Dexterity + Ranged",
+            "Agility + Toughness"
+        ]
+    },
+    {
+        "Name": "Zabat",
+        "Stats": {
+            "Fighting": 6,
+            "Strength": 2,
+            "Dexterity": 8,
+            "Agility": 6,
+            "Awareness": 9
+        },
+        "Defenses": {
+            "Toughness": 3,
+            "Parry": 6,
+            "Dodge": 6
+        },
+        "Powers": [
+            {
+                "Type": "Melee",
+                "Damage": 2,
+                "Power Points": 0
+            },
+            {
+                "Type": "Close-Range",
+                "Damage": 3,
+                "Extras": [
+                    "Increased Range"
+                ],
+                "Power Points": 6
+            },
+            {
+                "Type": "Armor",
+                "Protection": 3,
+                "Power Points": 3
+            },
+            {
+                "Type": "Concealment",
+                "Senses": [
+                    "Visual"
+                ],
+                "Rank": 8,
+                "Power Points": 4.0
+            }
+        ],
+        "Movement": {
+            "Land": 0.0,
+            "Water": 0.0,
+            "Air": 1600.7
+        },
+        "Total Power Points": 75.0,
+        "Power Level": 11,
+        "Power Level Source": [
+            "Dexterity + Ranged"
+        ]
+    },
+    {
+        "Name": "Zoids Mammoth",
+        "Stats": {
+            "Fighting": 5,
+            "Strength": 5,
+            "Dexterity": 4,
+            "Agility": 5,
+            "Awareness": 5
+        },
+        "Defenses": {
+            "Toughness": 6,
+            "Parry": 5,
+            "Dodge": 5
+        },
+        "Powers": [
+            {
+                "Type": "Melee",
+                "Damage": 5,
+                "Power Points": 0
+            },
+            {
+                "Type": "Close-Range",
+                "Damage": 5,
+                "Extras": [
+                    "Increased Range"
+                ],
+                "Power Points": 10
+            },
+            {
+                "Type": "Armor",
+                "Protection": 6,
+                "Power Points": 6
+            },
+            {
+                "Type": "Concealment",
+                "Senses": [
+                    "Visual"
+                ],
+                "Rank": 2,
+                "Power Points": 1.0
+            }
+        ],
+        "Movement": {
+            "Land": 141.7,
+            "Water": 0.0,
+            "Air": 0.0
+        },
+        "Total Power Points": 65.0,
+        "Power Level": 11,
+        "Power Level Source": [
+            "Agility + Toughness",
+            "Fighting + Toughness"
+        ]
+    }
+]

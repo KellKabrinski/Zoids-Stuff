@@ -1,0 +1,38 @@
+Name: Double Sworder
+
+Stats:
+  Fighting: 7
+  Strength: 3
+  Dexterity: 10
+  Agility: 6
+  Awareness: 8
+
+Defenses:
+  Toughness: 2
+  Parry: 7
+  Dodge: 6
+
+Powers:
+  - Type: Melee
+    Damage: 3
+    Power Points: 0
+  - Type: Close-Range
+    Damage: 2
+    Extras: Increased Range
+    Power Points: 4
+  - Type: Armor
+    Protection: 2
+    Power Points: 2
+  - Type: Concealment
+    Senses: Visual
+    Rank: 4
+    Power Points: 2.0
+
+Movement:
+  Land: 0.0 m/6s
+  Water: 0.0 m/6s
+  Air: 188.7 m/6s
+
+Total Power Points: 76.0
+Power Level: 12
+Power Level Source(s): Dexterity + Ranged

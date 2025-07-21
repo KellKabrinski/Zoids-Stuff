@@ -1,0 +1,42 @@
+Name: Liger Zero Schneider
+
+Stats:
+  Fighting: 9
+  Strength: 9
+  Dexterity: 11
+  Agility: 7
+  Awareness: 6
+
+Defenses:
+  Toughness: 5
+  Parry: 9
+  Dodge: 7
+
+Powers:
+  - Type: Melee
+    Damage: 9
+    Power Points: 0
+  - Type: Close-Range
+    Damage: 4
+    Extras: Increased Range
+    Power Points: 8
+  - Type: Armor
+    Protection: 5
+    Power Points: 5
+  - Type: Create (E-Shield)
+    Rank: 9
+    Extras: Tethered, Limited to hemisphere in front of Zoid, Limited (Damage remains after dismissing)
+    Power Points: 9
+  - Type: Concealment
+    Senses: Visual
+    Rank: 4
+    Power Points: 2.0
+
+Movement:
+  Land: 516.7 m/6s
+  Water: 0.0 m/6s
+  Air: 0.0 m/6s
+
+Total Power Points: 108.0
+Power Level: 18
+Power Level Source(s): Fighting + Melee

@@ -1,0 +1,34 @@
+Name: Rev Rapter
+
+Stats:
+  Fighting: 6
+  Strength: 5
+  Dexterity: 9
+  Agility: 5
+  Awareness: 4
+
+Defenses:
+  Toughness: 4
+  Parry: 6
+  Dodge: 5
+
+Powers:
+  - Type: Melee
+    Damage: 5
+    Power Points: 0
+  - Type: Armor
+    Protection: 4
+    Power Points: 4
+  - Type: Concealment
+    Senses: Visual
+    Rank: 2
+    Power Points: 1.0
+
+Movement:
+  Land: 350.0 m/6s
+  Water: 0.0 m/6s
+  Air: 0.0 m/6s
+
+Total Power Points: 63.0
+Power Level: 11
+Power Level Source(s): Fighting + Melee

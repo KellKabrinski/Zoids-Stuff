@@ -1,0 +1,42 @@
+Name: Energy Liger
+
+Stats:
+  Fighting: 8
+  Strength: 10
+  Dexterity: 11
+  Agility: 8
+  Awareness: 6
+
+Defenses:
+  Toughness: 8
+  Parry: 8
+  Dodge: 8
+
+Powers:
+  - Type: Melee
+    Damage: 10
+    Power Points: 0
+  - Type: Close-Range
+    Damage: 10
+    Extras: Increased Range
+    Power Points: 20
+  - Type: Mid-Range
+    Damage: 9
+    Extras: Increased Range, Extended Range 1
+    Power Points: 21
+  - Type: Armor
+    Protection: 8
+    Power Points: 8
+  - Type: Concealment
+    Senses: Visual
+    Rank: 4
+    Power Points: 2.0
+
+Movement:
+  Land: 1100.0 m/6s
+  Water: 0.0 m/6s
+  Air: 0.0 m/6s
+
+Total Power Points: 137.0
+Power Level: 21
+Power Level Source(s): Dexterity + Ranged

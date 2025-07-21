@@ -1,0 +1,38 @@
+Name: Liger Zero Jager
+
+Stats:
+  Fighting: 8
+  Strength: 7
+  Dexterity: 12
+  Agility: 7
+  Awareness: 7
+
+Defenses:
+  Toughness: 4
+  Parry: 8
+  Dodge: 7
+
+Powers:
+  - Type: Melee
+    Damage: 7
+    Power Points: 0
+  - Type: Close-Range
+    Damage: 4
+    Extras: Increased Range
+    Power Points: 8
+  - Type: Armor
+    Protection: 4
+    Power Points: 4
+  - Type: Concealment
+    Senses: Visual
+    Rank: 6
+    Power Points: 3.0
+
+Movement:
+  Land: 550.0 m/6s
+  Water: 0.0 m/6s
+  Air: 0.0 m/6s
+
+Total Power Points: 97.0
+Power Level: 16
+Power Level Source(s): Dexterity + Ranged

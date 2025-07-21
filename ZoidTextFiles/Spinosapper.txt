@@ -1,0 +1,38 @@
+Name: Spinosapper
+
+Stats:
+  Fighting: 4
+  Strength: 2
+  Dexterity: 5
+  Agility: 4
+  Awareness: 4
+
+Defenses:
+  Toughness: 4
+  Parry: 4
+  Dodge: 4
+
+Powers:
+  - Type: Melee
+    Damage: 2
+    Power Points: 0
+  - Type: Close-Range
+    Damage: 2
+    Extras: Increased Range
+    Power Points: 4
+  - Type: Armor
+    Protection: 4
+    Power Points: 4
+  - Type: Concealment
+    Senses: Visual
+    Rank: 2
+    Power Points: 1.0
+
+Movement:
+  Land: 175.0 m/6s
+  Water: 0.0 m/6s
+  Air: 0.0 m/6s
+
+Total Power Points: 47.0
+Power Level: 8
+Power Level Source(s): Agility + Toughness, Fighting + Toughness

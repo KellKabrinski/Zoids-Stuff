@@ -1,0 +1,38 @@
+Name: Guntiger
+
+Stats:
+  Fighting: 7
+  Strength: 3
+  Dexterity: 10
+  Agility: 7
+  Awareness: 5
+
+Defenses:
+  Toughness: 2
+  Parry: 7
+  Dodge: 7
+
+Powers:
+  - Type: Melee
+    Damage: 3
+    Power Points: 0
+  - Type: Close-Range
+    Damage: 4
+    Extras: Increased Range
+    Power Points: 8
+  - Type: Armor
+    Protection: 2
+    Power Points: 2
+  - Type: Concealment
+    Senses: Visual
+    Rank: 5
+    Power Points: 2.5
+
+Movement:
+  Land: 450.0 m/6s
+  Water: 0.0 m/6s
+  Air: 0.0 m/6s
+
+Total Power Points: 76.5
+Power Level: 14
+Power Level Source(s): Dexterity + Ranged

@@ -1,0 +1,42 @@
+Name: Death Saurer
+
+Stats:
+  Fighting: 7
+  Strength: 11
+  Dexterity: 7
+  Agility: 7
+  Awareness: 5
+
+Defenses:
+  Toughness: 11
+  Parry: 7
+  Dodge: 7
+
+Powers:
+  - Type: Melee
+    Damage: 11
+    Power Points: 0
+  - Type: Close-Range
+    Damage: 11
+    Extras: Increased Range
+    Power Points: 22
+  - Type: Mid-Range
+    Damage: 10
+    Extras: Increased Range, Extended Range 1
+    Power Points: 23
+  - Type: Armor
+    Protection: 11
+    Power Points: 11
+  - Type: Concealment
+    Senses: Visual
+    Rank: 1
+    Power Points: 0.5
+
+Movement:
+  Land: 150.0 m/6s
+  Water: 0.0 m/6s
+  Air: 0.0 m/6s
+
+Total Power Points: 130.5
+Power Level: 18
+Power Level Source(s): Fighting + Melee, Dexterity + Ranged, Agility + Toughness, Fighting + Toughness

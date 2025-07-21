@@ -1,0 +1,42 @@
+Name: Gator
+
+Stats:
+  Fighting: 3
+  Strength: 1
+  Dexterity: 2
+  Agility: 3
+  Awareness: 9
+
+Defenses:
+  Toughness: 2
+  Parry: 3
+  Dodge: 3
+
+Powers:
+  - Type: Melee
+    Damage: 1
+    Power Points: 0
+  - Type: Close-Range
+    Damage: 2
+    Extras: Increased Range
+    Power Points: 4
+  - Type: Armor
+    Protection: 2
+    Power Points: 2
+  - Type: Concealment
+    Senses: Visual
+    Rank: 5
+    Power Points: 2.5
+  - Type: Concealment
+    Senses: Sensor
+    Rank: 7
+    Power Points: 3.5
+
+Movement:
+  Land: 333.3 m/6s
+  Water: 0.0 m/6s
+  Air: 0.0 m/6s
+
+Total Power Points: 48.0
+Power Level: 5
+Power Level Source(s): Agility + Toughness, Fighting + Toughness

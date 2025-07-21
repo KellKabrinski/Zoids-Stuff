@@ -1,0 +1,42 @@
+Name: Liger Zero Phoenix
+
+Stats:
+  Fighting: 7
+  Strength: 8
+  Dexterity: 11
+  Agility: 7
+  Awareness: 7
+
+Defenses:
+  Toughness: 6
+  Parry: 7
+  Dodge: 7
+
+Powers:
+  - Type: Melee
+    Damage: 8
+    Power Points: 0
+  - Type: Close-Range
+    Damage: 6
+    Extras: Increased Range
+    Power Points: 12
+  - Type: Mid-Range
+    Damage: 6
+    Extras: Increased Range, Extended Range 1
+    Power Points: 13
+  - Type: Armor
+    Protection: 6
+    Power Points: 6
+  - Type: Concealment
+    Senses: Visual
+    Rank: 2
+    Power Points: 1.0
+
+Movement:
+  Land: 566.7 m/6s
+  Water: 0.0 m/6s
+  Air: 1143.3 m/6s
+
+Total Power Points: 112.0
+Power Level: 17
+Power Level Source(s): Dexterity + Ranged

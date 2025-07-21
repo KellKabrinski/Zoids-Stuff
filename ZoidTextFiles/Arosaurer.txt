@@ -1,0 +1,38 @@
+Name: Arosaurer
+
+Stats:
+  Fighting: 6
+  Strength: 5
+  Dexterity: 9
+  Agility: 6
+  Awareness: 5
+
+Defenses:
+  Toughness: 4
+  Parry: 6
+  Dodge: 6
+
+Powers:
+  - Type: Melee
+    Damage: 5
+    Power Points: 0
+  - Type: Close-Range
+    Damage: 4
+    Extras: Increased Range
+    Power Points: 8
+  - Type: Armor
+    Protection: 4
+    Power Points: 4
+  - Type: Concealment
+    Senses: Visual
+    Rank: 2
+    Power Points: 1.0
+
+Movement:
+  Land: 283.3 m/6s
+  Water: 0.0 m/6s
+  Air: 0.0 m/6s
+
+Total Power Points: 75.0
+Power Level: 13
+Power Level Source(s): Dexterity + Ranged

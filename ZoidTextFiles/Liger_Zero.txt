@@ -1,0 +1,38 @@
+Name: Liger Zero
+
+Stats:
+  Fighting: 8
+  Strength: 7
+  Dexterity: 11
+  Agility: 7
+  Awareness: 7
+
+Defenses:
+  Toughness: 6
+  Parry: 8
+  Dodge: 7
+
+Powers:
+  - Type: Melee
+    Damage: 7
+    Power Points: 0
+  - Type: Close-Range
+    Damage: 4
+    Extras: Increased Range
+    Power Points: 8
+  - Type: Armor
+    Protection: 6
+    Power Points: 6
+  - Type: Concealment
+    Senses: Visual
+    Rank: 4
+    Power Points: 2.0
+
+Movement:
+  Land: 511.7 m/6s
+  Water: 0.0 m/6s
+  Air: 0.0 m/6s
+
+Total Power Points: 96.0
+Power Level: 15
+Power Level Source(s): Fighting + Melee, Dexterity + Ranged

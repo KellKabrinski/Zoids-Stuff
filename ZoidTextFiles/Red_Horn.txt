@@ -1,0 +1,46 @@
+Name: Red Horn
+
+Stats:
+  Fighting: 7
+  Strength: 6
+  Dexterity: 7
+  Agility: 8
+  Awareness: 6
+
+Defenses:
+  Toughness: 7
+  Parry: 7
+  Dodge: 8
+
+Powers:
+  - Type: Melee
+    Damage: 6
+    Power Points: 0
+  - Type: Close-Range
+    Damage: 7
+    Extras: Increased Range
+    Power Points: 14
+  - Type: Mid-Range
+    Damage: 7
+    Extras: Increased Range, Extended Range 1
+    Power Points: 15
+  - Type: Long-Range
+    Damage: 4
+    Extras: Increased Range, Extended Range 2
+    Power Points: 16
+  - Type: Armor
+    Protection: 7
+    Power Points: 7
+  - Type: Concealment
+    Senses: Visual
+    Rank: 3
+    Power Points: 1.5
+
+Movement:
+  Land: 216.7 m/6s
+  Water: 0.0 m/6s
+  Air: 0.0 m/6s
+
+Total Power Points: 121.5
+Power Level: 15
+Power Level Source(s): Agility + Toughness

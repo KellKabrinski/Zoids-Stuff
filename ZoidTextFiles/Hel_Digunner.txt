@@ -1,0 +1,42 @@
+Name: Hel Digunner
+
+Stats:
+  Fighting: 3
+  Strength: 3
+  Dexterity: 3
+  Agility: 4
+  Awareness: 5
+
+Defenses:
+  Toughness: 3
+  Parry: 3
+  Dodge: 4
+
+Powers:
+  - Type: Melee
+    Damage: 3
+    Power Points: 0
+  - Type: Close-Range
+    Damage: 5
+    Extras: Increased Range
+    Power Points: 10
+  - Type: Mid-Range
+    Damage: 5
+    Extras: Increased Range, Extended Range 1
+    Power Points: 11
+  - Type: Armor
+    Protection: 3
+    Power Points: 3
+  - Type: Concealment
+    Senses: Visual
+    Rank: 6
+    Power Points: 3.0
+
+Movement:
+  Land: 216.7 m/6s
+  Water: 0.0 m/6s
+  Air: 0.0 m/6s
+
+Total Power Points: 63.0
+Power Level: 8
+Power Level Source(s): Dexterity + Ranged

@@ -1,0 +1,38 @@
+Name: Zoids Mammoth
+
+Stats:
+  Fighting: 5
+  Strength: 5
+  Dexterity: 4
+  Agility: 5
+  Awareness: 5
+
+Defenses:
+  Toughness: 6
+  Parry: 5
+  Dodge: 5
+
+Powers:
+  - Type: Melee
+    Damage: 5
+    Power Points: 0
+  - Type: Close-Range
+    Damage: 5
+    Extras: Increased Range
+    Power Points: 10
+  - Type: Armor
+    Protection: 6
+    Power Points: 6
+  - Type: Concealment
+    Senses: Visual
+    Rank: 2
+    Power Points: 1.0
+
+Movement:
+  Land: 141.7 m/6s
+  Water: 0.0 m/6s
+  Air: 0.0 m/6s
+
+Total Power Points: 65.0
+Power Level: 11
+Power Level Source(s): Agility + Toughness, Fighting + Toughness

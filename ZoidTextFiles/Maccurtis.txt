@@ -1,0 +1,38 @@
+Name: Maccurtis
+
+Stats:
+  Fighting: 5
+  Strength: 3
+  Dexterity: 6
+  Agility: 5
+  Awareness: 5
+
+Defenses:
+  Toughness: 5
+  Parry: 5
+  Dodge: 5
+
+Powers:
+  - Type: Melee
+    Damage: 3
+    Power Points: 0
+  - Type: Close-Range
+    Damage: 3
+    Extras: Increased Range
+    Power Points: 6
+  - Type: Armor
+    Protection: 5
+    Power Points: 5
+  - Type: Concealment
+    Senses: Visual
+    Rank: 8
+    Power Points: 4.0
+
+Movement:
+  Land: 200.0 m/6s
+  Water: 98.8 m/6s
+  Air: 0.0 m/6s
+
+Total Power Points: 63.0
+Power Level: 10
+Power Level Source(s): Agility + Toughness, Fighting + Toughness

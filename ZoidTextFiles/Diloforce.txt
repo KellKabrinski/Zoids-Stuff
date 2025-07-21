@@ -1,0 +1,42 @@
+Name: Diloforce
+
+Stats:
+  Fighting: 5
+  Strength: 4
+  Dexterity: 7
+  Agility: 5
+  Awareness: 4
+
+Defenses:
+  Toughness: 2
+  Parry: 5
+  Dodge: 5
+
+Powers:
+  - Type: Melee
+    Damage: 4
+    Power Points: 0
+  - Type: Close-Range
+    Damage: 4
+    Extras: Increased Range
+    Power Points: 8
+  - Type: Armor
+    Protection: 2
+    Power Points: 2
+  - Type: Create (E-Shield)
+    Rank: 4
+    Extras: Tethered, Limited to hemisphere in front of Zoid, Limited (Damage remains after dismissing)
+    Power Points: 4
+  - Type: Concealment
+    Senses: Visual
+    Rank: 5
+    Power Points: 2.5
+
+Movement:
+  Land: 500.0 m/6s
+  Water: 0.0 m/6s
+  Air: 0.0 m/6s
+
+Total Power Points: 66.5
+Power Level: 11
+Power Level Source(s): Dexterity + Ranged

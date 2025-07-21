@@ -1,0 +1,38 @@
+Name: Raynos
+
+Stats:
+  Fighting: 7
+  Strength: 5
+  Dexterity: 9
+  Agility: 7
+  Awareness: 9
+
+Defenses:
+  Toughness: 3
+  Parry: 7
+  Dodge: 7
+
+Powers:
+  - Type: Melee
+    Damage: 5
+    Power Points: 0
+  - Type: Close-Range
+    Damage: 6
+    Extras: Increased Range
+    Power Points: 12
+  - Type: Armor
+    Protection: 3
+    Power Points: 3
+  - Type: Concealment
+    Senses: Visual
+    Rank: 5
+    Power Points: 2.5
+
+Movement:
+  Land: 0.0 m/6s
+  Water: 0.0 m/6s
+  Air: 1886.5 m/6s
+
+Total Power Points: 91.5
+Power Level: 15
+Power Level Source(s): Dexterity + Ranged

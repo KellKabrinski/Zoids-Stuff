@@ -1,0 +1,46 @@
+Name: Elephander
+
+Stats:
+  Fighting: 6
+  Strength: 7
+  Dexterity: 6
+  Agility: 6
+  Awareness: 8
+
+Defenses:
+  Toughness: 9
+  Parry: 6
+  Dodge: 6
+
+Powers:
+  - Type: Melee
+    Damage: 7
+    Power Points: 0
+  - Type: Close-Range
+    Damage: 6
+    Extras: Increased Range
+    Power Points: 12
+  - Type: Mid-Range
+    Damage: 6
+    Extras: Increased Range, Extended Range 1
+    Power Points: 13
+  - Type: Armor
+    Protection: 9
+    Power Points: 9
+  - Type: Create (E-Shield)
+    Rank: 8
+    Extras: Tethered, Limited to hemisphere in front of Zoid, Limited (Damage remains after dismissing)
+    Power Points: 8
+  - Type: Concealment
+    Senses: Visual
+    Rank: 3
+    Power Points: 1.5
+
+Movement:
+  Land: 216.7 m/6s
+  Water: 0.0 m/6s
+  Air: 0.0 m/6s
+
+Total Power Points: 109.5
+Power Level: 15
+Power Level Source(s): Agility + Toughness, Fighting + Toughness

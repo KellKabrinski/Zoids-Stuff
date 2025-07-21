@@ -1,0 +1,38 @@
+Name: Shadow Fox
+
+Stats:
+  Fighting: 8
+  Strength: 5
+  Dexterity: 10
+  Agility: 8
+  Awareness: 10
+
+Defenses:
+  Toughness: 5
+  Parry: 8
+  Dodge: 8
+
+Powers:
+  - Type: Melee
+    Damage: 5
+    Power Points: 0
+  - Type: Close-Range
+    Damage: 5
+    Extras: Increased Range
+    Power Points: 10
+  - Type: Armor
+    Protection: 5
+    Power Points: 5
+  - Type: Concealment
+    Senses: Visual
+    Rank: 9
+    Power Points: 4.5
+
+Movement:
+  Land: 483.3 m/6s
+  Water: 0.0 m/6s
+  Air: 0.0 m/6s
+
+Total Power Points: 101.5
+Power Level: 15
+Power Level Source(s): Dexterity + Ranged

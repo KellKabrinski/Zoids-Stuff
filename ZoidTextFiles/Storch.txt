@@ -1,0 +1,42 @@
+Name: Storch
+
+Stats:
+  Fighting: 6
+  Strength: 2
+  Dexterity: 10
+  Agility: 7
+  Awareness: 7
+
+Defenses:
+  Toughness: 3
+  Parry: 6
+  Dodge: 7
+
+Powers:
+  - Type: Melee
+    Damage: 2
+    Power Points: 0
+  - Type: Close-Range
+    Damage: 3
+    Extras: Increased Range
+    Power Points: 6
+  - Type: Mid-Range
+    Damage: 5
+    Extras: Increased Range, Extended Range 1
+    Power Points: 7
+  - Type: Armor
+    Protection: 3
+    Power Points: 3
+  - Type: Concealment
+    Senses: Visual
+    Rank: 3
+    Power Points: 1.5
+
+Movement:
+  Land: 0.0 m/6s
+  Water: 0.0 m/6s
+  Air: 1200.5 m/6s
+
+Total Power Points: 81.5
+Power Level: 15
+Power Level Source(s): Dexterity + Ranged

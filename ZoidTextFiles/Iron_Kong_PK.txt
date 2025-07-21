@@ -1,0 +1,46 @@
+Name: Iron Kong PK
+
+Stats:
+  Fighting: 8
+  Strength: 8
+  Dexterity: 9
+  Agility: 8
+  Awareness: 9
+
+Defenses:
+  Toughness: 8
+  Parry: 8
+  Dodge: 8
+
+Powers:
+  - Type: Melee
+    Damage: 8
+    Power Points: 0
+  - Type: Close-Range
+    Damage: 9
+    Extras: Increased Range
+    Power Points: 18
+  - Type: Mid-Range
+    Damage: 9
+    Extras: Increased Range, Extended Range 1
+    Power Points: 19
+  - Type: Long-Range
+    Damage: 9
+    Extras: Increased Range, Extended Range 2
+    Power Points: 20
+  - Type: Armor
+    Protection: 8
+    Power Points: 8
+  - Type: Concealment
+    Senses: Visual
+    Rank: 2
+    Power Points: 1.0
+
+Movement:
+  Land: 283.3 m/6s
+  Water: 0.0 m/6s
+  Air: 0.0 m/6s
+
+Total Power Points: 150.0
+Power Level: 18
+Power Level Source(s): Dexterity + Ranged

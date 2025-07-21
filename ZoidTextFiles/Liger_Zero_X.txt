@@ -1,0 +1,42 @@
+Name: Liger Zero X
+
+Stats:
+  Fighting: 8
+  Strength: 8
+  Dexterity: 11
+  Agility: 8
+  Awareness: 7
+
+Defenses:
+  Toughness: 5
+  Parry: 8
+  Dodge: 8
+
+Powers:
+  - Type: Melee
+    Damage: 8
+    Power Points: 0
+  - Type: Close-Range
+    Damage: 8
+    Extras: Increased Range
+    Power Points: 16
+  - Type: Mid-Range
+    Damage: 7
+    Extras: Increased Range, Extended Range 1
+    Power Points: 17
+  - Type: Armor
+    Protection: 5
+    Power Points: 5
+  - Type: Concealment
+    Senses: Visual
+    Rank: 12
+    Power Points: 6.0
+
+Movement:
+  Land: 525.0 m/6s
+  Water: 0.0 m/6s
+  Air: 0.0 m/6s
+
+Total Power Points: 128.0
+Power Level: 19
+Power Level Source(s): Dexterity + Ranged
