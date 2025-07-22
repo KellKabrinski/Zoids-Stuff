@@ -153,6 +153,21 @@ def get_range(distance):
         return "mid"
     else:
         return "long"
+def d20():
+    return random.randint(1, 20)
+
+def search_check(searcher: Zoid, target: Zoid):
+    roll = d20()
+    total = roll + searcher.awareness
+    target_dc = 10 + (target.stealth if (target.has_stealth() and target.stealth_on) else 0)
+    print(f"  Search Check: d20({roll}) + Awareness({searcher.awareness}) = {total} vs DC {target_dc}")
+    if total >= target_dc:
+        print("  Enemy detected!")
+        return True
+    else:
+        print("  You fail to locate the enemy!")
+        return False
+
 
 def game_loop(z1, z2, battle_type):
     zoid_objs = {1: z1, 2: z2}
@@ -163,6 +178,13 @@ def game_loop(z1, z2, battle_type):
         player = order[turn % 2]
         zoid = zoid_objs[player]
         enemy = zoid_objs[1 if player == 2 else 2]
+        enemyDetected = True
+        if enemy.stealth_on:
+            print(f"\n{enemy.name} is in stealth mode!")
+            if not search_check(zoid, enemy):
+                enemyDetected = False
+                print(f"{zoid.name} cannot locate {enemy.name}!")
+
         zoid.print_status()
         print(f"\nCurrent distance between Zoids: {distance:.1f} meters")
         print(f"{zoid.name}'s turn!")
@@ -192,51 +214,14 @@ def game_loop(z1, z2, battle_type):
             move_attack = input("  Move (m) or Attack (a) or Skip (s)? ")
             if move_attack.lower().startswith('m'):
                 print("Choose maneuver:")
-                move = input("  1: Close\n  2: Retreat\n  3: Circle\n  4: Stand Still\n  Choice: ")
-                speed = zoid.get_speed(battle_type)
-                if move == "1":
-                    zoid.position = 'close'
-                    distance = max(0, distance - speed)
-                elif move == "2":
-                    zoid.position = 'retreat'
-                    distance += speed
-                elif move == "3":
-                    zoid.position = 'circle'
-                elif move == "4":
-                    zoid.position = 'stand still'
-                did_move = False
+                distance,did_move,enemyDetected = Movement(battle_type, distance, zoid, did_move, enemyDetected, enemy)
         else:
             # MOVEMENT PHASE
             print("Choose maneuver:")
-            move = input("  1: Close\n  2: Retreat\n  3: Circle\n  4: Stand Still\n  Choice: ")
-            speed = zoid.get_speed(battle_type)
-            if move == "1":
-                zoid.position = 'close'
-                distance = max(0, distance - speed)
-                did_move = True
-            elif move == "2":
-                zoid.position = 'retreat'
-                distance += speed
-                did_move = True
-            elif move == "3":
-                zoid.position = 'circle'
-                did_move = True
-            elif move == "4":
-                zoid.position = 'stand still'
-                did_move = False
+            distance, did_move,enemyDetected = Movement(battle_type, distance, zoid,did_move, enemyDetected, enemy)
 
         # SHIELD & STEALTH PHASE (always available)
-        if zoid.has_shield():
-            print(f"  Shield is currently {'ON' if zoid.shield_on else 'OFF'}")
-            s_toggle = input("  Toggle shield? (y/n): ")
-            if s_toggle.lower().startswith('y'):
-                zoid.shield_on = not zoid.shield_on
-
-        if zoid.has_stealth():
-            print(f"  Stealth is currently {'ON' if zoid.stealth_on else 'OFF'}")
-            st_toggle = input("  Toggle stealth? (y/n): ")
-            if st_toggle.lower().startswith('y'):
-                zoid.stealth_on = not zoid.stealth_on
+        ShieldAndStealth(zoid)
 
         # ATTACK PHASE
         did_attack = False
@@ -272,6 +257,8 @@ def game_loop(z1, z2, battle_type):
                         attack_roll = random.randint(1, 20) + zoid.dexterity
                         defense_roll = 10 + enemy.dodge
                     did_hit = attack_roll >= defense_roll
+                    if not enemyDetected and enemy.stealth_on and did_hit:
+                        did_hit=random.choice([False, True])
                     if did_hit:
                         print(f"{zoid.name} hits {enemy.name} for {damage} damage!")
                         if enemy.has_shield() and enemy.shield_on:
@@ -317,6 +304,53 @@ def game_loop(z1, z2, battle_type):
             zoid.status = "intact"
 
         turn += 1
+
+def Movement(battle_type, distance, zoid,did_move, enemyDetected,enemyZoid):
+    
+    speed = zoid.get_speed(battle_type)
+    if not enemyDetected:
+        move=input("Enemy is concealed! 1: Scout For Enemy\n 2: Stand Still\n Choice:")
+        enemyDetected=search_check(zoid, enemyZoid)
+        if move == "1":
+            direction = random.choice(['close','retreat'])
+            if direction == 'close':
+                zoid.position = 'close'
+                distance = max(0, distance - speed* 0.5)
+                did_move = True
+            elif direction == 'retreat':
+                zoid.position = 'retreat'
+                distance += speed * 0.5
+                did_move = True
+    else:
+        move = input("  1: Close\n  2: Retreat\n  3: Circle\n  4: Stand Still\n  Choice: ")
+        if move == "1":
+            zoid.position = 'close'
+            distance = max(0, distance - speed)
+            did_move = True
+        elif move == "2":
+            zoid.position = 'retreat'
+            distance += speed
+            did_move = True
+        elif move == "3":
+            zoid.position = 'circle'
+            did_move = True
+        elif move == "4":
+            zoid.position = 'stand still'
+            did_move = False
+    return distance,did_move,enemyDetected
+
+def ShieldAndStealth(zoid):
+    if zoid.has_shield() and not zoid.shieldDisabled:
+        print(f"  Shield is currently {'ON' if zoid.shield_on else 'OFF'}")
+        s_toggle = input("  Toggle shield? (y/n): ")
+        if s_toggle.lower().startswith('y'):
+            zoid.shield_on = not zoid.shield_on
+
+    if zoid.has_stealth():
+        print(f"  Stealth is currently {'ON' if zoid.stealth_on else 'OFF'}")
+        st_toggle = input("  Toggle stealth? (y/n): ")
+        if st_toggle.lower().startswith('y'):
+            zoid.stealth_on = not zoid.stealth_on
 
 def main():
     zoids = load_zoids("ConvertedZoidStats.json")
