@@ -1,4 +1,5 @@
 import json
+import math
 import random
 
 class Zoid:
@@ -25,7 +26,7 @@ class Zoid:
         self.close_range = next((p.get('Damage') for p in self.powers if p['Type'] == 'Close-Range'), None)
         self.mid_range = next((p.get('Damage') for p in self.powers if p['Type'] == 'Mid-Range'), None)
         self.long_range = next((p.get('Damage') for p in self.powers if p['Type'] == 'Long-Range'), None)
-        self.shield = next((p.get('Rank') for p in self.powers if p['Type'] == 'Create'), None)
+        self.shield = next((p.get('Rank') for p in self.powers if p['Type'] == 'Create (E-Shield)'), None)
         self.shieldDisabled=False
         self.stealth = next((p.get('Rank') for p in self.powers if p['Type'] == 'Concealment' and 'Visual' in p.get('Senses', [])), None)
         self.armor = next((p.get('Protection') for p in self.powers if p['Type'] == 'Armor'), None)
@@ -35,6 +36,7 @@ class Zoid:
         self.shield_on = False
         self.stealth_on = False
         self.dents = 0
+        self.angle = 0.0
         self.status = "intact"  # "intact", "dazed", "stunned", "defeated"
 
     def has_shield(self):
@@ -80,6 +82,7 @@ class Zoid:
               f"Mid={self.mid_range if self.mid_range is not None else '-'}, "
               f"Long={self.long_range if self.long_range is not None else '-'}")
         print(f"Armor: {self.armor if self.armor is not None else '-'}")
+        print(f"Angle: {self.angle}° (0° is facing enemy)")
 
 def load_zoids(path):
     with open(path, "r", encoding="utf-8") as f:
@@ -153,13 +156,20 @@ def get_range(distance):
         return "mid"
     else:
         return "long"
+
+def is_attack_in_shield_arc(attacker,defender):
+    rel_angle=(attacker.angle-defender.angle) % 360
+    if rel_angle > 180:
+        rel_angle = 360 - rel_angle
+    return abs(rel_angle) <= 45
+
 def d20():
     return random.randint(1, 20)
 
 def search_check(searcher: Zoid, target: Zoid):
     roll = d20()
     total = roll + searcher.awareness
-    target_dc = 10 + (target.stealth if (target.has_stealth() and target.stealth_on) else 0)
+    target_dc = 5 + (target.stealth if (target.has_stealth() and target.stealth_on) else 0)
     print(f"  Search Check: d20({roll}) + Awareness({searcher.awareness}) = {total} vs DC {target_dc}")
     if total >= target_dc:
         print("  Enemy detected!")
@@ -167,6 +177,11 @@ def search_check(searcher: Zoid, target: Zoid):
     else:
         print("  You fail to locate the enemy!")
         return False
+    
+def max_circling_angle(speed, distance):
+    if distance <= 0.1:  # Allow full 360 at melee
+        return 360
+    return min(360, (speed * 180) / (math.pi * distance))
 
 
 def game_loop(z1, z2, battle_type):
@@ -178,13 +193,13 @@ def game_loop(z1, z2, battle_type):
         player = order[turn % 2]
         zoid = zoid_objs[player]
         enemy = zoid_objs[1 if player == 2 else 2]
+        # Concealment: search at start of turn if enemy is stealthed
         enemyDetected = True
         if enemy.stealth_on:
             print(f"\n{enemy.name} is in stealth mode!")
-            if not search_check(zoid, enemy):
-                enemyDetected = False
+            enemyDetected = search_check(zoid, enemy)
+            if not enemyDetected:
                 print(f"{zoid.name} cannot locate {enemy.name}!")
-
         zoid.print_status()
         print(f"\nCurrent distance between Zoids: {distance:.1f} meters")
         print(f"{zoid.name}'s turn!")
@@ -194,14 +209,7 @@ def game_loop(z1, z2, battle_type):
         # STUNNED: Cannot move or attack
         if zoid.status == "stunned":
             print("You are STUNNED! You cannot move or attack this turn.")
-            if zoid.has_shield():
-                s_toggle = input("  Toggle shield? (y/n): ")
-                if s_toggle.lower().startswith('y'):
-                    zoid.shield_on = not zoid.shield_on
-            if zoid.has_stealth():
-                st_toggle = input("  Toggle stealth? (y/n): ")
-                if st_toggle.lower().startswith('y'):
-                    zoid.stealth_on = not zoid.stealth_on
+            ShieldAndStealth(zoid)
             zoid.status = "dazed"
             turn += 1
             continue
@@ -214,17 +222,24 @@ def game_loop(z1, z2, battle_type):
             move_attack = input("  Move (m) or Attack (a) or Skip (s)? ")
             if move_attack.lower().startswith('m'):
                 print("Choose maneuver:")
-                distance,did_move,enemyDetected = Movement(battle_type, distance, zoid, did_move, enemyDetected, enemy)
+                distance, did_move, enemyDetected = Movement(
+                    battle_type, distance, zoid, did_move, enemyDetected, enemy
+                )
         else:
             # MOVEMENT PHASE
             print("Choose maneuver:")
-            distance, did_move,enemyDetected = Movement(battle_type, distance, zoid,did_move, enemyDetected, enemy)
+            distance, did_move, enemyDetected = Movement(
+                battle_type, distance, zoid, did_move, enemyDetected, enemy
+            )
 
         # SHIELD & STEALTH PHASE (always available)
         ShieldAndStealth(zoid)
 
         # ATTACK PHASE
         did_attack = False
+        if zoid.shield_on and zoid.has_shield():
+            print(f"{zoid.name} cannot attack while shield is on.")
+            continue
         if not (zoid.status == "dazed" and did_move):
             range = get_range(distance)
             print(f"\n{zoid.name} is in {range} range of {enemy.name}.")
@@ -241,61 +256,74 @@ def game_loop(z1, z2, battle_type):
             else:
                 attack = input("  Attack? (y/n): ")
                 if attack.lower().startswith('y'):
-                    print(f"{zoid.name} attacks {enemy.name} with a {range} attack!")
-                    if range == "melee":
-                        damage = zoid.melee
-                    elif range == "close":
-                        damage = zoid.close_range
-                    elif range == "mid":
-                        damage = zoid.mid_range
-                    elif range == "long":
-                        damage = zoid.long_range
-                    if range== "melee":
-                        attack_roll = random.randint(1, 20) + zoid.fighting
-                        defense_roll = 10 + enemy.parry
-                    else:
-                        attack_roll = random.randint(1, 20) + zoid.dexterity
-                        defense_roll = 10 + enemy.dodge
-                    did_hit = attack_roll >= defense_roll
-                    if not enemyDetected and enemy.stealth_on and did_hit:
-                        did_hit=random.choice([False, True])
-                    if did_hit:
-                        print(f"{zoid.name} hits {enemy.name} for {damage} damage!")
-                        if enemy.has_shield() and enemy.shield_on:
-                            shield_roll = random.randint(1, 20) + enemy.shield
-                            if shield_roll>=damage+15:
-                                enemy.shieldDisabled=True
-                                print(f"{enemy.name}'s shield is disabled!")
+                    # Miss chance if enemy is still concealed
+                    if enemy.stealth_on and not enemyDetected:
+                        print("Target is concealed! 50% miss chance.")
+                        if random.choice([True, False]):
+                            print("Your attack misses the target's last known location!")
+                            did_attack = True
+                            # End attack phase
                         else:
-                            toughness_roll = random.randint(1, 20) + enemy.toughness - enemy.dents
-                            damageDifference = damage + 15 - toughness_roll
-                            if damageDifference <=0:
-                                print(f"{enemy.name} successfully defends against the attack!")
-                            elif damageDifference<=5:
-                                print(f"{enemy.name} takes a minor hit!")
-                                enemy.dents += 1
-                                print(f"{enemy.name} receives a DENT! (Total dents: {enemy.dents})")
-                            elif damageDifference <= 10:
-                                print(f"{enemy.name} takes a moderate hit!")
-                                enemy.dents += 1
-                                print(f"{enemy.name} receives a DENT! (Total dents: {enemy.dents})")
-                                print(f"{enemy.name} is now DAZED! ")
-                                enemy.status = "dazed"
-                            elif damageDifference <= 15:
-                                print(f"{enemy.name} takes a heavy hit!")
-                                enemy.dents += 1
-                                print(f"{enemy.name} receives a DENT! (Total dents: {enemy.dents})")
-                                print(f"{enemy.name} is now STUNNED! ")
-                                enemy.status = "stunned"
+                            print("You get lucky and land a hit despite concealment!")
+                            # Proceed to attack as normal below
+                    if not (enemy.stealth_on and not enemyDetected) or not did_attack:
+                        print(f"{zoid.name} attacks {enemy.name} with a {range} attack!")
+                        if range == "melee":
+                            damage = zoid.melee
+                            attack_roll = random.randint(1, 20) + zoid.fighting
+                            defense_roll = 10 + enemy.parry
+                        elif range == "close":
+                            damage = zoid.close_range
+                            attack_roll = random.randint(1, 20) + zoid.dexterity
+                            defense_roll = 10 + enemy.dodge
+                        elif range == "mid":
+                            damage = zoid.mid_range
+                            attack_roll = random.randint(1, 20) + zoid.dexterity
+                            defense_roll = 10 + enemy.dodge
+                        elif range == "long":
+                            damage = zoid.long_range
+                            attack_roll = random.randint(1, 20) + zoid.dexterity
+                            defense_roll = 10 + enemy.dodge
+                        did_hit = attack_roll >= defense_roll
+                        if did_hit:
+                            print(f"Attack roll: {attack_roll} vs Defense roll: {defense_roll}")
+                            print(f"{zoid.name} hits {enemy.name} for {damage} damage!")
+                            if enemy.has_shield() and enemy.shield_on and is_attack_in_shield_arc(zoid, enemy):
+                                shield_roll = random.randint(1, 20) + enemy.shield
+                                if shield_roll >= damage + 15:
+                                    enemy.shieldDisabled = True
+                                    print(f"{enemy.name}'s shield is disabled!")
                             else:
-                                print(f"{enemy.name} takes a critical hit!")
-                                enemy.dents += 1
-                                print(f"{enemy.name} receives a DENT! (Total dents: {enemy.dents})")
-                                print(f"{enemy.name} is now DEFEATED! ")
-                                enemy.status = "defeated"
-                    else:
-                        print(f"{zoid.name} misses the attack on {enemy.name}!")
-                    did_attack = True
+                                toughness_roll = random.randint(1, 20) + enemy.toughness - enemy.dents
+                                print(f"Enemy toughness roll: {toughness_roll} (Toughness: {enemy.toughness}, Dents: {enemy.dents})")
+                                damageDifference = damage + 15 - toughness_roll
+                                if damageDifference <= 0:
+                                    print(f"{enemy.name} successfully defends against the attack!")
+                                elif damageDifference <= 5:
+                                    print(f"{enemy.name} takes a minor hit!")
+                                    enemy.dents += 1
+                                    print(f"{enemy.name} receives a DENT! (Total dents: {enemy.dents})")
+                                elif damageDifference <= 10:
+                                    print(f"{enemy.name} takes a moderate hit!")
+                                    enemy.dents += 1
+                                    print(f"{enemy.name} receives a DENT! (Total dents: {enemy.dents})")
+                                    print(f"{enemy.name} is now DAZED! ")
+                                    enemy.status = "dazed"
+                                elif damageDifference <= 15:
+                                    print(f"{enemy.name} takes a heavy hit!")
+                                    enemy.dents += 1
+                                    print(f"{enemy.name} receives a DENT! (Total dents: {enemy.dents})")
+                                    print(f"{enemy.name} is now STUNNED! ")
+                                    enemy.status = "stunned"
+                                else:
+                                    print(f"{enemy.name} takes a critical hit!")
+                                    enemy.dents += 1
+                                    print(f"{enemy.name} receives a DENT! (Total dents: {enemy.dents})")
+                                    print(f"{enemy.name} is now DEFEATED! ")
+                                    enemy.status = "defeated"
+                        else:
+                            print(f"{zoid.name} misses the attack on {enemy.name}!")
+                        did_attack = True
 
         # End of turn status logic
         if prior_status == "stunned":
@@ -305,24 +333,28 @@ def game_loop(z1, z2, battle_type):
 
         turn += 1
 
-def Movement(battle_type, distance, zoid,did_move, enemyDetected,enemyZoid):
-    
+def Movement(battle_type, distance, zoid, did_move, enemyDetected, enemyZoid):
     speed = zoid.get_speed(battle_type)
+    # If the enemy is not detected (concealment working), restrict options
     if not enemyDetected:
-        move=input("Enemy is concealed! 1: Scout For Enemy\n 2: Stand Still\n Choice:")
-        enemyDetected=search_check(zoid, enemyZoid)
+        move = input("Enemy is concealed! 1: Search for Enemy  2: Stand Still\nChoice: ")
         if move == "1":
-            direction = random.choice(['close','retreat'])
-            if direction == 'close':
+            direction = random.choice(['closer', 'retreat'])
+            if direction == 'closer':
                 zoid.position = 'close'
-                distance = max(0, distance - speed* 0.5)
-                did_move = True
-            elif direction == 'retreat':
+                distance = max(0, distance - speed * 0.5)
+            else:
                 zoid.position = 'retreat'
                 distance += speed * 0.5
-                did_move = True
+            did_move = True
+            # New search check after random movement
+            enemyDetected = search_check(zoid, enemyZoid)
+        else:
+            zoid.position = 'stand still'
+            did_move = False
+            # No additional search check if standing still
     else:
-        move = input("  1: Close\n  2: Retreat\n  3: Circle\n  4: Stand Still\n  Choice: ")
+        move = input("  1: Close\n  2: Retreat\n  3: Circle Left\n 4:Circle Right\n  5: Stand Still\n  Choice: ")
         if move == "1":
             zoid.position = 'close'
             distance = max(0, distance - speed)
@@ -331,13 +363,28 @@ def Movement(battle_type, distance, zoid,did_move, enemyDetected,enemyZoid):
             zoid.position = 'retreat'
             distance += speed
             did_move = True
-        elif move == "3":
+        elif move in ("3","4"):
+            max_angle=max_circling_angle(speed,distance)
+            while True:
+                try:
+                    angle_change = float(input(f"How many degrees do you want to circle? (0 to {max_angle:.1f}): "))
+                    if 0 <= angle_change <= max_angle:
+                        break
+                except ValueError:
+                    pass
+                print("Invalid angle. Try again.")
+            if move == "3":
+                zoid.angle = (zoid.angle + angle_change) % 360
+                print(f"You circle left! New angle: {zoid.angle:.1f}°")
+            else:
+                zoid.angle = (zoid.angle - angle_change) % 360
+                print(f"You circle right! New angle: {zoid.angle:.1f}°")
             zoid.position = 'circle'
             did_move = True
-        elif move == "4":
+        elif move == "5":
             zoid.position = 'stand still'
             did_move = False
-    return distance,did_move,enemyDetected
+    return distance, did_move, enemyDetected
 
 def ShieldAndStealth(zoid):
     if zoid.has_shield() and not zoid.shieldDisabled:
