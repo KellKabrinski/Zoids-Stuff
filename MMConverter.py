@@ -7,6 +7,9 @@ def convert_zoid_stats(input_file, output_file):
     converted = []
 
     for zoid in zoids:
+        land_speed_rank=0
+        water_speed_rank=0
+        air_speed_rank=0
         try:
             name = zoid["Zoid"]
             melee = int(zoid.get("Melee", 0))
@@ -27,18 +30,55 @@ def convert_zoid_stats(input_file, output_file):
         try:
             land_speed_kph = float(zoid.get("Ground Speed", 0))
             land_speed_m6s = round((land_speed_kph * 1000) / 600, 1)
+            land_speed_mph = land_speed_kph * 0.621371
+            if land_speed_mph < 120:
+                land_speed_rank=5
+            elif land_speed_mph < 250:
+                land_speed_rank=6
+            elif land_speed_mph < 500:
+                land_speed_rank=7
+            elif land_speed_mph < 1000:
+                land_speed_rank=8
+            elif land_speed_mph < 2000:
+                land_speed_rank=9
+
         except ValueError:
             land_speed_m6s = 0
 
         try:
             water_speed_knots = float(zoid.get("Water Speed", 0))
             water_speed_m6s = round((water_speed_knots * 1852) / 600, 1)
+            water_speed_mph = water_speed_knots * 1.15078
+            if water_speed_mph < 120:
+                water_speed_rank = 5
+            elif water_speed_mph < 250:
+                water_speed_rank=6
+            elif water_speed_mph < 500:
+                water_speed_rank=7
+            elif water_speed_mph < 1000:
+                water_speed_rank=8
+            elif water_speed_mph < 2000:
+                water_speed_rank=9
         except ValueError:
             water_speed_m6s = 0
 
         try:
             air_speed_mach = float(zoid.get("Air Speed", 0))
             air_speed_m6s = round((air_speed_mach * 343000) / 600, 1)
+            air_speed_mph = air_speed_mach * 761.207
+            
+            if air_speed_mph < 120:
+                air_speed_rank = 5
+            elif air_speed_mph < 250:
+                air_speed_rank=6
+            elif air_speed_mph < 500:
+                air_speed_rank=7
+            elif air_speed_mph < 1000:
+                air_speed_rank=8
+            elif air_speed_mph < 2000:
+                air_speed_rank=9
+            elif air_speed_mph < 4000:
+                air_speed_rank=10
         except ValueError:
             air_speed_m6s = 0
 
@@ -58,6 +98,8 @@ def convert_zoid_stats(input_file, output_file):
             strength * stat_cost +
             awareness * stat_cost
         )
+
+        total_power_points += land_speed_rank + water_speed_rank + 2*air_speed_rank
 
         powers = []
         max_ranged = 0
@@ -104,21 +146,16 @@ def convert_zoid_stats(input_file, output_file):
 
         if armour > 0:
             powers.append({
-                "Type": "Armor",
-                "Protection": armour,
+                "Type": "Protection",
+                "Rank": armour,
                 "Power Points": armour
             })
             total_power_points += armour
 
         if e_shield > 0:
             powers.append({
-                "Type": "Create (E-Shield)",
+                "Type": "E-Shield",
                 "Rank": e_shield,
-                "Extras": [
-                    "Tethered",
-                    "Limited to hemisphere in front of Zoid",
-                    "Limited (Damage remains after dismissing)"
-                ],
                 "Power Points": e_shield
             })
             total_power_points += e_shield
@@ -142,6 +179,24 @@ def convert_zoid_stats(input_file, output_file):
             }
             powers.append(sensor_conceal)
             total_power_points += ecm * 0.5
+        if land_speed_rank>0:
+            powers.append({
+                "Type": "Speed",
+                "Rank": land_speed_rank,
+                "Power Points": land_speed_rank
+            })
+            if water_speed_rank > 0:
+                powers.append({
+                    "Type": "Swimming",
+                    "Rank": water_speed_rank,
+                    "Power Points": water_speed_rank
+                })
+            if air_speed_rank > 0:
+                powers.append({
+                    "Type": "Flight",
+                    "Rank": air_speed_rank,
+                    "Power Points": air_speed_rank
+                })
 
         # Power Level calculation with tie tracking
         option_1 = fighting + melee

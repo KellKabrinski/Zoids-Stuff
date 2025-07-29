@@ -26,10 +26,10 @@ class Zoid:
         self.close_range = next((p.get('Damage') for p in self.powers if p['Type'] == 'Close-Range'), None)
         self.mid_range = next((p.get('Damage') for p in self.powers if p['Type'] == 'Mid-Range'), None)
         self.long_range = next((p.get('Damage') for p in self.powers if p['Type'] == 'Long-Range'), None)
-        self.shield = next((p.get('Rank') for p in self.powers if p['Type'] == 'Create (E-Shield)'), None)
+        self.shield = next((p.get('Rank') for p in self.powers if p['Type'] == 'E-Shield'), None)
         self.shieldDisabled=False
         self.stealth = next((p.get('Rank') for p in self.powers if p['Type'] == 'Concealment' and 'Visual' in p.get('Senses', [])), None)
-        self.armor = next((p.get('Protection') for p in self.powers if p['Type'] == 'Armor'), None)
+        self.armor = next((p.get('Rank') for p in self.powers if p['Type'] == 'Armor'), None)
 
         # Battle state
         self.position = "neutral"
@@ -169,7 +169,10 @@ def d20():
 def search_check(searcher: Zoid, target: Zoid):
     roll = d20()
     total = roll + searcher.awareness
-    target_dc = 5 + (target.stealth if (target.has_stealth() and target.stealth_on) else 0)
+    if target.has_stealth() and target.stealth_on and target.stealth is not None:
+        target_dc = 5 + target.stealth
+    else:
+        target_dc=0
     print(f"  Search Check: d20({roll}) + Awareness({searcher.awareness}) = {total} vs DC {target_dc}")
     if total >= target_dc:
         print("  Enemy detected!")
@@ -239,20 +242,16 @@ def game_loop(z1, z2, battle_type):
         did_attack = False
         if zoid.shield_on and zoid.has_shield():
             print(f"{zoid.name} cannot attack while shield is on.")
+            turn += 1
             continue
         if not (zoid.status == "dazed" and did_move):
             range = get_range(distance)
             print(f"\n{zoid.name} is in {range} range of {enemy.name}.")
             if not zoid.can_attack(distance):
                 print(f"{zoid.name} cannot attack {enemy.name} from {range} range!")
-                if not did_move:
-                    attack = input("  Do you want to move instead? (y/n): ")
-                    if attack.lower().startswith('y'):
-                        continue
-                    else:
-                        print(f"{zoid.name} skips the attack phase.")
-                        turn += 1
-                        continue
+                print(f"{zoid.name} skips the attack phase.")
+                turn += 1
+                continue
             else:
                 attack = input("  Attack? (y/n): ")
                 if attack.lower().startswith('y'):
@@ -268,6 +267,9 @@ def game_loop(z1, z2, battle_type):
                             # Proceed to attack as normal below
                     if not (enemy.stealth_on and not enemyDetected) or not did_attack:
                         print(f"{zoid.name} attacks {enemy.name} with a {range} attack!")
+                        attack_roll = 0
+                        defense_roll = 0
+                        damage = 0
                         if range == "melee":
                             damage = zoid.melee
                             attack_roll = random.randint(1, 20) + zoid.fighting
