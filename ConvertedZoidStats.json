@@ -44,16 +44,6 @@
                 "Type": "Speed",
                 "Rank": 5,
                 "Power Points": 5
-            },
-            {
-                "Type": "Swimming",
-                "Rank": 5,
-                "Power Points": 5
-            },
-            {
-                "Type": "Flight",
-                "Rank": 5,
-                "Power Points": 5
             }
         ],
         "Movement": {
@@ -61,12 +51,12 @@
             "Water": 0.0,
             "Air": 0.0
         },
-        "Total Power Points": 95.0,
+        "Total Power Points": 80.0,
         "Power Level": 13,
         "Power Level Source": [
             "Dexterity + Ranged"
         ],
-        "Cost": 33250.0
+        "Cost": 28000.0
     },
     {
         "Name": "Barigator",
@@ -118,11 +108,6 @@
                 "Type": "Swimming",
                 "Rank": 5,
                 "Power Points": 5
-            },
-            {
-                "Type": "Flight",
-                "Rank": 5,
-                "Power Points": 5
             }
         ],
         "Movement": {
@@ -130,14 +115,14 @@
             "Water": 108.0,
             "Air": 0.0
         },
-        "Total Power Points": 62.0,
+        "Total Power Points": 52.0,
         "Power Level": 7,
         "Power Level Source": [
             "Fighting + Melee",
             "Agility + Toughness",
             "Fighting + Toughness"
         ],
-        "Cost": 21700.0
+        "Cost": 18200.0
     },
     {
         "Name": "Bearfighter",
@@ -184,16 +169,6 @@
                 "Type": "Speed",
                 "Rank": 6,
                 "Power Points": 6
-            },
-            {
-                "Type": "Swimming",
-                "Rank": 5,
-                "Power Points": 5
-            },
-            {
-                "Type": "Flight",
-                "Rank": 5,
-                "Power Points": 5
             }
         ],
         "Movement": {
@@ -201,12 +176,12 @@
             "Water": 0.0,
             "Air": 0.0
         },
-        "Total Power Points": 99.5,
+        "Total Power Points": 84.5,
         "Power Level": 13,
         "Power Level Source": [
             "Dexterity + Ranged"
         ],
-        "Cost": 34825.0
+        "Cost": 29575.0
     },
     {
         "Name": "Berserk Fuhrer",
@@ -267,16 +242,6 @@
                 "Type": "Speed",
                 "Rank": 6,
                 "Power Points": 6
-            },
-            {
-                "Type": "Swimming",
-                "Rank": 5,
-                "Power Points": 5
-            },
-            {
-                "Type": "Flight",
-                "Rank": 5,
-                "Power Points": 5
             }
         ],
         "Movement": {
@@ -284,12 +249,12 @@
             "Water": 0.0,
             "Air": 0.0
         },
-        "Total Power Points": 150.0,
+        "Total Power Points": 135.0,
         "Power Level": 18,
         "Power Level Source": [
             "Dexterity + Ranged"
         ],
-        "Cost": 52500.0
+        "Cost": 47250.0
     },
     {
         "Name": "Black Rhimos",
@@ -345,16 +310,6 @@
                 "Type": "Speed",
                 "Rank": 5,
                 "Power Points": 5
-            },
-            {
-                "Type": "Swimming",
-                "Rank": 5,
-                "Power Points": 5
-            },
-            {
-                "Type": "Flight",
-                "Rank": 5,
-                "Power Points": 5
             }
         ],
         "Movement": {
@@ -362,14 +317,14 @@
             "Water": 0.0,
             "Air": 0.0
         },
-        "Total Power Points": 107.0,
+        "Total Power Points": 92.0,
         "Power Level": 12,
         "Power Level Source": [
             "Dexterity + Ranged",
             "Agility + Toughness",
             "Fighting + Toughness"
         ],
-        "Cost": 37450.0
+        "Cost": 32200.0
     },
     {
         "Name": "Blade Liger",
@@ -421,16 +376,6 @@
                 "Type": "Speed",
                 "Rank": 6,
                 "Power Points": 6
-            },
-            {
-                "Type": "Swimming",
-                "Rank": 5,
-                "Power Points": 5
-            },
-            {
-                "Type": "Flight",
-                "Rank": 5,
-                "Power Points": 5
             }
         ],
         "Movement": {
@@ -438,12 +383,12 @@
             "Water": 0.0,
             "Air": 0.0
         },
-        "Total Power Points": 118.0,
+        "Total Power Points": 103.0,
         "Power Level": 15,
         "Power Level Source": [
             "Dexterity + Ranged"
         ],
-        "Cost": 41300.0
+        "Cost": 36050.0
     },
     {
         "Name": "Brachios",
@@ -499,16 +444,6 @@
                 "Type": "Speed",
                 "Rank": 5,
                 "Power Points": 5
-            },
-            {
-                "Type": "Swimming",
-                "Rank": 5,
-                "Power Points": 5
-            },
-            {
-                "Type": "Flight",
-                "Rank": 5,
-                "Power Points": 5
             }
         ],
         "Movement": {
@@ -516,14 +451,14 @@
             "Water": 0.0,
             "Air": 0.0
         },
-        "Total Power Points": 90.5,
+        "Total Power Points": 75.5,
         "Power Level": 9,
         "Power Level Source": [
             "Dexterity + Ranged",
             "Agility + Toughness",
             "Fighting + Toughness"
         ],
-        "Cost": 31675.0
+        "Cost": 26425.0
     },
     {
         "Name": "Cannon Tortoise",
@@ -588,16 +523,6 @@
                 "Type": "Speed",
                 "Rank": 5,
                 "Power Points": 5
-            },
-            {
-                "Type": "Swimming",
-                "Rank": 5,
-                "Power Points": 5
-            },
-            {
-                "Type": "Flight",
-                "Rank": 5,
-                "Power Points": 5
             }
         ],
         "Movement": {
@@ -605,12 +530,12 @@
             "Water": 0.0,
             "Air": 0.0
         },
-        "Total Power Points": 78.0,
+        "Total Power Points": 63.0,
         "Power Level": 12,
         "Power Level Source": [
             "Agility + Toughness"
         ],
-        "Cost": 27300.0
+        "Cost": 22050.0
     },
     {
         "Name": "Command Wolf",
@@ -657,16 +582,6 @@
                 "Type": "Speed",
                 "Rank": 6,
                 "Power Points": 6
-            },
-            {
-                "Type": "Swimming",
-                "Rank": 5,
-                "Power Points": 5
-            },
-            {
-                "Type": "Flight",
-                "Rank": 5,
-                "Power Points": 5
             }
         ],
         "Movement": {
@@ -674,12 +589,12 @@
             "Water": 0.0,
             "Air": 0.0
         },
-        "Total Power Points": 107.0,
+        "Total Power Points": 92.0,
         "Power Level": 13,
         "Power Level Source": [
             "Dexterity + Ranged"
         ],
-        "Cost": 37450.0
+        "Cost": 32200.0
     },
     {
         "Name": "Command Wolf AC",
@@ -735,16 +650,6 @@
                 "Type": "Speed",
                 "Rank": 6,
                 "Power Points": 6
-            },
-            {
-                "Type": "Swimming",
-                "Rank": 5,
-                "Power Points": 5
-            },
-            {
-                "Type": "Flight",
-                "Rank": 5,
-                "Power Points": 5
             }
         ],
         "Movement": {
@@ -752,12 +657,12 @@
             "Water": 0.0,
             "Air": 0.0
         },
-        "Total Power Points": 114.0,
+        "Total Power Points": 99.0,
         "Power Level": 13,
         "Power Level Source": [
             "Dexterity + Ranged"
         ],
-        "Cost": 39900.0
+        "Cost": 34650.0
     },
     {
         "Name": "Command Wolf IS",
@@ -813,16 +718,6 @@
                 "Type": "Speed",
                 "Rank": 6,
                 "Power Points": 6
-            },
-            {
-                "Type": "Swimming",
-                "Rank": 5,
-                "Power Points": 5
-            },
-            {
-                "Type": "Flight",
-                "Rank": 5,
-                "Power Points": 5
             }
         ],
         "Movement": {
@@ -830,12 +725,12 @@
             "Water": 0.0,
             "Air": 0.0
         },
-        "Total Power Points": 111.5,
+        "Total Power Points": 96.5,
         "Power Level": 13,
         "Power Level Source": [
             "Dexterity + Ranged"
         ],
-        "Cost": 39025.0
+        "Cost": 33775.0
     },
     {
         "Name": "Dark Spiner",
@@ -890,16 +785,6 @@
                 "Type": "Speed",
                 "Rank": 6,
                 "Power Points": 6
-            },
-            {
-                "Type": "Swimming",
-                "Rank": 5,
-                "Power Points": 5
-            },
-            {
-                "Type": "Flight",
-                "Rank": 5,
-                "Power Points": 5
             }
         ],
         "Movement": {
@@ -907,13 +792,13 @@
             "Water": 0.0,
             "Air": 0.0
         },
-        "Total Power Points": 116.5,
+        "Total Power Points": 101.5,
         "Power Level": 13,
         "Power Level Source": [
             "Fighting + Melee",
             "Dexterity + Ranged"
         ],
-        "Cost": 40775.0
+        "Cost": 35525.0
     },
     {
         "Name": "Death Saurer",
@@ -969,16 +854,6 @@
                 "Type": "Speed",
                 "Rank": 5,
                 "Power Points": 5
-            },
-            {
-                "Type": "Swimming",
-                "Rank": 5,
-                "Power Points": 5
-            },
-            {
-                "Type": "Flight",
-                "Rank": 5,
-                "Power Points": 5
             }
         ],
         "Movement": {
@@ -986,7 +861,7 @@
             "Water": 0.0,
             "Air": 0.0
         },
-        "Total Power Points": 150.5,
+        "Total Power Points": 135.5,
         "Power Level": 18,
         "Power Level Source": [
             "Fighting + Melee",
@@ -994,7 +869,7 @@
             "Agility + Toughness",
             "Fighting + Toughness"
         ],
-        "Cost": 52675.0
+        "Cost": 47425.0
     },
     {
         "Name": "Death Stinger",
@@ -1060,11 +935,6 @@
                 "Type": "Swimming",
                 "Rank": 5,
                 "Power Points": 5
-            },
-            {
-                "Type": "Flight",
-                "Rank": 5,
-                "Power Points": 5
             }
         ],
         "Movement": {
@@ -1072,12 +942,12 @@
             "Water": 222.2,
             "Air": 0.0
         },
-        "Total Power Points": 176.5,
+        "Total Power Points": 166.5,
         "Power Level": 21,
         "Power Level Source": [
             "Dexterity + Ranged"
         ],
-        "Cost": 61775.0
+        "Cost": 58275.0
     },
     {
         "Name": "Demantis",
@@ -1124,16 +994,6 @@
                 "Type": "Speed",
                 "Rank": 6,
                 "Power Points": 6
-            },
-            {
-                "Type": "Swimming",
-                "Rank": 5,
-                "Power Points": 5
-            },
-            {
-                "Type": "Flight",
-                "Rank": 5,
-                "Power Points": 5
             }
         ],
         "Movement": {
@@ -1141,13 +1001,13 @@
             "Water": 0.0,
             "Air": 0.0
         },
-        "Total Power Points": 74.5,
+        "Total Power Points": 59.5,
         "Power Level": 8,
         "Power Level Source": [
             "Fighting + Melee",
             "Dexterity + Ranged"
         ],
-        "Cost": 26075.0
+        "Cost": 20825.0
     },
     {
         "Name": "Dibison",
@@ -1203,16 +1063,6 @@
                 "Type": "Speed",
                 "Rank": 5,
                 "Power Points": 5
-            },
-            {
-                "Type": "Swimming",
-                "Rank": 5,
-                "Power Points": 5
-            },
-            {
-                "Type": "Flight",
-                "Rank": 5,
-                "Power Points": 5
             }
         ],
         "Movement": {
@@ -1220,13 +1070,13 @@
             "Water": 0.0,
             "Air": 0.0
         },
-        "Total Power Points": 129.5,
+        "Total Power Points": 114.5,
         "Power Level": 14,
         "Power Level Source": [
             "Dexterity + Ranged",
             "Agility + Toughness"
         ],
-        "Cost": 45325.0
+        "Cost": 40075.0
     },
     {
         "Name": "Diloforce",
@@ -1278,16 +1128,6 @@
                 "Type": "Speed",
                 "Rank": 6,
                 "Power Points": 6
-            },
-            {
-                "Type": "Swimming",
-                "Rank": 5,
-                "Power Points": 5
-            },
-            {
-                "Type": "Flight",
-                "Rank": 5,
-                "Power Points": 5
             }
         ],
         "Movement": {
@@ -1295,12 +1135,12 @@
             "Water": 0.0,
             "Air": 0.0
         },
-        "Total Power Points": 87.5,
+        "Total Power Points": 72.5,
         "Power Level": 11,
         "Power Level Source": [
             "Dexterity + Ranged"
         ],
-        "Cost": 30625.0
+        "Cost": 25375.0
     },
     {
         "Name": "Dimetrodon",
@@ -1355,16 +1195,6 @@
                 "Type": "Speed",
                 "Rank": 5,
                 "Power Points": 5
-            },
-            {
-                "Type": "Swimming",
-                "Rank": 5,
-                "Power Points": 5
-            },
-            {
-                "Type": "Flight",
-                "Rank": 5,
-                "Power Points": 5
             }
         ],
         "Movement": {
@@ -1372,13 +1202,13 @@
             "Water": 0.0,
             "Air": 0.0
         },
-        "Total Power Points": 92.5,
+        "Total Power Points": 77.5,
         "Power Level": 10,
         "Power Level Source": [
             "Agility + Toughness",
             "Fighting + Toughness"
         ],
-        "Cost": 32375.0
+        "Cost": 27125.0
     },
     {
         "Name": "Double Sworder",
@@ -1420,21 +1250,6 @@
                 ],
                 "Rank": 4,
                 "Power Points": 2.0
-            },
-            {
-                "Type": "Speed",
-                "Rank": 5,
-                "Power Points": 5
-            },
-            {
-                "Type": "Swimming",
-                "Rank": 5,
-                "Power Points": 5
-            },
-            {
-                "Type": "Flight",
-                "Rank": 7,
-                "Power Points": 7
             }
         ],
         "Movement": {
@@ -1442,12 +1257,12 @@
             "Water": 0.0,
             "Air": 188.7
         },
-        "Total Power Points": 100.0,
+        "Total Power Points": 90.0,
         "Power Level": 12,
         "Power Level Source": [
             "Dexterity + Ranged"
         ],
-        "Cost": 35000.0
+        "Cost": 31500.0
     },
     {
         "Name": "Elephander",
@@ -1508,16 +1323,6 @@
                 "Type": "Speed",
                 "Rank": 5,
                 "Power Points": 5
-            },
-            {
-                "Type": "Swimming",
-                "Rank": 5,
-                "Power Points": 5
-            },
-            {
-                "Type": "Flight",
-                "Rank": 5,
-                "Power Points": 5
             }
         ],
         "Movement": {
@@ -1525,13 +1330,13 @@
             "Water": 0.0,
             "Air": 0.0
         },
-        "Total Power Points": 129.5,
+        "Total Power Points": 114.5,
         "Power Level": 15,
         "Power Level Source": [
             "Agility + Toughness",
             "Fighting + Toughness"
         ],
-        "Cost": 45325.0
+        "Cost": 40075.0
     },
     {
         "Name": "Energy Liger",
@@ -1587,16 +1392,6 @@
                 "Type": "Speed",
                 "Rank": 7,
                 "Power Points": 7
-            },
-            {
-                "Type": "Swimming",
-                "Rank": 5,
-                "Power Points": 5
-            },
-            {
-                "Type": "Flight",
-                "Rank": 5,
-                "Power Points": 5
             }
         ],
         "Movement": {
@@ -1604,12 +1399,12 @@
             "Water": 0.0,
             "Air": 0.0
         },
-        "Total Power Points": 159.0,
+        "Total Power Points": 144.0,
         "Power Level": 21,
         "Power Level Source": [
             "Dexterity + Ranged"
         ],
-        "Cost": 55650.0
+        "Cost": 50400.0
     },
     {
         "Name": "Gairyuki",
@@ -1656,16 +1451,6 @@
                 "Type": "Speed",
                 "Rank": 6,
                 "Power Points": 6
-            },
-            {
-                "Type": "Swimming",
-                "Rank": 5,
-                "Power Points": 5
-            },
-            {
-                "Type": "Flight",
-                "Rank": 5,
-                "Power Points": 5
             }
         ],
         "Movement": {
@@ -1673,12 +1458,12 @@
             "Water": 0.0,
             "Air": 0.0
         },
-        "Total Power Points": 129.5,
+        "Total Power Points": 114.5,
         "Power Level": 20,
         "Power Level Source": [
             "Dexterity + Ranged"
         ],
-        "Cost": 45325.0
+        "Cost": 40075.0
     },
     {
         "Name": "Gator",
@@ -1733,16 +1518,6 @@
                 "Type": "Speed",
                 "Rank": 6,
                 "Power Points": 6
-            },
-            {
-                "Type": "Swimming",
-                "Rank": 5,
-                "Power Points": 5
-            },
-            {
-                "Type": "Flight",
-                "Rank": 5,
-                "Power Points": 5
             }
         ],
         "Movement": {
@@ -1750,13 +1525,13 @@
             "Water": 0.0,
             "Air": 0.0
         },
-        "Total Power Points": 69.0,
+        "Total Power Points": 54.0,
         "Power Level": 5,
         "Power Level Source": [
             "Agility + Toughness",
             "Fighting + Toughness"
         ],
-        "Cost": 24150.0
+        "Cost": 18900.0
     },
     {
         "Name": "Geno Breaker",
@@ -1812,16 +1587,6 @@
                 "Type": "Speed",
                 "Rank": 6,
                 "Power Points": 6
-            },
-            {
-                "Type": "Swimming",
-                "Rank": 5,
-                "Power Points": 5
-            },
-            {
-                "Type": "Flight",
-                "Rank": 5,
-                "Power Points": 5
             }
         ],
         "Movement": {
@@ -1829,12 +1594,12 @@
             "Water": 0.0,
             "Air": 0.0
         },
-        "Total Power Points": 149.5,
+        "Total Power Points": 134.5,
         "Power Level": 20,
         "Power Level Source": [
             "Dexterity + Ranged"
         ],
-        "Cost": 52325.0
+        "Cost": 47075.0
     },
     {
         "Name": "Geno Saurer",
@@ -1890,16 +1655,6 @@
                 "Type": "Speed",
                 "Rank": 6,
                 "Power Points": 6
-            },
-            {
-                "Type": "Swimming",
-                "Rank": 5,
-                "Power Points": 5
-            },
-            {
-                "Type": "Flight",
-                "Rank": 5,
-                "Power Points": 5
             }
         ],
         "Movement": {
@@ -1907,12 +1662,12 @@
             "Water": 0.0,
             "Air": 0.0
         },
-        "Total Power Points": 137.5,
+        "Total Power Points": 122.5,
         "Power Level": 18,
         "Power Level Source": [
             "Dexterity + Ranged"
         ],
-        "Cost": 48125.0
+        "Cost": 42875.0
     },
     {
         "Name": "Glaive Quama",
@@ -1954,21 +1709,6 @@
                 ],
                 "Rank": 5,
                 "Power Points": 2.5
-            },
-            {
-                "Type": "Speed",
-                "Rank": 5,
-                "Power Points": 5
-            },
-            {
-                "Type": "Swimming",
-                "Rank": 5,
-                "Power Points": 5
-            },
-            {
-                "Type": "Flight",
-                "Rank": 9,
-                "Power Points": 9
             }
         ],
         "Movement": {
@@ -1976,12 +1716,12 @@
             "Water": 0.0,
             "Air": 1429.2
         },
-        "Total Power Points": 105.5,
+        "Total Power Points": 95.5,
         "Power Level": 13,
         "Power Level Source": [
             "Dexterity + Ranged"
         ],
-        "Cost": 36925.0
+        "Cost": 33425.0
     },
     {
         "Name": "Godos",
@@ -2028,16 +1768,6 @@
                 "Type": "Speed",
                 "Rank": 5,
                 "Power Points": 5
-            },
-            {
-                "Type": "Swimming",
-                "Rank": 5,
-                "Power Points": 5
-            },
-            {
-                "Type": "Flight",
-                "Rank": 5,
-                "Power Points": 5
             }
         ],
         "Movement": {
@@ -2045,12 +1775,12 @@
             "Water": 0.0,
             "Air": 0.0
         },
-        "Total Power Points": 76.0,
+        "Total Power Points": 61.0,
         "Power Level": 10,
         "Power Level Source": [
             "Dexterity + Ranged"
         ],
-        "Cost": 26600.0
+        "Cost": 21350.0
     },
     {
         "Name": "Gojulas",
@@ -2097,16 +1827,6 @@
                 "Type": "Speed",
                 "Rank": 5,
                 "Power Points": 5
-            },
-            {
-                "Type": "Swimming",
-                "Rank": 5,
-                "Power Points": 5
-            },
-            {
-                "Type": "Flight",
-                "Rank": 5,
-                "Power Points": 5
             }
         ],
         "Movement": {
@@ -2114,12 +1834,12 @@
             "Water": 0.0,
             "Air": 0.0
         },
-        "Total Power Points": 104.0,
+        "Total Power Points": 89.0,
         "Power Level": 14,
         "Power Level Source": [
             "Fighting + Melee"
         ],
-        "Cost": 36400.0
+        "Cost": 31150.0
     },
     {
         "Name": "Gojulas The Ogre",
@@ -2184,16 +1904,6 @@
                 "Type": "Speed",
                 "Rank": 5,
                 "Power Points": 5
-            },
-            {
-                "Type": "Swimming",
-                "Rank": 5,
-                "Power Points": 5
-            },
-            {
-                "Type": "Flight",
-                "Rank": 5,
-                "Power Points": 5
             }
         ],
         "Movement": {
@@ -2201,12 +1911,12 @@
             "Water": 0.0,
             "Air": 0.0
         },
-        "Total Power Points": 159.5,
+        "Total Power Points": 144.5,
         "Power Level": 21,
         "Power Level Source": [
             "Dexterity + Ranged"
         ],
-        "Cost": 55825.0
+        "Cost": 50575.0
     },
     {
         "Name": "Gojulasgiga",
@@ -2258,16 +1968,6 @@
                 "Type": "Speed",
                 "Rank": 5,
                 "Power Points": 5
-            },
-            {
-                "Type": "Swimming",
-                "Rank": 5,
-                "Power Points": 5
-            },
-            {
-                "Type": "Flight",
-                "Rank": 5,
-                "Power Points": 5
             }
         ],
         "Movement": {
@@ -2275,12 +1975,12 @@
             "Water": 0.0,
             "Air": 0.0
         },
-        "Total Power Points": 149.0,
+        "Total Power Points": 134.0,
         "Power Level": 21,
         "Power Level Source": [
             "Dexterity + Ranged"
         ],
-        "Cost": 52150.0
+        "Cost": 46900.0
     },
     {
         "Name": "Gordos",
@@ -2344,16 +2044,6 @@
                 "Type": "Speed",
                 "Rank": 5,
                 "Power Points": 5
-            },
-            {
-                "Type": "Swimming",
-                "Rank": 5,
-                "Power Points": 5
-            },
-            {
-                "Type": "Flight",
-                "Rank": 5,
-                "Power Points": 5
             }
         ],
         "Movement": {
@@ -2361,12 +2051,12 @@
             "Water": 0.0,
             "Air": 0.0
         },
-        "Total Power Points": 99.5,
+        "Total Power Points": 84.5,
         "Power Level": 10,
         "Power Level Source": [
             "Agility + Toughness"
         ],
-        "Cost": 34825.0
+        "Cost": 29575.0
     },
     {
         "Name": "Gorhecks",
@@ -2430,16 +2120,6 @@
                 "Type": "Speed",
                 "Rank": 5,
                 "Power Points": 5
-            },
-            {
-                "Type": "Swimming",
-                "Rank": 5,
-                "Power Points": 5
-            },
-            {
-                "Type": "Flight",
-                "Rank": 5,
-                "Power Points": 5
             }
         ],
         "Movement": {
@@ -2447,12 +2127,12 @@
             "Water": 0.0,
             "Air": 0.0
         },
-        "Total Power Points": 91.5,
+        "Total Power Points": 76.5,
         "Power Level": 8,
         "Power Level Source": [
             "Agility + Toughness"
         ],
-        "Cost": 32025.0
+        "Cost": 26775.0
     },
     {
         "Name": "Grounchar",
@@ -2507,16 +2187,6 @@
                 "Type": "Speed",
                 "Rank": 5,
                 "Power Points": 5
-            },
-            {
-                "Type": "Swimming",
-                "Rank": 5,
-                "Power Points": 5
-            },
-            {
-                "Type": "Flight",
-                "Rank": 5,
-                "Power Points": 5
             }
         ],
         "Movement": {
@@ -2524,12 +2194,12 @@
             "Water": 0.0,
             "Air": 0.0
         },
-        "Total Power Points": 80.0,
+        "Total Power Points": 65.0,
         "Power Level": 7,
         "Power Level Source": [
             "Fighting + Melee"
         ],
-        "Cost": 28000.0
+        "Cost": 22750.0
     },
     {
         "Name": "Gun Sniper",
@@ -2585,16 +2255,6 @@
                 "Type": "Speed",
                 "Rank": 6,
                 "Power Points": 6
-            },
-            {
-                "Type": "Swimming",
-                "Rank": 5,
-                "Power Points": 5
-            },
-            {
-                "Type": "Flight",
-                "Rank": 5,
-                "Power Points": 5
             }
         ],
         "Movement": {
@@ -2602,12 +2262,12 @@
             "Water": 0.0,
             "Air": 0.0
         },
-        "Total Power Points": 102.0,
+        "Total Power Points": 87.0,
         "Power Level": 13,
         "Power Level Source": [
             "Dexterity + Ranged"
         ],
-        "Cost": 35700.0
+        "Cost": 30450.0
     },
     {
         "Name": "Gunbluster",
@@ -2677,16 +2337,6 @@
                 "Type": "Speed",
                 "Rank": 5,
                 "Power Points": 5
-            },
-            {
-                "Type": "Swimming",
-                "Rank": 5,
-                "Power Points": 5
-            },
-            {
-                "Type": "Flight",
-                "Rank": 5,
-                "Power Points": 5
             }
         ],
         "Movement": {
@@ -2694,12 +2344,12 @@
             "Water": 0.0,
             "Air": 0.0
         },
-        "Total Power Points": 150.0,
+        "Total Power Points": 135.0,
         "Power Level": 14,
         "Power Level Source": [
             "Agility + Toughness"
         ],
-        "Cost": 52500.0
+        "Cost": 47250.0
     },
     {
         "Name": "Guntiger",
@@ -2746,16 +2396,6 @@
                 "Type": "Speed",
                 "Rank": 6,
                 "Power Points": 6
-            },
-            {
-                "Type": "Swimming",
-                "Rank": 5,
-                "Power Points": 5
-            },
-            {
-                "Type": "Flight",
-                "Rank": 5,
-                "Power Points": 5
             }
         ],
         "Movement": {
@@ -2763,12 +2403,12 @@
             "Water": 0.0,
             "Air": 0.0
         },
-        "Total Power Points": 97.5,
+        "Total Power Points": 82.5,
         "Power Level": 14,
         "Power Level Source": [
             "Dexterity + Ranged"
         ],
-        "Cost": 34125.0
+        "Cost": 28875.0
     },
     {
         "Name": "Gustav MS",
@@ -2807,16 +2447,6 @@
                 "Type": "Speed",
                 "Rank": 5,
                 "Power Points": 5
-            },
-            {
-                "Type": "Swimming",
-                "Rank": 5,
-                "Power Points": 5
-            },
-            {
-                "Type": "Flight",
-                "Rank": 5,
-                "Power Points": 5
             }
         ],
         "Movement": {
@@ -2824,12 +2454,12 @@
             "Water": 0.0,
             "Air": 0.0
         },
-        "Total Power Points": 71.0,
+        "Total Power Points": 56.0,
         "Power Level": 14,
         "Power Level Source": [
             "Fighting + Toughness"
         ],
-        "Cost": 24850.0
+        "Cost": 19600.0
     },
     {
         "Name": "Guysack",
@@ -2876,16 +2506,6 @@
                 "Type": "Speed",
                 "Rank": 5,
                 "Power Points": 5
-            },
-            {
-                "Type": "Swimming",
-                "Rank": 5,
-                "Power Points": 5
-            },
-            {
-                "Type": "Flight",
-                "Rank": 5,
-                "Power Points": 5
             }
         ],
         "Movement": {
@@ -2893,12 +2513,12 @@
             "Water": 0.0,
             "Air": 0.0
         },
-        "Total Power Points": 74.0,
+        "Total Power Points": 59.0,
         "Power Level": 9,
         "Power Level Source": [
             "Dexterity + Ranged"
         ],
-        "Cost": 25900.0
+        "Cost": 20650.0
     },
     {
         "Name": "Hammer Head",
@@ -2949,21 +2569,6 @@
                 ],
                 "Rank": 9,
                 "Power Points": 4.5
-            },
-            {
-                "Type": "Speed",
-                "Rank": 5,
-                "Power Points": 5
-            },
-            {
-                "Type": "Swimming",
-                "Rank": 5,
-                "Power Points": 5
-            },
-            {
-                "Type": "Flight",
-                "Rank": 8,
-                "Power Points": 8
             }
         ],
         "Movement": {
@@ -2971,12 +2576,12 @@
             "Water": 200.6,
             "Air": 571.7
         },
-        "Total Power Points": 100.5,
+        "Total Power Points": 95.5,
         "Power Level": 12,
         "Power Level Source": [
             "Agility + Toughness"
         ],
-        "Cost": 35175.0
+        "Cost": 33425.0
     },
     {
         "Name": "Hammer Rock",
@@ -3023,16 +2628,6 @@
                 "Type": "Speed",
                 "Rank": 5,
                 "Power Points": 5
-            },
-            {
-                "Type": "Swimming",
-                "Rank": 5,
-                "Power Points": 5
-            },
-            {
-                "Type": "Flight",
-                "Rank": 5,
-                "Power Points": 5
             }
         ],
         "Movement": {
@@ -3040,12 +2635,12 @@
             "Water": 0.0,
             "Air": 0.0
         },
-        "Total Power Points": 92.0,
+        "Total Power Points": 77.0,
         "Power Level": 12,
         "Power Level Source": [
             "Dexterity + Ranged"
         ],
-        "Cost": 32200.0
+        "Cost": 26950.0
     },
     {
         "Name": "Hel Digunner",
@@ -3101,16 +2696,6 @@
                 "Type": "Speed",
                 "Rank": 5,
                 "Power Points": 5
-            },
-            {
-                "Type": "Swimming",
-                "Rank": 5,
-                "Power Points": 5
-            },
-            {
-                "Type": "Flight",
-                "Rank": 5,
-                "Power Points": 5
             }
         ],
         "Movement": {
@@ -3118,12 +2703,12 @@
             "Water": 0.0,
             "Air": 0.0
         },
-        "Total Power Points": 83.0,
+        "Total Power Points": 68.0,
         "Power Level": 8,
         "Power Level Source": [
             "Dexterity + Ranged"
         ],
-        "Cost": 29050.0
+        "Cost": 23800.0
     },
     {
         "Name": "Helcat",
@@ -3170,16 +2755,6 @@
                 "Type": "Speed",
                 "Rank": 6,
                 "Power Points": 6
-            },
-            {
-                "Type": "Swimming",
-                "Rank": 5,
-                "Power Points": 5
-            },
-            {
-                "Type": "Flight",
-                "Rank": 5,
-                "Power Points": 5
             }
         ],
         "Movement": {
@@ -3187,12 +2762,12 @@
             "Water": 0.0,
             "Air": 0.0
         },
-        "Total Power Points": 95.0,
+        "Total Power Points": 80.0,
         "Power Level": 12,
         "Power Level Source": [
             "Dexterity + Ranged"
         ],
-        "Cost": 33250.0
+        "Cost": 28000.0
     },
     {
         "Name": "Iguan",
@@ -3239,16 +2814,6 @@
                 "Type": "Speed",
                 "Rank": 6,
                 "Power Points": 6
-            },
-            {
-                "Type": "Swimming",
-                "Rank": 5,
-                "Power Points": 5
-            },
-            {
-                "Type": "Flight",
-                "Rank": 5,
-                "Power Points": 5
             }
         ],
         "Movement": {
@@ -3256,12 +2821,12 @@
             "Water": 0.0,
             "Air": 0.0
         },
-        "Total Power Points": 79.0,
+        "Total Power Points": 64.0,
         "Power Level": 11,
         "Power Level Source": [
             "Dexterity + Ranged"
         ],
-        "Cost": 27650.0
+        "Cost": 22400.0
     },
     {
         "Name": "Iron Kong",
@@ -3326,16 +2891,6 @@
                 "Type": "Speed",
                 "Rank": 5,
                 "Power Points": 5
-            },
-            {
-                "Type": "Swimming",
-                "Rank": 5,
-                "Power Points": 5
-            },
-            {
-                "Type": "Flight",
-                "Rank": 5,
-                "Power Points": 5
             }
         ],
         "Movement": {
@@ -3343,7 +2898,7 @@
             "Water": 0.0,
             "Air": 0.0
         },
-        "Total Power Points": 160.5,
+        "Total Power Points": 145.5,
         "Power Level": 16,
         "Power Level Source": [
             "Fighting + Melee",
@@ -3351,7 +2906,7 @@
             "Agility + Toughness",
             "Fighting + Toughness"
         ],
-        "Cost": 56175.0
+        "Cost": 50925.0
     },
     {
         "Name": "Iron Kong PK",
@@ -3416,16 +2971,6 @@
                 "Type": "Speed",
                 "Rank": 5,
                 "Power Points": 5
-            },
-            {
-                "Type": "Swimming",
-                "Rank": 5,
-                "Power Points": 5
-            },
-            {
-                "Type": "Flight",
-                "Rank": 5,
-                "Power Points": 5
             }
         ],
         "Movement": {
@@ -3433,12 +2978,12 @@
             "Water": 0.0,
             "Air": 0.0
         },
-        "Total Power Points": 170.0,
+        "Total Power Points": 155.0,
         "Power Level": 18,
         "Power Level Source": [
             "Dexterity + Ranged"
         ],
-        "Cost": 59500.0
+        "Cost": 54250.0
     },
     {
         "Name": "Killer Dome",
@@ -3498,11 +3043,6 @@
                 "Type": "Swimming",
                 "Rank": 5,
                 "Power Points": 5
-            },
-            {
-                "Type": "Flight",
-                "Rank": 5,
-                "Power Points": 5
             }
         ],
         "Movement": {
@@ -3510,12 +3050,12 @@
             "Water": 117.3,
             "Air": 0.0
         },
-        "Total Power Points": 95.0,
+        "Total Power Points": 85.0,
         "Power Level": 12,
         "Power Level Source": [
             "Agility + Toughness"
         ],
-        "Cost": 33250.0
+        "Cost": 29750.0
     },
     {
         "Name": "Konig Wolf",
@@ -3571,16 +3111,6 @@
                 "Type": "Speed",
                 "Rank": 6,
                 "Power Points": 6
-            },
-            {
-                "Type": "Swimming",
-                "Rank": 5,
-                "Power Points": 5
-            },
-            {
-                "Type": "Flight",
-                "Rank": 5,
-                "Power Points": 5
             }
         ],
         "Movement": {
@@ -3588,12 +3118,12 @@
             "Water": 0.0,
             "Air": 0.0
         },
-        "Total Power Points": 154.0,
+        "Total Power Points": 139.0,
         "Power Level": 19,
         "Power Level Source": [
             "Dexterity + Ranged"
         ],
-        "Cost": 53900.0
+        "Cost": 48650.0
     },
     {
         "Name": "Liger Zero",
@@ -3640,16 +3170,6 @@
                 "Type": "Speed",
                 "Rank": 6,
                 "Power Points": 6
-            },
-            {
-                "Type": "Swimming",
-                "Rank": 5,
-                "Power Points": 5
-            },
-            {
-                "Type": "Flight",
-                "Rank": 5,
-                "Power Points": 5
             }
         ],
         "Movement": {
@@ -3657,13 +3177,13 @@
             "Water": 0.0,
             "Air": 0.0
         },
-        "Total Power Points": 117.0,
+        "Total Power Points": 102.0,
         "Power Level": 15,
         "Power Level Source": [
             "Fighting + Melee",
             "Dexterity + Ranged"
         ],
-        "Cost": 40950.0
+        "Cost": 35700.0
     },
     {
         "Name": "Liger Zero Jager",
@@ -3710,16 +3230,6 @@
                 "Type": "Speed",
                 "Rank": 6,
                 "Power Points": 6
-            },
-            {
-                "Type": "Swimming",
-                "Rank": 5,
-                "Power Points": 5
-            },
-            {
-                "Type": "Flight",
-                "Rank": 5,
-                "Power Points": 5
             }
         ],
         "Movement": {
@@ -3727,12 +3237,12 @@
             "Water": 0.0,
             "Air": 0.0
         },
-        "Total Power Points": 118.0,
+        "Total Power Points": 103.0,
         "Power Level": 16,
         "Power Level Source": [
             "Dexterity + Ranged"
         ],
-        "Cost": 41300.0
+        "Cost": 36050.0
     },
     {
         "Name": "Liger Zero Panzer",
@@ -3797,16 +3307,6 @@
                 "Type": "Speed",
                 "Rank": 6,
                 "Power Points": 6
-            },
-            {
-                "Type": "Swimming",
-                "Rank": 5,
-                "Power Points": 5
-            },
-            {
-                "Type": "Flight",
-                "Rank": 5,
-                "Power Points": 5
             }
         ],
         "Movement": {
@@ -3814,13 +3314,13 @@
             "Water": 0.0,
             "Air": 0.0
         },
-        "Total Power Points": 139.5,
+        "Total Power Points": 124.5,
         "Power Level": 14,
         "Power Level Source": [
             "Dexterity + Ranged",
             "Agility + Toughness"
         ],
-        "Cost": 48825.0
+        "Cost": 43575.0
     },
     {
         "Name": "Liger Zero Phoenix",
@@ -3878,11 +3378,6 @@
                 "Power Points": 6
             },
             {
-                "Type": "Swimming",
-                "Rank": 5,
-                "Power Points": 5
-            },
-            {
                 "Type": "Flight",
                 "Rank": 9,
                 "Power Points": 9
@@ -3893,12 +3388,12 @@
             "Water": 0.0,
             "Air": 1143.3
         },
-        "Total Power Points": 141.0,
+        "Total Power Points": 136.0,
         "Power Level": 17,
         "Power Level Source": [
             "Dexterity + Ranged"
         ],
-        "Cost": 49350.0
+        "Cost": 47600.0
     },
     {
         "Name": "Liger Zero Schneider",
@@ -3950,16 +3445,6 @@
                 "Type": "Speed",
                 "Rank": 6,
                 "Power Points": 6
-            },
-            {
-                "Type": "Swimming",
-                "Rank": 5,
-                "Power Points": 5
-            },
-            {
-                "Type": "Flight",
-                "Rank": 5,
-                "Power Points": 5
             }
         ],
         "Movement": {
@@ -3967,12 +3452,12 @@
             "Water": 0.0,
             "Air": 0.0
         },
-        "Total Power Points": 129.0,
+        "Total Power Points": 114.0,
         "Power Level": 18,
         "Power Level Source": [
             "Fighting + Melee"
         ],
-        "Cost": 45150.0
+        "Cost": 39900.0
     },
     {
         "Name": "Liger Zero X",
@@ -4028,16 +3513,6 @@
                 "Type": "Speed",
                 "Rank": 6,
                 "Power Points": 6
-            },
-            {
-                "Type": "Swimming",
-                "Rank": 5,
-                "Power Points": 5
-            },
-            {
-                "Type": "Flight",
-                "Rank": 5,
-                "Power Points": 5
             }
         ],
         "Movement": {
@@ -4045,12 +3520,12 @@
             "Water": 0.0,
             "Air": 0.0
         },
-        "Total Power Points": 149.0,
+        "Total Power Points": 134.0,
         "Power Level": 19,
         "Power Level Source": [
             "Dexterity + Ranged"
         ],
-        "Cost": 52150.0
+        "Cost": 46900.0
     },
     {
         "Name": "Lightning Saix",
@@ -4106,16 +3581,6 @@
                 "Type": "Speed",
                 "Rank": 6,
                 "Power Points": 6
-            },
-            {
-                "Type": "Swimming",
-                "Rank": 5,
-                "Power Points": 5
-            },
-            {
-                "Type": "Flight",
-                "Rank": 5,
-                "Power Points": 5
             }
         ],
         "Movement": {
@@ -4123,12 +3588,12 @@
             "Water": 0.0,
             "Air": 0.0
         },
-        "Total Power Points": 132.5,
+        "Total Power Points": 117.5,
         "Power Level": 17,
         "Power Level Source": [
             "Dexterity + Ranged"
         ],
-        "Cost": 46375.0
+        "Cost": 41125.0
     },
     {
         "Name": "Maccurtis",
@@ -4180,11 +3645,6 @@
                 "Type": "Swimming",
                 "Rank": 5,
                 "Power Points": 5
-            },
-            {
-                "Type": "Flight",
-                "Rank": 5,
-                "Power Points": 5
             }
         ],
         "Movement": {
@@ -4192,13 +3652,13 @@
             "Water": 98.8,
             "Air": 0.0
         },
-        "Total Power Points": 83.0,
+        "Total Power Points": 73.0,
         "Power Level": 10,
         "Power Level Source": [
             "Agility + Toughness",
             "Fighting + Toughness"
         ],
-        "Cost": 29050.0
+        "Cost": 25550.0
     },
     {
         "Name": "Madthunder",
@@ -4259,16 +3719,6 @@
                 "Type": "Speed",
                 "Rank": 5,
                 "Power Points": 5
-            },
-            {
-                "Type": "Swimming",
-                "Rank": 5,
-                "Power Points": 5
-            },
-            {
-                "Type": "Flight",
-                "Rank": 5,
-                "Power Points": 5
             }
         ],
         "Movement": {
@@ -4276,13 +3726,13 @@
             "Water": 0.0,
             "Air": 0.0
         },
-        "Total Power Points": 164.5,
+        "Total Power Points": 149.5,
         "Power Level": 20,
         "Power Level Source": [
             "Fighting + Melee",
             "Fighting + Toughness"
         ],
-        "Cost": 57575.0
+        "Cost": 52325.0
     },
     {
         "Name": "Megaleon",
@@ -4338,16 +3788,6 @@
                 "Type": "Speed",
                 "Rank": 5,
                 "Power Points": 5
-            },
-            {
-                "Type": "Swimming",
-                "Rank": 5,
-                "Power Points": 5
-            },
-            {
-                "Type": "Flight",
-                "Rank": 5,
-                "Power Points": 5
             }
         ],
         "Movement": {
@@ -4355,12 +3795,12 @@
             "Water": 0.0,
             "Air": 0.0
         },
-        "Total Power Points": 75.5,
+        "Total Power Points": 60.5,
         "Power Level": 7,
         "Power Level Source": [
             "Agility + Toughness"
         ],
-        "Cost": 26425.0
+        "Cost": 21175.0
     },
     {
         "Name": "Molga",
@@ -4416,16 +3856,6 @@
                 "Type": "Speed",
                 "Rank": 6,
                 "Power Points": 6
-            },
-            {
-                "Type": "Swimming",
-                "Rank": 5,
-                "Power Points": 5
-            },
-            {
-                "Type": "Flight",
-                "Rank": 5,
-                "Power Points": 5
             }
         ],
         "Movement": {
@@ -4433,12 +3863,12 @@
             "Water": 0.0,
             "Air": 0.0
         },
-        "Total Power Points": 74.0,
+        "Total Power Points": 59.0,
         "Power Level": 9,
         "Power Level Source": [
             "Agility + Toughness"
         ],
-        "Cost": 25900.0
+        "Cost": 20650.0
     },
     {
         "Name": "Pteras",
@@ -4480,21 +3910,6 @@
                 ],
                 "Rank": 5,
                 "Power Points": 2.5
-            },
-            {
-                "Type": "Speed",
-                "Rank": 5,
-                "Power Points": 5
-            },
-            {
-                "Type": "Swimming",
-                "Rank": 5,
-                "Power Points": 5
-            },
-            {
-                "Type": "Flight",
-                "Rank": 9,
-                "Power Points": 9
             }
         ],
         "Movement": {
@@ -4502,12 +3917,12 @@
             "Water": 0.0,
             "Air": 1143.3
         },
-        "Total Power Points": 94.5,
+        "Total Power Points": 84.5,
         "Power Level": 11,
         "Power Level Source": [
             "Dexterity + Ranged"
         ],
-        "Cost": 33075.0
+        "Cost": 29575.0
     },
     {
         "Name": "Raynos",
@@ -4549,21 +3964,6 @@
                 ],
                 "Rank": 5,
                 "Power Points": 2.5
-            },
-            {
-                "Type": "Speed",
-                "Rank": 5,
-                "Power Points": 5
-            },
-            {
-                "Type": "Swimming",
-                "Rank": 5,
-                "Power Points": 5
-            },
-            {
-                "Type": "Flight",
-                "Rank": 10,
-                "Power Points": 10
             }
         ],
         "Movement": {
@@ -4571,12 +3971,12 @@
             "Water": 0.0,
             "Air": 1886.5
         },
-        "Total Power Points": 121.5,
+        "Total Power Points": 111.5,
         "Power Level": 15,
         "Power Level Source": [
             "Dexterity + Ranged"
         ],
-        "Cost": 42525.0
+        "Cost": 39025.0
     },
     {
         "Name": "Red Horn",
@@ -4641,16 +4041,6 @@
                 "Type": "Speed",
                 "Rank": 5,
                 "Power Points": 5
-            },
-            {
-                "Type": "Swimming",
-                "Rank": 5,
-                "Power Points": 5
-            },
-            {
-                "Type": "Flight",
-                "Rank": 5,
-                "Power Points": 5
             }
         ],
         "Movement": {
@@ -4658,12 +4048,12 @@
             "Water": 0.0,
             "Air": 0.0
         },
-        "Total Power Points": 141.5,
+        "Total Power Points": 126.5,
         "Power Level": 15,
         "Power Level Source": [
             "Agility + Toughness"
         ],
-        "Cost": 49525.0
+        "Cost": 44275.0
     },
     {
         "Name": "Redler",
@@ -4705,21 +4095,6 @@
                 ],
                 "Rank": 5,
                 "Power Points": 2.5
-            },
-            {
-                "Type": "Speed",
-                "Rank": 5,
-                "Power Points": 5
-            },
-            {
-                "Type": "Swimming",
-                "Rank": 5,
-                "Power Points": 5
-            },
-            {
-                "Type": "Flight",
-                "Rank": 10,
-                "Power Points": 10
             }
         ],
         "Movement": {
@@ -4727,12 +4102,12 @@
             "Water": 0.0,
             "Air": 1600.7
         },
-        "Total Power Points": 109.5,
+        "Total Power Points": 99.5,
         "Power Level": 13,
         "Power Level Source": [
             "Fighting + Melee"
         ],
-        "Cost": 38325.0
+        "Cost": 34825.0
     },
     {
         "Name": "Rev Rapter",
@@ -4771,16 +4146,6 @@
                 "Type": "Speed",
                 "Rank": 6,
                 "Power Points": 6
-            },
-            {
-                "Type": "Swimming",
-                "Rank": 5,
-                "Power Points": 5
-            },
-            {
-                "Type": "Flight",
-                "Rank": 5,
-                "Power Points": 5
             }
         ],
         "Movement": {
@@ -4788,12 +4153,12 @@
             "Water": 0.0,
             "Air": 0.0
         },
-        "Total Power Points": 84.0,
+        "Total Power Points": 69.0,
         "Power Level": 11,
         "Power Level Source": [
             "Fighting + Melee"
         ],
-        "Cost": 29400.0
+        "Cost": 24150.0
     },
     {
         "Name": "Saber Tiger",
@@ -4840,16 +4205,6 @@
                 "Type": "Speed",
                 "Rank": 6,
                 "Power Points": 6
-            },
-            {
-                "Type": "Swimming",
-                "Rank": 5,
-                "Power Points": 5
-            },
-            {
-                "Type": "Flight",
-                "Rank": 5,
-                "Power Points": 5
             }
         ],
         "Movement": {
@@ -4857,12 +4212,12 @@
             "Water": 0.0,
             "Air": 0.0
         },
-        "Total Power Points": 107.5,
+        "Total Power Points": 92.5,
         "Power Level": 14,
         "Power Level Source": [
             "Dexterity + Ranged"
         ],
-        "Cost": 37625.0
+        "Cost": 32375.0
     },
     {
         "Name": "Saberlion",
@@ -4901,16 +4256,6 @@
                 "Type": "Speed",
                 "Rank": 6,
                 "Power Points": 6
-            },
-            {
-                "Type": "Swimming",
-                "Rank": 5,
-                "Power Points": 5
-            },
-            {
-                "Type": "Flight",
-                "Rank": 5,
-                "Power Points": 5
             }
         ],
         "Movement": {
@@ -4918,12 +4263,12 @@
             "Water": 0.0,
             "Air": 0.0
         },
-        "Total Power Points": 93.5,
+        "Total Power Points": 78.5,
         "Power Level": 12,
         "Power Level Source": [
             "Fighting + Melee"
         ],
-        "Cost": 32725.0
+        "Cost": 27475.0
     },
     {
         "Name": "Saicurtis",
@@ -4965,21 +4310,6 @@
                 ],
                 "Rank": 4,
                 "Power Points": 2.0
-            },
-            {
-                "Type": "Speed",
-                "Rank": 5,
-                "Power Points": 5
-            },
-            {
-                "Type": "Swimming",
-                "Rank": 5,
-                "Power Points": 5
-            },
-            {
-                "Type": "Flight",
-                "Rank": 6,
-                "Power Points": 6
             }
         ],
         "Movement": {
@@ -4987,12 +4317,12 @@
             "Water": 0.0,
             "Air": 180.1
         },
-        "Total Power Points": 90.0,
+        "Total Power Points": 80.0,
         "Power Level": 12,
         "Power Level Source": [
             "Dexterity + Ranged"
         ],
-        "Cost": 31500.0
+        "Cost": 28000.0
     },
     {
         "Name": "Salamander",
@@ -5043,21 +4373,6 @@
                 ],
                 "Rank": 5,
                 "Power Points": 2.5
-            },
-            {
-                "Type": "Speed",
-                "Rank": 5,
-                "Power Points": 5
-            },
-            {
-                "Type": "Swimming",
-                "Rank": 5,
-                "Power Points": 5
-            },
-            {
-                "Type": "Flight",
-                "Rank": 9,
-                "Power Points": 9
             }
         ],
         "Movement": {
@@ -5065,12 +4380,12 @@
             "Water": 0.0,
             "Air": 1143.3
         },
-        "Total Power Points": 123.5,
+        "Total Power Points": 113.5,
         "Power Level": 13,
         "Power Level Source": [
             "Dexterity + Ranged"
         ],
-        "Cost": 43225.0
+        "Cost": 39725.0
     },
     {
         "Name": "Seismosaurus",
@@ -5135,16 +4450,6 @@
                 "Type": "Speed",
                 "Rank": 5,
                 "Power Points": 5
-            },
-            {
-                "Type": "Swimming",
-                "Rank": 5,
-                "Power Points": 5
-            },
-            {
-                "Type": "Flight",
-                "Rank": 5,
-                "Power Points": 5
             }
         ],
         "Movement": {
@@ -5152,12 +4457,12 @@
             "Water": 0.0,
             "Air": 0.0
         },
-        "Total Power Points": 164.0,
+        "Total Power Points": 149.0,
         "Power Level": 17,
         "Power Level Source": [
             "Agility + Toughness"
         ],
-        "Cost": 57400.0
+        "Cost": 52150.0
     },
     {
         "Name": "Shadow Fox",
@@ -5204,16 +4509,6 @@
                 "Type": "Speed",
                 "Rank": 6,
                 "Power Points": 6
-            },
-            {
-                "Type": "Swimming",
-                "Rank": 5,
-                "Power Points": 5
-            },
-            {
-                "Type": "Flight",
-                "Rank": 5,
-                "Power Points": 5
             }
         ],
         "Movement": {
@@ -5221,12 +4516,12 @@
             "Water": 0.0,
             "Air": 0.0
         },
-        "Total Power Points": 122.5,
+        "Total Power Points": 107.5,
         "Power Level": 15,
         "Power Level Source": [
             "Dexterity + Ranged"
         ],
-        "Cost": 42875.0
+        "Cost": 37625.0
     },
     {
         "Name": "Shield Liger",
@@ -5278,16 +4573,6 @@
                 "Type": "Speed",
                 "Rank": 6,
                 "Power Points": 6
-            },
-            {
-                "Type": "Swimming",
-                "Rank": 5,
-                "Power Points": 5
-            },
-            {
-                "Type": "Flight",
-                "Rank": 5,
-                "Power Points": 5
             }
         ],
         "Movement": {
@@ -5295,12 +4580,12 @@
             "Water": 0.0,
             "Air": 0.0
         },
-        "Total Power Points": 115.0,
+        "Total Power Points": 100.0,
         "Power Level": 14,
         "Power Level Source": [
             "Dexterity + Ranged"
         ],
-        "Cost": 40250.0
+        "Cost": 35000.0
     },
     {
         "Name": "Shield Liger DCS-J",
@@ -5361,16 +4646,6 @@
                 "Type": "Speed",
                 "Rank": 6,
                 "Power Points": 6
-            },
-            {
-                "Type": "Swimming",
-                "Rank": 5,
-                "Power Points": 5
-            },
-            {
-                "Type": "Flight",
-                "Rank": 5,
-                "Power Points": 5
             }
         ],
         "Movement": {
@@ -5378,12 +4653,12 @@
             "Water": 0.0,
             "Air": 0.0
         },
-        "Total Power Points": 131.0,
+        "Total Power Points": 116.0,
         "Power Level": 17,
         "Power Level Source": [
             "Dexterity + Ranged"
         ],
-        "Cost": 45850.0
+        "Cost": 40600.0
     },
     {
         "Name": "Sinker",
@@ -5434,21 +4709,6 @@
                 ],
                 "Rank": 9,
                 "Power Points": 4.5
-            },
-            {
-                "Type": "Speed",
-                "Rank": 5,
-                "Power Points": 5
-            },
-            {
-                "Type": "Swimming",
-                "Rank": 5,
-                "Power Points": 5
-            },
-            {
-                "Type": "Flight",
-                "Rank": 8,
-                "Power Points": 8
             }
         ],
         "Movement": {
@@ -5456,12 +4716,12 @@
             "Water": 185.2,
             "Air": 514.5
         },
-        "Total Power Points": 87.5,
+        "Total Power Points": 82.5,
         "Power Level": 10,
         "Power Level Source": [
             "Dexterity + Ranged"
         ],
-        "Cost": 30625.0
+        "Cost": 28875.0
     },
     {
         "Name": "Snipe Master",
@@ -5517,16 +4777,6 @@
                 "Type": "Speed",
                 "Rank": 6,
                 "Power Points": 6
-            },
-            {
-                "Type": "Swimming",
-                "Rank": 5,
-                "Power Points": 5
-            },
-            {
-                "Type": "Flight",
-                "Rank": 5,
-                "Power Points": 5
             }
         ],
         "Movement": {
@@ -5534,12 +4784,12 @@
             "Water": 0.0,
             "Air": 0.0
         },
-        "Total Power Points": 100.0,
+        "Total Power Points": 85.0,
         "Power Level": 14,
         "Power Level Source": [
             "Dexterity + Ranged"
         ],
-        "Cost": 35000.0
+        "Cost": 29750.0
     },
     {
         "Name": "Spinosapper",
@@ -5586,16 +4836,6 @@
                 "Type": "Speed",
                 "Rank": 5,
                 "Power Points": 5
-            },
-            {
-                "Type": "Swimming",
-                "Rank": 5,
-                "Power Points": 5
-            },
-            {
-                "Type": "Flight",
-                "Rank": 5,
-                "Power Points": 5
             }
         ],
         "Movement": {
@@ -5603,13 +4843,13 @@
             "Water": 0.0,
             "Air": 0.0
         },
-        "Total Power Points": 67.0,
+        "Total Power Points": 52.0,
         "Power Level": 8,
         "Power Level Source": [
             "Agility + Toughness",
             "Fighting + Toughness"
         ],
-        "Cost": 23450.0
+        "Cost": 18200.0
     },
     {
         "Name": "Stealth Viper",
@@ -5665,16 +4905,6 @@
                 "Type": "Speed",
                 "Rank": 5,
                 "Power Points": 5
-            },
-            {
-                "Type": "Swimming",
-                "Rank": 5,
-                "Power Points": 5
-            },
-            {
-                "Type": "Flight",
-                "Rank": 5,
-                "Power Points": 5
             }
         ],
         "Movement": {
@@ -5682,12 +4912,12 @@
             "Water": 0.0,
             "Air": 0.0
         },
-        "Total Power Points": 90.0,
+        "Total Power Points": 75.0,
         "Power Level": 11,
         "Power Level Source": [
             "Dexterity + Ranged"
         ],
-        "Cost": 31500.0
+        "Cost": 26250.0
     },
     {
         "Name": "Storch",
@@ -5738,21 +4968,6 @@
                 ],
                 "Rank": 3,
                 "Power Points": 1.5
-            },
-            {
-                "Type": "Speed",
-                "Rank": 5,
-                "Power Points": 5
-            },
-            {
-                "Type": "Swimming",
-                "Rank": 5,
-                "Power Points": 5
-            },
-            {
-                "Type": "Flight",
-                "Rank": 9,
-                "Power Points": 9
             }
         ],
         "Movement": {
@@ -5760,12 +4975,12 @@
             "Water": 0.0,
             "Air": 1200.5
         },
-        "Total Power Points": 109.5,
+        "Total Power Points": 99.5,
         "Power Level": 15,
         "Power Level Source": [
             "Dexterity + Ranged"
         ],
-        "Cost": 38325.0
+        "Cost": 34825.0
     },
     {
         "Name": "Storm Sworder",
@@ -5807,21 +5022,6 @@
                 ],
                 "Rank": 5,
                 "Power Points": 2.5
-            },
-            {
-                "Type": "Speed",
-                "Rank": 5,
-                "Power Points": 5
-            },
-            {
-                "Type": "Swimming",
-                "Rank": 5,
-                "Power Points": 5
-            },
-            {
-                "Type": "Flight",
-                "Rank": 10,
-                "Power Points": 10
             }
         ],
         "Movement": {
@@ -5829,13 +5029,13 @@
             "Water": 0.0,
             "Air": 1829.3
         },
-        "Total Power Points": 113.5,
+        "Total Power Points": 103.5,
         "Power Level": 13,
         "Power Level Source": [
             "Fighting + Melee",
             "Dexterity + Ranged"
         ],
-        "Cost": 39725.0
+        "Cost": 36225.0
     },
     {
         "Name": "Ultra Saurus",
@@ -5905,11 +5105,6 @@
                 "Type": "Swimming",
                 "Rank": 5,
                 "Power Points": 5
-            },
-            {
-                "Type": "Flight",
-                "Rank": 5,
-                "Power Points": 5
             }
         ],
         "Movement": {
@@ -5917,12 +5112,12 @@
             "Water": 145.1,
             "Air": 0.0
         },
-        "Total Power Points": 146.5,
+        "Total Power Points": 136.5,
         "Power Level": 14,
         "Power Level Source": [
             "Agility + Toughness"
         ],
-        "Cost": 51275.0
+        "Cost": 47775.0
     },
     {
         "Name": "Wardick",
@@ -5983,11 +5178,6 @@
                 "Type": "Swimming",
                 "Rank": 5,
                 "Power Points": 5
-            },
-            {
-                "Type": "Flight",
-                "Rank": 5,
-                "Power Points": 5
             }
         ],
         "Movement": {
@@ -5995,13 +5185,13 @@
             "Water": 200.6,
             "Air": 0.0
         },
-        "Total Power Points": 99.5,
+        "Total Power Points": 89.5,
         "Power Level": 11,
         "Power Level Source": [
             "Dexterity + Ranged",
             "Agility + Toughness"
         ],
-        "Cost": 34825.0
+        "Cost": 31325.0
     },
     {
         "Name": "Zabat",
@@ -6043,21 +5233,6 @@
                 ],
                 "Rank": 8,
                 "Power Points": 4.0
-            },
-            {
-                "Type": "Speed",
-                "Rank": 5,
-                "Power Points": 5
-            },
-            {
-                "Type": "Swimming",
-                "Rank": 5,
-                "Power Points": 5
-            },
-            {
-                "Type": "Flight",
-                "Rank": 10,
-                "Power Points": 10
             }
         ],
         "Movement": {
@@ -6065,12 +5240,12 @@
             "Water": 0.0,
             "Air": 1600.7
         },
-        "Total Power Points": 105.0,
+        "Total Power Points": 95.0,
         "Power Level": 11,
         "Power Level Source": [
             "Dexterity + Ranged"
         ],
-        "Cost": 36750.0
+        "Cost": 33250.0
     },
     {
         "Name": "Zoids Mammoth",
@@ -6117,16 +5292,6 @@
                 "Type": "Speed",
                 "Rank": 5,
                 "Power Points": 5
-            },
-            {
-                "Type": "Swimming",
-                "Rank": 5,
-                "Power Points": 5
-            },
-            {
-                "Type": "Flight",
-                "Rank": 5,
-                "Power Points": 5
             }
         ],
         "Movement": {
@@ -6134,12 +5299,12 @@
             "Water": 0.0,
             "Air": 0.0
         },
-        "Total Power Points": 85.0,
+        "Total Power Points": 70.0,
         "Power Level": 11,
         "Power Level Source": [
             "Agility + Toughness",
             "Fighting + Toughness"
         ],
-        "Cost": 29750.0
+        "Cost": 24500.0
     }
 ]

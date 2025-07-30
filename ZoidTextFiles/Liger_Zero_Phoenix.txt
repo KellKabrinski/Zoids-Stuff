@@ -34,9 +34,6 @@ Powers:
   - Type: Speed
     Rank: 6
     Power Points: 6
-  - Type: Swimming
-    Rank: 5
-    Power Points: 5
   - Type: Flight
     Rank: 9
     Power Points: 9
@@ -46,7 +43,7 @@ Movement:
   Water: 0.0 m/6s
   Air: 1143.3 m/6s
 
-Total Power Points: 141.0
+Total Power Points: 136.0
 Power Level: 17
 Power Level Source(s): Dexterity + Ranged
-Cost: 49350.0 Credits
+Cost: 47600.0 Credits

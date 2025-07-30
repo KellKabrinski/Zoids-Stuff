@@ -31,16 +31,17 @@ def convert_zoid_stats(input_file, output_file):
             land_speed_kph = float(zoid.get("Ground Speed", 0))
             land_speed_m6s = round((land_speed_kph * 1000) / 600, 1)
             land_speed_mph = land_speed_kph * 0.621371
-            if land_speed_mph < 120:
-                land_speed_rank=5
-            elif land_speed_mph < 250:
-                land_speed_rank=6
-            elif land_speed_mph < 500:
-                land_speed_rank=7
-            elif land_speed_mph < 1000:
-                land_speed_rank=8
-            elif land_speed_mph < 2000:
-                land_speed_rank=9
+            if land_speed_mph > 0:
+                if land_speed_mph < 120:
+                    land_speed_rank=5
+                elif land_speed_mph < 250:
+                    land_speed_rank=6
+                elif land_speed_mph < 500:
+                    land_speed_rank=7
+                elif land_speed_mph < 1000:
+                    land_speed_rank=8
+                elif land_speed_mph < 2000:
+                    land_speed_rank=9
 
         except ValueError:
             land_speed_m6s = 0
@@ -49,16 +50,17 @@ def convert_zoid_stats(input_file, output_file):
             water_speed_knots = float(zoid.get("Water Speed", 0))
             water_speed_m6s = round((water_speed_knots * 1852) / 600, 1)
             water_speed_mph = water_speed_knots * 1.15078
-            if water_speed_mph < 120:
-                water_speed_rank = 5
-            elif water_speed_mph < 250:
-                water_speed_rank=6
-            elif water_speed_mph < 500:
-                water_speed_rank=7
-            elif water_speed_mph < 1000:
-                water_speed_rank=8
-            elif water_speed_mph < 2000:
-                water_speed_rank=9
+            if water_speed_mph > 0:
+                if water_speed_mph < 120:
+                    water_speed_rank = 5
+                elif water_speed_mph < 250:
+                    water_speed_rank=6
+                elif water_speed_mph < 500:
+                    water_speed_rank=7
+                elif water_speed_mph < 1000:
+                    water_speed_rank=8
+                elif water_speed_mph < 2000:
+                    water_speed_rank=9
         except ValueError:
             water_speed_m6s = 0
 
@@ -66,19 +68,19 @@ def convert_zoid_stats(input_file, output_file):
             air_speed_mach = float(zoid.get("Air Speed", 0))
             air_speed_m6s = round((air_speed_mach * 343000) / 600, 1)
             air_speed_mph = air_speed_mach * 761.207
-            
-            if air_speed_mph < 120:
-                air_speed_rank = 5
-            elif air_speed_mph < 250:
-                air_speed_rank=6
-            elif air_speed_mph < 500:
-                air_speed_rank=7
-            elif air_speed_mph < 1000:
-                air_speed_rank=8
-            elif air_speed_mph < 2000:
-                air_speed_rank=9
-            elif air_speed_mph < 4000:
-                air_speed_rank=10
+            if air_speed_mph > 0:
+                if air_speed_mph < 120:
+                    air_speed_rank = 5
+                elif air_speed_mph < 250:
+                    air_speed_rank=6
+                elif air_speed_mph < 500:
+                    air_speed_rank=7
+                elif air_speed_mph < 1000:
+                    air_speed_rank=8
+                elif air_speed_mph < 2000:
+                    air_speed_rank=9
+                elif air_speed_mph < 4000:
+                    air_speed_rank=10
         except ValueError:
             air_speed_m6s = 0
 

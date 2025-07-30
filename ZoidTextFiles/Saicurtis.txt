@@ -27,22 +27,13 @@ Powers:
     Senses: Visual
     Rank: 4
     Power Points: 2.0
-  - Type: Speed
-    Rank: 5
-    Power Points: 5
-  - Type: Swimming
-    Rank: 5
-    Power Points: 5
-  - Type: Flight
-    Rank: 6
-    Power Points: 6
 
 Movement:
   Land: 0.0 m/6s
   Water: 0.0 m/6s
   Air: 180.1 m/6s
 
-Total Power Points: 90.0
+Total Power Points: 80.0
 Power Level: 12
 Power Level Source(s): Dexterity + Ranged
-Cost: 31500.0 Credits
+Cost: 28000.0 Credits

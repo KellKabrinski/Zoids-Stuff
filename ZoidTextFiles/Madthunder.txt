@@ -37,19 +37,13 @@ Powers:
   - Type: Speed
     Rank: 5
     Power Points: 5
-  - Type: Swimming
-    Rank: 5
-    Power Points: 5
-  - Type: Flight
-    Rank: 5
-    Power Points: 5
 
 Movement:
   Land: 166.7 m/6s
   Water: 0.0 m/6s
   Air: 0.0 m/6s
 
-Total Power Points: 164.5
+Total Power Points: 149.5
 Power Level: 20
 Power Level Source(s): Fighting + Melee, Fighting + Toughness
-Cost: 57575.0 Credits
+Cost: 52325.0 Credits

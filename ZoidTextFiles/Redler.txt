@@ -27,22 +27,13 @@ Powers:
     Senses: Visual
     Rank: 5
     Power Points: 2.5
-  - Type: Speed
-    Rank: 5
-    Power Points: 5
-  - Type: Swimming
-    Rank: 5
-    Power Points: 5
-  - Type: Flight
-    Rank: 10
-    Power Points: 10
 
 Movement:
   Land: 0.0 m/6s
   Water: 0.0 m/6s
   Air: 1600.7 m/6s
 
-Total Power Points: 109.5
+Total Power Points: 99.5
 Power Level: 13
 Power Level Source(s): Fighting + Melee
-Cost: 38325.0 Credits
+Cost: 34825.0 Credits
