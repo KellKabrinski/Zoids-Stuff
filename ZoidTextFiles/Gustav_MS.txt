@@ -16,19 +16,29 @@ Powers:
   - Type: Melee
     Damage: 2
     Power Points: 0
-  - Type: Armor
-    Protection: 10
+  - Type: Protection
+    Rank: 10
     Power Points: 10
   - Type: Concealment
     Senses: Visual
     Rank: 2
     Power Points: 1.0
+  - Type: Speed
+    Rank: 5
+    Power Points: 5
+  - Type: Swimming
+    Rank: 5
+    Power Points: 5
+  - Type: Flight
+    Rank: 5
+    Power Points: 5
 
 Movement:
   Land: 225.0 m/6s
   Water: 0.0 m/6s
   Air: 0.0 m/6s
 
-Total Power Points: 51.0
+Total Power Points: 71.0
 Power Level: 14
 Power Level Source(s): Fighting + Toughness
+Cost: 24850.0 Credits

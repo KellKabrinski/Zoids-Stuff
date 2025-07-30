@@ -65,7 +65,8 @@
         "Power Level": 13,
         "Power Level Source": [
             "Dexterity + Ranged"
-        ]
+        ],
+        "Cost": 33250.0
     },
     {
         "Name": "Barigator",
@@ -135,7 +136,8 @@
             "Fighting + Melee",
             "Agility + Toughness",
             "Fighting + Toughness"
-        ]
+        ],
+        "Cost": 21700.0
     },
     {
         "Name": "Bearfighter",
@@ -203,7 +205,8 @@
         "Power Level": 13,
         "Power Level Source": [
             "Dexterity + Ranged"
-        ]
+        ],
+        "Cost": 34825.0
     },
     {
         "Name": "Berserk Fuhrer",
@@ -285,7 +288,8 @@
         "Power Level": 18,
         "Power Level Source": [
             "Dexterity + Ranged"
-        ]
+        ],
+        "Cost": 52500.0
     },
     {
         "Name": "Black Rhimos",
@@ -364,7 +368,8 @@
             "Dexterity + Ranged",
             "Agility + Toughness",
             "Fighting + Toughness"
-        ]
+        ],
+        "Cost": 37450.0
     },
     {
         "Name": "Blade Liger",
@@ -437,7 +442,8 @@
         "Power Level": 15,
         "Power Level Source": [
             "Dexterity + Ranged"
-        ]
+        ],
+        "Cost": 41300.0
     },
     {
         "Name": "Brachios",
@@ -516,7 +522,8 @@
             "Dexterity + Ranged",
             "Agility + Toughness",
             "Fighting + Toughness"
-        ]
+        ],
+        "Cost": 31675.0
     },
     {
         "Name": "Cannon Tortoise",
@@ -602,7 +609,8 @@
         "Power Level": 12,
         "Power Level Source": [
             "Agility + Toughness"
-        ]
+        ],
+        "Cost": 27300.0
     },
     {
         "Name": "Command Wolf",
@@ -670,7 +678,8 @@
         "Power Level": 13,
         "Power Level Source": [
             "Dexterity + Ranged"
-        ]
+        ],
+        "Cost": 37450.0
     },
     {
         "Name": "Command Wolf AC",
@@ -747,7 +756,8 @@
         "Power Level": 13,
         "Power Level Source": [
             "Dexterity + Ranged"
-        ]
+        ],
+        "Cost": 39900.0
     },
     {
         "Name": "Command Wolf IS",
@@ -824,7 +834,8 @@
         "Power Level": 13,
         "Power Level Source": [
             "Dexterity + Ranged"
-        ]
+        ],
+        "Cost": 39025.0
     },
     {
         "Name": "Dark Spiner",
@@ -901,7 +912,8 @@
         "Power Level Source": [
             "Fighting + Melee",
             "Dexterity + Ranged"
-        ]
+        ],
+        "Cost": 40775.0
     },
     {
         "Name": "Death Saurer",
@@ -981,7 +993,8 @@
             "Dexterity + Ranged",
             "Agility + Toughness",
             "Fighting + Toughness"
-        ]
+        ],
+        "Cost": 52675.0
     },
     {
         "Name": "Death Stinger",
@@ -1063,7 +1076,8 @@
         "Power Level": 21,
         "Power Level Source": [
             "Dexterity + Ranged"
-        ]
+        ],
+        "Cost": 61775.0
     },
     {
         "Name": "Demantis",
@@ -1132,7 +1146,8 @@
         "Power Level Source": [
             "Fighting + Melee",
             "Dexterity + Ranged"
-        ]
+        ],
+        "Cost": 26075.0
     },
     {
         "Name": "Dibison",
@@ -1210,7 +1225,8 @@
         "Power Level Source": [
             "Dexterity + Ranged",
             "Agility + Toughness"
-        ]
+        ],
+        "Cost": 45325.0
     },
     {
         "Name": "Diloforce",
@@ -1283,7 +1299,8 @@
         "Power Level": 11,
         "Power Level Source": [
             "Dexterity + Ranged"
-        ]
+        ],
+        "Cost": 30625.0
     },
     {
         "Name": "Dimetrodon",
@@ -1360,7 +1377,8 @@
         "Power Level Source": [
             "Agility + Toughness",
             "Fighting + Toughness"
-        ]
+        ],
+        "Cost": 32375.0
     },
     {
         "Name": "Double Sworder",
@@ -1428,7 +1446,8 @@
         "Power Level": 12,
         "Power Level Source": [
             "Dexterity + Ranged"
-        ]
+        ],
+        "Cost": 35000.0
     },
     {
         "Name": "Elephander",
@@ -1511,7 +1530,8 @@
         "Power Level Source": [
             "Agility + Toughness",
             "Fighting + Toughness"
-        ]
+        ],
+        "Cost": 45325.0
     },
     {
         "Name": "Energy Liger",
@@ -1588,7 +1608,8 @@
         "Power Level": 21,
         "Power Level Source": [
             "Dexterity + Ranged"
-        ]
+        ],
+        "Cost": 55650.0
     },
     {
         "Name": "Gairyuki",
@@ -1656,7 +1677,8 @@
         "Power Level": 20,
         "Power Level Source": [
             "Dexterity + Ranged"
-        ]
+        ],
+        "Cost": 45325.0
     },
     {
         "Name": "Gator",
@@ -1733,7 +1755,8 @@
         "Power Level Source": [
             "Agility + Toughness",
             "Fighting + Toughness"
-        ]
+        ],
+        "Cost": 24150.0
     },
     {
         "Name": "Geno Breaker",
@@ -1810,7 +1833,8 @@
         "Power Level": 20,
         "Power Level Source": [
             "Dexterity + Ranged"
-        ]
+        ],
+        "Cost": 52325.0
     },
     {
         "Name": "Geno Saurer",
@@ -1887,7 +1911,8 @@
         "Power Level": 18,
         "Power Level Source": [
             "Dexterity + Ranged"
-        ]
+        ],
+        "Cost": 48125.0
     },
     {
         "Name": "Glaive Quama",
@@ -1955,7 +1980,8 @@
         "Power Level": 13,
         "Power Level Source": [
             "Dexterity + Ranged"
-        ]
+        ],
+        "Cost": 36925.0
     },
     {
         "Name": "Godos",
@@ -2023,7 +2049,8 @@
         "Power Level": 10,
         "Power Level Source": [
             "Dexterity + Ranged"
-        ]
+        ],
+        "Cost": 26600.0
     },
     {
         "Name": "Gojulas",
@@ -2091,7 +2118,8 @@
         "Power Level": 14,
         "Power Level Source": [
             "Fighting + Melee"
-        ]
+        ],
+        "Cost": 36400.0
     },
     {
         "Name": "Gojulas The Ogre",
@@ -2177,7 +2205,8 @@
         "Power Level": 21,
         "Power Level Source": [
             "Dexterity + Ranged"
-        ]
+        ],
+        "Cost": 55825.0
     },
     {
         "Name": "Gojulasgiga",
@@ -2250,7 +2279,8 @@
         "Power Level": 21,
         "Power Level Source": [
             "Dexterity + Ranged"
-        ]
+        ],
+        "Cost": 52150.0
     },
     {
         "Name": "Gordos",
@@ -2335,7 +2365,8 @@
         "Power Level": 10,
         "Power Level Source": [
             "Agility + Toughness"
-        ]
+        ],
+        "Cost": 34825.0
     },
     {
         "Name": "Gorhecks",
@@ -2420,7 +2451,8 @@
         "Power Level": 8,
         "Power Level Source": [
             "Agility + Toughness"
-        ]
+        ],
+        "Cost": 32025.0
     },
     {
         "Name": "Grounchar",
@@ -2496,7 +2528,8 @@
         "Power Level": 7,
         "Power Level Source": [
             "Fighting + Melee"
-        ]
+        ],
+        "Cost": 28000.0
     },
     {
         "Name": "Gun Sniper",
@@ -2573,7 +2606,8 @@
         "Power Level": 13,
         "Power Level Source": [
             "Dexterity + Ranged"
-        ]
+        ],
+        "Cost": 35700.0
     },
     {
         "Name": "Gunbluster",
@@ -2664,7 +2698,8 @@
         "Power Level": 14,
         "Power Level Source": [
             "Agility + Toughness"
-        ]
+        ],
+        "Cost": 52500.0
     },
     {
         "Name": "Guntiger",
@@ -2732,7 +2767,8 @@
         "Power Level": 14,
         "Power Level Source": [
             "Dexterity + Ranged"
-        ]
+        ],
+        "Cost": 34125.0
     },
     {
         "Name": "Gustav MS",
@@ -2792,7 +2828,8 @@
         "Power Level": 14,
         "Power Level Source": [
             "Fighting + Toughness"
-        ]
+        ],
+        "Cost": 24850.0
     },
     {
         "Name": "Guysack",
@@ -2860,7 +2897,8 @@
         "Power Level": 9,
         "Power Level Source": [
             "Dexterity + Ranged"
-        ]
+        ],
+        "Cost": 25900.0
     },
     {
         "Name": "Hammer Head",
@@ -2937,7 +2975,8 @@
         "Power Level": 12,
         "Power Level Source": [
             "Agility + Toughness"
-        ]
+        ],
+        "Cost": 35175.0
     },
     {
         "Name": "Hammer Rock",
@@ -3005,7 +3044,8 @@
         "Power Level": 12,
         "Power Level Source": [
             "Dexterity + Ranged"
-        ]
+        ],
+        "Cost": 32200.0
     },
     {
         "Name": "Hel Digunner",
@@ -3082,7 +3122,8 @@
         "Power Level": 8,
         "Power Level Source": [
             "Dexterity + Ranged"
-        ]
+        ],
+        "Cost": 29050.0
     },
     {
         "Name": "Helcat",
@@ -3150,7 +3191,8 @@
         "Power Level": 12,
         "Power Level Source": [
             "Dexterity + Ranged"
-        ]
+        ],
+        "Cost": 33250.0
     },
     {
         "Name": "Iguan",
@@ -3218,7 +3260,8 @@
         "Power Level": 11,
         "Power Level Source": [
             "Dexterity + Ranged"
-        ]
+        ],
+        "Cost": 27650.0
     },
     {
         "Name": "Iron Kong",
@@ -3307,7 +3350,8 @@
             "Dexterity + Ranged",
             "Agility + Toughness",
             "Fighting + Toughness"
-        ]
+        ],
+        "Cost": 56175.0
     },
     {
         "Name": "Iron Kong PK",
@@ -3393,7 +3437,8 @@
         "Power Level": 18,
         "Power Level Source": [
             "Dexterity + Ranged"
-        ]
+        ],
+        "Cost": 59500.0
     },
     {
         "Name": "Killer Dome",
@@ -3469,7 +3514,8 @@
         "Power Level": 12,
         "Power Level Source": [
             "Agility + Toughness"
-        ]
+        ],
+        "Cost": 33250.0
     },
     {
         "Name": "Konig Wolf",
@@ -3546,7 +3592,8 @@
         "Power Level": 19,
         "Power Level Source": [
             "Dexterity + Ranged"
-        ]
+        ],
+        "Cost": 53900.0
     },
     {
         "Name": "Liger Zero",
@@ -3615,7 +3662,8 @@
         "Power Level Source": [
             "Fighting + Melee",
             "Dexterity + Ranged"
-        ]
+        ],
+        "Cost": 40950.0
     },
     {
         "Name": "Liger Zero Jager",
@@ -3683,7 +3731,8 @@
         "Power Level": 16,
         "Power Level Source": [
             "Dexterity + Ranged"
-        ]
+        ],
+        "Cost": 41300.0
     },
     {
         "Name": "Liger Zero Panzer",
@@ -3770,7 +3819,8 @@
         "Power Level Source": [
             "Dexterity + Ranged",
             "Agility + Toughness"
-        ]
+        ],
+        "Cost": 48825.0
     },
     {
         "Name": "Liger Zero Phoenix",
@@ -3847,7 +3897,8 @@
         "Power Level": 17,
         "Power Level Source": [
             "Dexterity + Ranged"
-        ]
+        ],
+        "Cost": 49350.0
     },
     {
         "Name": "Liger Zero Schneider",
@@ -3920,7 +3971,8 @@
         "Power Level": 18,
         "Power Level Source": [
             "Fighting + Melee"
-        ]
+        ],
+        "Cost": 45150.0
     },
     {
         "Name": "Liger Zero X",
@@ -3997,7 +4049,8 @@
         "Power Level": 19,
         "Power Level Source": [
             "Dexterity + Ranged"
-        ]
+        ],
+        "Cost": 52150.0
     },
     {
         "Name": "Lightning Saix",
@@ -4074,7 +4127,8 @@
         "Power Level": 17,
         "Power Level Source": [
             "Dexterity + Ranged"
-        ]
+        ],
+        "Cost": 46375.0
     },
     {
         "Name": "Maccurtis",
@@ -4143,7 +4197,8 @@
         "Power Level Source": [
             "Agility + Toughness",
             "Fighting + Toughness"
-        ]
+        ],
+        "Cost": 29050.0
     },
     {
         "Name": "Madthunder",
@@ -4226,7 +4281,8 @@
         "Power Level Source": [
             "Fighting + Melee",
             "Fighting + Toughness"
-        ]
+        ],
+        "Cost": 57575.0
     },
     {
         "Name": "Megaleon",
@@ -4303,7 +4359,8 @@
         "Power Level": 7,
         "Power Level Source": [
             "Agility + Toughness"
-        ]
+        ],
+        "Cost": 26425.0
     },
     {
         "Name": "Molga",
@@ -4380,7 +4437,8 @@
         "Power Level": 9,
         "Power Level Source": [
             "Agility + Toughness"
-        ]
+        ],
+        "Cost": 25900.0
     },
     {
         "Name": "Pteras",
@@ -4448,7 +4506,8 @@
         "Power Level": 11,
         "Power Level Source": [
             "Dexterity + Ranged"
-        ]
+        ],
+        "Cost": 33075.0
     },
     {
         "Name": "Raynos",
@@ -4516,7 +4575,8 @@
         "Power Level": 15,
         "Power Level Source": [
             "Dexterity + Ranged"
-        ]
+        ],
+        "Cost": 42525.0
     },
     {
         "Name": "Red Horn",
@@ -4602,7 +4662,8 @@
         "Power Level": 15,
         "Power Level Source": [
             "Agility + Toughness"
-        ]
+        ],
+        "Cost": 49525.0
     },
     {
         "Name": "Redler",
@@ -4670,7 +4731,8 @@
         "Power Level": 13,
         "Power Level Source": [
             "Fighting + Melee"
-        ]
+        ],
+        "Cost": 38325.0
     },
     {
         "Name": "Rev Rapter",
@@ -4730,7 +4792,8 @@
         "Power Level": 11,
         "Power Level Source": [
             "Fighting + Melee"
-        ]
+        ],
+        "Cost": 29400.0
     },
     {
         "Name": "Saber Tiger",
@@ -4798,7 +4861,8 @@
         "Power Level": 14,
         "Power Level Source": [
             "Dexterity + Ranged"
-        ]
+        ],
+        "Cost": 37625.0
     },
     {
         "Name": "Saberlion",
@@ -4858,7 +4922,8 @@
         "Power Level": 12,
         "Power Level Source": [
             "Fighting + Melee"
-        ]
+        ],
+        "Cost": 32725.0
     },
     {
         "Name": "Saicurtis",
@@ -4926,7 +4991,8 @@
         "Power Level": 12,
         "Power Level Source": [
             "Dexterity + Ranged"
-        ]
+        ],
+        "Cost": 31500.0
     },
     {
         "Name": "Salamander",
@@ -5003,7 +5069,8 @@
         "Power Level": 13,
         "Power Level Source": [
             "Dexterity + Ranged"
-        ]
+        ],
+        "Cost": 43225.0
     },
     {
         "Name": "Seismosaurus",
@@ -5089,7 +5156,8 @@
         "Power Level": 17,
         "Power Level Source": [
             "Agility + Toughness"
-        ]
+        ],
+        "Cost": 57400.0
     },
     {
         "Name": "Shadow Fox",
@@ -5157,7 +5225,8 @@
         "Power Level": 15,
         "Power Level Source": [
             "Dexterity + Ranged"
-        ]
+        ],
+        "Cost": 42875.0
     },
     {
         "Name": "Shield Liger",
@@ -5230,7 +5299,8 @@
         "Power Level": 14,
         "Power Level Source": [
             "Dexterity + Ranged"
-        ]
+        ],
+        "Cost": 40250.0
     },
     {
         "Name": "Shield Liger DCS-J",
@@ -5312,7 +5382,8 @@
         "Power Level": 17,
         "Power Level Source": [
             "Dexterity + Ranged"
-        ]
+        ],
+        "Cost": 45850.0
     },
     {
         "Name": "Sinker",
@@ -5389,7 +5460,8 @@
         "Power Level": 10,
         "Power Level Source": [
             "Dexterity + Ranged"
-        ]
+        ],
+        "Cost": 30625.0
     },
     {
         "Name": "Snipe Master",
@@ -5466,7 +5538,8 @@
         "Power Level": 14,
         "Power Level Source": [
             "Dexterity + Ranged"
-        ]
+        ],
+        "Cost": 35000.0
     },
     {
         "Name": "Spinosapper",
@@ -5535,7 +5608,8 @@
         "Power Level Source": [
             "Agility + Toughness",
             "Fighting + Toughness"
-        ]
+        ],
+        "Cost": 23450.0
     },
     {
         "Name": "Stealth Viper",
@@ -5612,7 +5686,8 @@
         "Power Level": 11,
         "Power Level Source": [
             "Dexterity + Ranged"
-        ]
+        ],
+        "Cost": 31500.0
     },
     {
         "Name": "Storch",
@@ -5689,7 +5764,8 @@
         "Power Level": 15,
         "Power Level Source": [
             "Dexterity + Ranged"
-        ]
+        ],
+        "Cost": 38325.0
     },
     {
         "Name": "Storm Sworder",
@@ -5758,7 +5834,8 @@
         "Power Level Source": [
             "Fighting + Melee",
             "Dexterity + Ranged"
-        ]
+        ],
+        "Cost": 39725.0
     },
     {
         "Name": "Ultra Saurus",
@@ -5844,7 +5921,8 @@
         "Power Level": 14,
         "Power Level Source": [
             "Agility + Toughness"
-        ]
+        ],
+        "Cost": 51275.0
     },
     {
         "Name": "Wardick",
@@ -5922,7 +6000,8 @@
         "Power Level Source": [
             "Dexterity + Ranged",
             "Agility + Toughness"
-        ]
+        ],
+        "Cost": 34825.0
     },
     {
         "Name": "Zabat",
@@ -5990,7 +6069,8 @@
         "Power Level": 11,
         "Power Level Source": [
             "Dexterity + Ranged"
-        ]
+        ],
+        "Cost": 36750.0
     },
     {
         "Name": "Zoids Mammoth",
@@ -6059,6 +6139,7 @@
         "Power Level Source": [
             "Agility + Toughness",
             "Fighting + Toughness"
-        ]
+        ],
+        "Cost": 29750.0
     }
 ]

@@ -30,6 +30,7 @@ def format_zoid(zoid):
     lines.append(f"\nTotal Power Points: {zoid['Total Power Points']}")
     lines.append(f"Power Level: {zoid['Power Level']}")
     lines.append(f"Power Level Source(s): {', '.join(zoid['Power Level Source'])}")
+    lines.append(f"Cost: {zoid['Cost']} Credits")
 
     return "\n".join(lines)
 

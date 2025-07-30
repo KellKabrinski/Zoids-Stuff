@@ -238,7 +238,8 @@ def convert_zoid_stats(input_file, output_file):
             },
             "Total Power Points": total_power_points,
             "Power Level": power_level,
-            "Power Level Source": power_level_sources
+            "Power Level Source": power_level_sources,
+            "Cost": total_power_points*350
         })
 
     with open(output_file, 'w', encoding='utf-8') as outfile:

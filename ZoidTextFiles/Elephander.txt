@@ -24,23 +24,32 @@ Powers:
     Damage: 6
     Extras: Increased Range, Extended Range 1
     Power Points: 13
-  - Type: Armor
-    Protection: 9
+  - Type: Protection
+    Rank: 9
     Power Points: 9
-  - Type: Create (E-Shield)
+  - Type: E-Shield
     Rank: 8
-    Extras: Tethered, Limited to hemisphere in front of Zoid, Limited (Damage remains after dismissing)
     Power Points: 8
   - Type: Concealment
     Senses: Visual
     Rank: 3
     Power Points: 1.5
+  - Type: Speed
+    Rank: 5
+    Power Points: 5
+  - Type: Swimming
+    Rank: 5
+    Power Points: 5
+  - Type: Flight
+    Rank: 5
+    Power Points: 5
 
 Movement:
   Land: 216.7 m/6s
   Water: 0.0 m/6s
   Air: 0.0 m/6s
 
-Total Power Points: 109.5
+Total Power Points: 129.5
 Power Level: 15
 Power Level Source(s): Agility + Toughness, Fighting + Toughness
+Cost: 45325.0 Credits

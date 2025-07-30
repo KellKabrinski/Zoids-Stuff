@@ -20,8 +20,8 @@ Powers:
     Damage: 6
     Extras: Increased Range
     Power Points: 12
-  - Type: Armor
-    Protection: 7
+  - Type: Protection
+    Rank: 7
     Power Points: 7
   - Type: Concealment
     Senses: Visual
@@ -31,12 +31,22 @@ Powers:
     Senses: Sensor
     Rank: 7
     Power Points: 3.5
+  - Type: Speed
+    Rank: 5
+    Power Points: 5
+  - Type: Swimming
+    Rank: 5
+    Power Points: 5
+  - Type: Flight
+    Rank: 5
+    Power Points: 5
 
 Movement:
   Land: 250.0 m/6s
   Water: 117.3 m/6s
   Air: 0.0 m/6s
 
-Total Power Points: 75.0
+Total Power Points: 95.0
 Power Level: 12
 Power Level Source(s): Agility + Toughness
+Cost: 33250.0 Credits

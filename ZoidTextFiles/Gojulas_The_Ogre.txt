@@ -28,19 +28,29 @@ Powers:
     Damage: 10
     Extras: Increased Range, Extended Range 2
     Power Points: 18
-  - Type: Armor
-    Protection: 8
+  - Type: Protection
+    Rank: 8
     Power Points: 8
   - Type: Concealment
     Senses: Visual
     Rank: 1
     Power Points: 0.5
+  - Type: Speed
+    Rank: 5
+    Power Points: 5
+  - Type: Swimming
+    Rank: 5
+    Power Points: 5
+  - Type: Flight
+    Rank: 5
+    Power Points: 5
 
 Movement:
   Land: 208.3 m/6s
   Water: 0.0 m/6s
   Air: 0.0 m/6s
 
-Total Power Points: 139.5
+Total Power Points: 159.5
 Power Level: 21
 Power Level Source(s): Dexterity + Ranged
+Cost: 55825.0 Credits
