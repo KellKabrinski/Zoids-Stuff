@@ -30,6 +30,8 @@ class Zoid:
         self.shieldDisabled=False
         self.stealth = next((p.get('Rank') for p in self.powers if p['Type'] == 'Concealment' and 'Visual' in p.get('Senses', [])), None)
         self.armor = next((p.get('Rank') for p in self.powers if p['Type'] == 'Armor'), None)
+        self.close_combat = next((p.get('Rank') for p in self.powers if p['Type'] == 'Close Combat'), None)
+        self.ranged_combat = next((p.get('Rank') for p in self.powers if p['Type'] == 'Ranged Combat'), None)
 
         # Battle state
         self.position = "neutral"
@@ -272,19 +274,19 @@ def game_loop(z1, z2, battle_type):
                         damage = 0
                         if range == "melee":
                             damage = zoid.melee
-                            attack_roll = random.randint(1, 20) + zoid.fighting
+                            attack_roll = random.randint(1, 20) + zoid.fighting + zoid.close_combat
                             defense_roll = 10 + enemy.parry
                         elif range == "close":
                             damage = zoid.close_range
-                            attack_roll = random.randint(1, 20) + zoid.dexterity
+                            attack_roll = random.randint(1, 20) + zoid.dexterity + zoid.ranged_combat
                             defense_roll = 10 + enemy.dodge
                         elif range == "mid":
                             damage = zoid.mid_range
-                            attack_roll = random.randint(1, 20) + zoid.dexterity
+                            attack_roll = random.randint(1, 20) + zoid.dexterity + zoid.ranged_combat
                             defense_roll = 10 + enemy.dodge
                         elif range == "long":
                             damage = zoid.long_range
-                            attack_roll = random.randint(1, 20) + zoid.dexterity
+                            attack_roll = random.randint(1, 20) + zoid.dexterity + zoid.ranged_combat
                             defense_roll = 10 + enemy.dodge
                         did_hit = attack_roll >= defense_roll
                         if did_hit:

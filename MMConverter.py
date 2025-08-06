@@ -1,10 +1,29 @@
 import json
+import random
 
+def calculateSpeedRank(speedMPH):
+    if speedMPH == 0:
+        return 0
+    elif speedMPH < 120:
+        return 5
+    elif speedMPH < 250:
+        return 6
+    elif speedMPH < 500:
+        return 7
+    elif speedMPH < 1000:
+        return 8
+    elif speedMPH < 2000:
+        return 9
+    elif speedMPH < 4000:
+        return 10
+    print (f"Warning: Speed {speedMPH} is not in the expected range, defaulting to 0.")
+    return 0
 def convert_zoid_stats(input_file, output_file):
     with open(input_file, 'r', encoding='utf-8') as infile:
         zoids = json.load(infile)
 
     converted = []
+    log=dict()
 
     for zoid in zoids:
         land_speed_rank=0
@@ -31,16 +50,7 @@ def convert_zoid_stats(input_file, output_file):
             land_speed_kph = float(zoid.get("Ground Speed", 0))
             land_speed_m6s = round((land_speed_kph * 1000) / 600, 1)
             land_speed_mph = land_speed_kph * 0.621371
-            if land_speed_mph < 120:
-                land_speed_rank=5
-            elif land_speed_mph < 250:
-                land_speed_rank=6
-            elif land_speed_mph < 500:
-                land_speed_rank=7
-            elif land_speed_mph < 1000:
-                land_speed_rank=8
-            elif land_speed_mph < 2000:
-                land_speed_rank=9
+            land_speed_rank = calculateSpeedRank(land_speed_mph)
 
         except ValueError:
             land_speed_m6s = 0
@@ -49,16 +59,7 @@ def convert_zoid_stats(input_file, output_file):
             water_speed_knots = float(zoid.get("Water Speed", 0))
             water_speed_m6s = round((water_speed_knots * 1852) / 600, 1)
             water_speed_mph = water_speed_knots * 1.15078
-            if water_speed_mph < 120:
-                water_speed_rank = 5
-            elif water_speed_mph < 250:
-                water_speed_rank=6
-            elif water_speed_mph < 500:
-                water_speed_rank=7
-            elif water_speed_mph < 1000:
-                water_speed_rank=8
-            elif water_speed_mph < 2000:
-                water_speed_rank=9
+            water_speed_rank = calculateSpeedRank(water_speed_mph)
         except ValueError:
             water_speed_m6s = 0
 
@@ -66,21 +67,11 @@ def convert_zoid_stats(input_file, output_file):
             air_speed_mach = float(zoid.get("Air Speed", 0))
             air_speed_m6s = round((air_speed_mach * 343000) / 600, 1)
             air_speed_mph = air_speed_mach * 761.207
-            
-            if air_speed_mph < 120:
-                air_speed_rank = 5
-            elif air_speed_mph < 250:
-                air_speed_rank=6
-            elif air_speed_mph < 500:
-                air_speed_rank=7
-            elif air_speed_mph < 1000:
-                air_speed_rank=8
-            elif air_speed_mph < 2000:
-                air_speed_rank=9
-            elif air_speed_mph < 4000:
-                air_speed_rank=10
+            air_speed_rank = calculateSpeedRank(air_speed_mph)
         except ValueError:
             air_speed_m6s = 0
+            air_speed_rank = 0
+            print(f"Warning: Air Speed for {name} is not a valid number, defaulting to 0.")
 
         highest_ranged = max(close, mid, long)
 
@@ -103,11 +94,12 @@ def convert_zoid_stats(input_file, output_file):
 
         powers = []
         max_ranged = 0
+        
 
         if melee > 0:
             powers.append({
                 "Type": "Melee",
-                "Damage": melee,
+                "Rank": melee,
                 "Power Points": 0
             })
 
@@ -115,7 +107,7 @@ def convert_zoid_stats(input_file, output_file):
             pp = close * 2
             powers.append({
                 "Type": "Close-Range",
-                "Damage": close,
+                "Rank": close,
                 "Extras": ["Increased Range"],
                 "Power Points": pp
             })
@@ -126,7 +118,7 @@ def convert_zoid_stats(input_file, output_file):
             pp = close * 2 + 1
             powers.append({
                 "Type": "Mid-Range",
-                "Damage": mid,
+                "Rank": mid,
                 "Extras": ["Increased Range", "Extended Range 1"],
                 "Power Points": pp
             })
@@ -137,12 +129,29 @@ def convert_zoid_stats(input_file, output_file):
             pp = close * 2 + 2
             powers.append({
                 "Type": "Long-Range",
-                "Damage": long,
+                "Rank": long,
                 "Extras": ["Increased Range", "Extended Range 2"],
                 "Power Points": pp
             })
             total_power_points += pp
             max_ranged = max(max_ranged, long)
+
+        if max_ranged < melee:
+            powers.append({
+                "Type": "Close Combat",
+                "Rank": 3,
+                "Power Points": 3
+                })
+            total_power_points += 3
+        else:
+            powers.append({
+                "Type": "Ranged Combat",
+                "Rank": 2,
+                "Power Points": 2
+            })
+            total_power_points += 2
+        
+            
 
         if armour > 0:
             powers.append({
@@ -163,7 +172,6 @@ def convert_zoid_stats(input_file, output_file):
         if stealth > 0:
             visual_conceal = {
                 "Type": "Concealment",
-                "Senses": ["Visual"],
                 "Rank": stealth,
                 "Power Points": stealth * 0.5
             }
@@ -172,8 +180,7 @@ def convert_zoid_stats(input_file, output_file):
 
         if ecm > 0:
             sensor_conceal = {
-                "Type": "Concealment",
-                "Senses": ["Sensor"],
+                "Type": "Jamming",
                 "Rank": ecm,
                 "Power Points": ecm * 0.5
             }
@@ -199,10 +206,10 @@ def convert_zoid_stats(input_file, output_file):
                 })
 
         # Power Level calculation with tie tracking
-        option_1 = fighting + melee
-        option_2 = dexterity + max_ranged
-        option_3 = agility + armour
-        option_4 = fighting + armour
+        option_1 = (fighting + melee + 3)
+        option_2 = (dexterity + max_ranged + 2)
+        option_3 = (agility + armour)
+        option_4 = (fighting + armour)
 
         power_level = max(option_1, option_2, option_3, option_4)
 
@@ -241,11 +248,36 @@ def convert_zoid_stats(input_file, output_file):
             "Power Level Source": power_level_sources,
             "Cost": total_power_points*350
         })
+        # Logging for averages by power level
+        pl_key = power_level
+        if pl_key not in log:
+            log[pl_key] = {
+                "count": 0,
+                "melee": 0,
+                "best ranged": 0,
+                "toughness": 0
+            }
+        log[pl_key]["count"] += 1
+        log[pl_key]["melee"] += melee
+        log[pl_key]["best ranged"] += max_ranged
+        log[pl_key]["toughness"] += armour
+            
 
     with open(output_file, 'w', encoding='utf-8') as outfile:
         json.dump(converted, outfile, indent=4)
+    return log
+    
 
 # Example usage
 input_path = 'ZoidStats.json'
 output_path = 'ConvertedZoidStats.json'
-convert_zoid_stats(input_path, output_path)
+log = convert_zoid_stats(input_path, output_path)
+for power_level in sorted(list(log)):
+    data= log[power_level]
+    if data['count'] == 0:
+        continue
+    print(f"Power Level {power_level}")
+    print(f"  Average Melee: {data['melee'] / data['count'] if data['count'] > 0 else 0}")
+    print(f"  Average Best Ranged: {data['best ranged'] / data['count'] if data['count'] > 0 else 0}")
+    print(f"  Average Toughness: {data['toughness'] / data['count'] if data['count'] > 0 else 0}")
+    print()
