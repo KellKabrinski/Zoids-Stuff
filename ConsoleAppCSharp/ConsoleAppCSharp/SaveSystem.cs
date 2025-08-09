@@ -21,7 +21,7 @@ namespace ZoidsBattle
         public CharacterData(CharacterData save)
         {
             Name = save.Name;
-            Zoids = new List<Zoid>(save.Zoids);
+            Zoids = save.Zoids;
             credits = save.credits;
         }
 

@@ -3,7 +3,7 @@ namespace ZoidsBattle
      public class Zoid
     {
         // Basic Info
-        public string Name { get; private set; }
+        public string ZoidName { get; private set; }
 
         // Stats
         public int Fighting { get; private set; }
@@ -47,10 +47,11 @@ namespace ZoidsBattle
         public Ranges BestRange { get; set; }
         public Ranges WorstRange { get; set; }
         public int PowerLevel { get; set; }
+        public int Cost { get; set; }
 
         public Zoid(ZoidData data)
         {
-            Name = data.Name;
+            ZoidName = data.Name;
             Fighting = data.Stats.Fighting;
             Strength = data.Stats.Strength;
             Dexterity = data.Stats.Dexterity;
@@ -117,11 +118,12 @@ namespace ZoidsBattle
                     RangedCombat = power.Rank.Value;
                 }
             }
+            Cost = (int)data.Cost;
         }
 
         public Zoid()
         {
-            Name = "Default Zoid";
+            ZoidName = "Default Zoid";
             Powers = new List<Power>();
         }
 
@@ -146,7 +148,7 @@ namespace ZoidsBattle
 
         public void PrintStatus(double distance)
         {
-            Console.WriteLine($"\n{Name}'s status: Distance={distance}, Shield={(ShieldOn ? "ON" : "OFF")} (Rank={ShieldRank}), Stealth={(StealthOn ? "ON" : "OFF")} (Rank={StealthRank}), Dents={Dents}, Status={Status}");
+            Console.WriteLine($"\n{ZoidName}'s status: Distance={distance}, Shield={(ShieldOn ? "ON" : "OFF")} (Rank={ShieldRank}), Stealth={(StealthOn ? "ON" : "OFF")} (Rank={StealthRank}), Dents={Dents}, Status={Status}");
             Console.WriteLine($"Accuracy: Melee={Fighting  + CloseCombat}, Ranged={Dexterity+ RangedCombat}");
             Console.WriteLine($"Attacks: Melee={Melee}, Close={CloseRange}, Mid={MidRange}, Long={LongRange}");
             Console.WriteLine($"Angle: {Angle}° (0° is facing enemy)");

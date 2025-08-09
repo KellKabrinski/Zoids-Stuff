@@ -1,0 +1,67 @@
+{
+  "Name": "Default Character",
+  "Zoids": [
+    {
+      "Name": "Arosaurer",
+      "Fighting": 6,
+      "Strength": 5,
+      "Dexterity": 9,
+      "Agility": 6,
+      "Awareness": 5,
+      "Toughness": 4,
+      "Parry": 6,
+      "Dodge": 6,
+      "Land": 283,
+      "Water": 0,
+      "Air": 0,
+      "Powers": [
+        {
+          "Type": "Melee",
+          "Rank": 5,
+          "Senses": []
+        },
+        {
+          "Type": "Close-Range",
+          "Rank": 4,
+          "Senses": []
+        },
+        {
+          "Type": "Protection",
+          "Rank": 4,
+          "Senses": []
+        },
+        {
+          "Type": "Concealment",
+          "Rank": 2,
+          "Senses": []
+        },
+        {
+          "Type": "Speed",
+          "Rank": 5,
+          "Senses": []
+        }
+      ],
+      "Melee": 5,
+      "CloseRange": 4,
+      "MidRange": 0,
+      "LongRange": 0,
+      "ShieldRank": 0,
+      "ShieldDisabled": false,
+      "StealthRank": 2,
+      "CloseCombat": 0,
+      "RangedCombat": 0,
+      "Armor": 0,
+      "Position": "retreat",
+      "ShieldOn": false,
+      "StealthOn": true,
+      "Dents": 1,
+      "Angle": 0,
+      "Status": "defeated",
+      "BestRange": 0,
+      "WorstRange": 2,
+      "PowerLevel": 13,
+      "Cost": 28000
+    }
+  ],
+  "credits": 12000
+}
