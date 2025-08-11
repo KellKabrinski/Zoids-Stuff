@@ -1,17 +1,17 @@
 {
-  "Name": "Default Character",
+  "Name": "Kell",
   "Zoids": [
     {
-      "Name": "Arosaurer",
-      "Fighting": 6,
+      "ZoidName": "Shadow Fox",
+      "Fighting": 8,
       "Strength": 5,
-      "Dexterity": 9,
-      "Agility": 6,
-      "Awareness": 5,
-      "Toughness": 4,
-      "Parry": 6,
-      "Dodge": 6,
-      "Land": 283,
+      "Dexterity": 10,
+      "Agility": 8,
+      "Awareness": 10,
+      "Toughness": 5,
+      "Parry": 8,
+      "Dodge": 8,
+      "Land": 483,
       "Water": 0,
       "Air": 0,
       "Powers": [
@@ -22,46 +22,46 @@
         },
         {
           "Type": "Close-Range",
-          "Rank": 4,
+          "Rank": 5,
           "Senses": []
         },
         {
           "Type": "Protection",
-          "Rank": 4,
+          "Rank": 5,
           "Senses": []
         },
         {
           "Type": "Concealment",
-          "Rank": 2,
+          "Rank": 9,
           "Senses": []
         },
         {
           "Type": "Speed",
-          "Rank": 5,
+          "Rank": 6,
           "Senses": []
         }
       ],
       "Melee": 5,
-      "CloseRange": 4,
+      "CloseRange": 5,
       "MidRange": 0,
       "LongRange": 0,
       "ShieldRank": 0,
       "ShieldDisabled": false,
-      "StealthRank": 2,
+      "StealthRank": 9,
       "CloseCombat": 0,
       "RangedCombat": 0,
       "Armor": 0,
-      "Position": "retreat",
+      "Position": "stand still",
       "ShieldOn": false,
       "StealthOn": true,
-      "Dents": 1,
-      "Angle": 0,
-      "Status": "defeated",
+      "Dents": 5,
+      "Angle": 150,
+      "Status": "intact",
       "BestRange": 0,
       "WorstRange": 2,
-      "PowerLevel": 13,
-      "Cost": 28000
+      "PowerLevel": 15,
+      "Cost": 37625
     }
   ],
-  "credits": 12000
+  "credits": 12375
 }

@@ -1,40 +1,43 @@
+using System.Text.Json.Serialization;
+
 namespace ZoidsBattle
 {
      public class Zoid
     {
         // Basic Info
-        public string ZoidName { get; private set; }
+        public string ZoidName { get; set; }
 
         // Stats
-        public int Fighting { get; private set; }
-        public int Strength { get; private set; }
-        public int Dexterity { get; private set; }
-        public int Agility { get; private set; }
-        public int Awareness { get; private set; }
+        public int Fighting { get; set; }
+        public int Strength { get; set; }
+        public int Dexterity { get; set; }
+        public int Agility { get; set; }
+        public int Awareness { get; set; }
 
         // Defenses
-        public int Toughness { get; private set; }
-        public int Parry { get; private set; }
-        public int Dodge { get; private set; }
+        public int Toughness { get; set; }
+        public int Parry { get; set; }
+        public int Dodge { get; set; }
 
         // Movement
-        public int Land { get; private set; }
-        public int Water { get; private set; }
-        public int Air { get; private set; }
+        public int Land { get; set; }
+        public int Water { get; set; }
+        public int Air { get; set; }
 
         // Powers
-        public List<Power> Powers { get; private set; }
-        public int Melee { get; private set; }
-        public int CloseRange { get; private set; }
-        public int MidRange { get; private set; }
-        public int LongRange { get; private set; }
-        public int ShieldRank { get; private set; }
+        [JsonPropertyName("Powers")]
+        public List<Power> Powers { get; set; }
+        public int Melee { get; set; }
+        public int CloseRange { get; set; }
+        public int MidRange { get; set; }
+        public int LongRange { get; set; }
+        public int ShieldRank { get; set; }
         public bool ShieldDisabled { get; set; } = false;
-        public int StealthRank { get; private set; }
+        public int StealthRank { get; set; }
 
-        public int CloseCombat { get; private set; }
-        public int RangedCombat { get; private set; }
-        public int Armor { get; private set; }
+        public int CloseCombat { get; set; }
+        public int RangedCombat { get; set; }
+        public int Armor { get; set; }
 
         // Battle state
         public string Position { get; set; } = "neutral";
@@ -99,15 +102,8 @@ namespace ZoidsBattle
                     LongRange = power.Rank.Value;
                 }
 
-                var rangeDamages = new Dictionary<Ranges, int>
-                {
-                    { Ranges.Melee, Melee },
-                    { Ranges.Close, CloseRange },
-                    { Ranges.Mid, MidRange },
-                    { Ranges.Long, LongRange }
-                };
-                BestRange = rangeDamages.OrderByDescending(kv => kv.Value).First().Key;
-                WorstRange = rangeDamages.OrderBy(kv => kv.Value).First().Key;
+               
+                CalculateBestAndWorstRange();
 
                 if (power.Type == "Close Combat" && power.Rank.HasValue)
                 {
@@ -121,13 +117,38 @@ namespace ZoidsBattle
             Cost = (int)data.Cost;
         }
 
+        public void CalculateBestAndWorstRange()
+        {
+ var rangeDamages = new Dictionary<Ranges, int>
+                {
+                    { Ranges.Melee, Melee },
+                    { Ranges.Close, CloseRange },
+                    { Ranges.Mid, MidRange },
+                    { Ranges.Long, LongRange }
+                };
+
+            BestRange = rangeDamages.OrderByDescending(kv => kv.Value).First().Key;
+            WorstRange = rangeDamages.OrderBy(kv => kv.Value).First().Key;
+        }
+
         public Zoid()
         {
             ZoidName = "Default Zoid";
             Powers = new List<Power>();
         }
 
-        public bool HasShield() => ShieldRank>0 && !ShieldDisabled;
+        public void ReturnToBaseState()
+        {
+            Status = "intact";
+            Dents = 0;
+            Position = "";
+            ShieldOn = false;
+            ShieldDisabled = false;
+            StealthOn = false;
+            Angle = 0;
+        }
+
+        public bool HasShield() => ShieldRank > 0 && !ShieldDisabled;
         public bool HasStealth() => StealthRank > 0;
         public int GetSpeed(string battleType) => battleType.ToLower() switch
         {

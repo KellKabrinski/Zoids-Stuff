@@ -9,6 +9,7 @@ namespace ZoidsBattle
     public class CharacterData
     {
         public string Name { get; set; }
+        [JsonPropertyName("Zoids")]
         public List<Zoid> Zoids { get; set; }
         public int credits { get; set; }
 
@@ -32,6 +33,12 @@ namespace ZoidsBattle
                 WriteIndented = true,
                 DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull
             };
+
+            foreach (var zoid in Zoids)
+            {
+                zoid.ReturnToBaseState();
+            }
+
             string jsonString = JsonSerializer.Serialize(this, options);
             File.WriteAllText(fileName, jsonString);
         }
@@ -45,11 +52,16 @@ namespace ZoidsBattle
             var options = new JsonSerializerOptions
             {
                 PropertyNameCaseInsensitive = true
+
             };
             var characterData = JsonSerializer.Deserialize<CharacterData>(jsonString, options);
             if (characterData == null)
             {
                 throw new InvalidOperationException("Failed to deserialize CharacterData from the file.");
+            }
+            foreach (var zoid in characterData.Zoids)
+            {
+                zoid.CalculateBestAndWorstRange();
             }
             return characterData;
         }

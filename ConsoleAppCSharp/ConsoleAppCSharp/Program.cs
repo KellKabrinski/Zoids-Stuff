@@ -199,10 +199,66 @@ namespace ZoidsBattle
                 Console.WriteLine("Invalid input. Try again.");
             }
             bool aiMode = opponentType == 2;
+            Zoid z1, z2;
+            global::System.Int32 winner;
+            playerData = ChooseZoidsAndBattle(battleType, filtered, playerData, aiMode, out z1, out z2, out winner);
+
+            if (winner == 1)
+            {
+                Console.WriteLine($"{z1.ZoidName} wins!");
+                playerData.credits += 5000;
+            }
+            else
+            {
+                Console.WriteLine($"{z2.ZoidName} wins!");
+            }
+
+            Console.Write("\nWould you like to fight again? (y/n): ");
+            var again = Console.ReadLine();
+            while (again != null && again.Trim().ToLower().StartsWith('y'))
+            {
+                battleType = PickBattleType();
+                filtered = FilterZoids(zoids, battleType);
+                if (!filtered.Any())
+                {
+                    Console.WriteLine("No Zoids available for that environment!");
+                    break;
+                }
+                playerData = ChooseZoidsAndBattle(battleType, filtered, playerData, aiMode, out z1, out z2, out winner);
+                if (winner == 1)
+                {
+                    Console.WriteLine($"{z1.ZoidName} wins!");
+                    playerData.credits += 5000;
+                }
+                else
+                {
+                    Console.WriteLine($"{z2.ZoidName} wins!");
+                }
+                Console.Write("\nWould you like to fight again? (y/n): ");
+                again = Console.ReadLine();
+            }
+
+            Console.WriteLine("Updating Save...");
+            playerData.SaveToFile("save1.json");
+        }
+
+        private static CharacterData ChooseZoidsAndBattle(string battleType, IEnumerable<ZoidData> filtered, CharacterData playerData, bool aiMode, out Zoid z1, out Zoid z2, out int winner)
+        {
             AIPersonality personality = random.Next(0, 2) == 0 ? AIPersonality.Aggressive : AIPersonality.Defensive;
 
-            Zoid z1 = new Zoid();
+            z1 = new Zoid();
+            z2 = new Zoid();
+            playerData = ChooseZoids(filtered, playerData, aiMode, out z1, out z2, personality);
 
+            Console.WriteLine($"\nPlayer 1: {z1.ZoidName} vs Player 2: {z2.ZoidName}");
+            winner = GameLoop(z1, z2, battleType, aiMode, personality);
+           z1.ReturnToBaseState();
+           z2.ReturnToBaseState();
+            return playerData;
+        }
+
+        private static CharacterData ChooseZoids(IEnumerable<ZoidData> filtered, CharacterData playerData, global::System.Boolean aiMode, out Zoid z1, out Zoid z2, AIPersonality personality)
+        {
             if (!aiMode) { z1 = ChooseZoid(filtered, 1); }
             else
             {
@@ -263,16 +319,17 @@ namespace ZoidsBattle
 
 
             }
-            Zoid z2 = new Zoid();
+            z2 = new Zoid();
             if (!aiMode)
             {
                 z2 = ChooseZoid(filtered, 2);
             }
             else
             {
+                Zoid playerZoid = z1;
                 // AI chooses a Zoid within one power level of the player
                 var aiCandidates = filtered
-                    .Where(z => Math.Abs(z.PowerLevel - z1.PowerLevel) <= 1)
+                    .Where(z => Math.Abs(z.PowerLevel - playerZoid.PowerLevel) <= 1)
                     .ToList();
 
                 if (!aiCandidates.Any())
@@ -287,8 +344,8 @@ namespace ZoidsBattle
                     // Prefer Zoids with shields
                     aiPick = aiCandidates
                         .OrderByDescending(z => z.Powers.Any(p => p.Type == "E-Shield" && p.Rank.HasValue && p.Rank.Value > 0))
-                        .ThenBy(z => Math.Abs(z.PowerLevel - z1.PowerLevel))
-                        .ThenBy(z => z.Name)
+                        .ThenBy(z => Math.Abs(z.PowerLevel - playerZoid.PowerLevel))
+                        .ThenBy(_ => random.Next())
                         .First();
                 }
                 else
@@ -299,8 +356,8 @@ namespace ZoidsBattle
                             z.Powers.Where(p =>
                                 p.Type == "Melee" || p.Type == "Close-Range" || p.Type == "Mid-Range" || p.Type == "Long-Range")
                             .Select(p => p.Rank ?? 0).DefaultIfEmpty(0).Max())
-                        .ThenBy(z => Math.Abs(z.PowerLevel - z1.PowerLevel))
-                        .ThenBy(z => z.Name)
+                        .ThenBy(z => Math.Abs(z.PowerLevel - playerZoid.PowerLevel))
+                        .ThenBy(_ => random.Next())
                         .First();
                 }
 
@@ -308,19 +365,7 @@ namespace ZoidsBattle
                 Console.WriteLine($"AI ({personality}) selects: {z2.ZoidName} (PL {z2.PowerLevel})");
             }
 
-            Console.WriteLine($"\nPlayer 1: {z1.ZoidName} vs Player 2: {z2.ZoidName}");
-            int winner = GameLoop(z1, z2, battleType, aiMode, personality);
-            if (winner == 1)
-            {
-                Console.WriteLine($"{z1.ZoidName} wins!");
-                playerData.credits += 5000;
-            }
-            else
-            {
-                Console.WriteLine($"{z2.ZoidName} wins!");
-            }
-            Console.WriteLine("Updating Save...");
-            playerData.SaveToFile("save1.json");
+            return playerData;
         }
 
         private static CharacterData NewCharacter(string saveFile)
@@ -365,12 +410,17 @@ namespace ZoidsBattle
             });
         }
 
-        private static Zoid ChooseZoid(IEnumerable<ZoidData> zoids, int playerNum, int costLimit=0)
+        private static Zoid ChooseZoid(IEnumerable<ZoidData> zoids, int playerNum, int costLimit=0, bool shopMode = false)
         {
             var sorted = zoids.OrderBy(z => (z.PowerLevel, z.Name)).ToList();
             if (costLimit > 0)
             {
                 sorted = sorted.Where(z => z.Cost <= costLimit).ToList();
+                if (shopMode)
+                {
+                    var shopZoids = sorted.OrderBy(_ => random.Next()).Take(5).ToList();
+                    sorted = shopZoids;
+                }
             }
             Console.WriteLine("\nAvailable Zoids:");
             for (int i = 0; i < sorted.Count; i++)
@@ -815,6 +865,9 @@ namespace ZoidsBattle
             int turn = 0;
             double distance = GetStartingDistance();
             double movedDistance = 0;
+            // Initialize Zoid statuses
+            z1.Status="intact";
+            z2.Status="intact";
 
             while (z1.Status != "defeated" && z2.Status != "defeated")
             {
