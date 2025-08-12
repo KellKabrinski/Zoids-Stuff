@@ -1,6 +1,0 @@
-C:\Users\dwh19\Downloads\Mutants and Masterminds\Zoids-Stuff\ConsoleAppCSharp\ConsoleAppCSharp\bin\Release\net8.0\publish\ConvertedZoidStats.json
-C:\Users\dwh19\Downloads\Mutants and Masterminds\Zoids-Stuff\ConsoleAppCSharp\ConsoleAppCSharp\bin\Release\net8.0\publish\ConsoleAppCSharp.exe
-C:\Users\dwh19\Downloads\Mutants and Masterminds\Zoids-Stuff\ConsoleAppCSharp\ConsoleAppCSharp\bin\Release\net8.0\publish\ConsoleAppCSharp.dll
-C:\Users\dwh19\Downloads\Mutants and Masterminds\Zoids-Stuff\ConsoleAppCSharp\ConsoleAppCSharp\bin\Release\net8.0\publish\ConsoleAppCSharp.deps.json
-C:\Users\dwh19\Downloads\Mutants and Masterminds\Zoids-Stuff\ConsoleAppCSharp\ConsoleAppCSharp\bin\Release\net8.0\publish\ConsoleAppCSharp.runtimeconfig.json
-C:\Users\dwh19\Downloads\Mutants and Masterminds\Zoids-Stuff\ConsoleAppCSharp\ConsoleAppCSharp\bin\Release\net8.0\publish\ConsoleAppCSharp.pdb
