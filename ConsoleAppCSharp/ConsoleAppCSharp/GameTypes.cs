@@ -16,12 +16,24 @@ namespace ZoidsBattle
     /// </summary>
     public class PlayerAction
     {
+        public List<ActionType> ActionSequence { get; set; } = new List<ActionType>();
         public MovementType MovementType { get; set; } = MovementType.None;
         public double MoveDistance { get; set; }
         public double AngleChange { get; set; }
         public bool ShouldAttack { get; set; }
         public bool ToggleShield { get; set; }
         public bool ToggleStealth { get; set; }
+    }
+
+    /// <summary>
+    /// Types of actions a player can take
+    /// </summary>
+    public enum ActionType
+    {
+        Move,
+        Attack,
+        Shield,
+        Stealth
     }
 
     /// <summary>

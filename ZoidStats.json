@@ -16,7 +16,8 @@
         "Bombing": "",
         "Ground Speed": "170",
         "Water Speed": "0",
-        "Air Speed": "0"
+        "Air Speed": "0",
+        "Faction": "Republic"
     },
     {
         "Zoid": "Barigator",
@@ -35,7 +36,8 @@
         "Bombing": "",
         "Ground Speed": "150",
         "Water Speed": "35",
-        "Air Speed": "0"
+        "Air Speed": "0",
+        "Faction": "Republic"
     },
     {
         "Zoid": "Bearfighter",
@@ -54,7 +56,8 @@
         "Bombing": "",
         "Ground Speed": "200",
         "Water Speed": "0",
-        "Air Speed": "0"
+        "Air Speed": "0",
+        "Faction": "Republic"
     },
     {
         "Zoid": "Berserk Fuhrer",
@@ -73,7 +76,8 @@
         "Bombing": "",
         "Ground Speed": "340",
         "Water Speed": "0",
-        "Air Speed": "0"
+        "Air Speed": "0",
+        "Faction": "Empire"
     },
     {
         "Zoid": "Black Rhimos",
@@ -92,7 +96,8 @@
         "Bombing": "",
         "Ground Speed": "180",
         "Water Speed": "0",
-        "Air Speed": "0"
+        "Air Speed": "0",
+        "Faction": "Empire"
     },
     {
         "Zoid": "Blade Liger",
@@ -111,7 +116,8 @@
         "Bombing": "",
         "Ground Speed": "305",
         "Water Speed": "0",
-        "Air Speed": "0"
+        "Air Speed": "0",
+        "Faction": "Republic"
     },
     {
         "Zoid": "Brachios",
@@ -130,7 +136,8 @@
         "Bombing": "",
         "Ground Speed": "140",
         "Water Speed": "0",
-        "Air Speed": "0"
+        "Air Speed": "0",
+        "Faction": "Empire"
     },
     {
         "Zoid": "Cannon Tortoise",
@@ -149,7 +156,8 @@
         "Bombing": "",
         "Ground Speed": "100",
         "Water Speed": "0",
-        "Air Speed": "0"
+        "Air Speed": "0",
+        "Faction": "Republic"
     },
     {
         "Zoid": "Command Wolf",
@@ -168,7 +176,8 @@
         "Bombing": "",
         "Ground Speed": "210",
         "Water Speed": "0",
-        "Air Speed": "0"
+        "Air Speed": "0",
+        "Faction": "Republic"
     },
     {
         "Zoid": "Command Wolf AC",
@@ -187,7 +196,8 @@
         "Bombing": "",
         "Ground Speed": "200",
         "Water Speed": "0",
-        "Air Speed": "0"
+        "Air Speed": "0",
+        "Faction": "Republic"
     },
     {
         "Zoid": "Command Wolf IS",
@@ -206,7 +216,8 @@
         "Bombing": "",
         "Ground Speed": "200",
         "Water Speed": "0",
-        "Air Speed": "0"
+        "Air Speed": "0",
+        "Faction": "Republic"
     },
     {
         "Zoid": "Dark Spiner",
@@ -225,7 +236,8 @@
         "Bombing": "",
         "Ground Speed": "240",
         "Water Speed": "0",
-        "Air Speed": "0"
+        "Air Speed": "0",
+        "Faction": "Empire"
     },
     {
         "Zoid": "Death Saurer",
@@ -244,7 +256,8 @@
         "Bombing": "",
         "Ground Speed": "90",
         "Water Speed": "0",
-        "Air Speed": "0"
+        "Air Speed": "0",
+        "Faction": "Empire"
     },
     {
         "Zoid": "Death Stinger",
@@ -263,7 +276,8 @@
         "Bombing": "",
         "Ground Speed": "185",
         "Water Speed": "72",
-        "Air Speed": "0"
+        "Air Speed": "0",
+        "Faction": "Empire"
     },
     {
         "Zoid": "Demantis",
@@ -282,7 +296,8 @@
         "Bombing": "",
         "Ground Speed": "370",
         "Water Speed": "0",
-        "Air Speed": "0"
+        "Air Speed": "0",
+        "Faction": "Empire"
     },
     {
         "Zoid": "Dibison",
@@ -301,7 +316,8 @@
         "Bombing": "",
         "Ground Speed": "130",
         "Water Speed": "0",
-        "Air Speed": "0"
+        "Air Speed": "0",
+        "Faction": "Republic"
     },
     {
         "Zoid": "Diloforce",
@@ -320,7 +336,8 @@
         "Bombing": "",
         "Ground Speed": "300",
         "Water Speed": "0",
-        "Air Speed": "0"
+        "Air Speed": "0",
+        "Faction": "Empire"
     },
     {
         "Zoid": "Dimetrodon",
@@ -339,7 +356,8 @@
         "Bombing": "",
         "Ground Speed": "150",
         "Water Speed": "0",
-        "Air Speed": "0"
+        "Air Speed": "0",
+        "Faction": "Empire"
     },
     {
         "Zoid": "Double Sworder",
@@ -358,7 +376,8 @@
         "Bombing": "",
         "Ground Speed": "0",
         "Water Speed": "0",
-        "Air Speed": "0.33"
+        "Air Speed": "0.33",
+        "Faction": "Republic"
     },
     {
         "Zoid": "Elephander",
@@ -377,7 +396,8 @@
         "Bombing": "",
         "Ground Speed": "130",
         "Water Speed": "0",
-        "Air Speed": "0"
+        "Air Speed": "0",
+        "Faction": "Empire"
     },
     {
         "Zoid": "Energy Liger",
@@ -396,7 +416,8 @@
         "Bombing": "",
         "Ground Speed": "660",
         "Water Speed": "0",
-        "Air Speed": "0"
+        "Air Speed": "0",
+        "Faction": "Empire"
     },
     {
         "Zoid": "Gairyuki",
@@ -415,7 +436,8 @@
         "Bombing": "",
         "Ground Speed": "290",
         "Water Speed": "0",
-        "Air Speed": "0"
+        "Air Speed": "0",
+        "Faction": "Republic"
     },
     {
         "Zoid": "Gator",
@@ -434,7 +456,8 @@
         "Bombing": "",
         "Ground Speed": "200",
         "Water Speed": "0",
-        "Air Speed": "0"
+        "Air Speed": "0",
+        "Faction": "Empire"
     },
     {
         "Zoid": "Geno Breaker",
@@ -453,7 +476,8 @@
         "Bombing": "",
         "Ground Speed": "345",
         "Water Speed": "0",
-        "Air Speed": "0"
+        "Air Speed": "0",
+        "Faction": "Empire"
     },
     {
         "Zoid": "Geno Saurer",
@@ -472,7 +496,8 @@
         "Bombing": "",
         "Ground Speed": "260",
         "Water Speed": "0",
-        "Air Speed": "0"
+        "Air Speed": "0",
+        "Faction": "Empire"
     },
     {
         "Zoid": "Glaive Quama",
@@ -491,7 +516,8 @@
         "Bombing": "",
         "Ground Speed": "0",
         "Water Speed": "0",
-        "Air Speed": "2.5"
+        "Air Speed": "2.5",
+        "Faction": "Empire"
     },
     {
         "Zoid": "Godos",
@@ -510,7 +536,8 @@
         "Bombing": "",
         "Ground Speed": "150",
         "Water Speed": "0",
-        "Air Speed": "0"
+        "Air Speed": "0",
+        "Faction": "Republic"
     },
     {
         "Zoid": "Gojulas",
@@ -529,7 +556,8 @@
         "Bombing": "",
         "Ground Speed": "75",
         "Water Speed": "0",
-        "Air Speed": "0"
+        "Air Speed": "0",
+        "Faction": "Republic"
     },
     {
         "Zoid": "Gojulas The Ogre",
@@ -548,7 +576,8 @@
         "Bombing": "",
         "Ground Speed": "125",
         "Water Speed": "0",
-        "Air Speed": "0"
+        "Air Speed": "0",
+        "Faction": "Republic"
     },
     {
         "Zoid": "Gojulasgiga",
@@ -567,7 +596,8 @@
         "Bombing": "",
         "Ground Speed": "180",
         "Water Speed": "0",
-        "Air Speed": "0"
+        "Air Speed": "0",
+        "Faction": "Republic"
     },
     {
         "Zoid": "Gordos",
@@ -586,7 +616,8 @@
         "Bombing": "",
         "Ground Speed": "80",
         "Water Speed": "0",
-        "Air Speed": "0"
+        "Air Speed": "0",
+        "Faction": "Republic"
     },
     {
         "Zoid": "Gorhecks",
@@ -605,7 +636,8 @@
         "Bombing": "",
         "Ground Speed": "120",
         "Water Speed": "0",
-        "Air Speed": "0"
+        "Air Speed": "0",
+        "Faction": "Republic"
     },
     {
         "Zoid": "Grounchar",
@@ -624,7 +656,8 @@
         "Bombing": "",
         "Ground Speed": "120",
         "Water Speed": "0",
-        "Air Speed": "0"
+        "Air Speed": "0",
+        "Faction": "Empire"
     },
     {
         "Zoid": "Gun Sniper",
@@ -643,7 +676,8 @@
         "Bombing": "",
         "Ground Speed": "200",
         "Water Speed": "0",
-        "Air Speed": "0"
+        "Air Speed": "0",
+        "Faction": "Republic"
     },
     {
         "Zoid": "Gunbluster",
@@ -662,7 +696,8 @@
         "Bombing": "",
         "Ground Speed": "120",
         "Water Speed": "0",
-        "Air Speed": "0"
+        "Air Speed": "0",
+        "Faction": "Republic"
     },
     {
         "Zoid": "Guntiger",
@@ -681,7 +716,8 @@
         "Bombing": "",
         "Ground Speed": "270",
         "Water Speed": "0",
-        "Air Speed": "0"
+        "Air Speed": "0",
+        "Faction": "Empire"
     },
     {
         "Zoid": "Gustav MS",
@@ -700,7 +736,8 @@
         "Bombing": "",
         "Ground Speed": "135",
         "Water Speed": "0",
-        "Air Speed": "0"
+        "Air Speed": "0",
+        "Faction": "Civilian"
     },
     {
         "Zoid": "Guysack",
@@ -719,7 +756,8 @@
         "Bombing": "",
         "Ground Speed": "120",
         "Water Speed": "0",
-        "Air Speed": "0"
+        "Air Speed": "0",
+        "Faction": "Republic"
     },
     {
         "Zoid": "Hammer Head",
@@ -738,7 +776,8 @@
         "Bombing": "",
         "Ground Speed": "0",
         "Water Speed": "65",
-        "Air Speed": "1"
+        "Air Speed": "1",
+        "Faction": "Republic"
     },
     {
         "Zoid": "Hammer Rock",
@@ -757,7 +796,8 @@
         "Bombing": "",
         "Ground Speed": "180",
         "Water Speed": "0",
-        "Air Speed": "0"
+        "Air Speed": "0",
+        "Faction": "Empire"
     },
     {
         "Zoid": "Hel Digunner",
@@ -776,7 +816,8 @@
         "Bombing": "",
         "Ground Speed": "130",
         "Water Speed": "0",
-        "Air Speed": "0"
+        "Air Speed": "0",
+        "Faction": "Empire"
     },
     {
         "Zoid": "Helcat",
@@ -795,7 +836,8 @@
         "Bombing": "",
         "Ground Speed": "200",
         "Water Speed": "0",
-        "Air Speed": "0"
+        "Air Speed": "0",
+        "Faction": "Empire"
     },
     {
         "Zoid": "Iguan",
@@ -814,7 +856,8 @@
         "Bombing": "",
         "Ground Speed": "200",
         "Water Speed": "0",
-        "Air Speed": "0"
+        "Air Speed": "0",
+        "Faction": "Empire"
     },
     {
         "Zoid": "Iron Kong",
@@ -833,7 +876,8 @@
         "Bombing": "",
         "Ground Speed": "150",
         "Water Speed": "0",
-        "Air Speed": "0"
+        "Air Speed": "0",
+        "Faction": "Empire"
     },
     {
         "Zoid": "Iron Kong PK",
@@ -852,7 +896,8 @@
         "Bombing": "",
         "Ground Speed": "170",
         "Water Speed": "0",
-        "Air Speed": "0"
+        "Air Speed": "0",
+        "Faction": "Empire"
     },
     {
         "Zoid": "Killer Dome",
@@ -871,7 +916,8 @@
         "Bombing": "",
         "Ground Speed": "150",
         "Water Speed": "38",
-        "Air Speed": "0"
+        "Air Speed": "0",
+        "Faction": "Empire"
     },
     {
         "Zoid": "Konig Wolf",
@@ -890,7 +936,8 @@
         "Bombing": "",
         "Ground Speed": "290",
         "Water Speed": "0",
-        "Air Speed": "0"
+        "Air Speed": "0",
+        "Faction": "Republic"
     },
     {
         "Zoid": "Liger Zero",
@@ -909,7 +956,8 @@
         "Bombing": "",
         "Ground Speed": "307",
         "Water Speed": "0",
-        "Air Speed": "0"
+        "Air Speed": "0",
+        "Faction": "Republic"
     },
     {
         "Zoid": "Liger Zero Jager",
@@ -928,7 +976,8 @@
         "Bombing": "",
         "Ground Speed": "330",
         "Water Speed": "0",
-        "Air Speed": "0"
+        "Air Speed": "0",
+        "Faction": "Republic"
     },
     {
         "Zoid": "Liger Zero Panzer",
@@ -947,7 +996,8 @@
         "Bombing": "",
         "Ground Speed": "285",
         "Water Speed": "0",
-        "Air Speed": "0"
+        "Air Speed": "0",
+        "Faction": "Republic"
     },
     {
         "Zoid": "Liger Zero Phoenix",
@@ -966,7 +1016,8 @@
         "Bombing": "",
         "Ground Speed": "340",
         "Water Speed": "0",
-        "Air Speed": "2"
+        "Air Speed": "2",
+        "Faction": "Republic"
     },
     {
         "Zoid": "Liger Zero Schneider",
@@ -985,7 +1036,8 @@
         "Bombing": "",
         "Ground Speed": "310",
         "Water Speed": "0",
-        "Air Speed": "0"
+        "Air Speed": "0",
+        "Faction": "Republic"
     },
     {
         "Zoid": "Liger Zero X",
@@ -1004,7 +1056,8 @@
         "Bombing": "",
         "Ground Speed": "315",
         "Water Speed": "0",
-        "Air Speed": "0"
+        "Air Speed": "0",
+        "Faction": "Republic"
     },
     {
         "Zoid": "Lightning Saix",
@@ -1023,7 +1076,8 @@
         "Bombing": "",
         "Ground Speed": "325",
         "Water Speed": "0",
-        "Air Speed": "0"
+        "Air Speed": "0",
+        "Faction": "Empire"
     },
     {
         "Zoid": "Maccurtis",
@@ -1042,7 +1096,8 @@
         "Bombing": "",
         "Ground Speed": "120",
         "Water Speed": "32",
-        "Air Speed": "0"
+        "Air Speed": "0",
+        "Faction": "Empire"
     },
     {
         "Zoid": "Madthunder",
@@ -1061,7 +1116,8 @@
         "Bombing": "",
         "Ground Speed": "100",
         "Water Speed": "0",
-        "Air Speed": "0"
+        "Air Speed": "0",
+        "Faction": "Republic"
     },
     {
         "Zoid": "Megaleon",
@@ -1080,7 +1136,8 @@
         "Bombing": "",
         "Ground Speed": "80",
         "Water Speed": "0",
-        "Air Speed": "0"
+        "Air Speed": "0",
+        "Faction": "Republic"
     },
     {
         "Zoid": "Molga",
@@ -1099,7 +1156,8 @@
         "Bombing": "",
         "Ground Speed": "200",
         "Water Speed": "0",
-        "Air Speed": "0"
+        "Air Speed": "0",
+        "Faction": "Empire"
     },
     {
         "Zoid": "Pteras",
@@ -1118,7 +1176,8 @@
         "Bombing": "5",
         "Ground Speed": "0",
         "Water Speed": "0",
-        "Air Speed": "2"
+        "Air Speed": "2",
+        "Faction": "Republic"
     },
     {
         "Zoid": "Raynos",
@@ -1137,7 +1196,8 @@
         "Bombing": "",
         "Ground Speed": "0",
         "Water Speed": "0",
-        "Air Speed": "3.3"
+        "Air Speed": "3.3",
+        "Faction": "Republic"
     },
     {
         "Zoid": "Red Horn",
@@ -1156,7 +1216,8 @@
         "Bombing": "",
         "Ground Speed": "130",
         "Water Speed": "0",
-        "Air Speed": "0"
+        "Air Speed": "0",
+        "Faction": "Empire"
     },
     {
         "Zoid": "Redler",
@@ -1175,7 +1236,8 @@
         "Bombing": "",
         "Ground Speed": "0",
         "Water Speed": "0",
-        "Air Speed": "2.8"
+        "Air Speed": "2.8",
+        "Faction": "Empire"
     },
     {
         "Zoid": "Rev Rapter",
@@ -1194,7 +1256,8 @@
         "Bombing": "",
         "Ground Speed": "210",
         "Water Speed": "0",
-        "Air Speed": "0"
+        "Air Speed": "0",
+        "Faction": "Empire"
     },
     {
         "Zoid": "Saber Tiger",
@@ -1213,7 +1276,8 @@
         "Bombing": "",
         "Ground Speed": "240",
         "Water Speed": "0",
-        "Air Speed": "0"
+        "Air Speed": "0",
+        "Faction": "Empire"
     },
     {
         "Zoid": "Saberlion",
@@ -1232,7 +1296,8 @@
         "Bombing": "",
         "Ground Speed": "255",
         "Water Speed": "0",
-        "Air Speed": "0"
+        "Air Speed": "0",
+        "Faction": "Republic"
     },
     {
         "Zoid": "Saicurtis",
@@ -1251,7 +1316,8 @@
         "Bombing": "",
         "Ground Speed": "0",
         "Water Speed": "0",
-        "Air Speed": "0.315"
+        "Air Speed": "0.315",
+        "Faction": "Empire"
     },
     {
         "Zoid": "Salamander",
@@ -1270,7 +1336,8 @@
         "Bombing": "12",
         "Ground Speed": "0",
         "Water Speed": "0",
-        "Air Speed": "2"
+        "Air Speed": "2",
+        "Faction": "Republic"
     },
     {
         "Zoid": "Seismosaurus",
@@ -1289,7 +1356,8 @@
         "Bombing": "",
         "Ground Speed": "70",
         "Water Speed": "0",
-        "Air Speed": "0"
+        "Air Speed": "0",
+        "Faction": "Empire"
     },
     {
         "Zoid": "Shadow Fox",
@@ -1308,7 +1376,8 @@
         "Bombing": "",
         "Ground Speed": "290",
         "Water Speed": "0",
-        "Air Speed": "0"
+        "Air Speed": "0",
+        "Faction": "Republic"
     },
     {
         "Zoid": "Shield Liger",
@@ -1327,7 +1396,8 @@
         "Bombing": "",
         "Ground Speed": "250",
         "Water Speed": "0",
-        "Air Speed": "0"
+        "Air Speed": "0",
+        "Faction": "Republic"
     },
     {
         "Zoid": "Shield Liger DCS-J",
@@ -1346,7 +1416,8 @@
         "Bombing": "",
         "Ground Speed": "285",
         "Water Speed": "0",
-        "Air Speed": "0"
+        "Air Speed": "0",
+        "Faction": "Republic"
     },
     {
         "Zoid": "Sinker",
@@ -1365,7 +1436,8 @@
         "Bombing": "",
         "Ground Speed": "0",
         "Water Speed": "60",
-        "Air Speed": "0.9"
+        "Air Speed": "0.9",
+        "Faction": "Empire"
     },
     {
         "Zoid": "Snipe Master",
@@ -1384,7 +1456,8 @@
         "Bombing": "",
         "Ground Speed": "195",
         "Water Speed": "0",
-        "Air Speed": "0"
+        "Air Speed": "0",
+        "Faction": "Republic"
     },
     {
         "Zoid": "Spinosapper",
@@ -1403,7 +1476,8 @@
         "Bombing": "",
         "Ground Speed": "105",
         "Water Speed": "0",
-        "Air Speed": "0"
+        "Air Speed": "0",
+        "Faction": "Republic"
     },
     {
         "Zoid": "Stealth Viper",
@@ -1422,7 +1496,8 @@
         "Bombing": "",
         "Ground Speed": "180",
         "Water Speed": "0",
-        "Air Speed": "0"
+        "Air Speed": "0",
+        "Faction": "Republic"
     },
     {
         "Zoid": "Storch",
@@ -1441,7 +1516,8 @@
         "Bombing": "",
         "Ground Speed": "0",
         "Water Speed": "0",
-        "Air Speed": "2.1"
+        "Air Speed": "2.1",
+        "Faction": "Empire"
     },
     {
         "Zoid": "Storm Sworder",
@@ -1460,7 +1536,8 @@
         "Bombing": "",
         "Ground Speed": "0",
         "Water Speed": "0",
-        "Air Speed": "3.2"
+        "Air Speed": "3.2",
+        "Faction": "Republic"
     },
     {
         "Zoid": "Ultra Saurus",
@@ -1479,7 +1556,8 @@
         "Bombing": "",
         "Ground Speed": "50",
         "Water Speed": "47",
-        "Air Speed": "0"
+        "Air Speed": "0",
+        "Faction": "Republic"
     },
     {
         "Zoid": "Wardick",
@@ -1498,7 +1576,8 @@
         "Bombing": "",
         "Ground Speed": "70",
         "Water Speed": "65",
-        "Air Speed": "0"
+        "Air Speed": "0",
+        "Faction": "Empire"
     },
     {
         "Zoid": "Zabat",
@@ -1517,7 +1596,8 @@
         "Bombing": "9",
         "Ground Speed": "0",
         "Water Speed": "0",
-        "Air Speed": "2.8"
+        "Air Speed": "2.8",
+        "Faction": "Empire"
     },
     {
         "Zoid": "Zoids Mammoth",
@@ -1536,6 +1616,7 @@
         "Bombing": "",
         "Ground Speed": "85",
         "Water Speed": "0",
-        "Air Speed": "0"
+        "Air Speed": "0",
+        "Faction": "Republic"
     }
 ]

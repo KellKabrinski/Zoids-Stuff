@@ -1,7 +1,7 @@
 <Window x:Class="ZoidsBattle.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="Zoids Battle Game" Height="700" Width="1000"
+        Title="Zoids Battle Game" Height="900" Width="1200"
         WindowStartupLocation="CenterScreen">
     <Grid>
         <Grid.RowDefinitions>
@@ -35,6 +35,30 @@
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="10">
                         <RadioButton x:Name="PvPRadio" Content="Player vs Player" IsChecked="True" Margin="20,0"/>
                         <RadioButton x:Name="AIRadio" Content="Player vs AI" Margin="20,0"/>
+                    </StackPanel>
+                </GroupBox>
+                
+                <GroupBox Header="Starting Distance" Margin="0,0,0,20">
+                    <StackPanel Margin="15">
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,0,0,10">
+                            <TextBlock Text="Distance: " FontSize="14" VerticalAlignment="Center"/>
+                            <TextBlock x:Name="StartingDistanceValueText" Text="1000" FontWeight="Bold" FontSize="14" VerticalAlignment="Center"/>
+                            <TextBlock Text=" meters" FontSize="14" VerticalAlignment="Center"/>
+                        </StackPanel>
+                        <Slider x:Name="StartingDistanceSlider" 
+                                Minimum="200" 
+                                Maximum="2000" 
+                                Value="1000"
+                                TickFrequency="100"
+                                IsSnapToTickEnabled="True"
+                                ValueChanged="StartingDistanceSlider_ValueChanged"
+                                Width="300"
+                                HorizontalAlignment="Center"/>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,5,0,0">
+                            <TextBlock Text="Close (200m)" FontSize="10" Margin="0,0,20,0"/>
+                            <TextBlock Text="Standard (1000m)" FontSize="10" Margin="0,0,20,0"/>
+                            <TextBlock Text="Long Range (2000m)" FontSize="10"/>
+                        </StackPanel>
                     </StackPanel>
                 </GroupBox>
                 
@@ -108,28 +132,189 @@
             <Grid x:Name="BattlePanel" Visibility="Collapsed">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
                     <RowDefinition Height="*"/>
+                    <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
                 </Grid.RowDefinitions>
                 
+                <!-- Battle Header -->
                 <StackPanel Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Center" Margin="10">
                     <TextBlock x:Name="Player1ZoidText" Text="Player 1: " FontSize="16" FontWeight="Bold"/>
                     <TextBlock Text=" vs " FontSize="16" Margin="10,0"/>
                     <TextBlock x:Name="Player2ZoidText" Text="Player 2: " FontSize="16" FontWeight="Bold"/>
                 </StackPanel>
                 
-                <ScrollViewer Grid.Row="1" Margin="10">
-                    <TextBox x:Name="BattleLogTextBox" 
-                             IsReadOnly="True" 
-                             TextWrapping="Wrap" 
-                             FontFamily="Consolas" 
-                             FontSize="12"
-                             Background="Black"
-                             Foreground="LimeGreen"
-                             Padding="10"/>
-                </ScrollViewer>
+                <!-- Zoid Status Display -->
+                <Grid Grid.Row="1" Margin="10">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    
+                    <!-- Player 1 Status -->
+                    <GroupBox Grid.Column="0" Header="Player 1 Status" Margin="0,0,5,0">
+                        <StackPanel x:Name="Player1StatusPanel" Margin="5">
+                            <TextBlock x:Name="Player1HealthText" Text="Health: 100%" FontWeight="Bold"/>
+                            <TextBlock x:Name="Player1ShieldText" Text="Shield: OFF"/>
+                            <TextBlock x:Name="Player1StealthText" Text="Stealth: OFF"/>
+                            <TextBlock x:Name="Player1PositionText" Text="Position: Ready"/>
+                            <TextBlock x:Name="Player1DistanceText" Text="Distance: 1000m"/>
+                        </StackPanel>
+                    </GroupBox>
+                    
+                    <!-- Player 2 Status -->
+                    <GroupBox Grid.Column="1" Header="Player 2 Status" Margin="5,0,0,0">
+                        <StackPanel x:Name="Player2StatusPanel" Margin="5">
+                            <TextBlock x:Name="Player2HealthText" Text="Health: 100%" FontWeight="Bold"/>
+                            <TextBlock x:Name="Player2ShieldText" Text="Shield: OFF"/>
+                            <TextBlock x:Name="Player2StealthText" Text="Stealth: OFF"/>
+                            <TextBlock x:Name="Player2PositionText" Text="Position: Ready"/>
+                            <TextBlock x:Name="Player2DistanceText" Text="Distance: 1000m"/>
+                        </StackPanel>
+                    </GroupBox>
+                </Grid>
                 
-                <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center" Margin="10">
+                <!-- Battle Log -->
+                <Grid Grid.Row="2" Margin="10">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="2*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    
+                    <!-- Main Battle Log -->
+                    <GroupBox Grid.Column="0" Header="Battle Log" Margin="0,0,5,0">
+                        <ScrollViewer>
+                            <TextBox x:Name="BattleLogTextBox" 
+                                     IsReadOnly="True" 
+                                     TextWrapping="Wrap" 
+                                     FontFamily="Consolas" 
+                                     FontSize="12"
+                                     Background="Black"
+                                     Foreground="LimeGreen"
+                                     Padding="10"
+                                     BorderThickness="0"/>
+                        </ScrollViewer>
+                    </GroupBox>
+                    
+                    <!-- Previous Round Results -->
+                    <GroupBox Grid.Column="1" Header="Previous Rounds" Margin="5,0,0,0">
+                        <ScrollViewer>
+                            <StackPanel x:Name="PreviousRoundsPanel" Margin="5">
+                                <TextBlock Text="No previous rounds yet" 
+                                           FontStyle="Italic" 
+                                           HorizontalAlignment="Center" 
+                                           VerticalAlignment="Center"
+                                           Foreground="Gray"/>
+                            </StackPanel>
+                        </ScrollViewer>
+                    </GroupBox>
+                </Grid>
+                
+                <!-- Battle Controls -->
+                <GroupBox Grid.Row="3" x:Name="BattleControlsPanel" Header="Battle Controls" Margin="10" Visibility="Collapsed">
+                    <Grid Margin="10">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        
+                        <!-- Current Player Turn Indicator -->
+                        <TextBlock x:Name="CurrentTurnText" Grid.Row="0" 
+                                   Text="Player 1's Turn" 
+                                   FontSize="16" FontWeight="Bold" 
+                                   HorizontalAlignment="Center" 
+                                   Margin="0,0,0,10"/>
+                        
+                        <!-- Action Selection Area -->
+                        <GroupBox Grid.Row="1" Header="Select Actions (Choose any combination)" Margin="5">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                
+                                <!-- Move Action -->
+                                <GroupBox Grid.Column="0" Header="Movement" Margin="2">
+                                    <StackPanel>
+                                        <CheckBox x:Name="EnableMovementCheckBox" Content="Include Movement" Margin="2" Checked="ActionSelection_Changed" Unchecked="ActionSelection_Changed"/>
+                                        <ComboBox x:Name="MovementTypeCombo" Margin="2" IsEnabled="False">
+                                            <ComboBoxItem Content="Stand Still" Tag="StandStill"/>
+                                            <ComboBoxItem Content="Close Distance" Tag="Close"/>
+                                            <ComboBoxItem Content="Retreat" Tag="Retreat"/>
+                                            <ComboBoxItem Content="Circle Enemy" Tag="Circle"/>
+                                            <ComboBoxItem Content="Search" Tag="Search"/>
+                                        </ComboBox>
+                                    </StackPanel>
+                                </GroupBox>
+                                
+                                <!-- Attack Action -->
+                                <GroupBox Grid.Column="1" Header="Attack" Margin="2">
+                                    <StackPanel>
+                                        <CheckBox x:Name="EnableAttackCheckBox" Content="Include Attack" Margin="2" Checked="ActionSelection_Changed" Unchecked="ActionSelection_Changed"/>
+                                        <TextBlock x:Name="AttackRangeText" Text="Range: N/A" FontSize="10" Margin="2"/>
+                                        <TextBlock x:Name="AttackStatusText" Text="" FontSize="10" Margin="2" Foreground="Gray"/>
+                                    </StackPanel>
+                                </GroupBox>
+                                
+                                <!-- Shield Action -->
+                                <GroupBox Grid.Column="2" Header="Shield" Margin="2">
+                                    <StackPanel>
+                                        <CheckBox x:Name="EnableShieldCheckBox" Content="Toggle Shield" Margin="2" Checked="ActionSelection_Changed" Unchecked="ActionSelection_Changed"/>
+                                        <TextBlock x:Name="CurrentShieldStatusText" Text="Current: Inactive" FontSize="10" Margin="2"/>
+                                        <TextBlock x:Name="ShieldRankText" Text="Rank: 0" FontSize="10" Margin="2"/>
+                                    </StackPanel>
+                                </GroupBox>
+                                
+                                <!-- Stealth Action -->
+                                <GroupBox Grid.Column="3" Header="Stealth" Margin="2">
+                                    <StackPanel>
+                                        <CheckBox x:Name="EnableStealthCheckBox" Content="Toggle Stealth" Margin="2" Checked="ActionSelection_Changed" Unchecked="ActionSelection_Changed"/>
+                                        <TextBlock x:Name="CurrentStealthStatusText" Text="Current: Inactive" FontSize="10" Margin="2"/>
+                                        <TextBlock x:Name="StealthRankText" Text="Rank: 0" FontSize="10" Margin="2"/>
+                                    </StackPanel>
+                                </GroupBox>
+                            </Grid>
+                        </GroupBox>
+                        
+                        <!-- Action Sequence Ordering -->
+                        <GroupBox Grid.Row="2" Header="Action Execution Order" Margin="5">
+                            <StackPanel>
+                                <TextBlock Text="Drag to reorder actions:" FontWeight="Bold" Margin="0,0,0,5"/>
+                                <ListBox x:Name="ActionSequenceListBox" Height="120" Margin="2" AllowDrop="True" 
+                                         Drop="ActionSequence_Drop" DragOver="ActionSequence_DragOver">
+                                    <ListBox.ItemTemplate>
+                                        <DataTemplate>
+                                            <TextBlock Text="{Binding}" Padding="5" Background="LightBlue" Margin="2"/>
+                                        </DataTemplate>
+                                    </ListBox.ItemTemplate>
+                                </ListBox>
+                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="5">
+                                    <Button x:Name="MoveUpButton" Content="Move Up" Click="MoveUp_Click" Width="70" Margin="2"/>
+                                    <Button x:Name="MoveDownButton" Content="Move Down" Click="MoveDown_Click" Width="70" Margin="2"/>
+                                    <Button x:Name="ClearSequenceButton" Content="Clear All" Click="ClearSequence_Click" Width="70" Margin="2"/>
+                                </StackPanel>
+                            </StackPanel>
+                        </GroupBox>
+                        
+                        <!-- Action Buttons -->
+                        <StackPanel Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Center" Margin="10">
+                            <Button x:Name="ExecuteActionButton" Content="Execute Actions" Click="ExecuteAction_Click" 
+                                    Width="140" Height="35" Margin="5" 
+                                    Background="DarkGreen" Foreground="White" FontWeight="Bold"/>
+                            <Button x:Name="AutoActionButton" Content="Auto Actions" Click="AutoAction_Click" 
+                                    Width="100" Height="35" Margin="5"/>
+                        </StackPanel>
+                    </Grid>
+                </GroupBox>
+                
+                <!-- Bottom Buttons -->
+                <StackPanel Grid.Row="4" Orientation="Horizontal" HorizontalAlignment="Center" Margin="10">
                     <Button x:Name="NewBattleButton" Content="New Battle" 
                             Click="NewBattle_Click" 
                             Padding="15,8" 

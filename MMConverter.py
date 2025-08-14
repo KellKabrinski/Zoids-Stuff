@@ -31,6 +31,7 @@ def convert_zoid_stats(input_file, output_file):
         air_speed_rank=0
         try:
             name = zoid["Zoid"]
+            faction = zoid.get("Faction", "Unknown")
             melee = int(zoid.get("Melee", 0))
             close = int(zoid.get("Close-Range", 0))
             mid = int(zoid.get("Mid-Range", 0))
@@ -225,6 +226,7 @@ def convert_zoid_stats(input_file, output_file):
 
         converted.append({
             "Name": name,
+            "Faction": faction,
             "Stats": {
                 "Fighting": fighting,
                 "Strength": strength,

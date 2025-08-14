@@ -5,7 +5,7 @@ using System.Linq;
 namespace ZoidsBattle
 {
     /// <summary>
-    /// Abstract base class for the Zoids battle game engine.
+    /// Abstract base class for Zoids battle game engine.
     /// Separates game logic from user interface to allow reuse in different UI contexts.
     /// </summary>
     public abstract class GameEngine
@@ -134,6 +134,10 @@ namespace ZoidsBattle
         protected virtual Zoid ExecuteBattle(Zoid zoid1, Zoid zoid2, GameState gameState)
         {
             var zoids = new Dictionary<int, Zoid> { { 1, zoid1 }, { 2, zoid2 } };
+            
+            // DEBUG: Log the player assignments - add unique identifiers
+            DisplayMessage($"DEBUG: Player 1 = {zoid1.ZoidName} (P1), Player 2 = {zoid2.ZoidName} (P2)");
+            
             var (first, second) = PickFirst(zoid1, zoid2);
             int[] order = [first, second];
 
@@ -146,6 +150,11 @@ namespace ZoidsBattle
                 int player = order[gameState.TurnNumber % 2];
                 var current = zoids[player];
                 var enemy = zoids[player == 1 ? 2 : 1];
+
+                // DEBUG: Log turn details with player identifiers
+                string currentId = current == zoid1 ? "P1" : "P2";
+                string enemyId = enemy == zoid1 ? "P1" : "P2";
+                DisplayMessage($"DEBUG: Turn {gameState.TurnNumber + 1}, Player {player}, Current = {current.ZoidName} ({currentId}), Enemy = {enemy.ZoidName} ({enemyId})");
 
                 DisplayTurnStart(current, gameState.TurnNumber + 1);
 
@@ -203,24 +212,87 @@ namespace ZoidsBattle
 
         protected virtual void ExecuteAction(Zoid current, Zoid enemy, PlayerAction action, GameState gameState, ref bool enemyDetected)
         {
-            bool didMove = false;
+            // Execute actions in the order specified by the player
+            foreach (var actionType in action.ActionSequence)
+            {
+                switch (actionType)
+                {
+                    case ActionType.Move:
+                        ExecuteMovementAction(current, enemy, action, gameState, ref enemyDetected);
+                        break;
+                    case ActionType.Attack:
+                        ExecuteAttackAction(current, enemy, gameState, enemyDetected);
+                        break;
+                    case ActionType.Shield:
+                        ExecuteShieldAction(current, action);
+                        break;
+                    case ActionType.Stealth:
+                        ExecuteStealthAction(current, action);
+                        break;
+                }
+                
+                // Small delay between actions for visual clarity
+                System.Threading.Thread.Sleep(500);
+            }
+        }
 
-            // Handle movement
-            if (action.MovementType != MovementType.None)
+        private void ExecuteMovementAction(Zoid current, Zoid enemy, PlayerAction action, GameState gameState, ref bool enemyDetected)
+        {
+            double oldDistance = gameState.Distance;
+
+            if (action.MovementType != MovementType.None && action.MovementType != MovementType.StandStill)
             {
                 var newDistance = ExecuteMovement(current, enemy, action, gameState, ref enemyDetected);
                 gameState.Distance = newDistance;
-                didMove = true;
+                DisplayMessage($"Distance updated: {oldDistance:F1}m -> {newDistance:F1}m");
             }
+            else
+            {
+                DisplayMessage($"{current.ZoidName} stands still at {gameState.Distance:F1}m");
+            }
+        }
 
-            // Handle shield and stealth
-            HandleShieldAndStealth(current, action);
-
-            // Handle attack
-            if (action.ShouldAttack && CanAttack(current, enemy, gameState, didMove))
+        private void ExecuteAttackAction(Zoid current, Zoid enemy, GameState gameState, bool enemyDetected)
+        {
+            bool canAttackNow = CanAttack(current, enemy, gameState, false);
+            DisplayMessage($"Attack check: Distance={gameState.Distance:F1}m, CanAttack={canAttackNow}");
+            
+            if (canAttackNow)
             {
                 var range = GetRange(gameState.Distance);
+                DisplayMessage($"Executing {range} range attack at {gameState.Distance:F1}m");
+                DisplayMessage($"DEBUG ATTACK: {current.ZoidName} attacking {enemy.ZoidName}");
                 HandleAttack(current, enemy, range, enemyDetected);
+            }
+            else
+            {
+                DisplayMessage($"{current.ZoidName} cannot attack at current distance ({gameState.Distance:F1}m) or is blocked by status/shield");
+            }
+        }
+
+        private void ExecuteShieldAction(Zoid current, PlayerAction action)
+        {
+            if (current.ShieldRank > 0)
+            {
+                current.ShieldOn = !current.ShieldOn;
+                DisplayMessage($"{current.ZoidName} {(current.ShieldOn ? "activated" : "deactivated")} shield");
+            }
+            else
+            {
+                DisplayMessage($"{current.ZoidName} has no shield capability");
+            }
+        }
+
+        private void ExecuteStealthAction(Zoid current, PlayerAction action)
+        {
+            if (current.StealthRank > 0)
+            {
+                current.StealthOn = !current.StealthOn;
+                DisplayMessage($"{current.ZoidName} {(current.StealthOn ? "activated" : "deactivated")} stealth");
+            }
+            else
+            {
+                DisplayMessage($"{current.ZoidName} has no stealth capability");
             }
         }
 
