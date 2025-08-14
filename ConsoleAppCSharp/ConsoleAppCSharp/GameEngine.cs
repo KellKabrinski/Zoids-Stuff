@@ -199,6 +199,9 @@ namespace ZoidsBattle
 
             var playerAction = GetPlayerAction(current, enemy, gameState.Distance, enemyDetected, gameState);
             ExecuteAction(current, enemy, playerAction, gameState, ref enemyDetected);
+            
+            // Update status display after action execution to show any distance changes
+            DisplayZoidStatus(current, gameState.Distance);
         }
 
         protected virtual void ExecuteAITurn(Zoid current, Zoid enemy, GameState gameState)
@@ -208,6 +211,9 @@ namespace ZoidsBattle
 
             var aiAction = GenerateAIAction(current, enemy, gameState.Distance, enemyDetected, personality);
             ExecuteAction(current, enemy, aiAction, gameState, ref enemyDetected);
+            
+            // Update status display after action execution to show any distance changes
+            DisplayZoidStatus(current, gameState.Distance);
         }
 
         protected virtual void ExecuteAction(Zoid current, Zoid enemy, PlayerAction action, GameState gameState, ref bool enemyDetected)
@@ -239,11 +245,13 @@ namespace ZoidsBattle
         private void ExecuteMovementAction(Zoid current, Zoid enemy, PlayerAction action, GameState gameState, ref bool enemyDetected)
         {
             double oldDistance = gameState.Distance;
+            DisplayMessage($"DEBUG: ExecuteMovementAction - Starting distance: {oldDistance:F1}m, MovementType: {action.MovementType}");
 
             if (action.MovementType != MovementType.None && action.MovementType != MovementType.StandStill)
             {
                 var newDistance = ExecuteMovement(current, enemy, action, gameState, ref enemyDetected);
                 gameState.Distance = newDistance;
+                DisplayMessage($"DEBUG: Distance updated: {oldDistance:F1}m -> {newDistance:F1}m");
                 DisplayMessage($"Distance updated: {oldDistance:F1}m -> {newDistance:F1}m");
             }
             else

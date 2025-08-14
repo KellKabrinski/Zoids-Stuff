@@ -257,9 +257,11 @@ namespace ZoidsBattle
             
             BattleLogTextBox.Clear();
             AddBattleLogMessage("=== BATTLE STARTING ===");
+            AddBattleLogMessage("*** BATTLE LOG IS VISIBLE - YOU SHOULD SEE THIS MESSAGE ***");
             AddBattleLogMessage($"Terrain: {_battleType.ToUpper()}");
             AddBattleLogMessage($"Mode: {(_isAIMode ? "Player vs AI" : "Player vs Player")}");
             AddBattleLogMessage($"Starting Distance: {_userSelectedStartingDistance:F0}m");
+            AddBattleLogMessage("*** IF YOU CAN SEE THIS, THE BATTLE LOG IS WORKING ***");
             AddBattleLogMessage(""); // Empty line for spacing
             
             // Initialize battle state
@@ -613,34 +615,16 @@ namespace ZoidsBattle
             }
 
             // Set movement details if movement is included
-            if (action.ActionSequence.Contains(ActionType.Move) && MovementTypeCombo.SelectedItem is ComboBoxItem movementItem)
+            if (action.ActionSequence.Contains(ActionType.Move))
             {
-                var movementTag = movementItem.Tag.ToString();
-                action.MovementType = movementTag switch
-                {
-                    "StandStill" => MovementType.StandStill,
-                    "Close" => MovementType.Close,
-                    "Retreat" => MovementType.Retreat,
-                    "Circle" => MovementType.Circle,
-                    "Search" => MovementType.Search,
-                    _ => MovementType.StandStill
-                };
+                // Use the _selectedMovementType set by the movement speed dialog
+                action.MovementType = _selectedMovementType;
+                action.MoveDistance = _selectedMoveDistance;
 
-                // Set appropriate distances/angles
-                switch (action.MovementType)
+                // Set appropriate angles for circle movement
+                if (action.MovementType == MovementType.Circle)
                 {
-                    case MovementType.Close:
-                        action.MoveDistance = _currentBattleZoid?.GetSpeed(_battleType) * 0.8 ?? 200;
-                        break;
-                    case MovementType.Retreat:
-                        action.MoveDistance = _currentBattleZoid?.GetSpeed(_battleType) * 0.6 ?? 150;
-                        break;
-                    case MovementType.Circle:
-                        action.AngleChange = 45;
-                        break;
-                    case MovementType.Search:
-                        action.MoveDistance = _currentBattleZoid?.GetSpeed(_battleType) * 0.5 ?? 100;
-                        break;
+                    action.AngleChange = 45;
                 }
             }
 
@@ -767,9 +751,6 @@ namespace ZoidsBattle
 
         private void UpdateControlStates()
         {
-            // Enable/disable combo boxes based on checkbox states
-            MovementTypeCombo.IsEnabled = EnableMovementCheckBox.IsChecked == true;
-            
             // Update attack controls based on current distance and zoid capabilities
             UpdateAttackControls();
             
@@ -981,8 +962,9 @@ namespace ZoidsBattle
             EnableStealthCheckBox.IsChecked = false;
             
             // Set default selections for movement combo box
-            if (MovementTypeCombo.Items.Count > 0)
-                MovementTypeCombo.SelectedIndex = 0; // Stand Still
+            // Reset movement selection
+            _selectedMovementType = MovementType.StandStill;
+            _selectedMoveDistance = 0.0;
 
             // Update control states and displays
             UpdateControlStates();            // Clear action sequence
@@ -996,10 +978,10 @@ namespace ZoidsBattle
         {
             if (_player1Zoid != null)
             {
-                var healthPercent = Math.Max(0, 100 - (_player1Zoid.Dents * 20));
-                Player1HealthText.Text = $"Health: {healthPercent}%";
-                Player1HealthText.Foreground = healthPercent > 60 ? System.Windows.Media.Brushes.Green : 
-                                               healthPercent > 30 ? System.Windows.Media.Brushes.Orange : 
+                // Display dents directly instead of calculating health percentage
+                Player1HealthText.Text = $"Dents: {_player1Zoid.Dents}/5";
+                Player1HealthText.Foreground = _player1Zoid.Dents <= 1 ? System.Windows.Media.Brushes.Green : 
+                                               _player1Zoid.Dents <= 3 ? System.Windows.Media.Brushes.Orange : 
                                                System.Windows.Media.Brushes.Red;
                 
                 Player1ShieldText.Text = $"Shield: {(_player1Zoid.ShieldOn ? "ON" : "OFF")} (Rank {_player1Zoid.ShieldRank})";
@@ -1010,10 +992,10 @@ namespace ZoidsBattle
             
             if (_player2Zoid != null)
             {
-                var healthPercent = Math.Max(0, 100 - (_player2Zoid.Dents * 20));
-                Player2HealthText.Text = $"Health: {healthPercent}%";
-                Player2HealthText.Foreground = healthPercent > 60 ? System.Windows.Media.Brushes.Green : 
-                                               healthPercent > 30 ? System.Windows.Media.Brushes.Orange : 
+                // Display dents directly instead of calculating health percentage
+                Player2HealthText.Text = $"Dents: {_player2Zoid.Dents}/5";
+                Player2HealthText.Foreground = _player2Zoid.Dents <= 1 ? System.Windows.Media.Brushes.Green : 
+                                               _player2Zoid.Dents <= 3 ? System.Windows.Media.Brushes.Orange : 
                                                System.Windows.Media.Brushes.Red;
                 
                 Player2ShieldText.Text = $"Shield: {(_player2Zoid.ShieldOn ? "ON" : "OFF")} (Rank {_player2Zoid.ShieldRank})";
@@ -1232,6 +1214,7 @@ namespace ZoidsBattle
         // Display methods
         private void DisplayZoidStatus(Zoid zoid, double distance)
         {
+            AddBattleLogMessage($"DEBUG: DisplayZoidStatus called with distance={distance:F1}m, old _currentDistance={_currentDistance:F1}m");
             _currentDistance = distance;
             
             var status = $"{zoid.ZoidName} Status - Distance: {distance:F1}m, Shield: {(zoid.ShieldOn ? "ON" : "OFF")}, " +
@@ -1239,7 +1222,11 @@ namespace ZoidsBattle
             AddBattleLogMessage(status);
             
             // Update the status display immediately
-            Dispatcher.Invoke(() => UpdateZoidStatusDisplay());
+            Dispatcher.Invoke(() => {
+                AddBattleLogMessage($"DEBUG: About to update UI with _currentDistance={_currentDistance:F1}m");
+                UpdateZoidStatusDisplay();
+                AddBattleLogMessage($"DEBUG: UI update completed");
+            });
         }
 
         private void DisplayBattleStart(Zoid zoid1, Zoid zoid2)
