@@ -57,20 +57,36 @@ namespace ZoidsBattle
             // Award credits for winning
             if (winner == zoid1 && aiMode)
             {
-                updatedPlayerData.credits += 5000;
+                updatedPlayerData.credits += 100; // Award credits for beating AI
             }
 
-            // Reset zoids to base state
-            zoid1.ReturnToBaseState();
-            zoid2.ReturnToBaseState();
+            return new BattleResult { Winner = winner, PlayerData = updatedPlayerData };
+        }
 
-            return new BattleResult 
-            { 
-                Winner = winner, 
-                PlayerData = updatedPlayerData,
-                Player1Zoid = zoid1,
-                Player2Zoid = zoid2
+        // New overload for UI-selected Zoids
+        public virtual BattleResult RunBattleWithSelectedZoids(Zoid player1Zoid, Zoid player2Zoid, string battleType, double startingDistance, bool aiMode, CharacterData playerData)
+        {
+            DisplayBattleStart(player1Zoid, player2Zoid);
+            
+            var gameState = new GameState
+            {
+                BattleType = battleType,
+                Distance = startingDistance,
+                TurnNumber = 0,
+                IsAIMode = aiMode
             };
+
+            var winner = ExecuteBattle(player1Zoid, player2Zoid, gameState);
+            
+            DisplayBattleResult(winner, winner == player1Zoid ? player2Zoid : player1Zoid);
+            
+            // Award credits for winning
+            if (winner == player1Zoid && aiMode)
+            {
+                playerData.credits += 100; // Award credits for beating AI
+            }
+
+            return new BattleResult { Winner = winner, PlayerData = playerData };
         }
 
         protected virtual (Zoid zoid1, Zoid zoid2, CharacterData playerData) ChooseZoidsForBattle(
@@ -148,6 +164,7 @@ namespace ZoidsBattle
             while (zoid1.Status != "defeated" && zoid2.Status != "defeated")
             {
                 int player = order[gameState.TurnNumber % 2];
+                gameState.CurrentPlayer = player; // Set the current player in GameState
                 var current = zoids[player];
                 var enemy = zoids[player == 1 ? 2 : 1];
 
@@ -158,14 +175,8 @@ namespace ZoidsBattle
 
                 DisplayTurnStart(current, gameState.TurnNumber + 1);
 
-                if (gameState.IsAIMode && player == 2)
-                {
-                    ExecuteAITurn(current, enemy, gameState);
-                }
-                else
-                {
-                    ExecutePlayerTurn(current, enemy, gameState);
-                }
+                // Always use ExecutePlayerTurn - let the UI handle AI vs Human logic
+                ExecutePlayerTurn(current, enemy, gameState);
 
                 // Status cleanup
                 if (current.Status == "stunned") current.Status = "dazed";

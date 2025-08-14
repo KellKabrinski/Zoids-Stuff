@@ -9,6 +9,7 @@ namespace ZoidsBattle
         public double Distance { get; set; }
         public int TurnNumber { get; set; }
         public bool IsAIMode { get; set; }
+        public int CurrentPlayer { get; set; } // 1 for Player 1, 2 for Player 2
     }
 
     /// <summary>

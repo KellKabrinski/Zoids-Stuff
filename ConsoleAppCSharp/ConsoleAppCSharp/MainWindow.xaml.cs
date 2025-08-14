@@ -31,6 +31,7 @@ namespace ZoidsBattle
         private bool _isDebugMode = false; // Track if debug mode is enabled
         private Zoid? _currentBattleZoid;
         private Zoid? _enemyBattleZoid;
+        private bool _currentPlayerIsPlayer1 = true; // Track which player is currently active
         
         // Movement selection state
         private MovementType _selectedMovementType = MovementType.StandStill;
@@ -311,7 +312,14 @@ namespace ZoidsBattle
             {
                 try
                 {
-                    var result = _gameEngine!.RunBattle(_allZoids, _playerData);
+                    // Use the pre-selected Zoids instead of letting GameEngine choose
+                    var result = _gameEngine!.RunBattleWithSelectedZoids(
+                        _player1Zoid!, 
+                        _player2Zoid!, 
+                        _battleType, 
+                        _userSelectedStartingDistance, 
+                        _isAIMode, 
+                        _playerData);
                     _playerData = result.PlayerData;
                     
                     // Show new battle button after battle ends
@@ -461,7 +469,7 @@ namespace ZoidsBattle
             _isTrackingActionResults = true;
             
             // Log the player's chosen actions
-            bool isPlayer1 = _currentBattleZoid == _player1Zoid;
+            bool isPlayer1 = _currentPlayerIsPlayer1; // Use stored player info instead of object comparison
             string playerName = isPlayer1 ? "Player 1" : "Player 2";
             AddBattleLogMessage($"{playerName} executes: {GetActionDescription(action)}");
             AddBattleLogMessage("Processing actions and calculating results...");
@@ -469,7 +477,7 @@ namespace ZoidsBattle
             // Track human player round for history
             var humanRoundResult = new BattleRoundResult
             {
-                RoundNumber = _currentTurn,
+                RoundNumber = _battleHistory.Count + 1, // Use sequential count for round numbers
                 PlayerName = playerName,
                 IsAI = false,
                 ActionDescription = GetActionDescription(action),
@@ -880,12 +888,14 @@ namespace ZoidsBattle
                 action.MoveDistance = 0;
                 action.AngleChange = 0;
                 action.ShouldAttack = true;
+                action.ActionSequence.Add(ActionType.Attack);
             }
             else if (distance > 500)
             {
                 action.MovementType = MovementType.Close;
                 action.MoveDistance = currentZoid.GetSpeed(_battleType) * 0.8; // 80% speed
                 action.ShouldAttack = false;
+                action.ActionSequence.Add(ActionType.Move);
             }
             else if (currentZoid.CanAttack(distance))
             {
@@ -899,26 +909,31 @@ namespace ZoidsBattle
                 {
                     action.MovementType = MovementType.Circle;
                     action.AngleChange = random.Next(30, 90); // Random flanking angle
+                    action.ActionSequence.Add(ActionType.Move);
                 }
                 action.ShouldAttack = true;
+                action.ActionSequence.Add(ActionType.Attack);
             }
             else
             {
                 action.MovementType = MovementType.Close;
                 action.MoveDistance = currentZoid.GetSpeed(_battleType) * 0.6; // 60% speed
                 action.ShouldAttack = false;
+                action.ActionSequence.Add(ActionType.Move);
             }
 
             // Shield logic
             if (currentZoid.HasShield() && !currentZoid.ShieldOn && enemyZoid.CanAttack(distance))
             {
                 action.ToggleShield = true;
+                action.ActionSequence.Add(ActionType.Shield);
             }
 
             // Stealth logic
             if (currentZoid.HasStealth() && !currentZoid.StealthOn && random.Next(0, 3) == 0)
             {
                 action.ToggleStealth = true;
+                action.ActionSequence.Add(ActionType.Stealth);
             }
 
             return action;
@@ -1141,8 +1156,12 @@ namespace ZoidsBattle
             _waitingForPlayerAction = true;
             
             // Determine if this is AI mode and current player
-            bool isPlayer1 = currentZoid == _player1Zoid;
+            // Use the GameEngine's CurrentPlayer field which contains the exact player number
+            bool isPlayer1 = (gameState.CurrentPlayer == 1);
             bool isAI = _isAIMode && !isPlayer1; // In AI mode, Player 2 is AI
+            
+            // Store current player for use in other methods
+            _currentPlayerIsPlayer1 = isPlayer1;
             
             // Debug logging with object references
             string playerName = isPlayer1 ? "Player 1" : "Player 2";
@@ -1167,10 +1186,18 @@ namespace ZoidsBattle
                     var aiAction = GenerateAutoAction(currentZoid, enemyZoid, distance);
                     AddBattleLogMessage($"AI performs action: {GetActionDescription(aiAction)}");
                     
+                    // Debug: Show detailed AI action information
+                    AddBattleLogMessage($"DEBUG AI ACTION: MovementType={aiAction.MovementType}, MoveDistance={aiAction.MoveDistance:F1}, Actions=[{string.Join(", ", aiAction.ActionSequence)}]");
+                    
+                    // Set up action tracking for battle history (same as human players)
+                    _lastExecutedAction = aiAction;
+                    _lastActiveZoid = currentZoid;
+                    _isTrackingActionResults = true;
+                    
                     // Track AI round for history
                     var aiRoundResult = new BattleRoundResult
                     {
-                        RoundNumber = _currentTurn,
+                        RoundNumber = _battleHistory.Count + 1, // Use sequential count for round numbers
                         PlayerName = playerName,
                         IsAI = true,
                         ActionDescription = GetActionDescription(aiAction),
@@ -1181,12 +1208,17 @@ namespace ZoidsBattle
                     _battleHistory.Add(aiRoundResult);
                     UpdatePreviousRoundsDisplay();
                     
-                    _playerActionChoice.SetResult(aiAction);
-                    _waitingForPlayerAction = false;
-                    
                     // Hide controls for AI turn
                     BattleControlsPanel.Visibility = Visibility.Collapsed;
                     AddBattleLogMessage("DEBUG: Controls hidden for AI turn");
+                    
+                    // Add a small delay to prevent potential UI thread issues, then complete the action
+                    Task.Delay(1000).ContinueWith(_ => {
+                        Dispatcher.Invoke(() => {
+                            _playerActionChoice.SetResult(aiAction);
+                            _waitingForPlayerAction = false;
+                        });
+                    });
                 }
                 else
                 {
@@ -1195,18 +1227,16 @@ namespace ZoidsBattle
                     AddBattleLogMessage($"=== {playerName}'s Turn ===");
                     AddBattleLogMessage($"Distance: {distance:F0}m | Enemy Detected: {(enemyDetected ? "YES" : "NO")}");
                     AddBattleLogMessage(">>> SHOWING BATTLE CONTROLS - Choose your actions! <<<");
+                    AddBattleLogMessage($"DEBUG: About to call UpdateBattleControls for {playerName} (isPlayer1={isPlayer1})");
                     
                     // Show and update battle controls
                     UpdateBattleControls(currentZoid, isPlayer1);
-                    BattleControlsPanel.Visibility = Visibility.Visible;
+                    // Note: UpdateBattleControls already sets BattleControlsPanel.Visibility = Visibility.Visible;
                     
                     AddBattleLogMessage("DEBUG: Controls should now be VISIBLE!");
                     AddBattleLogMessage("If you don't see controls, please report this issue!");
                 }
             });
-            
-            // Increment turn counter for next round
-            _currentTurn++;
             
             return _playerActionChoice.Task;
         }
@@ -1307,29 +1337,9 @@ namespace ZoidsBattle
                 var lastEntry = _battleHistory.Last();
                 var results = new List<string>();
                 
-                // Calculate distance at time of attack based on action sequence
+                // Calculate distance at time of attack
+                // For simplicity and correctness: attacks always use the final distance after all movement
                 double attackDistance = newDistance;
-                bool hasMovement = action.ActionSequence.Contains(ActionType.Move);
-                bool hasAttack = action.ActionSequence.Contains(ActionType.Attack);
-                
-                if (hasMovement && hasAttack)
-                {
-                    // Find the position of Move and Attack in the sequence
-                    int moveIndex = action.ActionSequence.ToList().IndexOf(ActionType.Move);
-                    int attackIndex = action.ActionSequence.ToList().IndexOf(ActionType.Attack);
-                    
-                    // If attack happens before movement, use the original distance
-                    if (attackIndex < moveIndex)
-                    {
-                        attackDistance = lastEntry.DistanceAfter; // Distance before this turn's actions
-                    }
-                    // If attack happens after movement, use the new distance (already set)
-                }
-                else if (hasAttack && !hasMovement)
-                {
-                    // No movement, so attack happens at original distance
-                    attackDistance = lastEntry.DistanceAfter;
-                }
                 
                 // Movement results
                 if (action.ActionSequence.Contains(ActionType.Move))
@@ -1385,9 +1395,9 @@ namespace ZoidsBattle
 
         private Ranges GetRange(double distance)
         {
-            if (distance <= 100) return Ranges.Melee;
-            if (distance <= 300) return Ranges.Close;
-            if (distance <= 800) return Ranges.Mid;
+            if (distance == 0) return Ranges.Melee;
+            if (distance <= 500) return Ranges.Close;
+            if (distance <= 1000) return Ranges.Mid;
             return Ranges.Long;
         }
 
