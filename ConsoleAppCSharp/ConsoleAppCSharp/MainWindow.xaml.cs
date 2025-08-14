@@ -28,6 +28,7 @@ namespace ZoidsBattle
         private int _currentTurn = 1;
         private bool _isBattleActive = false;
         private bool _waitingForPlayerAction = false;
+        private bool _isDebugMode = false; // Track if debug mode is enabled
         private Zoid? _currentBattleZoid;
         private Zoid? _enemyBattleZoid;
         
@@ -56,6 +57,11 @@ namespace ZoidsBattle
         private TaskCompletionSource<double>? _distanceChoice;
         private TaskCompletionSource<PlayerAction>? _playerActionChoice;
         private TaskCompletionSource<bool>? _playAgainChoice;
+
+        // Action tracking for battle history
+        private PlayerAction? _lastExecutedAction;
+        private Zoid? _lastActiveZoid;
+        private bool _isTrackingActionResults = false;
 
         public MainWindow()
         {
@@ -115,6 +121,9 @@ namespace ZoidsBattle
 
             // Determine game mode
             _isAIMode = AIRadio.IsChecked == true;
+            
+            // Capture debug mode setting
+            _isDebugMode = DebugModeCheckBox.IsChecked == true;
 
             // Filter zoids based on battle type
             _filteredZoids = FilterZoids(_allZoids, _battleType).ToList();
@@ -252,12 +261,25 @@ namespace ZoidsBattle
             ZoidSelectionPanel.Visibility = Visibility.Collapsed;
             BattlePanel.Visibility = Visibility.Visible;
             
+            // Apply debug mode setting - hide/show battle log
+            if (_isDebugMode)
+            {
+                ShowBattleLogInDebugMode();
+            }
+            else
+            {
+                HideBattleLogInReleaseMode();
+            }
+            
             Player1ZoidText.Text = $"Player 1: {_player1Zoid.ZoidName} (PL {_player1Zoid.PowerLevel})";
             Player2ZoidText.Text = $"Player 2: {_player2Zoid.ZoidName} (PL {_player2Zoid.PowerLevel})";
             
             BattleLogTextBox.Clear();
-            AddBattleLogMessage("=== BATTLE STARTING ===");
-            AddBattleLogMessage("*** BATTLE LOG IS VISIBLE - YOU SHOULD SEE THIS MESSAGE ***");
+            if (_isDebugMode)
+            {
+                AddBattleLogMessage("=== BATTLE STARTING ===");
+                AddBattleLogMessage("*** BATTLE LOG IS VISIBLE - YOU SHOULD SEE THIS MESSAGE ***");
+            }
             AddBattleLogMessage($"Terrain: {_battleType.ToUpper()}");
             AddBattleLogMessage($"Mode: {(_isAIMode ? "Player vs AI" : "Player vs Player")}");
             AddBattleLogMessage($"Starting Distance: {_userSelectedStartingDistance:F0}m");
@@ -392,6 +414,10 @@ namespace ZoidsBattle
 
         private void AddBattleLogMessage(string message)
         {
+            // Only show battle log messages when debug mode is enabled
+            if (!_isDebugMode)
+                return;
+                
             Dispatcher.Invoke(() =>
             {
                 BattleLogTextBox.AppendText(message + Environment.NewLine);
@@ -429,11 +455,30 @@ namespace ZoidsBattle
 
             var action = GetPlayerActionFromUI();
             
+            // Set up action tracking for battle history
+            _lastExecutedAction = action;
+            _lastActiveZoid = _currentBattleZoid;
+            _isTrackingActionResults = true;
+            
             // Log the player's chosen actions
             bool isPlayer1 = _currentBattleZoid == _player1Zoid;
             string playerName = isPlayer1 ? "Player 1" : "Player 2";
             AddBattleLogMessage($"{playerName} executes: {GetActionDescription(action)}");
             AddBattleLogMessage("Processing actions and calculating results...");
+            
+            // Track human player round for history
+            var humanRoundResult = new BattleRoundResult
+            {
+                RoundNumber = _currentTurn,
+                PlayerName = playerName,
+                IsAI = false,
+                ActionDescription = GetActionDescription(action),
+                ResultDescription = "Processing...", // Will be updated after battle engine processes
+                DistanceAfter = _currentDistance,
+                ZoidStatusAfter = $"{_currentBattleZoid?.ZoidName ?? "Unknown"}: {_currentBattleZoid?.Status ?? "Unknown"}"
+            };
+            _battleHistory.Add(humanRoundResult);
+            UpdatePreviousRoundsDisplay();
             
             _playerActionChoice?.SetResult(action);
             _waitingForPlayerAction = false;
@@ -1221,6 +1266,22 @@ namespace ZoidsBattle
                         $"Stealth: {(zoid.StealthOn ? "ON" : "OFF")}, Dents: {zoid.Dents}, Status: {zoid.Status}";
             AddBattleLogMessage(status);
             
+            // Update battle history with action results if we're tracking
+            if (_isTrackingActionResults && _lastExecutedAction != null && _lastActiveZoid != null)
+            {
+                var enemyZoid = _lastActiveZoid == _player1Zoid ? _player2Zoid : _player1Zoid;
+                if (enemyZoid != null)
+                {
+                    // Ensure battle history update happens on UI thread
+                    Dispatcher.Invoke(() => {
+                        UpdateBattleHistoryWithResults(_lastActiveZoid, enemyZoid, distance, _lastExecutedAction);
+                    });
+                }
+                _isTrackingActionResults = false;
+                _lastExecutedAction = null;
+                _lastActiveZoid = null;
+            }
+            
             // Update the status display immediately
             Dispatcher.Invoke(() => {
                 AddBattleLogMessage($"DEBUG: About to update UI with _currentDistance={_currentDistance:F1}m");
@@ -1239,10 +1300,133 @@ namespace ZoidsBattle
             AddBattleLogMessage($"--- Turn {turnNumber}: {currentZoid.ZoidName}'s turn ---");
         }
 
+        private void UpdateBattleHistoryWithResults(Zoid activeZoid, Zoid enemyZoid, double newDistance, PlayerAction action)
+        {
+            if (_battleHistory.Any())
+            {
+                var lastEntry = _battleHistory.Last();
+                var results = new List<string>();
+                
+                // Calculate distance at time of attack based on action sequence
+                double attackDistance = newDistance;
+                bool hasMovement = action.ActionSequence.Contains(ActionType.Move);
+                bool hasAttack = action.ActionSequence.Contains(ActionType.Attack);
+                
+                if (hasMovement && hasAttack)
+                {
+                    // Find the position of Move and Attack in the sequence
+                    int moveIndex = action.ActionSequence.ToList().IndexOf(ActionType.Move);
+                    int attackIndex = action.ActionSequence.ToList().IndexOf(ActionType.Attack);
+                    
+                    // If attack happens before movement, use the original distance
+                    if (attackIndex < moveIndex)
+                    {
+                        attackDistance = lastEntry.DistanceAfter; // Distance before this turn's actions
+                    }
+                    // If attack happens after movement, use the new distance (already set)
+                }
+                else if (hasAttack && !hasMovement)
+                {
+                    // No movement, so attack happens at original distance
+                    attackDistance = lastEntry.DistanceAfter;
+                }
+                
+                // Movement results
+                if (action.ActionSequence.Contains(ActionType.Move))
+                {
+                    var distanceChange = newDistance - lastEntry.DistanceAfter;
+                    string movementResult = action.MovementType switch
+                    {
+                        MovementType.Close => $"Moved closer by {Math.Abs(distanceChange):F0}m",
+                        MovementType.Retreat => $"Retreated by {Math.Abs(distanceChange):F0}m",
+                        MovementType.Circle => "Circled around enemy",
+                        MovementType.Search => "Searched the area",
+                        _ => "Moved"
+                    };
+                    results.Add(movementResult);
+                }
+                else
+                {
+                    results.Add("Remained in position");
+                }
+                
+                // Shield/Stealth results
+                if (action.ActionSequence.Contains(ActionType.Shield))
+                {
+                    results.Add($"Shield {(activeZoid.ShieldOn ? "activated" : "deactivated")}");
+                }
+                if (action.ActionSequence.Contains(ActionType.Stealth))
+                {
+                    results.Add($"Stealth {(activeZoid.StealthOn ? "activated" : "deactivated")}");
+                }
+                
+                // Attack results - use the correct distance for range calculation
+                if (action.ActionSequence.Contains(ActionType.Attack))
+                {
+                    var range = GetRange(attackDistance);
+                    if (enemyZoid.Dents > 0)
+                    {
+                        results.Add($"{range} attack hit! Enemy takes damage (Dents: {enemyZoid.Dents}/5)");
+                    }
+                    else
+                    {
+                        results.Add($"{range} attack missed");
+                    }
+                }
+                
+                // Update the last entry with results
+                lastEntry.ResultDescription = string.Join("; ", results);
+                lastEntry.DistanceAfter = newDistance;
+                lastEntry.ZoidStatusAfter = $"{activeZoid.ZoidName}: Dents {activeZoid.Dents}/5, {activeZoid.Status}";
+                
+                UpdatePreviousRoundsDisplay();
+            }
+        }
+
+        private Ranges GetRange(double distance)
+        {
+            if (distance <= 100) return Ranges.Melee;
+            if (distance <= 300) return Ranges.Close;
+            if (distance <= 800) return Ranges.Mid;
+            return Ranges.Long;
+        }
+
         private void DisplayBattleResult(Zoid winner, Zoid loser)
         {
             AddBattleLogMessage($"*** {winner.ZoidName} WINS! ***");
             AddBattleLogMessage($"{loser.ZoidName} has been defeated!");
+        }
+
+        private void HideBattleLogInReleaseMode()
+        {
+            // Hide the battle log GroupBox
+            if (BattleLogGroupBox != null)
+            {
+                BattleLogGroupBox.Visibility = Visibility.Collapsed;
+            }
+            
+            // Adjust the grid columns to give all space to the Previous Rounds panel
+            if (BattleLogGrid != null && BattleLogGrid.ColumnDefinitions.Count >= 2)
+            {
+                BattleLogGrid.ColumnDefinitions[0].Width = new GridLength(0); // Hide battle log column
+                BattleLogGrid.ColumnDefinitions[1].Width = new GridLength(1, GridUnitType.Star); // Give all space to previous rounds
+            }
+        }
+        
+        private void ShowBattleLogInDebugMode()
+        {
+            // Show the battle log GroupBox
+            if (BattleLogGroupBox != null)
+            {
+                BattleLogGroupBox.Visibility = Visibility.Visible;
+            }
+            
+            // Restore the original grid column layout
+            if (BattleLogGrid != null && BattleLogGrid.ColumnDefinitions.Count >= 2)
+            {
+                BattleLogGrid.ColumnDefinitions[0].Width = new GridLength(2, GridUnitType.Star); // Battle log column
+                BattleLogGrid.ColumnDefinitions[1].Width = new GridLength(1, GridUnitType.Star); // Previous rounds column
+            }
         }
     }
 }

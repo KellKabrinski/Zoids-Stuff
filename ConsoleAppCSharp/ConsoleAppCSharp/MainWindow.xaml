@@ -63,6 +63,15 @@
                     </StackPanel>
                 </GroupBox>
                 
+                <GroupBox Header="Developer Options" Margin="0,0,0,20">
+                    <StackPanel Margin="15">
+                        <CheckBox x:Name="DebugModeCheckBox" Content="Enable Debug Mode (Show Battle Log)" 
+                                  HorizontalAlignment="Center" 
+                                  FontSize="12" 
+                                  ToolTip="Show detailed battle log and debug information during gameplay"/>
+                    </StackPanel>
+                </GroupBox>
+                
                 <Button x:Name="StartGameButton" Content="Start Game" 
                         Click="StartGame_Click" 
                         HorizontalAlignment="Center" 
@@ -133,7 +142,7 @@
             <Grid x:Name="BattlePanel" Visibility="Collapsed">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="100"/>
+                    <RowDefinition Height="Auto"/>
                     <RowDefinition Height="2*"/>
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
@@ -177,14 +186,14 @@
                 </Grid>
                 
                 <!-- Battle Log -->
-                <Grid Grid.Row="2" Margin="10">
+                <Grid Grid.Row="2" Margin="10" x:Name="BattleLogGrid">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="2*"/>
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
                     
                     <!-- Main Battle Log -->
-                    <GroupBox Grid.Column="0" Header="Battle Log" Margin="0,0,5,0">
+                    <GroupBox Grid.Column="0" Header="Battle Log" Margin="0,0,5,0" x:Name="BattleLogGroupBox">
                         <ScrollViewer>
                             <TextBox x:Name="BattleLogTextBox" 
                                      IsReadOnly="True" 
@@ -281,7 +290,7 @@
                         <!-- Action Sequence Ordering -->
                         <GroupBox Grid.Row="2" Header="Action Execution Order" Margin="5">
                             <StackPanel>
-                                <TextBlock Text="Drag to reorder actions:" FontWeight="Bold" Margin="0,0,0,5"/>
+                                <TextBlock Text="Use buttons to reorder actions:" FontWeight="Bold" Margin="0,0,0,5"/>
                                 <ListBox x:Name="ActionSequenceListBox" Height="120" Margin="2" AllowDrop="True" 
                                          Drop="ActionSequence_Drop" DragOver="ActionSequence_DragOver">
                                     <ListBox.ItemTemplate>
