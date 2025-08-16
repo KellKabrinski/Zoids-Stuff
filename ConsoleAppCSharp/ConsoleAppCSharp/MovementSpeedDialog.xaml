@@ -2,11 +2,12 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="Movement Speed Selection" 
-        Height="450" Width="500"
+        Height="600" Width="550"
         WindowStartupLocation="CenterOwner"
         ResizeMode="NoResize">
-    <Grid Margin="20">
+    <Grid Margin="15">
         <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
@@ -17,9 +18,9 @@
         <TextBlock Grid.Row="0" Text="Select Movement Type and Speed" 
                    FontSize="16" FontWeight="Bold" 
                    HorizontalAlignment="Center" 
-                   Margin="0,0,0,20"/>
+                   Margin="0,0,0,15"/>
         
-        <GroupBox Grid.Row="1" Header="Movement Type" Margin="0,0,0,15">
+        <GroupBox Grid.Row="1" Header="Movement Type" Margin="0,0,0,12">
             <ComboBox x:Name="MovementTypeCombo" Margin="15" Height="30" FontSize="12"
                       SelectionChanged="MovementTypeCombo_SelectionChanged">
                 <ComboBoxItem Content="Close Distance" Tag="Close"/>
@@ -29,7 +30,7 @@
             </ComboBox>
         </GroupBox>
         
-        <GroupBox Grid.Row="2" Header="Movement Speed" Margin="0,0,0,15">
+        <GroupBox Grid.Row="2" Header="Movement Speed" Margin="0,0,0,12">
             <StackPanel Margin="15">
                 <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
                     <TextBlock Text="Speed: " FontSize="12"/>
@@ -49,17 +50,46 @@
             </StackPanel>
         </GroupBox>
         
-        <GroupBox Grid.Row="3" Header="Preview" Margin="0,0,0,15">
+        <GroupBox Grid.Row="3" Header="Circle Direction and Angle" x:Name="CircleControlsGroup" Margin="0,0,0,12" Visibility="Collapsed">
+            <StackPanel Margin="12">
+                <TextBlock Text="Direction:" FontSize="12" Margin="0,0,0,4"/>
+                <ComboBox x:Name="CircleDirectionCombo" Height="25" FontSize="12" Margin="0,0,0,12">
+                    <ComboBoxItem Content="Clockwise" Tag="1" IsSelected="True"/>
+                    <ComboBoxItem Content="Counter-clockwise" Tag="-1"/>
+                </ComboBox>
+                
+                <StackPanel Orientation="Horizontal" Margin="0,0,0,8">
+                    <TextBlock Text="Angle: " FontSize="12"/>
+                    <TextBlock x:Name="AngleValueText" Text="45" FontWeight="Bold" FontSize="12"/>
+                    <TextBlock Text=" degrees" FontSize="12"/>
+                </StackPanel>
+                <Slider x:Name="AngleSlider" 
+                        Minimum="15" 
+                        Maximum="180" 
+                        Value="45"
+                        TickFrequency="15"
+                        IsSnapToTickEnabled="True"
+                        ValueChanged="AngleSlider_ValueChanged"
+                        Height="25"/>
+                <TextBlock Text="15 deg = Quick sidestep, 90 deg = Flank, 180 deg = Behind enemy" 
+                           FontSize="10" FontStyle="Italic" 
+                           Foreground="Gray" 
+                           Margin="0,4,0,0"/>
+            </StackPanel>
+        </GroupBox>
+        
+        <GroupBox Grid.Row="4" Header="Preview" Margin="0,0,0,12">
             <StackPanel Margin="15">
                 <TextBlock x:Name="CurrentDistanceText" Text="Current Distance: 1000m" FontSize="12"/>
                 <TextBlock x:Name="ProjectedDistanceText" Text="After Movement: 1000m" FontWeight="Bold" FontSize="12" Margin="0,5,0,0"/>
                 <TextBlock x:Name="AttackRangePreviewText" Text="Attack Range: N/A" Margin="0,15,0,0" FontSize="12" FontWeight="Bold" Foreground="DarkBlue"/>
+                <TextBlock x:Name="CirclePreviewText" Text="" FontSize="12" FontWeight="Bold" Foreground="DarkGreen" Margin="0,5,0,0" Visibility="Collapsed"/>
             </StackPanel>
         </GroupBox>
         
-        <StackPanel Grid.Row="4" Orientation="Horizontal" 
+        <StackPanel Grid.Row="5" Orientation="Horizontal" 
                     HorizontalAlignment="Center" 
-                    Margin="0,15,0,0">
+                    Margin="0,12,0,0">
             <Button x:Name="OKButton" Content="OK" 
                     Click="OK_Click" 
                     Width="100" Height="35" 

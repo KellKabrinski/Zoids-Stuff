@@ -8,6 +8,7 @@ namespace ZoidsBattle
     {
         public MovementType SelectedMovementType { get; private set; }
         public double SelectedSpeed { get; private set; }
+        public double SelectedAngleChange { get; private set; }
         
         private readonly double _maxSpeed;
         private readonly double _currentDistance;
@@ -41,11 +42,68 @@ namespace ZoidsBattle
             }
             
             UpdatePreview();
+            UpdateCircleControlsVisibility();
         }
 
         private void MovementTypeCombo_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             UpdatePreview();
+            UpdateCircleControlsVisibility();
+        }
+
+        private void UpdateCircleControlsVisibility()
+        {
+            if (MovementTypeCombo.SelectedItem == null) return;
+            
+            var selectedItem = (ComboBoxItem)MovementTypeCombo.SelectedItem;
+            var movementType = Enum.Parse<MovementType>(selectedItem.Tag.ToString() ?? "StandStill");
+            
+            bool isCircle = (movementType == MovementType.Circle);
+            CircleControlsGroup.Visibility = isCircle ? Visibility.Visible : Visibility.Collapsed;
+            
+            // Update angle slider maximum based on Zoid capabilities
+            if (isCircle && _currentZoid != null)
+            {
+                double maxAngle = CalculateMaxCircleAngle(_currentZoid, _currentDistance);
+                AngleSlider.Maximum = maxAngle;
+                
+                // Adjust current value if it exceeds the new maximum
+                if (AngleSlider.Value > maxAngle)
+                {
+                    AngleSlider.Value = maxAngle;
+                }
+            }
+        }
+
+        private double CalculateMaxCircleAngle(Zoid zoid, double distance)
+        {
+            // Get the Zoid's speed for the current terrain
+            double speed = zoid.GetSpeed("land"); // Default to land for now
+            
+            // Calculate the circumference at the current distance
+            // Using simplified geometry: circumference = 2 * π * distance
+            double circumference = 2 * Math.PI * distance;
+            
+            // Calculate what fraction of the circumference the Zoid can travel
+            double fractionOfCircle = speed / circumference;
+            
+            // Convert to degrees (360° = full circle)
+            double maxAngleDegrees = fractionOfCircle * 360.0;
+            
+            // Cap at reasonable limits:
+            // - Minimum: 15° (always allow some movement)
+            // - Maximum: 180° (can't circle more than halfway around)
+            maxAngleDegrees = Math.Max(15.0, Math.Min(180.0, maxAngleDegrees));
+            
+            return maxAngleDegrees;
+        }
+
+        private void AngleSlider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            if (AngleValueText != null)
+            {
+                AngleValueText.Text = $"{e.NewValue:F0}°";
+            }
         }
 
         private void SpeedSlider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
@@ -121,6 +179,21 @@ namespace ZoidsBattle
             var selectedItem = (ComboBoxItem)MovementTypeCombo.SelectedItem;
             SelectedMovementType = Enum.Parse<MovementType>(selectedItem.Tag?.ToString() ?? "StandStill");
             SelectedSpeed = SpeedSlider.Value;
+            
+            // Capture angle change for circle movement
+            if (SelectedMovementType == MovementType.Circle)
+            {
+                var directionItem = (ComboBoxItem)CircleDirectionCombo.SelectedItem;
+                string direction = directionItem?.Tag?.ToString() ?? "Clockwise";
+                double angle = AngleSlider.Value;
+                
+                // Clockwise is positive, Counter-clockwise is negative
+                SelectedAngleChange = direction == "Clockwise" ? angle : -angle;
+            }
+            else
+            {
+                SelectedAngleChange = 0;
+            }
             
             DialogResult = true;
             Close();

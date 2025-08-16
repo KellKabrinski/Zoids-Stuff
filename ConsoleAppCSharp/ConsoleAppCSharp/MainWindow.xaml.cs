@@ -36,6 +36,7 @@ namespace ZoidsBattle
         // Movement selection state
         private MovementType _selectedMovementType = MovementType.StandStill;
         private double _selectedMoveDistance = 0.0;
+        private double _selectedAngleChange = 0.0;
         private double _projectedDistance = 1000.0; // Distance after movement for attack preview
         
         // Battle history tracking
@@ -674,10 +675,10 @@ namespace ZoidsBattle
                 action.MovementType = _selectedMovementType;
                 action.MoveDistance = _selectedMoveDistance;
 
-                // Set appropriate angles for circle movement
+                // Set angle change for circle movement (including direction)
                 if (action.MovementType == MovementType.Circle)
                 {
-                    action.AngleChange = 45;
+                    action.AngleChange = _selectedAngleChange;
                 }
             }
 
@@ -709,6 +710,7 @@ namespace ZoidsBattle
             {
                 _selectedMovementType = speedDialog.SelectedMovementType;
                 _selectedMoveDistance = speedDialog.SelectedSpeed;
+                _selectedAngleChange = speedDialog.SelectedAngleChange;
                 
                 // Calculate projected distance after movement
                 _projectedDistance = CalculateProjectedDistance(_currentDistance, _selectedMovementType, _selectedMoveDistance);
@@ -722,6 +724,7 @@ namespace ZoidsBattle
                 EnableMovementCheckBox.IsChecked = false;
                 _selectedMovementType = MovementType.StandStill;
                 _selectedMoveDistance = 0.0;
+                _selectedAngleChange = 0.0;
                 _projectedDistance = _currentDistance;
             }
         }
@@ -756,6 +759,7 @@ namespace ZoidsBattle
                 // Reset movement selection
                 _selectedMovementType = MovementType.StandStill;
                 _selectedMoveDistance = 0.0;
+                _selectedAngleChange = 0.0;
                 _projectedDistance = _currentDistance;
             }
             
@@ -1025,6 +1029,7 @@ namespace ZoidsBattle
             // Reset movement selection
             _selectedMovementType = MovementType.StandStill;
             _selectedMoveDistance = 0.0;
+            _selectedAngleChange = 0.0;
 
             // Update control states and displays
             UpdateControlStates();            // Clear action sequence
