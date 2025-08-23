@@ -1,0 +1,38 @@
+====== Gator ======
+[[gator|Lore]] | **RPG Stats**
+
+===== Stats =====
+^ Attribute ^ Value ^
+| Fighting | 3 |
+| Strength | 1 |
+| Dexterity | 2 |
+| Agility | 3 |
+| Awareness | 9 |
+===== Defenses =====
+^ Defense Type ^ Value ^
+| Toughness | 2 |
+| Parry | 3 |
+| Dodge | 3 |
+
+===== Powers =====
+^ Type ^ Details ^
+| Melee | **Rank**: 1 \\ **Power Points**: 0 |
+| Close-Range | **Rank**: 2 \\ **Extras**: Increased Range, Extended Range 5 \\ **Power Points**: 9 |
+| Ranged Combat | **Rank**: 2 \\ **Power Points**: 2 |
+| Protection | **Rank**: 2 \\ **Power Points**: 2 |
+| Concealment | **Rank**: 5 \\ **Power Points**: 2.5 |
+| Jamming | **Rank**: 7 \\ **Power Points**: 3.5 |
+| Speed | **Rank**: 6 \\ **Power Points**: 6 |
+
+===== Movement =====
+^ Terrain ^ Speed ^
+| Land | 333.3 m/6s |
+| Water | 0.0 m/6s |
+| Air | 0.0 m/6s |
+
+===== Summary =====
+^ Attribute ^ Value ^
+| Total Power Points | 61.0 |
+| Power Level | 7 |
+| Power Level Source(s) | Fighting + Melee |
+| Cost | 21350.0 Credits |

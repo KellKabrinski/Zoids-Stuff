@@ -1,0 +1,38 @@
+====== Gojulasgiga ======
+[[gojulasgiga|Lore]] | **RPG Stats**
+
+===== Stats =====
+^ Attribute ^ Value ^
+| Fighting | 8 |
+| Strength | 11 |
+| Dexterity | 9 |
+| Agility | 8 |
+| Awareness | 6 |
+===== Defenses =====
+^ Defense Type ^ Value ^
+| Toughness | 10 |
+| Parry | 8 |
+| Dodge | 8 |
+
+===== Powers =====
+^ Type ^ Details ^
+| Melee | **Rank**: 11 \\ **Power Points**: 0 |
+| Close-Range | **Rank**: 12 \\ **Extras**: Increased Range, Extended Range 5 \\ **Power Points**: 29 |
+| Ranged Combat | **Rank**: 2 \\ **Power Points**: 2 |
+| Protection | **Rank**: 10 \\ **Power Points**: 10 |
+| E-Shield | **Rank**: 10 \\ **Power Points**: 10 |
+| Concealment | **Rank**: 2 \\ **Power Points**: 1.0 |
+| Speed | **Rank**: 5 \\ **Power Points**: 5 |
+
+===== Movement =====
+^ Terrain ^ Speed ^
+| Land | 300.0 m/6s |
+| Water | 0.0 m/6s |
+| Air | 0.0 m/6s |
+
+===== Summary =====
+^ Attribute ^ Value ^
+| Total Power Points | 141.0 |
+| Power Level | 23 |
+| Power Level Source(s) | Dexterity + Ranged |
+| Cost | 49350.0 Credits |

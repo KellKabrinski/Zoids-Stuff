@@ -1,0 +1,38 @@
+====== Snipe Master ======
+[[snipe_master|Lore]] | **RPG Stats**
+
+===== Stats =====
+^ Attribute ^ Value ^
+| Fighting | 7 |
+| Strength | 5 |
+| Dexterity | 9 |
+| Agility | 7 |
+| Awareness | 5 |
+===== Defenses =====
+^ Defense Type ^ Value ^
+| Toughness | 3 |
+| Parry | 7 |
+| Dodge | 7 |
+
+===== Powers =====
+^ Type ^ Details ^
+| Melee | **Rank**: 5 \\ **Power Points**: 0 |
+| Close-Range | **Rank**: 2 \\ **Extras**: Increased Range, Extended Range 5 \\ **Power Points**: 9 |
+| Mid-Range | **Rank**: 5 \\ **Extras**: Increased Range, Extended Range 6 \\ **Power Points**: 10 |
+| Ranged Combat | **Rank**: 2 \\ **Power Points**: 2 |
+| Protection | **Rank**: 3 \\ **Power Points**: 3 |
+| Concealment | **Rank**: 2 \\ **Power Points**: 1.0 |
+| Speed | **Rank**: 6 \\ **Power Points**: 6 |
+
+===== Movement =====
+^ Terrain ^ Speed ^
+| Land | 325.0 m/6s |
+| Water | 0.0 m/6s |
+| Air | 0.0 m/6s |
+
+===== Summary =====
+^ Attribute ^ Value ^
+| Total Power Points | 97.0 |
+| Power Level | 16 |
+| Power Level Source(s) | Dexterity + Ranged |
+| Cost | 33950.0 Credits |

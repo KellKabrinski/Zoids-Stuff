@@ -1,0 +1,39 @@
+====== Wardick ======
+[[wardick|Lore]] | **RPG Stats**
+
+===== Stats =====
+^ Attribute ^ Value ^
+| Fighting | 4 |
+| Strength | 3 |
+| Dexterity | 5 |
+| Agility | 5 |
+| Awareness | 5 |
+===== Defenses =====
+^ Defense Type ^ Value ^
+| Toughness | 6 |
+| Parry | 4 |
+| Dodge | 5 |
+
+===== Powers =====
+^ Type ^ Details ^
+| Melee | **Rank**: 3 \\ **Power Points**: 0 |
+| Close-Range | **Rank**: 6 \\ **Extras**: Increased Range, Extended Range 5 \\ **Power Points**: 17 |
+| Mid-Range | **Rank**: 6 \\ **Extras**: Increased Range, Extended Range 6 \\ **Power Points**: 18 |
+| Ranged Combat | **Rank**: 2 \\ **Power Points**: 2 |
+| Protection | **Rank**: 6 \\ **Power Points**: 6 |
+| Concealment | **Rank**: 9 \\ **Power Points**: 4.5 |
+| Speed | **Rank**: 5 \\ **Power Points**: 5 |
+| Swimming | **Rank**: 5 \\ **Power Points**: 5 |
+
+===== Movement =====
+^ Terrain ^ Speed ^
+| Land | 116.7 m/6s |
+| Water | 200.6 m/6s |
+| Air | 0.0 m/6s |
+
+===== Summary =====
+^ Attribute ^ Value ^
+| Total Power Points | 101.5 |
+| Power Level | 13 |
+| Power Level Source(s) | Dexterity + Ranged |
+| Cost | 35525.0 Credits |

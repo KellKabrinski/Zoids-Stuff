@@ -1,0 +1,39 @@
+====== Liger Zero Panzer ======
+[[liger_zero_panzer|Lore]] | **RPG Stats**
+
+===== Stats =====
+^ Attribute ^ Value ^
+| Fighting | 5 |
+| Strength | 6 |
+| Dexterity | 5 |
+| Agility | 6 |
+| Awareness | 7 |
+===== Defenses =====
+^ Defense Type ^ Value ^
+| Toughness | 8 |
+| Parry | 5 |
+| Dodge | 6 |
+
+===== Powers =====
+^ Type ^ Details ^
+| Melee | **Rank**: 6 \\ **Power Points**: 0 |
+| Close-Range | **Rank**: 8 \\ **Extras**: Increased Range, Extended Range 5 \\ **Power Points**: 21 |
+| Mid-Range | **Rank**: 9 \\ **Extras**: Increased Range, Extended Range 6 \\ **Power Points**: 22 |
+| Long-Range | **Rank**: 6 \\ **Extras**: Increased Range, Extended Range 7 \\ **Power Points**: 23 |
+| Ranged Combat | **Rank**: 2 \\ **Power Points**: 2 |
+| Protection | **Rank**: 8 \\ **Power Points**: 8 |
+| Concealment | **Rank**: 3 \\ **Power Points**: 1.5 |
+| Speed | **Rank**: 6 \\ **Power Points**: 6 |
+
+===== Movement =====
+^ Terrain ^ Speed ^
+| Land | 475.0 m/6s |
+| Water | 0.0 m/6s |
+| Air | 0.0 m/6s |
+
+===== Summary =====
+^ Attribute ^ Value ^
+| Total Power Points | 141.5 |
+| Power Level | 16 |
+| Power Level Source(s) | Dexterity + Ranged |
+| Cost | 49525.0 Credits |

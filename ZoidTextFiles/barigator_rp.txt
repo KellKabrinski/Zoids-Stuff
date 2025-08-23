@@ -1,0 +1,38 @@
+====== Barigator ======
+[[barigator|Lore]] | **RPG Stats**
+
+===== Stats =====
+^ Attribute ^ Value ^
+| Fighting | 4 |
+| Strength | 3 |
+| Dexterity | 3 |
+| Agility | 4 |
+| Awareness | 2 |
+===== Defenses =====
+^ Defense Type ^ Value ^
+| Toughness | 3 |
+| Parry | 4 |
+| Dodge | 4 |
+
+===== Powers =====
+^ Type ^ Details ^
+| Melee | **Rank**: 3 \\ **Power Points**: 0 |
+| Close-Range | **Rank**: 2 \\ **Extras**: Increased Range, Extended Range 5 \\ **Power Points**: 9 |
+| Close Combat | **Rank**: 3 \\ **Power Points**: 3 |
+| Protection | **Rank**: 3 \\ **Power Points**: 3 |
+| Concealment | **Rank**: 6 \\ **Power Points**: 3.0 |
+| Speed | **Rank**: 5 \\ **Power Points**: 5 |
+| Swimming | **Rank**: 5 \\ **Power Points**: 5 |
+
+===== Movement =====
+^ Terrain ^ Speed ^
+| Land | 250.0 m/6s |
+| Water | 108.0 m/6s |
+| Air | 0.0 m/6s |
+
+===== Summary =====
+^ Attribute ^ Value ^
+| Total Power Points | 60.0 |
+| Power Level | 10 |
+| Power Level Source(s) | Fighting + Melee |
+| Cost | 21000.0 Credits |

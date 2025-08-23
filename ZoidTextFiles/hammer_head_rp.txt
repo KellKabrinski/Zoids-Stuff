@@ -1,0 +1,37 @@
+====== Hammer Head ======
+[[hammer_head|Lore]] | **RPG Stats**
+
+===== Stats =====
+^ Attribute ^ Value ^
+| Fighting | 4 |
+| Strength | 2 |
+| Dexterity | 5 |
+| Agility | 5 |
+| Awareness | 5 |
+===== Defenses =====
+^ Defense Type ^ Value ^
+| Toughness | 7 |
+| Parry | 4 |
+| Dodge | 5 |
+
+===== Powers =====
+^ Type ^ Details ^
+| Melee | **Rank**: 2 \\ **Power Points**: 0 |
+| Close-Range | **Rank**: 5 \\ **Extras**: Increased Range, Extended Range 5 \\ **Power Points**: 15 |
+| Mid-Range | **Rank**: 5 \\ **Extras**: Increased Range, Extended Range 6 \\ **Power Points**: 16 |
+| Ranged Combat | **Rank**: 2 \\ **Power Points**: 2 |
+| Protection | **Rank**: 7 \\ **Power Points**: 7 |
+| Concealment | **Rank**: 9 \\ **Power Points**: 4.5 |
+
+===== Movement =====
+^ Terrain ^ Speed ^
+| Land | 0.0 m/6s |
+| Water | 200.6 m/6s |
+| Air | 571.7 m/6s |
+
+===== Summary =====
+^ Attribute ^ Value ^
+| Total Power Points | 107.5 |
+| Power Level | 12 |
+| Power Level Source(s) | Dexterity + Ranged, Agility + Toughness |
+| Cost | 37625.0 Credits |

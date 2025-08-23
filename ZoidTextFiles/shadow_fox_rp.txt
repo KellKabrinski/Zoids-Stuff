@@ -1,0 +1,37 @@
+====== Shadow Fox ======
+[[shadow_fox|Lore]] | **RPG Stats**
+
+===== Stats =====
+^ Attribute ^ Value ^
+| Fighting | 8 |
+| Strength | 5 |
+| Dexterity | 10 |
+| Agility | 8 |
+| Awareness | 10 |
+===== Defenses =====
+^ Defense Type ^ Value ^
+| Toughness | 5 |
+| Parry | 8 |
+| Dodge | 8 |
+
+===== Powers =====
+^ Type ^ Details ^
+| Melee | **Rank**: 5 \\ **Power Points**: 0 |
+| Close-Range | **Rank**: 5 \\ **Extras**: Increased Range, Extended Range 5 \\ **Power Points**: 15 |
+| Ranged Combat | **Rank**: 2 \\ **Power Points**: 2 |
+| Protection | **Rank**: 5 \\ **Power Points**: 5 |
+| Concealment | **Rank**: 9 \\ **Power Points**: 4.5 |
+| Speed | **Rank**: 6 \\ **Power Points**: 6 |
+
+===== Movement =====
+^ Terrain ^ Speed ^
+| Land | 483.3 m/6s |
+| Water | 0.0 m/6s |
+| Air | 0.0 m/6s |
+
+===== Summary =====
+^ Attribute ^ Value ^
+| Total Power Points | 114.5 |
+| Power Level | 17 |
+| Power Level Source(s) | Dexterity + Ranged |
+| Cost | 40075.0 Credits |

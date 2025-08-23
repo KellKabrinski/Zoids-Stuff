@@ -1,0 +1,38 @@
+====== Maccurtis ======
+[[maccurtis|Lore]] | **RPG Stats**
+
+===== Stats =====
+^ Attribute ^ Value ^
+| Fighting | 5 |
+| Strength | 3 |
+| Dexterity | 6 |
+| Agility | 5 |
+| Awareness | 5 |
+===== Defenses =====
+^ Defense Type ^ Value ^
+| Toughness | 5 |
+| Parry | 5 |
+| Dodge | 5 |
+
+===== Powers =====
+^ Type ^ Details ^
+| Melee | **Rank**: 3 \\ **Power Points**: 0 |
+| Close-Range | **Rank**: 3 \\ **Extras**: Increased Range, Extended Range 5 \\ **Power Points**: 11 |
+| Ranged Combat | **Rank**: 2 \\ **Power Points**: 2 |
+| Protection | **Rank**: 5 \\ **Power Points**: 5 |
+| Concealment | **Rank**: 8 \\ **Power Points**: 4.0 |
+| Speed | **Rank**: 5 \\ **Power Points**: 5 |
+| Swimming | **Rank**: 5 \\ **Power Points**: 5 |
+
+===== Movement =====
+^ Terrain ^ Speed ^
+| Land | 200.0 m/6s |
+| Water | 98.8 m/6s |
+| Air | 0.0 m/6s |
+
+===== Summary =====
+^ Attribute ^ Value ^
+| Total Power Points | 80.0 |
+| Power Level | 11 |
+| Power Level Source(s) | Fighting + Melee, Dexterity + Ranged |
+| Cost | 28000.0 Credits |

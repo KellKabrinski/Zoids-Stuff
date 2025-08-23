@@ -24,9 +24,10 @@
                 "Type": "Close-Range",
                 "Rank": 4,
                 "Extras": [
-                    "Increased Range"
+                    "Increased Range",
+                    "Extended Range 5"
                 ],
-                "Power Points": 8
+                "Power Points": 13
             },
             {
                 "Type": "Close Combat",
@@ -54,12 +55,12 @@
             "Water": 0.0,
             "Air": 0.0
         },
-        "Total Power Points": 83.0,
+        "Total Power Points": 88.0,
         "Power Level": 15,
         "Power Level Source": [
             "Dexterity + Ranged"
         ],
-        "Cost": 29050.0
+        "Cost": 30800.0
     },
     {
         "Name": "Barigator",
@@ -86,9 +87,10 @@
                 "Type": "Close-Range",
                 "Rank": 2,
                 "Extras": [
-                    "Increased Range"
+                    "Increased Range",
+                    "Extended Range 5"
                 ],
-                "Power Points": 4
+                "Power Points": 9
             },
             {
                 "Type": "Close Combat",
@@ -121,12 +123,12 @@
             "Water": 108.0,
             "Air": 0.0
         },
-        "Total Power Points": 55.0,
+        "Total Power Points": 60.0,
         "Power Level": 10,
         "Power Level Source": [
             "Fighting + Melee"
         ],
-        "Cost": 19250.0
+        "Cost": 21000.0
     },
     {
         "Name": "Bearfighter",
@@ -153,9 +155,10 @@
                 "Type": "Close-Range",
                 "Rank": 5,
                 "Extras": [
-                    "Increased Range"
+                    "Increased Range",
+                    "Extended Range 5"
                 ],
-                "Power Points": 10
+                "Power Points": 15
             },
             {
                 "Type": "Ranged Combat",
@@ -183,12 +186,12 @@
             "Water": 0.0,
             "Air": 0.0
         },
-        "Total Power Points": 86.5,
+        "Total Power Points": 91.5,
         "Power Level": 15,
         "Power Level Source": [
             "Dexterity + Ranged"
         ],
-        "Cost": 30275.0
+        "Cost": 32025.0
     },
     {
         "Name": "Berserk Fuhrer",
@@ -215,18 +218,19 @@
                 "Type": "Close-Range",
                 "Rank": 9,
                 "Extras": [
-                    "Increased Range"
+                    "Increased Range",
+                    "Extended Range 5"
                 ],
-                "Power Points": 18
+                "Power Points": 23
             },
             {
                 "Type": "Mid-Range",
                 "Rank": 8,
                 "Extras": [
                     "Increased Range",
-                    "Extended Range 1"
+                    "Extended Range 6"
                 ],
-                "Power Points": 19
+                "Power Points": 24
             },
             {
                 "Type": "Ranged Combat",
@@ -259,12 +263,12 @@
             "Water": 0.0,
             "Air": 0.0
         },
-        "Total Power Points": 137.0,
+        "Total Power Points": 147.0,
         "Power Level": 20,
         "Power Level Source": [
             "Dexterity + Ranged"
         ],
-        "Cost": 47950.0
+        "Cost": 51450.0
     },
     {
         "Name": "Black Rhimos",
@@ -291,18 +295,19 @@
                 "Type": "Close-Range",
                 "Rank": 5,
                 "Extras": [
-                    "Increased Range"
+                    "Increased Range",
+                    "Extended Range 5"
                 ],
-                "Power Points": 10
+                "Power Points": 15
             },
             {
                 "Type": "Mid-Range",
                 "Rank": 3,
                 "Extras": [
                     "Increased Range",
-                    "Extended Range 1"
+                    "Extended Range 6"
                 ],
-                "Power Points": 11
+                "Power Points": 16
             },
             {
                 "Type": "Ranged Combat",
@@ -330,13 +335,13 @@
             "Water": 0.0,
             "Air": 0.0
         },
-        "Total Power Points": 94.0,
+        "Total Power Points": 104.0,
         "Power Level": 14,
         "Power Level Source": [
             "Fighting + Melee",
             "Dexterity + Ranged"
         ],
-        "Cost": 32900.0
+        "Cost": 36400.0
     },
     {
         "Name": "Blade Liger",
@@ -363,9 +368,10 @@
                 "Type": "Close-Range",
                 "Rank": 5,
                 "Extras": [
-                    "Increased Range"
+                    "Increased Range",
+                    "Extended Range 5"
                 ],
-                "Power Points": 10
+                "Power Points": 15
             },
             {
                 "Type": "Close Combat",
@@ -398,13 +404,13 @@
             "Water": 0.0,
             "Air": 0.0
         },
-        "Total Power Points": 106.0,
+        "Total Power Points": 111.0,
         "Power Level": 17,
         "Power Level Source": [
             "Fighting + Melee",
             "Dexterity + Ranged"
         ],
-        "Cost": 37100.0
+        "Cost": 38850.0
     },
     {
         "Name": "Brachios",
@@ -431,18 +437,19 @@
                 "Type": "Close-Range",
                 "Rank": 5,
                 "Extras": [
-                    "Increased Range"
+                    "Increased Range",
+                    "Extended Range 5"
                 ],
-                "Power Points": 10
+                "Power Points": 15
             },
             {
                 "Type": "Mid-Range",
                 "Rank": 5,
                 "Extras": [
                     "Increased Range",
-                    "Extended Range 1"
+                    "Extended Range 6"
                 ],
-                "Power Points": 11
+                "Power Points": 16
             },
             {
                 "Type": "Ranged Combat",
@@ -470,13 +477,13 @@
             "Water": 0.0,
             "Air": 0.0
         },
-        "Total Power Points": 77.5,
+        "Total Power Points": 87.5,
         "Power Level": 11,
         "Power Level Source": [
             "Fighting + Melee",
             "Dexterity + Ranged"
         ],
-        "Cost": 27125.0
+        "Cost": 30625.0
     },
     {
         "Name": "Cannon Tortoise",
@@ -503,27 +510,28 @@
                 "Type": "Close-Range",
                 "Rank": 2,
                 "Extras": [
-                    "Increased Range"
+                    "Increased Range",
+                    "Extended Range 5"
                 ],
-                "Power Points": 4
+                "Power Points": 9
             },
             {
                 "Type": "Mid-Range",
                 "Rank": 7,
                 "Extras": [
                     "Increased Range",
-                    "Extended Range 1"
+                    "Extended Range 6"
                 ],
-                "Power Points": 5
+                "Power Points": 10
             },
             {
                 "Type": "Long-Range",
                 "Rank": 7,
                 "Extras": [
                     "Increased Range",
-                    "Extended Range 2"
+                    "Extended Range 7"
                 ],
-                "Power Points": 6
+                "Power Points": 11
             },
             {
                 "Type": "Ranged Combat",
@@ -551,12 +559,12 @@
             "Water": 0.0,
             "Air": 0.0
         },
-        "Total Power Points": 65.0,
+        "Total Power Points": 80.0,
         "Power Level": 12,
         "Power Level Source": [
             "Agility + Toughness"
         ],
-        "Cost": 22750.0
+        "Cost": 28000.0
     },
     {
         "Name": "Command Wolf",
@@ -583,9 +591,10 @@
                 "Type": "Close-Range",
                 "Rank": 4,
                 "Extras": [
-                    "Increased Range"
+                    "Increased Range",
+                    "Extended Range 5"
                 ],
-                "Power Points": 8
+                "Power Points": 13
             },
             {
                 "Type": "Ranged Combat",
@@ -613,12 +622,12 @@
             "Water": 0.0,
             "Air": 0.0
         },
-        "Total Power Points": 94.0,
+        "Total Power Points": 99.0,
         "Power Level": 15,
         "Power Level Source": [
             "Dexterity + Ranged"
         ],
-        "Cost": 32900.0
+        "Cost": 34650.0
     },
     {
         "Name": "Command Wolf AC",
@@ -645,18 +654,19 @@
                 "Type": "Close-Range",
                 "Rank": 6,
                 "Extras": [
-                    "Increased Range"
+                    "Increased Range",
+                    "Extended Range 5"
                 ],
-                "Power Points": 12
+                "Power Points": 17
             },
             {
                 "Type": "Mid-Range",
                 "Rank": 5,
                 "Extras": [
                     "Increased Range",
-                    "Extended Range 1"
+                    "Extended Range 6"
                 ],
-                "Power Points": 13
+                "Power Points": 18
             },
             {
                 "Type": "Ranged Combat",
@@ -684,12 +694,12 @@
             "Water": 0.0,
             "Air": 0.0
         },
-        "Total Power Points": 101.0,
+        "Total Power Points": 111.0,
         "Power Level": 15,
         "Power Level Source": [
             "Dexterity + Ranged"
         ],
-        "Cost": 35350.0
+        "Cost": 38850.0
     },
     {
         "Name": "Command Wolf IS",
@@ -716,18 +726,19 @@
                 "Type": "Close-Range",
                 "Rank": 6,
                 "Extras": [
-                    "Increased Range"
+                    "Increased Range",
+                    "Extended Range 5"
                 ],
-                "Power Points": 12
+                "Power Points": 17
             },
             {
                 "Type": "Mid-Range",
                 "Rank": 6,
                 "Extras": [
                     "Increased Range",
-                    "Extended Range 1"
+                    "Extended Range 6"
                 ],
-                "Power Points": 13
+                "Power Points": 18
             },
             {
                 "Type": "Ranged Combat",
@@ -755,12 +766,12 @@
             "Water": 0.0,
             "Air": 0.0
         },
-        "Total Power Points": 98.5,
+        "Total Power Points": 108.5,
         "Power Level": 15,
         "Power Level Source": [
             "Dexterity + Ranged"
         ],
-        "Cost": 34475.0
+        "Cost": 37975.0
     },
     {
         "Name": "Dark Spiner",
@@ -787,9 +798,10 @@
                 "Type": "Close-Range",
                 "Rank": 5,
                 "Extras": [
-                    "Increased Range"
+                    "Increased Range",
+                    "Extended Range 5"
                 ],
-                "Power Points": 10
+                "Power Points": 15
             },
             {
                 "Type": "Close Combat",
@@ -822,12 +834,12 @@
             "Water": 0.0,
             "Air": 0.0
         },
-        "Total Power Points": 104.5,
+        "Total Power Points": 109.5,
         "Power Level": 16,
         "Power Level Source": [
             "Fighting + Melee"
         ],
-        "Cost": 36575.0
+        "Cost": 38325.0
     },
     {
         "Name": "Death Saurer",
@@ -854,18 +866,19 @@
                 "Type": "Close-Range",
                 "Rank": 11,
                 "Extras": [
-                    "Increased Range"
+                    "Increased Range",
+                    "Extended Range 5"
                 ],
-                "Power Points": 22
+                "Power Points": 27
             },
             {
                 "Type": "Mid-Range",
                 "Rank": 10,
                 "Extras": [
                     "Increased Range",
-                    "Extended Range 1"
+                    "Extended Range 6"
                 ],
-                "Power Points": 23
+                "Power Points": 28
             },
             {
                 "Type": "Ranged Combat",
@@ -893,12 +906,12 @@
             "Water": 0.0,
             "Air": 0.0
         },
-        "Total Power Points": 137.5,
+        "Total Power Points": 147.5,
         "Power Level": 21,
         "Power Level Source": [
             "Fighting + Melee"
         ],
-        "Cost": 48125.0
+        "Cost": 51625.0
     },
     {
         "Name": "Death Stinger",
@@ -925,18 +938,19 @@
                 "Type": "Close-Range",
                 "Rank": 10,
                 "Extras": [
-                    "Increased Range"
+                    "Increased Range",
+                    "Extended Range 5"
                 ],
-                "Power Points": 20
+                "Power Points": 25
             },
             {
                 "Type": "Mid-Range",
                 "Rank": 9,
                 "Extras": [
                     "Increased Range",
-                    "Extended Range 1"
+                    "Extended Range 6"
                 ],
-                "Power Points": 21
+                "Power Points": 26
             },
             {
                 "Type": "Close Combat",
@@ -974,12 +988,12 @@
             "Water": 222.2,
             "Air": 0.0
         },
-        "Total Power Points": 169.5,
+        "Total Power Points": 179.5,
         "Power Level": 23,
         "Power Level Source": [
             "Dexterity + Ranged"
         ],
-        "Cost": 59325.0
+        "Cost": 62825.0
     },
     {
         "Name": "Demantis",
@@ -1006,9 +1020,10 @@
                 "Type": "Close-Range",
                 "Rank": 2,
                 "Extras": [
-                    "Increased Range"
+                    "Increased Range",
+                    "Extended Range 5"
                 ],
-                "Power Points": 4
+                "Power Points": 9
             },
             {
                 "Type": "Close Combat",
@@ -1036,12 +1051,12 @@
             "Water": 0.0,
             "Air": 0.0
         },
-        "Total Power Points": 62.5,
+        "Total Power Points": 67.5,
         "Power Level": 11,
         "Power Level Source": [
             "Fighting + Melee"
         ],
-        "Cost": 21875.0
+        "Cost": 23625.0
     },
     {
         "Name": "Dibison",
@@ -1068,18 +1083,19 @@
                 "Type": "Close-Range",
                 "Rank": 9,
                 "Extras": [
-                    "Increased Range"
+                    "Increased Range",
+                    "Extended Range 5"
                 ],
-                "Power Points": 18
+                "Power Points": 23
             },
             {
                 "Type": "Mid-Range",
                 "Rank": 9,
                 "Extras": [
                     "Increased Range",
-                    "Extended Range 1"
+                    "Extended Range 6"
                 ],
-                "Power Points": 19
+                "Power Points": 24
             },
             {
                 "Type": "Ranged Combat",
@@ -1107,13 +1123,13 @@
             "Water": 0.0,
             "Air": 0.0
         },
-        "Total Power Points": 116.5,
+        "Total Power Points": 126.5,
         "Power Level": 16,
         "Power Level Source": [
             "Fighting + Melee",
             "Dexterity + Ranged"
         ],
-        "Cost": 40775.0
+        "Cost": 44275.0
     },
     {
         "Name": "Diloforce",
@@ -1140,9 +1156,10 @@
                 "Type": "Close-Range",
                 "Rank": 4,
                 "Extras": [
-                    "Increased Range"
+                    "Increased Range",
+                    "Extended Range 5"
                 ],
-                "Power Points": 8
+                "Power Points": 13
             },
             {
                 "Type": "Ranged Combat",
@@ -1175,12 +1192,12 @@
             "Water": 0.0,
             "Air": 0.0
         },
-        "Total Power Points": 74.5,
+        "Total Power Points": 79.5,
         "Power Level": 13,
         "Power Level Source": [
             "Dexterity + Ranged"
         ],
-        "Cost": 26075.0
+        "Cost": 27825.0
     },
     {
         "Name": "Dimetrodon",
@@ -1207,9 +1224,10 @@
                 "Type": "Close-Range",
                 "Rank": 4,
                 "Extras": [
-                    "Increased Range"
+                    "Increased Range",
+                    "Extended Range 5"
                 ],
-                "Power Points": 8
+                "Power Points": 13
             },
             {
                 "Type": "Ranged Combat",
@@ -1242,12 +1260,12 @@
             "Water": 0.0,
             "Air": 0.0
         },
-        "Total Power Points": 79.5,
+        "Total Power Points": 84.5,
         "Power Level": 11,
         "Power Level Source": [
             "Fighting + Melee"
         ],
-        "Cost": 27825.0
+        "Cost": 29575.0
     },
     {
         "Name": "Double Sworder",
@@ -1274,9 +1292,10 @@
                 "Type": "Close-Range",
                 "Rank": 2,
                 "Extras": [
-                    "Increased Range"
+                    "Increased Range",
+                    "Extended Range 5"
                 ],
-                "Power Points": 4
+                "Power Points": 9
             },
             {
                 "Type": "Close Combat",
@@ -1299,12 +1318,12 @@
             "Water": 0.0,
             "Air": 188.7
         },
-        "Total Power Points": 93.0,
+        "Total Power Points": 98.0,
         "Power Level": 14,
         "Power Level Source": [
             "Dexterity + Ranged"
         ],
-        "Cost": 32550.0
+        "Cost": 34300.0
     },
     {
         "Name": "Elephander",
@@ -1331,18 +1350,19 @@
                 "Type": "Close-Range",
                 "Rank": 6,
                 "Extras": [
-                    "Increased Range"
+                    "Increased Range",
+                    "Extended Range 5"
                 ],
-                "Power Points": 12
+                "Power Points": 17
             },
             {
                 "Type": "Mid-Range",
                 "Rank": 6,
                 "Extras": [
                     "Increased Range",
-                    "Extended Range 1"
+                    "Extended Range 6"
                 ],
-                "Power Points": 13
+                "Power Points": 18
             },
             {
                 "Type": "Close Combat",
@@ -1375,12 +1395,12 @@
             "Water": 0.0,
             "Air": 0.0
         },
-        "Total Power Points": 117.5,
+        "Total Power Points": 127.5,
         "Power Level": 16,
         "Power Level Source": [
             "Fighting + Melee"
         ],
-        "Cost": 41125.0
+        "Cost": 44625.0
     },
     {
         "Name": "Energy Liger",
@@ -1407,18 +1427,19 @@
                 "Type": "Close-Range",
                 "Rank": 10,
                 "Extras": [
-                    "Increased Range"
+                    "Increased Range",
+                    "Extended Range 5"
                 ],
-                "Power Points": 20
+                "Power Points": 25
             },
             {
                 "Type": "Mid-Range",
                 "Rank": 9,
                 "Extras": [
                     "Increased Range",
-                    "Extended Range 1"
+                    "Extended Range 6"
                 ],
-                "Power Points": 21
+                "Power Points": 26
             },
             {
                 "Type": "Ranged Combat",
@@ -1446,12 +1467,12 @@
             "Water": 0.0,
             "Air": 0.0
         },
-        "Total Power Points": 146.0,
+        "Total Power Points": 156.0,
         "Power Level": 23,
         "Power Level Source": [
             "Dexterity + Ranged"
         ],
-        "Cost": 51100.0
+        "Cost": 54600.0
     },
     {
         "Name": "Gairyuki",
@@ -1478,9 +1499,10 @@
                 "Type": "Close-Range",
                 "Rank": 11,
                 "Extras": [
-                    "Increased Range"
+                    "Increased Range",
+                    "Extended Range 5"
                 ],
-                "Power Points": 22
+                "Power Points": 27
             },
             {
                 "Type": "Ranged Combat",
@@ -1508,12 +1530,12 @@
             "Water": 0.0,
             "Air": 0.0
         },
-        "Total Power Points": 116.5,
+        "Total Power Points": 121.5,
         "Power Level": 22,
         "Power Level Source": [
             "Dexterity + Ranged"
         ],
-        "Cost": 40775.0
+        "Cost": 42525.0
     },
     {
         "Name": "Gator",
@@ -1540,9 +1562,10 @@
                 "Type": "Close-Range",
                 "Rank": 2,
                 "Extras": [
-                    "Increased Range"
+                    "Increased Range",
+                    "Extended Range 5"
                 ],
-                "Power Points": 4
+                "Power Points": 9
             },
             {
                 "Type": "Ranged Combat",
@@ -1575,12 +1598,12 @@
             "Water": 0.0,
             "Air": 0.0
         },
-        "Total Power Points": 56.0,
+        "Total Power Points": 61.0,
         "Power Level": 7,
         "Power Level Source": [
             "Fighting + Melee"
         ],
-        "Cost": 19600.0
+        "Cost": 21350.0
     },
     {
         "Name": "Geno Breaker",
@@ -1607,18 +1630,19 @@
                 "Type": "Close-Range",
                 "Rank": 9,
                 "Extras": [
-                    "Increased Range"
+                    "Increased Range",
+                    "Extended Range 5"
                 ],
-                "Power Points": 18
+                "Power Points": 23
             },
             {
                 "Type": "Mid-Range",
                 "Rank": 8,
                 "Extras": [
                     "Increased Range",
-                    "Extended Range 1"
+                    "Extended Range 6"
                 ],
-                "Power Points": 19
+                "Power Points": 24
             },
             {
                 "Type": "Ranged Combat",
@@ -1646,12 +1670,12 @@
             "Water": 0.0,
             "Air": 0.0
         },
-        "Total Power Points": 136.5,
+        "Total Power Points": 146.5,
         "Power Level": 22,
         "Power Level Source": [
             "Dexterity + Ranged"
         ],
-        "Cost": 47775.0
+        "Cost": 51275.0
     },
     {
         "Name": "Geno Saurer",
@@ -1678,18 +1702,19 @@
                 "Type": "Close-Range",
                 "Rank": 9,
                 "Extras": [
-                    "Increased Range"
+                    "Increased Range",
+                    "Extended Range 5"
                 ],
-                "Power Points": 18
+                "Power Points": 23
             },
             {
                 "Type": "Mid-Range",
                 "Rank": 7,
                 "Extras": [
                     "Increased Range",
-                    "Extended Range 1"
+                    "Extended Range 6"
                 ],
-                "Power Points": 19
+                "Power Points": 24
             },
             {
                 "Type": "Ranged Combat",
@@ -1717,12 +1742,12 @@
             "Water": 0.0,
             "Air": 0.0
         },
-        "Total Power Points": 124.5,
+        "Total Power Points": 134.5,
         "Power Level": 20,
         "Power Level Source": [
             "Dexterity + Ranged"
         ],
-        "Cost": 43575.0
+        "Cost": 47075.0
     },
     {
         "Name": "Glaive Quama",
@@ -1749,9 +1774,10 @@
                 "Type": "Close-Range",
                 "Rank": 4,
                 "Extras": [
-                    "Increased Range"
+                    "Increased Range",
+                    "Extended Range 5"
                 ],
-                "Power Points": 8
+                "Power Points": 13
             },
             {
                 "Type": "Ranged Combat",
@@ -1774,12 +1800,12 @@
             "Water": 0.0,
             "Air": 1429.2
         },
-        "Total Power Points": 97.5,
+        "Total Power Points": 102.5,
         "Power Level": 15,
         "Power Level Source": [
             "Dexterity + Ranged"
         ],
-        "Cost": 34125.0
+        "Cost": 35875.0
     },
     {
         "Name": "Godos",
@@ -1806,9 +1832,10 @@
                 "Type": "Close-Range",
                 "Rank": 3,
                 "Extras": [
-                    "Increased Range"
+                    "Increased Range",
+                    "Extended Range 5"
                 ],
-                "Power Points": 6
+                "Power Points": 11
             },
             {
                 "Type": "Ranged Combat",
@@ -1836,12 +1863,12 @@
             "Water": 0.0,
             "Air": 0.0
         },
-        "Total Power Points": 63.0,
+        "Total Power Points": 68.0,
         "Power Level": 12,
         "Power Level Source": [
             "Dexterity + Ranged"
         ],
-        "Cost": 22050.0
+        "Cost": 23800.0
     },
     {
         "Name": "Gojulas",
@@ -1868,9 +1895,10 @@
                 "Type": "Close-Range",
                 "Rank": 7,
                 "Extras": [
-                    "Increased Range"
+                    "Increased Range",
+                    "Extended Range 5"
                 ],
-                "Power Points": 14
+                "Power Points": 19
             },
             {
                 "Type": "Close Combat",
@@ -1898,12 +1926,12 @@
             "Water": 0.0,
             "Air": 0.0
         },
-        "Total Power Points": 92.0,
+        "Total Power Points": 97.0,
         "Power Level": 17,
         "Power Level Source": [
             "Fighting + Melee"
         ],
-        "Cost": 32200.0
+        "Cost": 33950.0
     },
     {
         "Name": "Gojulas The Ogre",
@@ -1930,27 +1958,28 @@
                 "Type": "Close-Range",
                 "Rank": 8,
                 "Extras": [
-                    "Increased Range"
+                    "Increased Range",
+                    "Extended Range 5"
                 ],
-                "Power Points": 16
+                "Power Points": 21
             },
             {
                 "Type": "Mid-Range",
                 "Rank": 10,
                 "Extras": [
                     "Increased Range",
-                    "Extended Range 1"
+                    "Extended Range 6"
                 ],
-                "Power Points": 17
+                "Power Points": 22
             },
             {
                 "Type": "Long-Range",
                 "Rank": 10,
                 "Extras": [
                     "Increased Range",
-                    "Extended Range 2"
+                    "Extended Range 7"
                 ],
-                "Power Points": 18
+                "Power Points": 23
             },
             {
                 "Type": "Ranged Combat",
@@ -1978,12 +2007,12 @@
             "Water": 0.0,
             "Air": 0.0
         },
-        "Total Power Points": 146.5,
+        "Total Power Points": 161.5,
         "Power Level": 23,
         "Power Level Source": [
             "Dexterity + Ranged"
         ],
-        "Cost": 51275.0
+        "Cost": 56525.0
     },
     {
         "Name": "Gojulasgiga",
@@ -2010,9 +2039,10 @@
                 "Type": "Close-Range",
                 "Rank": 12,
                 "Extras": [
-                    "Increased Range"
+                    "Increased Range",
+                    "Extended Range 5"
                 ],
-                "Power Points": 24
+                "Power Points": 29
             },
             {
                 "Type": "Ranged Combat",
@@ -2045,12 +2075,12 @@
             "Water": 0.0,
             "Air": 0.0
         },
-        "Total Power Points": 136.0,
+        "Total Power Points": 141.0,
         "Power Level": 23,
         "Power Level Source": [
             "Dexterity + Ranged"
         ],
-        "Cost": 47600.0
+        "Cost": 49350.0
     },
     {
         "Name": "Gordos",
@@ -2077,18 +2107,19 @@
                 "Type": "Close-Range",
                 "Rank": 5,
                 "Extras": [
-                    "Increased Range"
+                    "Increased Range",
+                    "Extended Range 5"
                 ],
-                "Power Points": 10
+                "Power Points": 15
             },
             {
                 "Type": "Mid-Range",
                 "Rank": 8,
                 "Extras": [
                     "Increased Range",
-                    "Extended Range 1"
+                    "Extended Range 6"
                 ],
-                "Power Points": 11
+                "Power Points": 16
             },
             {
                 "Type": "Ranged Combat",
@@ -2121,12 +2152,12 @@
             "Water": 0.0,
             "Air": 0.0
         },
-        "Total Power Points": 86.5,
+        "Total Power Points": 96.5,
         "Power Level": 11,
         "Power Level Source": [
             "Dexterity + Ranged"
         ],
-        "Cost": 30275.0
+        "Cost": 33775.0
     },
     {
         "Name": "Gorhecks",
@@ -2153,18 +2184,19 @@
                 "Type": "Close-Range",
                 "Rank": 3,
                 "Extras": [
-                    "Increased Range"
+                    "Increased Range",
+                    "Extended Range 5"
                 ],
-                "Power Points": 6
+                "Power Points": 11
             },
             {
                 "Type": "Mid-Range",
                 "Rank": 2,
                 "Extras": [
                     "Increased Range",
-                    "Extended Range 1"
+                    "Extended Range 6"
                 ],
-                "Power Points": 7
+                "Power Points": 12
             },
             {
                 "Type": "Ranged Combat",
@@ -2197,14 +2229,14 @@
             "Water": 0.0,
             "Air": 0.0
         },
-        "Total Power Points": 78.5,
+        "Total Power Points": 88.5,
         "Power Level": 8,
         "Power Level Source": [
             "Fighting + Melee",
             "Dexterity + Ranged",
             "Agility + Toughness"
         ],
-        "Cost": 27475.0
+        "Cost": 30975.0
     },
     {
         "Name": "Grounchar",
@@ -2231,9 +2263,10 @@
                 "Type": "Close-Range",
                 "Rank": 4,
                 "Extras": [
-                    "Increased Range"
+                    "Increased Range",
+                    "Extended Range 5"
                 ],
-                "Power Points": 8
+                "Power Points": 13
             },
             {
                 "Type": "Ranged Combat",
@@ -2266,12 +2299,12 @@
             "Water": 0.0,
             "Air": 0.0
         },
-        "Total Power Points": 67.0,
+        "Total Power Points": 72.0,
         "Power Level": 10,
         "Power Level Source": [
             "Fighting + Melee"
         ],
-        "Cost": 23450.0
+        "Cost": 25200.0
     },
     {
         "Name": "Gun Sniper",
@@ -2298,18 +2331,19 @@
                 "Type": "Close-Range",
                 "Rank": 5,
                 "Extras": [
-                    "Increased Range"
+                    "Increased Range",
+                    "Extended Range 5"
                 ],
-                "Power Points": 10
+                "Power Points": 15
             },
             {
                 "Type": "Mid-Range",
                 "Rank": 3,
                 "Extras": [
                     "Increased Range",
-                    "Extended Range 1"
+                    "Extended Range 6"
                 ],
-                "Power Points": 11
+                "Power Points": 16
             },
             {
                 "Type": "Ranged Combat",
@@ -2337,12 +2371,12 @@
             "Water": 0.0,
             "Air": 0.0
         },
-        "Total Power Points": 89.0,
+        "Total Power Points": 99.0,
         "Power Level": 15,
         "Power Level Source": [
             "Dexterity + Ranged"
         ],
-        "Cost": 31150.0
+        "Cost": 34650.0
     },
     {
         "Name": "Gunbluster",
@@ -2369,27 +2403,28 @@
                 "Type": "Close-Range",
                 "Rank": 10,
                 "Extras": [
-                    "Increased Range"
+                    "Increased Range",
+                    "Extended Range 5"
                 ],
-                "Power Points": 20
+                "Power Points": 25
             },
             {
                 "Type": "Mid-Range",
                 "Rank": 11,
                 "Extras": [
                     "Increased Range",
-                    "Extended Range 1"
+                    "Extended Range 6"
                 ],
-                "Power Points": 21
+                "Power Points": 26
             },
             {
                 "Type": "Long-Range",
                 "Rank": 9,
                 "Extras": [
                     "Increased Range",
-                    "Extended Range 2"
+                    "Extended Range 7"
                 ],
-                "Power Points": 22
+                "Power Points": 27
             },
             {
                 "Type": "Ranged Combat",
@@ -2422,12 +2457,12 @@
             "Water": 0.0,
             "Air": 0.0
         },
-        "Total Power Points": 137.0,
+        "Total Power Points": 152.0,
         "Power Level": 15,
         "Power Level Source": [
             "Dexterity + Ranged"
         ],
-        "Cost": 47950.0
+        "Cost": 53200.0
     },
     {
         "Name": "Guntiger",
@@ -2454,9 +2489,10 @@
                 "Type": "Close-Range",
                 "Rank": 4,
                 "Extras": [
-                    "Increased Range"
+                    "Increased Range",
+                    "Extended Range 5"
                 ],
-                "Power Points": 8
+                "Power Points": 13
             },
             {
                 "Type": "Ranged Combat",
@@ -2484,12 +2520,12 @@
             "Water": 0.0,
             "Air": 0.0
         },
-        "Total Power Points": 84.5,
+        "Total Power Points": 89.5,
         "Power Level": 16,
         "Power Level Source": [
             "Dexterity + Ranged"
         ],
-        "Cost": 29575.0
+        "Cost": 31325.0
     },
     {
         "Name": "Gustav MS",
@@ -2570,9 +2606,10 @@
                 "Type": "Close-Range",
                 "Rank": 3,
                 "Extras": [
-                    "Increased Range"
+                    "Increased Range",
+                    "Extended Range 5"
                 ],
-                "Power Points": 6
+                "Power Points": 11
             },
             {
                 "Type": "Ranged Combat",
@@ -2600,12 +2637,12 @@
             "Water": 0.0,
             "Air": 0.0
         },
-        "Total Power Points": 61.0,
+        "Total Power Points": 66.0,
         "Power Level": 11,
         "Power Level Source": [
             "Dexterity + Ranged"
         ],
-        "Cost": 21350.0
+        "Cost": 23100.0
     },
     {
         "Name": "Hammer Head",
@@ -2632,18 +2669,19 @@
                 "Type": "Close-Range",
                 "Rank": 5,
                 "Extras": [
-                    "Increased Range"
+                    "Increased Range",
+                    "Extended Range 5"
                 ],
-                "Power Points": 10
+                "Power Points": 15
             },
             {
                 "Type": "Mid-Range",
                 "Rank": 5,
                 "Extras": [
                     "Increased Range",
-                    "Extended Range 1"
+                    "Extended Range 6"
                 ],
-                "Power Points": 11
+                "Power Points": 16
             },
             {
                 "Type": "Ranged Combat",
@@ -2666,13 +2704,13 @@
             "Water": 200.6,
             "Air": 571.7
         },
-        "Total Power Points": 97.5,
+        "Total Power Points": 107.5,
         "Power Level": 12,
         "Power Level Source": [
             "Dexterity + Ranged",
             "Agility + Toughness"
         ],
-        "Cost": 34125.0
+        "Cost": 37625.0
     },
     {
         "Name": "Hammer Rock",
@@ -2699,9 +2737,10 @@
                 "Type": "Close-Range",
                 "Rank": 3,
                 "Extras": [
-                    "Increased Range"
+                    "Increased Range",
+                    "Extended Range 5"
                 ],
-                "Power Points": 6
+                "Power Points": 11
             },
             {
                 "Type": "Close Combat",
@@ -2729,13 +2768,13 @@
             "Water": 0.0,
             "Air": 0.0
         },
-        "Total Power Points": 80.0,
+        "Total Power Points": 85.0,
         "Power Level": 14,
         "Power Level Source": [
             "Fighting + Melee",
             "Dexterity + Ranged"
         ],
-        "Cost": 28000.0
+        "Cost": 29750.0
     },
     {
         "Name": "Hel Digunner",
@@ -2762,18 +2801,19 @@
                 "Type": "Close-Range",
                 "Rank": 5,
                 "Extras": [
-                    "Increased Range"
+                    "Increased Range",
+                    "Extended Range 5"
                 ],
-                "Power Points": 10
+                "Power Points": 15
             },
             {
                 "Type": "Mid-Range",
                 "Rank": 5,
                 "Extras": [
                     "Increased Range",
-                    "Extended Range 1"
+                    "Extended Range 6"
                 ],
-                "Power Points": 11
+                "Power Points": 16
             },
             {
                 "Type": "Ranged Combat",
@@ -2801,12 +2841,12 @@
             "Water": 0.0,
             "Air": 0.0
         },
-        "Total Power Points": 70.0,
+        "Total Power Points": 80.0,
         "Power Level": 10,
         "Power Level Source": [
             "Dexterity + Ranged"
         ],
-        "Cost": 24500.0
+        "Cost": 28000.0
     },
     {
         "Name": "Helcat",
@@ -2833,9 +2873,10 @@
                 "Type": "Close-Range",
                 "Rank": 3,
                 "Extras": [
-                    "Increased Range"
+                    "Increased Range",
+                    "Extended Range 5"
                 ],
-                "Power Points": 6
+                "Power Points": 11
             },
             {
                 "Type": "Ranged Combat",
@@ -2863,12 +2904,12 @@
             "Water": 0.0,
             "Air": 0.0
         },
-        "Total Power Points": 82.0,
+        "Total Power Points": 87.0,
         "Power Level": 14,
         "Power Level Source": [
             "Dexterity + Ranged"
         ],
-        "Cost": 28700.0
+        "Cost": 30450.0
     },
     {
         "Name": "Iguan",
@@ -2895,9 +2936,10 @@
                 "Type": "Close-Range",
                 "Rank": 3,
                 "Extras": [
-                    "Increased Range"
+                    "Increased Range",
+                    "Extended Range 5"
                 ],
-                "Power Points": 6
+                "Power Points": 11
             },
             {
                 "Type": "Ranged Combat",
@@ -2925,12 +2967,12 @@
             "Water": 0.0,
             "Air": 0.0
         },
-        "Total Power Points": 66.0,
+        "Total Power Points": 71.0,
         "Power Level": 13,
         "Power Level Source": [
             "Dexterity + Ranged"
         ],
-        "Cost": 23100.0
+        "Cost": 24850.0
     },
     {
         "Name": "Iron Kong",
@@ -2957,27 +2999,28 @@
                 "Type": "Close-Range",
                 "Rank": 8,
                 "Extras": [
-                    "Increased Range"
+                    "Increased Range",
+                    "Extended Range 5"
                 ],
-                "Power Points": 16
+                "Power Points": 21
             },
             {
                 "Type": "Mid-Range",
                 "Rank": 8,
                 "Extras": [
                     "Increased Range",
-                    "Extended Range 1"
+                    "Extended Range 6"
                 ],
-                "Power Points": 17
+                "Power Points": 22
             },
             {
                 "Type": "Long-Range",
                 "Rank": 8,
                 "Extras": [
                     "Increased Range",
-                    "Extended Range 2"
+                    "Extended Range 7"
                 ],
-                "Power Points": 18
+                "Power Points": 23
             },
             {
                 "Type": "Ranged Combat",
@@ -3005,12 +3048,12 @@
             "Water": 0.0,
             "Air": 0.0
         },
-        "Total Power Points": 147.5,
+        "Total Power Points": 162.5,
         "Power Level": 19,
         "Power Level Source": [
             "Fighting + Melee"
         ],
-        "Cost": 51625.0
+        "Cost": 56875.0
     },
     {
         "Name": "Iron Kong PK",
@@ -3037,27 +3080,28 @@
                 "Type": "Close-Range",
                 "Rank": 9,
                 "Extras": [
-                    "Increased Range"
+                    "Increased Range",
+                    "Extended Range 5"
                 ],
-                "Power Points": 18
+                "Power Points": 23
             },
             {
                 "Type": "Mid-Range",
                 "Rank": 9,
                 "Extras": [
                     "Increased Range",
-                    "Extended Range 1"
+                    "Extended Range 6"
                 ],
-                "Power Points": 19
+                "Power Points": 24
             },
             {
                 "Type": "Long-Range",
                 "Rank": 9,
                 "Extras": [
                     "Increased Range",
-                    "Extended Range 2"
+                    "Extended Range 7"
                 ],
-                "Power Points": 20
+                "Power Points": 25
             },
             {
                 "Type": "Ranged Combat",
@@ -3085,12 +3129,12 @@
             "Water": 0.0,
             "Air": 0.0
         },
-        "Total Power Points": 157.0,
+        "Total Power Points": 172.0,
         "Power Level": 20,
         "Power Level Source": [
             "Dexterity + Ranged"
         ],
-        "Cost": 54950.0
+        "Cost": 60200.0
     },
     {
         "Name": "Killer Dome",
@@ -3117,9 +3161,10 @@
                 "Type": "Close-Range",
                 "Rank": 6,
                 "Extras": [
-                    "Increased Range"
+                    "Increased Range",
+                    "Extended Range 5"
                 ],
-                "Power Points": 12
+                "Power Points": 17
             },
             {
                 "Type": "Ranged Combat",
@@ -3157,13 +3202,13 @@
             "Water": 117.3,
             "Air": 0.0
         },
-        "Total Power Points": 87.0,
+        "Total Power Points": 92.0,
         "Power Level": 12,
         "Power Level Source": [
             "Dexterity + Ranged",
             "Agility + Toughness"
         ],
-        "Cost": 30450.0
+        "Cost": 32200.0
     },
     {
         "Name": "Konig Wolf",
@@ -3190,18 +3235,19 @@
                 "Type": "Close-Range",
                 "Rank": 8,
                 "Extras": [
-                    "Increased Range"
+                    "Increased Range",
+                    "Extended Range 5"
                 ],
-                "Power Points": 16
+                "Power Points": 21
             },
             {
                 "Type": "Mid-Range",
                 "Rank": 8,
                 "Extras": [
                     "Increased Range",
-                    "Extended Range 1"
+                    "Extended Range 6"
                 ],
-                "Power Points": 17
+                "Power Points": 22
             },
             {
                 "Type": "Ranged Combat",
@@ -3229,12 +3275,12 @@
             "Water": 0.0,
             "Air": 0.0
         },
-        "Total Power Points": 141.0,
+        "Total Power Points": 151.0,
         "Power Level": 21,
         "Power Level Source": [
             "Dexterity + Ranged"
         ],
-        "Cost": 49350.0
+        "Cost": 52850.0
     },
     {
         "Name": "Liger Zero",
@@ -3261,9 +3307,10 @@
                 "Type": "Close-Range",
                 "Rank": 4,
                 "Extras": [
-                    "Increased Range"
+                    "Increased Range",
+                    "Extended Range 5"
                 ],
-                "Power Points": 8
+                "Power Points": 13
             },
             {
                 "Type": "Close Combat",
@@ -3291,12 +3338,12 @@
             "Water": 0.0,
             "Air": 0.0
         },
-        "Total Power Points": 105.0,
+        "Total Power Points": 110.0,
         "Power Level": 18,
         "Power Level Source": [
             "Fighting + Melee"
         ],
-        "Cost": 36750.0
+        "Cost": 38500.0
     },
     {
         "Name": "Liger Zero Jager",
@@ -3323,9 +3370,10 @@
                 "Type": "Close-Range",
                 "Rank": 4,
                 "Extras": [
-                    "Increased Range"
+                    "Increased Range",
+                    "Extended Range 5"
                 ],
-                "Power Points": 8
+                "Power Points": 13
             },
             {
                 "Type": "Close Combat",
@@ -3353,13 +3401,13 @@
             "Water": 0.0,
             "Air": 0.0
         },
-        "Total Power Points": 106.0,
+        "Total Power Points": 111.0,
         "Power Level": 18,
         "Power Level Source": [
             "Fighting + Melee",
             "Dexterity + Ranged"
         ],
-        "Cost": 37100.0
+        "Cost": 38850.0
     },
     {
         "Name": "Liger Zero Panzer",
@@ -3386,27 +3434,28 @@
                 "Type": "Close-Range",
                 "Rank": 8,
                 "Extras": [
-                    "Increased Range"
+                    "Increased Range",
+                    "Extended Range 5"
                 ],
-                "Power Points": 16
+                "Power Points": 21
             },
             {
                 "Type": "Mid-Range",
                 "Rank": 9,
                 "Extras": [
                     "Increased Range",
-                    "Extended Range 1"
+                    "Extended Range 6"
                 ],
-                "Power Points": 17
+                "Power Points": 22
             },
             {
                 "Type": "Long-Range",
                 "Rank": 6,
                 "Extras": [
                     "Increased Range",
-                    "Extended Range 2"
+                    "Extended Range 7"
                 ],
-                "Power Points": 18
+                "Power Points": 23
             },
             {
                 "Type": "Ranged Combat",
@@ -3434,12 +3483,12 @@
             "Water": 0.0,
             "Air": 0.0
         },
-        "Total Power Points": 126.5,
+        "Total Power Points": 141.5,
         "Power Level": 16,
         "Power Level Source": [
             "Dexterity + Ranged"
         ],
-        "Cost": 44275.0
+        "Cost": 49525.0
     },
     {
         "Name": "Liger Zero Phoenix",
@@ -3466,18 +3515,19 @@
                 "Type": "Close-Range",
                 "Rank": 6,
                 "Extras": [
-                    "Increased Range"
+                    "Increased Range",
+                    "Extended Range 5"
                 ],
-                "Power Points": 12
+                "Power Points": 17
             },
             {
                 "Type": "Mid-Range",
                 "Rank": 6,
                 "Extras": [
                     "Increased Range",
-                    "Extended Range 1"
+                    "Extended Range 6"
                 ],
-                "Power Points": 13
+                "Power Points": 18
             },
             {
                 "Type": "Close Combat",
@@ -3510,12 +3560,12 @@
             "Water": 0.0,
             "Air": 1143.3
         },
-        "Total Power Points": 139.0,
+        "Total Power Points": 149.0,
         "Power Level": 19,
         "Power Level Source": [
             "Dexterity + Ranged"
         ],
-        "Cost": 48650.0
+        "Cost": 52150.0
     },
     {
         "Name": "Liger Zero Schneider",
@@ -3542,9 +3592,10 @@
                 "Type": "Close-Range",
                 "Rank": 4,
                 "Extras": [
-                    "Increased Range"
+                    "Increased Range",
+                    "Extended Range 5"
                 ],
-                "Power Points": 8
+                "Power Points": 13
             },
             {
                 "Type": "Close Combat",
@@ -3577,12 +3628,12 @@
             "Water": 0.0,
             "Air": 0.0
         },
-        "Total Power Points": 117.0,
+        "Total Power Points": 122.0,
         "Power Level": 21,
         "Power Level Source": [
             "Fighting + Melee"
         ],
-        "Cost": 40950.0
+        "Cost": 42700.0
     },
     {
         "Name": "Liger Zero X",
@@ -3609,18 +3660,19 @@
                 "Type": "Close-Range",
                 "Rank": 8,
                 "Extras": [
-                    "Increased Range"
+                    "Increased Range",
+                    "Extended Range 5"
                 ],
-                "Power Points": 16
+                "Power Points": 21
             },
             {
                 "Type": "Mid-Range",
                 "Rank": 7,
                 "Extras": [
                     "Increased Range",
-                    "Extended Range 1"
+                    "Extended Range 6"
                 ],
-                "Power Points": 17
+                "Power Points": 22
             },
             {
                 "Type": "Ranged Combat",
@@ -3648,12 +3700,12 @@
             "Water": 0.0,
             "Air": 0.0
         },
-        "Total Power Points": 136.0,
+        "Total Power Points": 146.0,
         "Power Level": 21,
         "Power Level Source": [
             "Dexterity + Ranged"
         ],
-        "Cost": 47600.0
+        "Cost": 51100.0
     },
     {
         "Name": "Lightning Saix",
@@ -3680,18 +3732,19 @@
                 "Type": "Close-Range",
                 "Rank": 6,
                 "Extras": [
-                    "Increased Range"
+                    "Increased Range",
+                    "Extended Range 5"
                 ],
-                "Power Points": 12
+                "Power Points": 17
             },
             {
                 "Type": "Mid-Range",
                 "Rank": 6,
                 "Extras": [
                     "Increased Range",
-                    "Extended Range 1"
+                    "Extended Range 6"
                 ],
-                "Power Points": 13
+                "Power Points": 18
             },
             {
                 "Type": "Ranged Combat",
@@ -3719,12 +3772,12 @@
             "Water": 0.0,
             "Air": 0.0
         },
-        "Total Power Points": 119.5,
+        "Total Power Points": 129.5,
         "Power Level": 19,
         "Power Level Source": [
             "Dexterity + Ranged"
         ],
-        "Cost": 41825.0
+        "Cost": 45325.0
     },
     {
         "Name": "Maccurtis",
@@ -3751,9 +3804,10 @@
                 "Type": "Close-Range",
                 "Rank": 3,
                 "Extras": [
-                    "Increased Range"
+                    "Increased Range",
+                    "Extended Range 5"
                 ],
-                "Power Points": 6
+                "Power Points": 11
             },
             {
                 "Type": "Ranged Combat",
@@ -3786,13 +3840,13 @@
             "Water": 98.8,
             "Air": 0.0
         },
-        "Total Power Points": 75.0,
+        "Total Power Points": 80.0,
         "Power Level": 11,
         "Power Level Source": [
             "Fighting + Melee",
             "Dexterity + Ranged"
         ],
-        "Cost": 26250.0
+        "Cost": 28000.0
     },
     {
         "Name": "Madthunder",
@@ -3819,18 +3873,19 @@
                 "Type": "Close-Range",
                 "Rank": 9,
                 "Extras": [
-                    "Increased Range"
+                    "Increased Range",
+                    "Extended Range 5"
                 ],
-                "Power Points": 18
+                "Power Points": 23
             },
             {
                 "Type": "Mid-Range",
                 "Rank": 8,
                 "Extras": [
                     "Increased Range",
-                    "Extended Range 1"
+                    "Extended Range 6"
                 ],
-                "Power Points": 19
+                "Power Points": 24
             },
             {
                 "Type": "Close Combat",
@@ -3863,12 +3918,12 @@
             "Water": 0.0,
             "Air": 0.0
         },
-        "Total Power Points": 152.5,
+        "Total Power Points": 162.5,
         "Power Level": 23,
         "Power Level Source": [
             "Fighting + Melee"
         ],
-        "Cost": 53375.0
+        "Cost": 56875.0
     },
     {
         "Name": "Megaleon",
@@ -3895,18 +3950,19 @@
                 "Type": "Close-Range",
                 "Rank": 4,
                 "Extras": [
-                    "Increased Range"
+                    "Increased Range",
+                    "Extended Range 5"
                 ],
-                "Power Points": 8
+                "Power Points": 13
             },
             {
                 "Type": "Mid-Range",
                 "Rank": 4,
                 "Extras": [
                     "Increased Range",
-                    "Extended Range 1"
+                    "Extended Range 6"
                 ],
-                "Power Points": 9
+                "Power Points": 14
             },
             {
                 "Type": "Ranged Combat",
@@ -3934,12 +3990,12 @@
             "Water": 0.0,
             "Air": 0.0
         },
-        "Total Power Points": 62.5,
+        "Total Power Points": 72.5,
         "Power Level": 8,
         "Power Level Source": [
             "Dexterity + Ranged"
         ],
-        "Cost": 21875.0
+        "Cost": 25375.0
     },
     {
         "Name": "Molga",
@@ -3966,18 +4022,19 @@
                 "Type": "Close-Range",
                 "Rank": 3,
                 "Extras": [
-                    "Increased Range"
+                    "Increased Range",
+                    "Extended Range 5"
                 ],
-                "Power Points": 6
+                "Power Points": 11
             },
             {
                 "Type": "Mid-Range",
                 "Rank": 2,
                 "Extras": [
                     "Increased Range",
-                    "Extended Range 1"
+                    "Extended Range 6"
                 ],
-                "Power Points": 7
+                "Power Points": 12
             },
             {
                 "Type": "Ranged Combat",
@@ -4005,14 +4062,14 @@
             "Water": 0.0,
             "Air": 0.0
         },
-        "Total Power Points": 61.0,
+        "Total Power Points": 71.0,
         "Power Level": 9,
         "Power Level Source": [
             "Fighting + Melee",
             "Dexterity + Ranged",
             "Agility + Toughness"
         ],
-        "Cost": 21350.0
+        "Cost": 24850.0
     },
     {
         "Name": "Pteras",
@@ -4039,9 +4096,10 @@
                 "Type": "Close-Range",
                 "Rank": 2,
                 "Extras": [
-                    "Increased Range"
+                    "Increased Range",
+                    "Extended Range 5"
                 ],
-                "Power Points": 4
+                "Power Points": 9
             },
             {
                 "Type": "Ranged Combat",
@@ -4064,12 +4122,12 @@
             "Water": 0.0,
             "Air": 1143.3
         },
-        "Total Power Points": 86.5,
+        "Total Power Points": 91.5,
         "Power Level": 13,
         "Power Level Source": [
             "Dexterity + Ranged"
         ],
-        "Cost": 30275.0
+        "Cost": 32025.0
     },
     {
         "Name": "Raynos",
@@ -4096,9 +4154,10 @@
                 "Type": "Close-Range",
                 "Rank": 6,
                 "Extras": [
-                    "Increased Range"
+                    "Increased Range",
+                    "Extended Range 5"
                 ],
-                "Power Points": 12
+                "Power Points": 17
             },
             {
                 "Type": "Ranged Combat",
@@ -4121,12 +4180,12 @@
             "Water": 0.0,
             "Air": 1886.5
         },
-        "Total Power Points": 113.5,
+        "Total Power Points": 118.5,
         "Power Level": 17,
         "Power Level Source": [
             "Dexterity + Ranged"
         ],
-        "Cost": 39725.0
+        "Cost": 41475.0
     },
     {
         "Name": "Red Horn",
@@ -4153,27 +4212,28 @@
                 "Type": "Close-Range",
                 "Rank": 7,
                 "Extras": [
-                    "Increased Range"
+                    "Increased Range",
+                    "Extended Range 5"
                 ],
-                "Power Points": 14
+                "Power Points": 19
             },
             {
                 "Type": "Mid-Range",
                 "Rank": 7,
                 "Extras": [
                     "Increased Range",
-                    "Extended Range 1"
+                    "Extended Range 6"
                 ],
-                "Power Points": 15
+                "Power Points": 20
             },
             {
                 "Type": "Long-Range",
                 "Rank": 4,
                 "Extras": [
                     "Increased Range",
-                    "Extended Range 2"
+                    "Extended Range 7"
                 ],
-                "Power Points": 16
+                "Power Points": 21
             },
             {
                 "Type": "Ranged Combat",
@@ -4201,13 +4261,13 @@
             "Water": 0.0,
             "Air": 0.0
         },
-        "Total Power Points": 128.5,
+        "Total Power Points": 143.5,
         "Power Level": 16,
         "Power Level Source": [
             "Fighting + Melee",
             "Dexterity + Ranged"
         ],
-        "Cost": 44975.0
+        "Cost": 50225.0
     },
     {
         "Name": "Redler",
@@ -4234,9 +4294,10 @@
                 "Type": "Close-Range",
                 "Rank": 4,
                 "Extras": [
-                    "Increased Range"
+                    "Increased Range",
+                    "Extended Range 5"
                 ],
-                "Power Points": 8
+                "Power Points": 13
             },
             {
                 "Type": "Close Combat",
@@ -4259,12 +4320,12 @@
             "Water": 0.0,
             "Air": 1600.7
         },
-        "Total Power Points": 102.5,
+        "Total Power Points": 107.5,
         "Power Level": 16,
         "Power Level Source": [
             "Fighting + Melee"
         ],
-        "Cost": 35875.0
+        "Cost": 37625.0
     },
     {
         "Name": "Rev Rapter",
@@ -4345,9 +4406,10 @@
                 "Type": "Close-Range",
                 "Rank": 5,
                 "Extras": [
-                    "Increased Range"
+                    "Increased Range",
+                    "Extended Range 5"
                 ],
-                "Power Points": 10
+                "Power Points": 15
             },
             {
                 "Type": "Close Combat",
@@ -4375,13 +4437,13 @@
             "Water": 0.0,
             "Air": 0.0
         },
-        "Total Power Points": 95.5,
+        "Total Power Points": 100.5,
         "Power Level": 16,
         "Power Level Source": [
             "Fighting + Melee",
             "Dexterity + Ranged"
         ],
-        "Cost": 33425.0
+        "Cost": 35175.0
     },
     {
         "Name": "Saberlion",
@@ -4462,9 +4524,10 @@
                 "Type": "Close-Range",
                 "Rank": 2,
                 "Extras": [
-                    "Increased Range"
+                    "Increased Range",
+                    "Extended Range 5"
                 ],
-                "Power Points": 4
+                "Power Points": 9
             },
             {
                 "Type": "Ranged Combat",
@@ -4487,12 +4550,12 @@
             "Water": 0.0,
             "Air": 180.1
         },
-        "Total Power Points": 82.0,
+        "Total Power Points": 87.0,
         "Power Level": 14,
         "Power Level Source": [
             "Dexterity + Ranged"
         ],
-        "Cost": 28700.0
+        "Cost": 30450.0
     },
     {
         "Name": "Salamander",
@@ -4519,18 +4582,19 @@
                 "Type": "Close-Range",
                 "Rank": 6,
                 "Extras": [
-                    "Increased Range"
+                    "Increased Range",
+                    "Extended Range 5"
                 ],
-                "Power Points": 12
+                "Power Points": 17
             },
             {
                 "Type": "Mid-Range",
                 "Rank": 6,
                 "Extras": [
                     "Increased Range",
-                    "Extended Range 1"
+                    "Extended Range 6"
                 ],
-                "Power Points": 13
+                "Power Points": 18
             },
             {
                 "Type": "Ranged Combat",
@@ -4553,12 +4617,12 @@
             "Water": 0.0,
             "Air": 1143.3
         },
-        "Total Power Points": 115.5,
+        "Total Power Points": 125.5,
         "Power Level": 15,
         "Power Level Source": [
             "Dexterity + Ranged"
         ],
-        "Cost": 40425.0
+        "Cost": 43925.0
     },
     {
         "Name": "Seismosaurus",
@@ -4585,27 +4649,28 @@
                 "Type": "Close-Range",
                 "Rank": 12,
                 "Extras": [
-                    "Increased Range"
+                    "Increased Range",
+                    "Extended Range 5"
                 ],
-                "Power Points": 24
+                "Power Points": 29
             },
             {
                 "Type": "Mid-Range",
                 "Rank": 12,
                 "Extras": [
                     "Increased Range",
-                    "Extended Range 1"
+                    "Extended Range 6"
                 ],
-                "Power Points": 25
+                "Power Points": 30
             },
             {
                 "Type": "Long-Range",
                 "Rank": 12,
                 "Extras": [
                     "Increased Range",
-                    "Extended Range 2"
+                    "Extended Range 7"
                 ],
-                "Power Points": 26
+                "Power Points": 31
             },
             {
                 "Type": "Ranged Combat",
@@ -4633,12 +4698,12 @@
             "Water": 0.0,
             "Air": 0.0
         },
-        "Total Power Points": 151.0,
+        "Total Power Points": 166.0,
         "Power Level": 18,
         "Power Level Source": [
             "Dexterity + Ranged"
         ],
-        "Cost": 52850.0
+        "Cost": 58100.0
     },
     {
         "Name": "Shadow Fox",
@@ -4665,9 +4730,10 @@
                 "Type": "Close-Range",
                 "Rank": 5,
                 "Extras": [
-                    "Increased Range"
+                    "Increased Range",
+                    "Extended Range 5"
                 ],
-                "Power Points": 10
+                "Power Points": 15
             },
             {
                 "Type": "Ranged Combat",
@@ -4695,12 +4761,12 @@
             "Water": 0.0,
             "Air": 0.0
         },
-        "Total Power Points": 109.5,
+        "Total Power Points": 114.5,
         "Power Level": 17,
         "Power Level Source": [
             "Dexterity + Ranged"
         ],
-        "Cost": 38325.0
+        "Cost": 40075.0
     },
     {
         "Name": "Shield Liger",
@@ -4727,9 +4793,10 @@
                 "Type": "Close-Range",
                 "Rank": 5,
                 "Extras": [
-                    "Increased Range"
+                    "Increased Range",
+                    "Extended Range 5"
                 ],
-                "Power Points": 10
+                "Power Points": 15
             },
             {
                 "Type": "Close Combat",
@@ -4762,13 +4829,13 @@
             "Water": 0.0,
             "Air": 0.0
         },
-        "Total Power Points": 103.0,
+        "Total Power Points": 108.0,
         "Power Level": 16,
         "Power Level Source": [
             "Fighting + Melee",
             "Dexterity + Ranged"
         ],
-        "Cost": 36050.0
+        "Cost": 37800.0
     },
     {
         "Name": "Shield Liger DCS-J",
@@ -4795,18 +4862,19 @@
                 "Type": "Close-Range",
                 "Rank": 7,
                 "Extras": [
-                    "Increased Range"
+                    "Increased Range",
+                    "Extended Range 5"
                 ],
-                "Power Points": 14
+                "Power Points": 19
             },
             {
                 "Type": "Mid-Range",
                 "Rank": 7,
                 "Extras": [
                     "Increased Range",
-                    "Extended Range 1"
+                    "Extended Range 6"
                 ],
-                "Power Points": 15
+                "Power Points": 20
             },
             {
                 "Type": "Ranged Combat",
@@ -4839,12 +4907,12 @@
             "Water": 0.0,
             "Air": 0.0
         },
-        "Total Power Points": 118.0,
+        "Total Power Points": 128.0,
         "Power Level": 19,
         "Power Level Source": [
             "Dexterity + Ranged"
         ],
-        "Cost": 41300.0
+        "Cost": 44800.0
     },
     {
         "Name": "Sinker",
@@ -4871,18 +4939,19 @@
                 "Type": "Close-Range",
                 "Rank": 3,
                 "Extras": [
-                    "Increased Range"
+                    "Increased Range",
+                    "Extended Range 5"
                 ],
-                "Power Points": 6
+                "Power Points": 11
             },
             {
                 "Type": "Mid-Range",
                 "Rank": 4,
                 "Extras": [
                     "Increased Range",
-                    "Extended Range 1"
+                    "Extended Range 6"
                 ],
-                "Power Points": 7
+                "Power Points": 12
             },
             {
                 "Type": "Ranged Combat",
@@ -4905,12 +4974,12 @@
             "Water": 185.2,
             "Air": 514.5
         },
-        "Total Power Points": 84.5,
+        "Total Power Points": 94.5,
         "Power Level": 12,
         "Power Level Source": [
             "Dexterity + Ranged"
         ],
-        "Cost": 29575.0
+        "Cost": 33075.0
     },
     {
         "Name": "Snipe Master",
@@ -4937,18 +5006,19 @@
                 "Type": "Close-Range",
                 "Rank": 2,
                 "Extras": [
-                    "Increased Range"
+                    "Increased Range",
+                    "Extended Range 5"
                 ],
-                "Power Points": 4
+                "Power Points": 9
             },
             {
                 "Type": "Mid-Range",
                 "Rank": 5,
                 "Extras": [
                     "Increased Range",
-                    "Extended Range 1"
+                    "Extended Range 6"
                 ],
-                "Power Points": 5
+                "Power Points": 10
             },
             {
                 "Type": "Ranged Combat",
@@ -4976,12 +5046,12 @@
             "Water": 0.0,
             "Air": 0.0
         },
-        "Total Power Points": 87.0,
+        "Total Power Points": 97.0,
         "Power Level": 16,
         "Power Level Source": [
             "Dexterity + Ranged"
         ],
-        "Cost": 30450.0
+        "Cost": 33950.0
     },
     {
         "Name": "Spinosapper",
@@ -5008,9 +5078,10 @@
                 "Type": "Close-Range",
                 "Rank": 2,
                 "Extras": [
-                    "Increased Range"
+                    "Increased Range",
+                    "Extended Range 5"
                 ],
-                "Power Points": 4
+                "Power Points": 9
             },
             {
                 "Type": "Ranged Combat",
@@ -5038,13 +5109,13 @@
             "Water": 0.0,
             "Air": 0.0
         },
-        "Total Power Points": 54.0,
+        "Total Power Points": 59.0,
         "Power Level": 9,
         "Power Level Source": [
             "Fighting + Melee",
             "Dexterity + Ranged"
         ],
-        "Cost": 18900.0
+        "Cost": 20650.0
     },
     {
         "Name": "Stealth Viper",
@@ -5071,18 +5142,19 @@
                 "Type": "Close-Range",
                 "Rank": 2,
                 "Extras": [
-                    "Increased Range"
+                    "Increased Range",
+                    "Extended Range 5"
                 ],
-                "Power Points": 4
+                "Power Points": 9
             },
             {
                 "Type": "Mid-Range",
                 "Rank": 2,
                 "Extras": [
                     "Increased Range",
-                    "Extended Range 1"
+                    "Extended Range 6"
                 ],
-                "Power Points": 5
+                "Power Points": 10
             },
             {
                 "Type": "Close Combat",
@@ -5110,13 +5182,13 @@
             "Water": 0.0,
             "Air": 0.0
         },
-        "Total Power Points": 78.0,
+        "Total Power Points": 88.0,
         "Power Level": 13,
         "Power Level Source": [
             "Fighting + Melee",
             "Dexterity + Ranged"
         ],
-        "Cost": 27300.0
+        "Cost": 30800.0
     },
     {
         "Name": "Storch",
@@ -5143,18 +5215,19 @@
                 "Type": "Close-Range",
                 "Rank": 3,
                 "Extras": [
-                    "Increased Range"
+                    "Increased Range",
+                    "Extended Range 5"
                 ],
-                "Power Points": 6
+                "Power Points": 11
             },
             {
                 "Type": "Mid-Range",
                 "Rank": 5,
                 "Extras": [
                     "Increased Range",
-                    "Extended Range 1"
+                    "Extended Range 6"
                 ],
-                "Power Points": 7
+                "Power Points": 12
             },
             {
                 "Type": "Ranged Combat",
@@ -5177,12 +5250,12 @@
             "Water": 0.0,
             "Air": 1200.5
         },
-        "Total Power Points": 101.5,
+        "Total Power Points": 111.5,
         "Power Level": 17,
         "Power Level Source": [
             "Dexterity + Ranged"
         ],
-        "Cost": 35525.0
+        "Cost": 39025.0
     },
     {
         "Name": "Storm Sworder",
@@ -5209,9 +5282,10 @@
                 "Type": "Close-Range",
                 "Rank": 4,
                 "Extras": [
-                    "Increased Range"
+                    "Increased Range",
+                    "Extended Range 5"
                 ],
-                "Power Points": 8
+                "Power Points": 13
             },
             {
                 "Type": "Close Combat",
@@ -5234,12 +5308,12 @@
             "Water": 0.0,
             "Air": 1829.3
         },
-        "Total Power Points": 106.5,
+        "Total Power Points": 111.5,
         "Power Level": 16,
         "Power Level Source": [
             "Fighting + Melee"
         ],
-        "Cost": 37275.0
+        "Cost": 39025.0
     },
     {
         "Name": "Ultra Saurus",
@@ -5266,27 +5340,28 @@
                 "Type": "Close-Range",
                 "Rank": 10,
                 "Extras": [
-                    "Increased Range"
+                    "Increased Range",
+                    "Extended Range 5"
                 ],
-                "Power Points": 20
+                "Power Points": 25
             },
             {
                 "Type": "Mid-Range",
                 "Rank": 11,
                 "Extras": [
                     "Increased Range",
-                    "Extended Range 1"
+                    "Extended Range 6"
                 ],
-                "Power Points": 21
+                "Power Points": 26
             },
             {
                 "Type": "Long-Range",
                 "Rank": 10,
                 "Extras": [
                     "Increased Range",
-                    "Extended Range 2"
+                    "Extended Range 7"
                 ],
-                "Power Points": 22
+                "Power Points": 27
             },
             {
                 "Type": "Ranged Combat",
@@ -5319,12 +5394,12 @@
             "Water": 145.1,
             "Air": 0.0
         },
-        "Total Power Points": 138.5,
+        "Total Power Points": 153.5,
         "Power Level": 15,
         "Power Level Source": [
             "Fighting + Melee"
         ],
-        "Cost": 48475.0
+        "Cost": 53725.0
     },
     {
         "Name": "Wardick",
@@ -5351,18 +5426,19 @@
                 "Type": "Close-Range",
                 "Rank": 6,
                 "Extras": [
-                    "Increased Range"
+                    "Increased Range",
+                    "Extended Range 5"
                 ],
-                "Power Points": 12
+                "Power Points": 17
             },
             {
                 "Type": "Mid-Range",
                 "Rank": 6,
                 "Extras": [
                     "Increased Range",
-                    "Extended Range 1"
+                    "Extended Range 6"
                 ],
-                "Power Points": 13
+                "Power Points": 18
             },
             {
                 "Type": "Ranged Combat",
@@ -5395,12 +5471,12 @@
             "Water": 200.6,
             "Air": 0.0
         },
-        "Total Power Points": 91.5,
+        "Total Power Points": 101.5,
         "Power Level": 13,
         "Power Level Source": [
             "Dexterity + Ranged"
         ],
-        "Cost": 32025.0
+        "Cost": 35525.0
     },
     {
         "Name": "Zabat",
@@ -5427,9 +5503,10 @@
                 "Type": "Close-Range",
                 "Rank": 3,
                 "Extras": [
-                    "Increased Range"
+                    "Increased Range",
+                    "Extended Range 5"
                 ],
-                "Power Points": 6
+                "Power Points": 11
             },
             {
                 "Type": "Ranged Combat",
@@ -5452,12 +5529,12 @@
             "Water": 0.0,
             "Air": 1600.7
         },
-        "Total Power Points": 97.0,
+        "Total Power Points": 102.0,
         "Power Level": 13,
         "Power Level Source": [
             "Dexterity + Ranged"
         ],
-        "Cost": 33950.0
+        "Cost": 35700.0
     },
     {
         "Name": "Zoids Mammoth",
@@ -5484,9 +5561,10 @@
                 "Type": "Close-Range",
                 "Rank": 5,
                 "Extras": [
-                    "Increased Range"
+                    "Increased Range",
+                    "Extended Range 5"
                 ],
-                "Power Points": 10
+                "Power Points": 15
             },
             {
                 "Type": "Ranged Combat",
@@ -5514,11 +5592,11 @@
             "Water": 0.0,
             "Air": 0.0
         },
-        "Total Power Points": 72.0,
+        "Total Power Points": 77.0,
         "Power Level": 13,
         "Power Level Source": [
             "Fighting + Melee"
         ],
-        "Cost": 25200.0
+        "Cost": 26950.0
     }
 ]

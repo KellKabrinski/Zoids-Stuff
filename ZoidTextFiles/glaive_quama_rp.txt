@@ -1,0 +1,36 @@
+====== Glaive Quama ======
+[[glaive_quama|Lore]] | **RPG Stats**
+
+===== Stats =====
+^ Attribute ^ Value ^
+| Fighting | 6 |
+| Strength | 4 |
+| Dexterity | 9 |
+| Agility | 6 |
+| Awareness | 7 |
+===== Defenses =====
+^ Defense Type ^ Value ^
+| Toughness | 3 |
+| Parry | 6 |
+| Dodge | 6 |
+
+===== Powers =====
+^ Type ^ Details ^
+| Melee | **Rank**: 4 \\ **Power Points**: 0 |
+| Close-Range | **Rank**: 4 \\ **Extras**: Increased Range, Extended Range 5 \\ **Power Points**: 13 |
+| Ranged Combat | **Rank**: 2 \\ **Power Points**: 2 |
+| Protection | **Rank**: 3 \\ **Power Points**: 3 |
+| Concealment | **Rank**: 5 \\ **Power Points**: 2.5 |
+
+===== Movement =====
+^ Terrain ^ Speed ^
+| Land | 0.0 m/6s |
+| Water | 0.0 m/6s |
+| Air | 1429.2 m/6s |
+
+===== Summary =====
+^ Attribute ^ Value ^
+| Total Power Points | 102.5 |
+| Power Level | 15 |
+| Power Level Source(s) | Dexterity + Ranged |
+| Cost | 35875.0 Credits |

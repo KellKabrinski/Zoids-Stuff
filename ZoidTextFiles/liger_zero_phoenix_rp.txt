@@ -1,0 +1,39 @@
+====== Liger Zero Phoenix ======
+[[liger_zero_phoenix|Lore]] | **RPG Stats**
+
+===== Stats =====
+^ Attribute ^ Value ^
+| Fighting | 7 |
+| Strength | 8 |
+| Dexterity | 11 |
+| Agility | 7 |
+| Awareness | 7 |
+===== Defenses =====
+^ Defense Type ^ Value ^
+| Toughness | 6 |
+| Parry | 7 |
+| Dodge | 7 |
+
+===== Powers =====
+^ Type ^ Details ^
+| Melee | **Rank**: 8 \\ **Power Points**: 0 |
+| Close-Range | **Rank**: 6 \\ **Extras**: Increased Range, Extended Range 5 \\ **Power Points**: 17 |
+| Mid-Range | **Rank**: 6 \\ **Extras**: Increased Range, Extended Range 6 \\ **Power Points**: 18 |
+| Close Combat | **Rank**: 3 \\ **Power Points**: 3 |
+| Protection | **Rank**: 6 \\ **Power Points**: 6 |
+| Concealment | **Rank**: 2 \\ **Power Points**: 1.0 |
+| Speed | **Rank**: 6 \\ **Power Points**: 6 |
+| Flight | **Rank**: 9 \\ **Power Points**: 9 |
+
+===== Movement =====
+^ Terrain ^ Speed ^
+| Land | 566.7 m/6s |
+| Water | 0.0 m/6s |
+| Air | 1143.3 m/6s |
+
+===== Summary =====
+^ Attribute ^ Value ^
+| Total Power Points | 149.0 |
+| Power Level | 19 |
+| Power Level Source(s) | Dexterity + Ranged |
+| Cost | 52150.0 Credits |

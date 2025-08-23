@@ -1,0 +1,38 @@
+====== Dibison ======
+[[dibison|Lore]] | **RPG Stats**
+
+===== Stats =====
+^ Attribute ^ Value ^
+| Fighting | 6 |
+| Strength | 7 |
+| Dexterity | 5 |
+| Agility | 7 |
+| Awareness | 7 |
+===== Defenses =====
+^ Defense Type ^ Value ^
+| Toughness | 7 |
+| Parry | 6 |
+| Dodge | 7 |
+
+===== Powers =====
+^ Type ^ Details ^
+| Melee | **Rank**: 7 \\ **Power Points**: 0 |
+| Close-Range | **Rank**: 9 \\ **Extras**: Increased Range, Extended Range 5 \\ **Power Points**: 23 |
+| Mid-Range | **Rank**: 9 \\ **Extras**: Increased Range, Extended Range 6 \\ **Power Points**: 24 |
+| Ranged Combat | **Rank**: 2 \\ **Power Points**: 2 |
+| Protection | **Rank**: 7 \\ **Power Points**: 7 |
+| Concealment | **Rank**: 3 \\ **Power Points**: 1.5 |
+| Speed | **Rank**: 5 \\ **Power Points**: 5 |
+
+===== Movement =====
+^ Terrain ^ Speed ^
+| Land | 216.7 m/6s |
+| Water | 0.0 m/6s |
+| Air | 0.0 m/6s |
+
+===== Summary =====
+^ Attribute ^ Value ^
+| Total Power Points | 126.5 |
+| Power Level | 16 |
+| Power Level Source(s) | Fighting + Melee, Dexterity + Ranged |
+| Cost | 44275.0 Credits |

@@ -1,0 +1,39 @@
+====== Berserk Fuhrer ======
+[[berserk_fuhrer|Lore]] | **RPG Stats**
+
+===== Stats =====
+^ Attribute ^ Value ^
+| Fighting | 7 |
+| Strength | 8 |
+| Dexterity | 9 |
+| Agility | 7 |
+| Awareness | 7 |
+===== Defenses =====
+^ Defense Type ^ Value ^
+| Toughness | 7 |
+| Parry | 7 |
+| Dodge | 7 |
+
+===== Powers =====
+^ Type ^ Details ^
+| Melee | **Rank**: 8 \\ **Power Points**: 0 |
+| Close-Range | **Rank**: 9 \\ **Extras**: Increased Range, Extended Range 5 \\ **Power Points**: 23 |
+| Mid-Range | **Rank**: 8 \\ **Extras**: Increased Range, Extended Range 6 \\ **Power Points**: 24 |
+| Ranged Combat | **Rank**: 2 \\ **Power Points**: 2 |
+| Protection | **Rank**: 7 \\ **Power Points**: 7 |
+| E-Shield | **Rank**: 8 \\ **Power Points**: 8 |
+| Concealment | **Rank**: 2 \\ **Power Points**: 1.0 |
+| Speed | **Rank**: 6 \\ **Power Points**: 6 |
+
+===== Movement =====
+^ Terrain ^ Speed ^
+| Land | 566.7 m/6s |
+| Water | 0.0 m/6s |
+| Air | 0.0 m/6s |
+
+===== Summary =====
+^ Attribute ^ Value ^
+| Total Power Points | 147.0 |
+| Power Level | 20 |
+| Power Level Source(s) | Dexterity + Ranged |
+| Cost | 51450.0 Credits |

@@ -1,0 +1,37 @@
+====== Gojulas ======
+[[gojulas|Lore]] | **RPG Stats**
+
+===== Stats =====
+^ Attribute ^ Value ^
+| Fighting | 5 |
+| Strength | 9 |
+| Dexterity | 6 |
+| Agility | 5 |
+| Awareness | 6 |
+===== Defenses =====
+^ Defense Type ^ Value ^
+| Toughness | 7 |
+| Parry | 5 |
+| Dodge | 5 |
+
+===== Powers =====
+^ Type ^ Details ^
+| Melee | **Rank**: 9 \\ **Power Points**: 0 |
+| Close-Range | **Rank**: 7 \\ **Extras**: Increased Range, Extended Range 5 \\ **Power Points**: 19 |
+| Close Combat | **Rank**: 3 \\ **Power Points**: 3 |
+| Protection | **Rank**: 7 \\ **Power Points**: 7 |
+| Concealment | **Rank**: 2 \\ **Power Points**: 1.0 |
+| Speed | **Rank**: 5 \\ **Power Points**: 5 |
+
+===== Movement =====
+^ Terrain ^ Speed ^
+| Land | 125.0 m/6s |
+| Water | 0.0 m/6s |
+| Air | 0.0 m/6s |
+
+===== Summary =====
+^ Attribute ^ Value ^
+| Total Power Points | 97.0 |
+| Power Level | 17 |
+| Power Level Source(s) | Fighting + Melee |
+| Cost | 33950.0 Credits |

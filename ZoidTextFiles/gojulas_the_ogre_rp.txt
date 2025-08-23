@@ -1,0 +1,39 @@
+====== Gojulas The Ogre ======
+[[gojulas_the_ogre|Lore]] | **RPG Stats**
+
+===== Stats =====
+^ Attribute ^ Value ^
+| Fighting | 7 |
+| Strength | 10 |
+| Dexterity | 11 |
+| Agility | 7 |
+| Awareness | 5 |
+===== Defenses =====
+^ Defense Type ^ Value ^
+| Toughness | 8 |
+| Parry | 7 |
+| Dodge | 7 |
+
+===== Powers =====
+^ Type ^ Details ^
+| Melee | **Rank**: 10 \\ **Power Points**: 0 |
+| Close-Range | **Rank**: 8 \\ **Extras**: Increased Range, Extended Range 5 \\ **Power Points**: 21 |
+| Mid-Range | **Rank**: 10 \\ **Extras**: Increased Range, Extended Range 6 \\ **Power Points**: 22 |
+| Long-Range | **Rank**: 10 \\ **Extras**: Increased Range, Extended Range 7 \\ **Power Points**: 23 |
+| Ranged Combat | **Rank**: 2 \\ **Power Points**: 2 |
+| Protection | **Rank**: 8 \\ **Power Points**: 8 |
+| Concealment | **Rank**: 1 \\ **Power Points**: 0.5 |
+| Speed | **Rank**: 5 \\ **Power Points**: 5 |
+
+===== Movement =====
+^ Terrain ^ Speed ^
+| Land | 208.3 m/6s |
+| Water | 0.0 m/6s |
+| Air | 0.0 m/6s |
+
+===== Summary =====
+^ Attribute ^ Value ^
+| Total Power Points | 161.5 |
+| Power Level | 23 |
+| Power Level Source(s) | Dexterity + Ranged |
+| Cost | 56525.0 Credits |

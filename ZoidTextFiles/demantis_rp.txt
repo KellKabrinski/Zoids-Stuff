@@ -1,0 +1,37 @@
+====== Demantis ======
+[[demantis|Lore]] | **RPG Stats**
+
+===== Stats =====
+^ Attribute ^ Value ^
+| Fighting | 5 |
+| Strength | 3 |
+| Dexterity | 6 |
+| Agility | 4 |
+| Awareness | 5 |
+===== Defenses =====
+^ Defense Type ^ Value ^
+| Toughness | 1 |
+| Parry | 5 |
+| Dodge | 4 |
+
+===== Powers =====
+^ Type ^ Details ^
+| Melee | **Rank**: 3 \\ **Power Points**: 0 |
+| Close-Range | **Rank**: 2 \\ **Extras**: Increased Range, Extended Range 5 \\ **Power Points**: 9 |
+| Close Combat | **Rank**: 3 \\ **Power Points**: 3 |
+| Protection | **Rank**: 1 \\ **Power Points**: 1 |
+| Concealment | **Rank**: 5 \\ **Power Points**: 2.5 |
+| Speed | **Rank**: 6 \\ **Power Points**: 6 |
+
+===== Movement =====
+^ Terrain ^ Speed ^
+| Land | 616.7 m/6s |
+| Water | 0.0 m/6s |
+| Air | 0.0 m/6s |
+
+===== Summary =====
+^ Attribute ^ Value ^
+| Total Power Points | 67.5 |
+| Power Level | 11 |
+| Power Level Source(s) | Fighting + Melee |
+| Cost | 23625.0 Credits |

@@ -1,0 +1,38 @@
+====== Gun Sniper ======
+[[gun_sniper|Lore]] | **RPG Stats**
+
+===== Stats =====
+^ Attribute ^ Value ^
+| Fighting | 6 |
+| Strength | 4 |
+| Dexterity | 8 |
+| Agility | 6 |
+| Awareness | 4 |
+===== Defenses =====
+^ Defense Type ^ Value ^
+| Toughness | 3 |
+| Parry | 6 |
+| Dodge | 6 |
+
+===== Powers =====
+^ Type ^ Details ^
+| Melee | **Rank**: 4 \\ **Power Points**: 0 |
+| Close-Range | **Rank**: 5 \\ **Extras**: Increased Range, Extended Range 5 \\ **Power Points**: 15 |
+| Mid-Range | **Rank**: 3 \\ **Extras**: Increased Range, Extended Range 6 \\ **Power Points**: 16 |
+| Ranged Combat | **Rank**: 2 \\ **Power Points**: 2 |
+| Protection | **Rank**: 3 \\ **Power Points**: 3 |
+| Concealment | **Rank**: 2 \\ **Power Points**: 1.0 |
+| Speed | **Rank**: 6 \\ **Power Points**: 6 |
+
+===== Movement =====
+^ Terrain ^ Speed ^
+| Land | 333.3 m/6s |
+| Water | 0.0 m/6s |
+| Air | 0.0 m/6s |
+
+===== Summary =====
+^ Attribute ^ Value ^
+| Total Power Points | 99.0 |
+| Power Level | 15 |
+| Power Level Source(s) | Dexterity + Ranged |
+| Cost | 34650.0 Credits |

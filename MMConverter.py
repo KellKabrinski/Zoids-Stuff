@@ -105,33 +105,33 @@ def convert_zoid_stats(input_file, output_file):
             })
 
         if close > 0:
-            pp = close * 2
+            pp = close * 2 + 5
             powers.append({
                 "Type": "Close-Range",
                 "Rank": close,
-                "Extras": ["Increased Range"],
+                "Extras": ["Increased Range", "Extended Range 5"],
                 "Power Points": pp
             })
             total_power_points += pp
             max_ranged = max(max_ranged, close)
 
         if mid > 0:
-            pp = close * 2 + 1
+            pp = close * 2 + 6
             powers.append({
                 "Type": "Mid-Range",
                 "Rank": mid,
-                "Extras": ["Increased Range", "Extended Range 1"],
+                "Extras": ["Increased Range", "Extended Range 6"],
                 "Power Points": pp
             })
             total_power_points += pp
             max_ranged = max(max_ranged, mid)
 
         if long > 0:
-            pp = close * 2 + 2
+            pp = close * 2 + 7
             powers.append({
                 "Type": "Long-Range",
                 "Rank": long,
-                "Extras": ["Increased Range", "Extended Range 2"],
+                "Extras": ["Increased Range", "Extended Range 7"],
                 "Power Points": pp
             })
             total_power_points += pp

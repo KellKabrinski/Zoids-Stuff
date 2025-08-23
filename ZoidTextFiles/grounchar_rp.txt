@@ -1,0 +1,38 @@
+====== Grounchar ======
+[[grounchar|Lore]] | **RPG Stats**
+
+===== Stats =====
+^ Attribute ^ Value ^
+| Fighting | 3 |
+| Strength | 4 |
+| Dexterity | 2 |
+| Agility | 3 |
+| Awareness | 8 |
+===== Defenses =====
+^ Defense Type ^ Value ^
+| Toughness | 3 |
+| Parry | 3 |
+| Dodge | 3 |
+
+===== Powers =====
+^ Type ^ Details ^
+| Melee | **Rank**: 4 \\ **Power Points**: 0 |
+| Close-Range | **Rank**: 4 \\ **Extras**: Increased Range, Extended Range 5 \\ **Power Points**: 13 |
+| Ranged Combat | **Rank**: 2 \\ **Power Points**: 2 |
+| Protection | **Rank**: 3 \\ **Power Points**: 3 |
+| Concealment | **Rank**: 9 \\ **Power Points**: 4.5 |
+| Jamming | **Rank**: 9 \\ **Power Points**: 4.5 |
+| Speed | **Rank**: 5 \\ **Power Points**: 5 |
+
+===== Movement =====
+^ Terrain ^ Speed ^
+| Land | 200.0 m/6s |
+| Water | 0.0 m/6s |
+| Air | 0.0 m/6s |
+
+===== Summary =====
+^ Attribute ^ Value ^
+| Total Power Points | 72.0 |
+| Power Level | 10 |
+| Power Level Source(s) | Fighting + Melee |
+| Cost | 25200.0 Credits |

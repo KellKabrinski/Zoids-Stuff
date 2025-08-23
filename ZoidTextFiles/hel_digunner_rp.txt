@@ -1,0 +1,38 @@
+====== Hel Digunner ======
+[[hel_digunner|Lore]] | **RPG Stats**
+
+===== Stats =====
+^ Attribute ^ Value ^
+| Fighting | 3 |
+| Strength | 3 |
+| Dexterity | 3 |
+| Agility | 4 |
+| Awareness | 5 |
+===== Defenses =====
+^ Defense Type ^ Value ^
+| Toughness | 3 |
+| Parry | 3 |
+| Dodge | 4 |
+
+===== Powers =====
+^ Type ^ Details ^
+| Melee | **Rank**: 3 \\ **Power Points**: 0 |
+| Close-Range | **Rank**: 5 \\ **Extras**: Increased Range, Extended Range 5 \\ **Power Points**: 15 |
+| Mid-Range | **Rank**: 5 \\ **Extras**: Increased Range, Extended Range 6 \\ **Power Points**: 16 |
+| Ranged Combat | **Rank**: 2 \\ **Power Points**: 2 |
+| Protection | **Rank**: 3 \\ **Power Points**: 3 |
+| Concealment | **Rank**: 6 \\ **Power Points**: 3.0 |
+| Speed | **Rank**: 5 \\ **Power Points**: 5 |
+
+===== Movement =====
+^ Terrain ^ Speed ^
+| Land | 216.7 m/6s |
+| Water | 0.0 m/6s |
+| Air | 0.0 m/6s |
+
+===== Summary =====
+^ Attribute ^ Value ^
+| Total Power Points | 80.0 |
+| Power Level | 10 |
+| Power Level Source(s) | Dexterity + Ranged |
+| Cost | 28000.0 Credits |

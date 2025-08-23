@@ -1,0 +1,39 @@
+====== Red Horn ======
+[[red_horn|Lore]] | **RPG Stats**
+
+===== Stats =====
+^ Attribute ^ Value ^
+| Fighting | 7 |
+| Strength | 6 |
+| Dexterity | 7 |
+| Agility | 8 |
+| Awareness | 6 |
+===== Defenses =====
+^ Defense Type ^ Value ^
+| Toughness | 7 |
+| Parry | 7 |
+| Dodge | 8 |
+
+===== Powers =====
+^ Type ^ Details ^
+| Melee | **Rank**: 6 \\ **Power Points**: 0 |
+| Close-Range | **Rank**: 7 \\ **Extras**: Increased Range, Extended Range 5 \\ **Power Points**: 19 |
+| Mid-Range | **Rank**: 7 \\ **Extras**: Increased Range, Extended Range 6 \\ **Power Points**: 20 |
+| Long-Range | **Rank**: 4 \\ **Extras**: Increased Range, Extended Range 7 \\ **Power Points**: 21 |
+| Ranged Combat | **Rank**: 2 \\ **Power Points**: 2 |
+| Protection | **Rank**: 7 \\ **Power Points**: 7 |
+| Concealment | **Rank**: 3 \\ **Power Points**: 1.5 |
+| Speed | **Rank**: 5 \\ **Power Points**: 5 |
+
+===== Movement =====
+^ Terrain ^ Speed ^
+| Land | 216.7 m/6s |
+| Water | 0.0 m/6s |
+| Air | 0.0 m/6s |
+
+===== Summary =====
+^ Attribute ^ Value ^
+| Total Power Points | 143.5 |
+| Power Level | 16 |
+| Power Level Source(s) | Fighting + Melee, Dexterity + Ranged |
+| Cost | 50225.0 Credits |

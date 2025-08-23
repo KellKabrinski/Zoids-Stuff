@@ -1,0 +1,158 @@
+====== Zoids RPG Stats Index ======
+
+This page contains links to all available Zoid stat sheets, organized by Power Level.
+
+===== Power Level Summary =====
+^ Power Level ^ Number of Zoids ^
+| 7 | 1 |
+| 8 | 2 |
+| 9 | 2 |
+| 10 | 3 |
+| 11 | 6 |
+| 12 | 5 |
+| 13 | 7 |
+| 14 | 7 |
+| 15 | 11 |
+| 16 | 11 |
+| 17 | 5 |
+| 18 | 3 |
+| 19 | 4 |
+| 20 | 3 |
+| 21 | 4 |
+| 22 | 2 |
+| 23 | 5 |
+
+===== Power Level 7 =====
+^ Name ^ Cost (Credits) ^ Movement Type ^ Primary Weapons ^
+| [[gator_rp|Gator]] | 21,350 | Land | Melee, Close-Range, Ranged Combat |
+
+===== Power Level 8 =====
+^ Name ^ Cost (Credits) ^ Movement Type ^ Primary Weapons ^
+| [[gorhecks_rp|Gorhecks]] | 30,975 | Land | Melee, Close-Range, Mid-Range, Ranged Combat |
+| [[megaleon_rp|Megaleon]] | 25,375 | Land | Melee, Close-Range, Mid-Range, Ranged Combat |
+
+===== Power Level 9 =====
+^ Name ^ Cost (Credits) ^ Movement Type ^ Primary Weapons ^
+| [[molga_rp|Molga]] | 24,850 | Land | Melee, Close-Range, Mid-Range, Ranged Combat |
+| [[spinosapper_rp|Spinosapper]] | 20,650 | Land | Melee, Close-Range, Ranged Combat |
+
+===== Power Level 10 =====
+^ Name ^ Cost (Credits) ^ Movement Type ^ Primary Weapons ^
+| [[barigator_rp|Barigator]] | 21,000 | Land, Water | Melee, Close-Range, Close Combat |
+| [[grounchar_rp|Grounchar]] | 25,200 | Land | Melee, Close-Range, Ranged Combat |
+| [[hel_digunner_rp|Hel Digunner]] | 28,000 | Land | Melee, Close-Range, Mid-Range, Ranged Combat |
+
+===== Power Level 11 =====
+^ Name ^ Cost (Credits) ^ Movement Type ^ Primary Weapons ^
+| [[brachios_rp|Brachios]] | 30,625 | Land | Melee, Close-Range, Mid-Range, Ranged Combat |
+| [[demantis_rp|Demantis]] | 23,625 | Land | Melee, Close-Range, Close Combat |
+| [[dimetrodon_rp|Dimetrodon]] | 29,575 | Land | Melee, Close-Range, Ranged Combat |
+| [[gordos_rp|Gordos]] | 33,775 | Land | Melee, Close-Range, Mid-Range, Ranged Combat |
+| [[guysack_rp|Guysack]] | 23,100 | Land | Melee, Close-Range, Ranged Combat |
+| [[maccurtis_rp|Maccurtis]] | 28,000 | Land, Water | Melee, Close-Range, Ranged Combat |
+
+===== Power Level 12 =====
+^ Name ^ Cost (Credits) ^ Movement Type ^ Primary Weapons ^
+| [[cannon_tortoise_rp|Cannon Tortoise]] | 28,000 | Land | Melee, Close-Range, Mid-Range, Long-Range, Ranged Combat |
+| [[godos_rp|Godos]] | 23,800 | Land | Melee, Close-Range, Ranged Combat |
+| [[hammer_head_rp|Hammer Head]] | 37,625 | Water, Air | Melee, Close-Range, Mid-Range, Ranged Combat |
+| [[killer_dome_rp|Killer Dome]] | 32,200 | Land, Water | Melee, Close-Range, Ranged Combat |
+| [[sinker_rp|Sinker]] | 33,075 | Water, Air | Melee, Close-Range, Mid-Range, Ranged Combat |
+
+===== Power Level 13 =====
+^ Name ^ Cost (Credits) ^ Movement Type ^ Primary Weapons ^
+| [[diloforce_rp|Diloforce]] | 27,825 | Land | Melee, Close-Range, Ranged Combat |
+| [[iguan_rp|Iguan]] | 24,850 | Land | Melee, Close-Range, Ranged Combat |
+| [[pteras_rp|Pteras]] | 32,025 | Air | Melee, Close-Range, Ranged Combat |
+| [[stealth_viper_rp|Stealth Viper]] | 30,800 | Land | Melee, Close-Range, Mid-Range, Close Combat |
+| [[wardick_rp|Wardick]] | 35,525 | Land, Water | Melee, Close-Range, Mid-Range, Ranged Combat |
+| [[zabat_rp|Zabat]] | 35,700 | Air | Melee, Close-Range, Ranged Combat |
+| [[zoids_mammoth_rp|Zoids Mammoth]] | 26,950 | Land | Melee, Close-Range, Ranged Combat |
+
+===== Power Level 14 =====
+^ Name ^ Cost (Credits) ^ Movement Type ^ Primary Weapons ^
+| [[black_rhimos_rp|Black Rhimos]] | 36,400 | Land | Melee, Close-Range, Mid-Range, Ranged Combat |
+| [[double_sworder_rp|Double Sworder]] | 34,300 | Air | Melee, Close-Range, Close Combat |
+| [[gustav_ms_rp|Gustav MS]] | 20,650 | Land | Melee, Close Combat |
+| [[hammer_rock_rp|Hammer Rock]] | 29,750 | Land | Melee, Close-Range, Close Combat |
+| [[helcat_rp|Helcat]] | 30,450 | Land | Melee, Close-Range, Ranged Combat |
+| [[rev_rapter_rp|Rev Rapter]] | 25,200 | Land | Melee, Close Combat |
+| [[saicurtis_rp|Saicurtis]] | 30,450 | Air | Melee, Close-Range, Ranged Combat |
+
+===== Power Level 15 =====
+^ Name ^ Cost (Credits) ^ Movement Type ^ Primary Weapons ^
+| [[arosaurer_rp|Arosaurer]] | 30,800 | Land | Melee, Close-Range, Close Combat |
+| [[bearfighter_rp|Bearfighter]] | 32,025 | Land | Melee, Close-Range, Ranged Combat |
+| [[command_wolf_rp|Command Wolf]] | 34,650 | Land | Melee, Close-Range, Ranged Combat |
+| [[command_wolf_ac_rp|Command Wolf AC]] | 38,850 | Land | Melee, Close-Range, Mid-Range, Ranged Combat |
+| [[command_wolf_is_rp|Command Wolf IS]] | 37,975 | Land | Melee, Close-Range, Mid-Range, Ranged Combat |
+| [[glaive_quama_rp|Glaive Quama]] | 35,875 | Air | Melee, Close-Range, Ranged Combat |
+| [[gun_sniper_rp|Gun Sniper]] | 34,650 | Land | Melee, Close-Range, Mid-Range, Ranged Combat |
+| [[gunbluster_rp|Gunbluster]] | 53,200 | Land | Melee, Close-Range, Mid-Range, Long-Range, Ranged Combat |
+| [[saberlion_rp|Saberlion]] | 28,525 | Land | Melee, Close Combat |
+| [[salamander_rp|Salamander]] | 43,925 | Air | Melee, Close-Range, Mid-Range, Ranged Combat |
+| [[ultra_saurus_rp|Ultra Saurus]] | 53,725 | Land, Water | Melee, Close-Range, Mid-Range, Long-Range, Ranged Combat |
+
+===== Power Level 16 =====
+^ Name ^ Cost (Credits) ^ Movement Type ^ Primary Weapons ^
+| [[dark_spiner_rp|Dark Spiner]] | 38,325 | Land | Melee, Close-Range, Close Combat |
+| [[dibison_rp|Dibison]] | 44,275 | Land | Melee, Close-Range, Mid-Range, Ranged Combat |
+| [[elephander_rp|Elephander]] | 44,625 | Land | Melee, Close-Range, Mid-Range, Close Combat |
+| [[guntiger_rp|Guntiger]] | 31,325 | Land | Melee, Close-Range, Ranged Combat |
+| [[liger_zero_panzer_rp|Liger Zero Panzer]] | 49,525 | Land | Melee, Close-Range, Mid-Range, Long-Range, Ranged Combat |
+| [[red_horn_rp|Red Horn]] | 50,225 | Land | Melee, Close-Range, Mid-Range, Long-Range, Ranged Combat |
+| [[redler_rp|Redler]] | 37,625 | Air | Melee, Close-Range, Close Combat |
+| [[saber_tiger_rp|Saber Tiger]] | 35,175 | Land | Melee, Close-Range, Close Combat |
+| [[shield_liger_rp|Shield Liger]] | 37,800 | Land | Melee, Close-Range, Close Combat |
+| [[snipe_master_rp|Snipe Master]] | 33,950 | Land | Melee, Close-Range, Mid-Range, Ranged Combat |
+| [[storm_sworder_rp|Storm Sworder]] | 39,025 | Air | Melee, Close-Range, Close Combat |
+
+===== Power Level 17 =====
+^ Name ^ Cost (Credits) ^ Movement Type ^ Primary Weapons ^
+| [[blade_liger_rp|Blade Liger]] | 38,850 | Land | Melee, Close-Range, Close Combat |
+| [[gojulas_rp|Gojulas]] | 33,950 | Land | Melee, Close-Range, Close Combat |
+| [[raynos_rp|Raynos]] | 41,475 | Air | Melee, Close-Range, Ranged Combat |
+| [[shadow_fox_rp|Shadow Fox]] | 40,075 | Land | Melee, Close-Range, Ranged Combat |
+| [[storch_rp|Storch]] | 39,025 | Air | Melee, Close-Range, Mid-Range, Ranged Combat |
+
+===== Power Level 18 =====
+^ Name ^ Cost (Credits) ^ Movement Type ^ Primary Weapons ^
+| [[liger_zero_rp|Liger Zero]] | 38,500 | Land | Melee, Close-Range, Close Combat |
+| [[liger_zero_jager_rp|Liger Zero Jager]] | 38,850 | Land | Melee, Close-Range, Close Combat |
+| [[seismosaurus_rp|Seismosaurus]] | 58,100 | Land | Melee, Close-Range, Mid-Range, Long-Range, Ranged Combat |
+
+===== Power Level 19 =====
+^ Name ^ Cost (Credits) ^ Movement Type ^ Primary Weapons ^
+| [[iron_kong_rp|Iron Kong]] | 56,875 | Land | Melee, Close-Range, Mid-Range, Long-Range, Ranged Combat |
+| [[liger_zero_phoenix_rp|Liger Zero Phoenix]] | 52,150 | Land, Air | Melee, Close-Range, Mid-Range, Close Combat |
+| [[lightning_saix_rp|Lightning Saix]] | 45,325 | Land | Melee, Close-Range, Mid-Range, Ranged Combat |
+| [[shield_liger_dcs-j_rp|Shield Liger DCS-J]] | 44,800 | Land | Melee, Close-Range, Mid-Range, Ranged Combat |
+
+===== Power Level 20 =====
+^ Name ^ Cost (Credits) ^ Movement Type ^ Primary Weapons ^
+| [[berserk_fuhrer_rp|Berserk Fuhrer]] | 51,450 | Land | Melee, Close-Range, Mid-Range, Ranged Combat |
+| [[geno_saurer_rp|Geno Saurer]] | 47,075 | Land | Melee, Close-Range, Mid-Range, Ranged Combat |
+| [[iron_kong_pk_rp|Iron Kong PK]] | 60,200 | Land | Melee, Close-Range, Mid-Range, Long-Range, Ranged Combat |
+
+===== Power Level 21 =====
+^ Name ^ Cost (Credits) ^ Movement Type ^ Primary Weapons ^
+| [[death_saurer_rp|Death Saurer]] | 51,625 | Land | Melee, Close-Range, Mid-Range, Ranged Combat |
+| [[konig_wolf_rp|Konig Wolf]] | 52,850 | Land | Melee, Close-Range, Mid-Range, Ranged Combat |
+| [[liger_zero_schneider_rp|Liger Zero Schneider]] | 42,700 | Land | Melee, Close-Range, Close Combat |
+| [[liger_zero_x_rp|Liger Zero X]] | 51,100 | Land | Melee, Close-Range, Mid-Range, Ranged Combat |
+
+===== Power Level 22 =====
+^ Name ^ Cost (Credits) ^ Movement Type ^ Primary Weapons ^
+| [[gairyuki_rp|Gairyuki]] | 42,525 | Land | Melee, Close-Range, Ranged Combat |
+| [[geno_breaker_rp|Geno Breaker]] | 51,275 | Land | Melee, Close-Range, Mid-Range, Ranged Combat |
+
+===== Power Level 23 =====
+^ Name ^ Cost (Credits) ^ Movement Type ^ Primary Weapons ^
+| [[death_stinger_rp|Death Stinger]] | 62,825 | Land, Water | Melee, Close-Range, Mid-Range, Close Combat |
+| [[energy_liger_rp|Energy Liger]] | 54,600 | Land | Melee, Close-Range, Mid-Range, Ranged Combat |
+| [[gojulas_the_ogre_rp|Gojulas The Ogre]] | 56,525 | Land | Melee, Close-Range, Mid-Range, Long-Range, Ranged Combat |
+| [[gojulasgiga_rp|Gojulasgiga]] | 49,350 | Land | Melee, Close-Range, Ranged Combat |
+| [[madthunder_rp|Madthunder]] | 56,875 | Land | Melee, Close-Range, Mid-Range, Close Combat |
+
+----
+//Generated automatically from Zoid stat data//

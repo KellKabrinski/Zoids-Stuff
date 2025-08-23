@@ -1,0 +1,37 @@
+====== Spinosapper ======
+[[spinosapper|Lore]] | **RPG Stats**
+
+===== Stats =====
+^ Attribute ^ Value ^
+| Fighting | 4 |
+| Strength | 2 |
+| Dexterity | 5 |
+| Agility | 4 |
+| Awareness | 4 |
+===== Defenses =====
+^ Defense Type ^ Value ^
+| Toughness | 4 |
+| Parry | 4 |
+| Dodge | 4 |
+
+===== Powers =====
+^ Type ^ Details ^
+| Melee | **Rank**: 2 \\ **Power Points**: 0 |
+| Close-Range | **Rank**: 2 \\ **Extras**: Increased Range, Extended Range 5 \\ **Power Points**: 9 |
+| Ranged Combat | **Rank**: 2 \\ **Power Points**: 2 |
+| Protection | **Rank**: 4 \\ **Power Points**: 4 |
+| Concealment | **Rank**: 2 \\ **Power Points**: 1.0 |
+| Speed | **Rank**: 5 \\ **Power Points**: 5 |
+
+===== Movement =====
+^ Terrain ^ Speed ^
+| Land | 175.0 m/6s |
+| Water | 0.0 m/6s |
+| Air | 0.0 m/6s |
+
+===== Summary =====
+^ Attribute ^ Value ^
+| Total Power Points | 59.0 |
+| Power Level | 9 |
+| Power Level Source(s) | Fighting + Melee, Dexterity + Ranged |
+| Cost | 20650.0 Credits |

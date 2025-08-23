@@ -1,0 +1,38 @@
+====== Diloforce ======
+[[diloforce|Lore]] | **RPG Stats**
+
+===== Stats =====
+^ Attribute ^ Value ^
+| Fighting | 5 |
+| Strength | 4 |
+| Dexterity | 7 |
+| Agility | 5 |
+| Awareness | 4 |
+===== Defenses =====
+^ Defense Type ^ Value ^
+| Toughness | 2 |
+| Parry | 5 |
+| Dodge | 5 |
+
+===== Powers =====
+^ Type ^ Details ^
+| Melee | **Rank**: 4 \\ **Power Points**: 0 |
+| Close-Range | **Rank**: 4 \\ **Extras**: Increased Range, Extended Range 5 \\ **Power Points**: 13 |
+| Ranged Combat | **Rank**: 2 \\ **Power Points**: 2 |
+| Protection | **Rank**: 2 \\ **Power Points**: 2 |
+| E-Shield | **Rank**: 4 \\ **Power Points**: 4 |
+| Concealment | **Rank**: 5 \\ **Power Points**: 2.5 |
+| Speed | **Rank**: 6 \\ **Power Points**: 6 |
+
+===== Movement =====
+^ Terrain ^ Speed ^
+| Land | 500.0 m/6s |
+| Water | 0.0 m/6s |
+| Air | 0.0 m/6s |
+
+===== Summary =====
+^ Attribute ^ Value ^
+| Total Power Points | 79.5 |
+| Power Level | 13 |
+| Power Level Source(s) | Dexterity + Ranged |
+| Cost | 27825.0 Credits |

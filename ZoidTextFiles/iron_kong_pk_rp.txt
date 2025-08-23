@@ -1,0 +1,39 @@
+====== Iron Kong PK ======
+[[iron_kong_pk|Lore]] | **RPG Stats**
+
+===== Stats =====
+^ Attribute ^ Value ^
+| Fighting | 8 |
+| Strength | 8 |
+| Dexterity | 9 |
+| Agility | 8 |
+| Awareness | 9 |
+===== Defenses =====
+^ Defense Type ^ Value ^
+| Toughness | 8 |
+| Parry | 8 |
+| Dodge | 8 |
+
+===== Powers =====
+^ Type ^ Details ^
+| Melee | **Rank**: 8 \\ **Power Points**: 0 |
+| Close-Range | **Rank**: 9 \\ **Extras**: Increased Range, Extended Range 5 \\ **Power Points**: 23 |
+| Mid-Range | **Rank**: 9 \\ **Extras**: Increased Range, Extended Range 6 \\ **Power Points**: 24 |
+| Long-Range | **Rank**: 9 \\ **Extras**: Increased Range, Extended Range 7 \\ **Power Points**: 25 |
+| Ranged Combat | **Rank**: 2 \\ **Power Points**: 2 |
+| Protection | **Rank**: 8 \\ **Power Points**: 8 |
+| Concealment | **Rank**: 2 \\ **Power Points**: 1.0 |
+| Speed | **Rank**: 5 \\ **Power Points**: 5 |
+
+===== Movement =====
+^ Terrain ^ Speed ^
+| Land | 283.3 m/6s |
+| Water | 0.0 m/6s |
+| Air | 0.0 m/6s |
+
+===== Summary =====
+^ Attribute ^ Value ^
+| Total Power Points | 172.0 |
+| Power Level | 20 |
+| Power Level Source(s) | Dexterity + Ranged |
+| Cost | 60200.0 Credits |

@@ -1,0 +1,40 @@
+====== Death Stinger ======
+[[death_stinger|Lore]] | **RPG Stats**
+
+===== Stats =====
+^ Attribute ^ Value ^
+| Fighting | 7 |
+| Strength | 11 |
+| Dexterity | 11 |
+| Agility | 7 |
+| Awareness | 9 |
+===== Defenses =====
+^ Defense Type ^ Value ^
+| Toughness | 10 |
+| Parry | 7 |
+| Dodge | 7 |
+
+===== Powers =====
+^ Type ^ Details ^
+| Melee | **Rank**: 11 \\ **Power Points**: 0 |
+| Close-Range | **Rank**: 10 \\ **Extras**: Increased Range, Extended Range 5 \\ **Power Points**: 25 |
+| Mid-Range | **Rank**: 9 \\ **Extras**: Increased Range, Extended Range 6 \\ **Power Points**: 26 |
+| Close Combat | **Rank**: 3 \\ **Power Points**: 3 |
+| Protection | **Rank**: 10 \\ **Power Points**: 10 |
+| E-Shield | **Rank**: 11 \\ **Power Points**: 11 |
+| Concealment | **Rank**: 9 \\ **Power Points**: 4.5 |
+| Speed | **Rank**: 5 \\ **Power Points**: 5 |
+| Swimming | **Rank**: 5 \\ **Power Points**: 5 |
+
+===== Movement =====
+^ Terrain ^ Speed ^
+| Land | 308.3 m/6s |
+| Water | 222.2 m/6s |
+| Air | 0.0 m/6s |
+
+===== Summary =====
+^ Attribute ^ Value ^
+| Total Power Points | 179.5 |
+| Power Level | 23 |
+| Power Level Source(s) | Dexterity + Ranged |
+| Cost | 62825.0 Credits |

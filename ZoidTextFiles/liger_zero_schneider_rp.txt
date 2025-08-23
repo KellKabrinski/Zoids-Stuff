@@ -1,0 +1,38 @@
+====== Liger Zero Schneider ======
+[[liger_zero_schneider|Lore]] | **RPG Stats**
+
+===== Stats =====
+^ Attribute ^ Value ^
+| Fighting | 9 |
+| Strength | 9 |
+| Dexterity | 11 |
+| Agility | 7 |
+| Awareness | 6 |
+===== Defenses =====
+^ Defense Type ^ Value ^
+| Toughness | 5 |
+| Parry | 9 |
+| Dodge | 7 |
+
+===== Powers =====
+^ Type ^ Details ^
+| Melee | **Rank**: 9 \\ **Power Points**: 0 |
+| Close-Range | **Rank**: 4 \\ **Extras**: Increased Range, Extended Range 5 \\ **Power Points**: 13 |
+| Close Combat | **Rank**: 3 \\ **Power Points**: 3 |
+| Protection | **Rank**: 5 \\ **Power Points**: 5 |
+| E-Shield | **Rank**: 9 \\ **Power Points**: 9 |
+| Concealment | **Rank**: 4 \\ **Power Points**: 2.0 |
+| Speed | **Rank**: 6 \\ **Power Points**: 6 |
+
+===== Movement =====
+^ Terrain ^ Speed ^
+| Land | 516.7 m/6s |
+| Water | 0.0 m/6s |
+| Air | 0.0 m/6s |
+
+===== Summary =====
+^ Attribute ^ Value ^
+| Total Power Points | 122.0 |
+| Power Level | 21 |
+| Power Level Source(s) | Fighting + Melee |
+| Cost | 42700.0 Credits |

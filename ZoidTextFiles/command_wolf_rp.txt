@@ -1,0 +1,37 @@
+====== Command Wolf ======
+[[command_wolf|Lore]] | **RPG Stats**
+
+===== Stats =====
+^ Attribute ^ Value ^
+| Fighting | 7 |
+| Strength | 4 |
+| Dexterity | 9 |
+| Agility | 7 |
+| Awareness | 9 |
+===== Defenses =====
+^ Defense Type ^ Value ^
+| Toughness | 3 |
+| Parry | 7 |
+| Dodge | 7 |
+
+===== Powers =====
+^ Type ^ Details ^
+| Melee | **Rank**: 4 \\ **Power Points**: 0 |
+| Close-Range | **Rank**: 4 \\ **Extras**: Increased Range, Extended Range 5 \\ **Power Points**: 13 |
+| Ranged Combat | **Rank**: 2 \\ **Power Points**: 2 |
+| Protection | **Rank**: 3 \\ **Power Points**: 3 |
+| Concealment | **Rank**: 6 \\ **Power Points**: 3.0 |
+| Speed | **Rank**: 6 \\ **Power Points**: 6 |
+
+===== Movement =====
+^ Terrain ^ Speed ^
+| Land | 350.0 m/6s |
+| Water | 0.0 m/6s |
+| Air | 0.0 m/6s |
+
+===== Summary =====
+^ Attribute ^ Value ^
+| Total Power Points | 99.0 |
+| Power Level | 15 |
+| Power Level Source(s) | Dexterity + Ranged |
+| Cost | 34650.0 Credits |

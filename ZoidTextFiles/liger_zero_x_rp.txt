@@ -1,0 +1,38 @@
+====== Liger Zero X ======
+[[liger_zero_x|Lore]] | **RPG Stats**
+
+===== Stats =====
+^ Attribute ^ Value ^
+| Fighting | 8 |
+| Strength | 8 |
+| Dexterity | 11 |
+| Agility | 8 |
+| Awareness | 7 |
+===== Defenses =====
+^ Defense Type ^ Value ^
+| Toughness | 5 |
+| Parry | 8 |
+| Dodge | 8 |
+
+===== Powers =====
+^ Type ^ Details ^
+| Melee | **Rank**: 8 \\ **Power Points**: 0 |
+| Close-Range | **Rank**: 8 \\ **Extras**: Increased Range, Extended Range 5 \\ **Power Points**: 21 |
+| Mid-Range | **Rank**: 7 \\ **Extras**: Increased Range, Extended Range 6 \\ **Power Points**: 22 |
+| Ranged Combat | **Rank**: 2 \\ **Power Points**: 2 |
+| Protection | **Rank**: 5 \\ **Power Points**: 5 |
+| Concealment | **Rank**: 12 \\ **Power Points**: 6.0 |
+| Speed | **Rank**: 6 \\ **Power Points**: 6 |
+
+===== Movement =====
+^ Terrain ^ Speed ^
+| Land | 525.0 m/6s |
+| Water | 0.0 m/6s |
+| Air | 0.0 m/6s |
+
+===== Summary =====
+^ Attribute ^ Value ^
+| Total Power Points | 146.0 |
+| Power Level | 21 |
+| Power Level Source(s) | Dexterity + Ranged |
+| Cost | 51100.0 Credits |

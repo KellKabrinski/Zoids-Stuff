@@ -1,0 +1,36 @@
+====== Saberlion ======
+[[saberlion|Lore]] | **RPG Stats**
+
+===== Stats =====
+^ Attribute ^ Value ^
+| Fighting | 8 |
+| Strength | 4 |
+| Dexterity | 11 |
+| Agility | 6 |
+| Awareness | 5 |
+===== Defenses =====
+^ Defense Type ^ Value ^
+| Toughness | 2 |
+| Parry | 8 |
+| Dodge | 6 |
+
+===== Powers =====
+^ Type ^ Details ^
+| Melee | **Rank**: 4 \\ **Power Points**: 0 |
+| Close Combat | **Rank**: 3 \\ **Power Points**: 3 |
+| Protection | **Rank**: 2 \\ **Power Points**: 2 |
+| Concealment | **Rank**: 5 \\ **Power Points**: 2.5 |
+| Speed | **Rank**: 6 \\ **Power Points**: 6 |
+
+===== Movement =====
+^ Terrain ^ Speed ^
+| Land | 425.0 m/6s |
+| Water | 0.0 m/6s |
+| Air | 0.0 m/6s |
+
+===== Summary =====
+^ Attribute ^ Value ^
+| Total Power Points | 81.5 |
+| Power Level | 15 |
+| Power Level Source(s) | Fighting + Melee |
+| Cost | 28525.0 Credits |

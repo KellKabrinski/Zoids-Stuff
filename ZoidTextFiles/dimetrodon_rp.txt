@@ -1,0 +1,38 @@
+====== Dimetrodon ======
+[[dimetrodon|Lore]] | **RPG Stats**
+
+===== Stats =====
+^ Attribute ^ Value ^
+| Fighting | 4 |
+| Strength | 4 |
+| Dexterity | 2 |
+| Agility | 4 |
+| Awareness | 12 |
+===== Defenses =====
+^ Defense Type ^ Value ^
+| Toughness | 6 |
+| Parry | 4 |
+| Dodge | 4 |
+
+===== Powers =====
+^ Type ^ Details ^
+| Melee | **Rank**: 4 \\ **Power Points**: 0 |
+| Close-Range | **Rank**: 4 \\ **Extras**: Increased Range, Extended Range 5 \\ **Power Points**: 13 |
+| Ranged Combat | **Rank**: 2 \\ **Power Points**: 2 |
+| Protection | **Rank**: 6 \\ **Power Points**: 6 |
+| Concealment | **Rank**: 3 \\ **Power Points**: 1.5 |
+| Jamming | **Rank**: 10 \\ **Power Points**: 5.0 |
+| Speed | **Rank**: 5 \\ **Power Points**: 5 |
+
+===== Movement =====
+^ Terrain ^ Speed ^
+| Land | 250.0 m/6s |
+| Water | 0.0 m/6s |
+| Air | 0.0 m/6s |
+
+===== Summary =====
+^ Attribute ^ Value ^
+| Total Power Points | 84.5 |
+| Power Level | 11 |
+| Power Level Source(s) | Fighting + Melee |
+| Cost | 29575.0 Credits |

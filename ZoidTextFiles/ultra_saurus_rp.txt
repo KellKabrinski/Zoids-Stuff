@@ -1,0 +1,40 @@
+====== Ultra Saurus ======
+[[ultra_saurus|Lore]] | **RPG Stats**
+
+===== Stats =====
+^ Attribute ^ Value ^
+| Fighting | 4 |
+| Strength | 8 |
+| Dexterity | 1 |
+| Agility | 5 |
+| Awareness | 9 |
+===== Defenses =====
+^ Defense Type ^ Value ^
+| Toughness | 9 |
+| Parry | 4 |
+| Dodge | 5 |
+
+===== Powers =====
+^ Type ^ Details ^
+| Melee | **Rank**: 8 \\ **Power Points**: 0 |
+| Close-Range | **Rank**: 10 \\ **Extras**: Increased Range, Extended Range 5 \\ **Power Points**: 25 |
+| Mid-Range | **Rank**: 11 \\ **Extras**: Increased Range, Extended Range 6 \\ **Power Points**: 26 |
+| Long-Range | **Rank**: 10 \\ **Extras**: Increased Range, Extended Range 7 \\ **Power Points**: 27 |
+| Ranged Combat | **Rank**: 2 \\ **Power Points**: 2 |
+| Protection | **Rank**: 9 \\ **Power Points**: 9 |
+| Concealment | **Rank**: 1 \\ **Power Points**: 0.5 |
+| Speed | **Rank**: 5 \\ **Power Points**: 5 |
+| Swimming | **Rank**: 5 \\ **Power Points**: 5 |
+
+===== Movement =====
+^ Terrain ^ Speed ^
+| Land | 83.3 m/6s |
+| Water | 145.1 m/6s |
+| Air | 0.0 m/6s |
+
+===== Summary =====
+^ Attribute ^ Value ^
+| Total Power Points | 153.5 |
+| Power Level | 15 |
+| Power Level Source(s) | Fighting + Melee |
+| Cost | 53725.0 Credits |

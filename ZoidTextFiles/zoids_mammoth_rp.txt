@@ -1,0 +1,37 @@
+====== Zoids Mammoth ======
+[[zoids_mammoth|Lore]] | **RPG Stats**
+
+===== Stats =====
+^ Attribute ^ Value ^
+| Fighting | 5 |
+| Strength | 5 |
+| Dexterity | 4 |
+| Agility | 5 |
+| Awareness | 5 |
+===== Defenses =====
+^ Defense Type ^ Value ^
+| Toughness | 6 |
+| Parry | 5 |
+| Dodge | 5 |
+
+===== Powers =====
+^ Type ^ Details ^
+| Melee | **Rank**: 5 \\ **Power Points**: 0 |
+| Close-Range | **Rank**: 5 \\ **Extras**: Increased Range, Extended Range 5 \\ **Power Points**: 15 |
+| Ranged Combat | **Rank**: 2 \\ **Power Points**: 2 |
+| Protection | **Rank**: 6 \\ **Power Points**: 6 |
+| Concealment | **Rank**: 2 \\ **Power Points**: 1.0 |
+| Speed | **Rank**: 5 \\ **Power Points**: 5 |
+
+===== Movement =====
+^ Terrain ^ Speed ^
+| Land | 141.7 m/6s |
+| Water | 0.0 m/6s |
+| Air | 0.0 m/6s |
+
+===== Summary =====
+^ Attribute ^ Value ^
+| Total Power Points | 77.0 |
+| Power Level | 13 |
+| Power Level Source(s) | Fighting + Melee |
+| Cost | 26950.0 Credits |

@@ -1,0 +1,37 @@
+====== Sinker ======
+[[sinker|Lore]] | **RPG Stats**
+
+===== Stats =====
+^ Attribute ^ Value ^
+| Fighting | 4 |
+| Strength | 1 |
+| Dexterity | 6 |
+| Agility | 5 |
+| Awareness | 5 |
+===== Defenses =====
+^ Defense Type ^ Value ^
+| Toughness | 2 |
+| Parry | 4 |
+| Dodge | 5 |
+
+===== Powers =====
+^ Type ^ Details ^
+| Melee | **Rank**: 1 \\ **Power Points**: 0 |
+| Close-Range | **Rank**: 3 \\ **Extras**: Increased Range, Extended Range 5 \\ **Power Points**: 11 |
+| Mid-Range | **Rank**: 4 \\ **Extras**: Increased Range, Extended Range 6 \\ **Power Points**: 12 |
+| Ranged Combat | **Rank**: 2 \\ **Power Points**: 2 |
+| Protection | **Rank**: 2 \\ **Power Points**: 2 |
+| Concealment | **Rank**: 9 \\ **Power Points**: 4.5 |
+
+===== Movement =====
+^ Terrain ^ Speed ^
+| Land | 0.0 m/6s |
+| Water | 185.2 m/6s |
+| Air | 514.5 m/6s |
+
+===== Summary =====
+^ Attribute ^ Value ^
+| Total Power Points | 94.5 |
+| Power Level | 12 |
+| Power Level Source(s) | Dexterity + Ranged |
+| Cost | 33075.0 Credits |
