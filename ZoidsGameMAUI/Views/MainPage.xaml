@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage x:Class="ZoidsGameMAUI.Views.MainPage"
+             xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             Title="Zoids Battle Game">
+    
+    <ScrollView>
+        <VerticalStackLayout Spacing="25" Padding="30,0" VerticalOptions="Center">
+            
+            <!-- Welcome Section -->
+            <Image
+                Source="dotnet_bot.png"
+                HeightRequest="185"
+                Aspect="AspectFit"
+                SemanticProperties.Description="Cute dot net bot waving hi to you!" />
+
+            <Label
+                Text="Welcome to Zoids Battle!"
+                FontSize="32"
+                FontAttributes="Bold"
+                HorizontalOptions="Center" />
+
+            <Label
+                Text="Choose your option to get started"
+                FontSize="18"
+                HorizontalOptions="Center" />
+
+            <!-- Menu Options -->
+            <Button x:Name="NewGameBtn"
+                    Text="New Game"
+                    FontSize="18"
+                    BackgroundColor="#512BD4"
+                    TextColor="White"
+                    Clicked="OnNewGameClicked" />
+
+            <Button x:Name="LoadGameBtn"
+                    Text="Load Game"
+                    FontSize="18"
+                    BackgroundColor="#2E7D32"
+                    TextColor="White"
+                    Clicked="OnLoadGameClicked" />
+
+            <Button x:Name="ZoidShopBtn"
+                    Text="Zoid Shop"
+                    FontSize="18"
+                    BackgroundColor="#F57C00"
+                    TextColor="White"
+                    Clicked="OnZoidShopClicked" />
+
+            <Button x:Name="SaveManagerBtn"
+                    Text="Save Manager"
+                    FontSize="18"
+                    BackgroundColor="#9C27B0"
+                    TextColor="White"
+                    Clicked="OnSaveManagerClicked" />
+
+            <Button x:Name="SettingsBtn"
+                    Text="Settings"
+                    FontSize="18"
+                    BackgroundColor="#616161"
+                    TextColor="White"
+                    Clicked="OnSettingsClicked" />
+
+            <Button x:Name="SystemTestBtn"
+                    Text="System Test"
+                    FontSize="16"
+                    BackgroundColor="#D32F2F"
+                    TextColor="White"
+                    Clicked="OnSystemTestClicked" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage x:Class="ZoidsGameMAUI.Views.TestPage"
+             xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             Title="System Test">
+    
+    <ScrollView Padding="20">
+        <StackLayout Spacing="15">
+            
+            <Label Text="Zoids Game - System Tests" 
+                   FontSize="24" 
+                   FontAttributes="Bold" 
+                   HorizontalOptions="Center" />
+
+            <!-- Data Loading Test -->
+            <Border BackgroundColor="LightGray" Padding="15" StrokeThickness="1" Stroke="Gray">
+                <StackLayout>
+                    <Label Text="1. Data Loading Test" FontSize="18" FontAttributes="Bold" />
+                    <Button x:Name="TestDataLoadingBtn" 
+                            Text="Test Zoid Data Loading" 
+                            Clicked="OnTestDataLoadingClicked" />
+                    <Label x:Name="DataLoadingResult" Text="Not tested" />
+                </StackLayout>
+            </Border>
+
+            <!-- Zoid Creation Test -->
+            <Border BackgroundColor="LightGray" Padding="15" StrokeThickness="1" Stroke="Gray">
+                <StackLayout>
+                    <Label Text="2. Zoid Creation Test" FontSize="18" FontAttributes="Bold" />
+                    <Button x:Name="TestZoidCreationBtn" 
+                            Text="Test Zoid Creation" 
+                            Clicked="OnTestZoidCreationClicked" />
+                    <Label x:Name="ZoidCreationResult" Text="Not tested" />
+                </StackLayout>
+            </Border>
+
+            <!-- Battle System Test -->
+            <Border BackgroundColor="LightGray" Padding="15" StrokeThickness="1" Stroke="Gray">
+                <StackLayout>
+                    <Label Text="3. Battle System Test" FontSize="18" FontAttributes="Bold" />
+                    <Button x:Name="TestBattleSystemBtn" 
+                            Text="Test Battle Calculations" 
+                            Clicked="OnTestBattleSystemClicked" />
+                    <Label x:Name="BattleSystemResult" Text="Not tested" />
+                </StackLayout>
+            </Border>
+
+            <!-- Save System Test -->
+            <Border BackgroundColor="LightGray" Padding="15" StrokeThickness="1" Stroke="Gray">
+                <StackLayout>
+                    <Label Text="4. Save System Test" FontSize="18" FontAttributes="Bold" />
+                    <Button x:Name="TestSaveSystemBtn" 
+                            Text="Test Save/Load" 
+                            Clicked="OnTestSaveSystemClicked" />
+                    <Label x:Name="SaveSystemResult" Text="Not tested" />
+                </StackLayout>
+            </Border>
+
+            <!-- Navigation Test -->
+            <Border BackgroundColor="LightGray" Padding="15" StrokeThickness="1" Stroke="Gray">
+                <StackLayout>
+                    <Label Text="5. Navigation Test" FontSize="18" FontAttributes="Bold" />
+                    <Button x:Name="TestNavigationBtn" 
+                            Text="Test Page Navigation" 
+                            Clicked="OnTestNavigationClicked" />
+                    <Label x:Name="NavigationResult" Text="Not tested" />
+                </StackLayout>
+            </Border>
+
+            <!-- Run All Tests -->
+            <Button x:Name="RunAllTestsBtn" 
+                    Text="Run All Tests" 
+                    BackgroundColor="DarkBlue" 
+                    TextColor="White"
+                    FontAttributes="Bold"
+                    Clicked="OnRunAllTestsClicked" />
+
+            <!-- Results Summary -->
+            <Border BackgroundColor="Black" Padding="15" StrokeThickness="2" Stroke="DarkGray">
+                <StackLayout>
+                    <Label Text="Test Results:" FontSize="16" FontAttributes="Bold" TextColor="White" />
+                    <Label x:Name="TestSummary" 
+                           Text="Run tests to see results"
+                           TextColor="LightGreen"
+                           FontFamily="Consolas" />
+                </StackLayout>
+            </Border>
+
+            <Button Text="Back to Main Menu" 
+                    BackgroundColor="Gray" 
+                    TextColor="White"
+                    Clicked="OnBackClicked" />
+
+        </StackLayout>
+    </ScrollView>
+
+</ContentPage>

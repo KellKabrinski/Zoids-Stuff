@@ -42,172 +42,914 @@ namespace ZoidsBattle
 
         [JsonPropertyName("Cost")]
         public double Cost { get; set; }
-
-        [JsonPropertyName("Faction")]
-        public string Faction { get; set; } = "Civilian";
+        
     }
 
     public class Stats
     {
+        [JsonPropertyName("Fighting")]
         public int Fighting { get; set; }
+        
+        [JsonPropertyName("Strength")]
         public int Strength { get; set; }
+        
+        [JsonPropertyName("Dexterity")]
         public int Dexterity { get; set; }
+        
+        [JsonPropertyName("Agility")]
         public int Agility { get; set; }
+        
+        [JsonPropertyName("Awareness")]
         public int Awareness { get; set; }
     }
 
     public class Defenses
     {
+        [JsonPropertyName("Toughness")]
         public int Toughness { get; set; }
+        
+        [JsonPropertyName("Parry")]
         public int Parry { get; set; }
+        
+        [JsonPropertyName("Dodge")]
         public int Dodge { get; set; }
     }
 
     public class MovementStats
     {
+        [JsonPropertyName("Land")]
         public double Land { get; set; }
+        
+        [JsonPropertyName("Water")]
         public double Water { get; set; }
+        
+        [JsonPropertyName("Air")]
         public double Air { get; set; }
     }
 
     public class Power
     {
+        [JsonPropertyName("Type")]
         public required string Type { get; set; }
+        
+        [JsonPropertyName("Damage")]
         public int? Damage { get; set; }
+        
+        [JsonPropertyName("Rank")]
         public int? Rank { get; set; }
+        
         [JsonPropertyName("Senses")]
         public List<string> Senses { get; set; } = new List<string>();
     }
 
 
-    // This class contains only data structures and utility methods
-    // The actual entry point is now in App.xaml.cs for WPF mode
-    public static class ProgramUtilities
+    public static class Program
     {
-        public static List<ZoidData> LoadZoids(string path)
+        private static readonly Random random = new Random();
+
+        private static void HandleAttack(Zoid current, Zoid enemy, Ranges range, bool enemyDetected)
+        {
+            bool didAttack = false;
+            if (enemy.StealthOn && !enemyDetected)
+            {
+                Console.WriteLine("Target is concealed! 50% miss chance.");
+                if (random.Next(0, 2) == 0)
+                {
+                    Console.WriteLine("Your attack misses the target's last known location!");
+                    didAttack = true;
+                    return;
+                }
+                else
+                {
+                    Console.WriteLine("You get lucky and land a hit despite concealment!");
+                }
+            }
+            if (!didAttack)
+            {
+                Console.WriteLine($"{current.Name} attacks {enemy.Name} with a {range} attack!");
+                int attackRoll = 0, defenseRoll = 0;
+                int damage = range switch
+                {
+                    Ranges.Melee => current.Melee,
+                    Ranges.Close => current.CloseRange,
+                    Ranges.Mid => current.MidRange,
+                    _ => current.LongRange
+                };
+                attackRoll = RollD20() + (range == Ranges.Melee ? current.Fighting + current.CloseCombat : current.Dexterity + current.RangedCombat);
+                defenseRoll = 10 + (range == Ranges.Melee ? enemy.Parry : enemy.Dodge);
+
+                bool hit = attackRoll >= defenseRoll;
+                if (hit)
+                {
+                    Console.WriteLine($"Attack roll: {attackRoll} vs Defense roll: {defenseRoll}");
+                    Console.WriteLine($"{current.Name} hits {enemy.Name} for {damage} damage!");
+                    if (enemy.HasShield() && enemy.ShieldOn && IsAttackInShieldArc(current, enemy))
+                    {
+                        int shieldRoll = RollD20() + enemy.ShieldRank;
+                        if (shieldRoll >= damage + 15)
+                        {
+                            enemy.ShieldDisabled = true;
+                            enemy.ShieldOn = false;
+                            Console.WriteLine($"{enemy.Name}'s shield is disabled!");
+                        }
+                    }
+                    else
+                    {
+                        int toughRoll = RollD20() + enemy.Toughness - enemy.Dents;
+                        Console.WriteLine($"Enemy toughness roll: {toughRoll} (Toughness: {enemy.Toughness}, Dents: {enemy.Dents})");
+                        int diff = damage + 15 - toughRoll;
+                        if (diff <= 0)
+                            Console.WriteLine($"{enemy.Name} successfully defends against the attack!");
+                        else if (diff < 5 || diff < 10)
+                        {
+                            Console.WriteLine($"{enemy.Name} takes a {(diff < 5 ? "minor" : "moderate")} hit!");
+                            enemy.Dents++;
+                            Console.WriteLine($"{enemy.Name} receives a DENT! (Total dents: {enemy.Dents})");
+                            if (diff >= 5)
+                            {
+                                Console.WriteLine($"{enemy.Name} is now DAZED! ");
+                                enemy.Status = "dazed";
+                            }
+                        }
+                        else if (diff < 15)
+                        {
+                            Console.WriteLine($"{enemy.Name} takes a heavy hit!");
+                            enemy.Dents++;
+                            Console.WriteLine($"{enemy.Name} receives a DENT! (Total dents: {enemy.Dents})");
+                            Console.WriteLine($"{enemy.Name} is now STUNNED! ");
+                            enemy.Status = "stunned";
+                        }
+                        else
+                        {
+                            Console.WriteLine($"{enemy.Name} takes a critical hit!");
+                            enemy.Dents++;
+                            Console.WriteLine($"{enemy.Name} receives a DENT! (Total dents: {enemy.Dents})");
+                            Console.WriteLine($"{enemy.Name} is now DEFEATED! ");
+                            enemy.Status = "defeated";
+                        }
+                    }
+                }
+                else
+                {
+                    Console.WriteLine($"{current.Name} misses the attack on {enemy.Name}!");
+                }
+                didAttack = true;
+            }
+        }
+
+        public static void Main()
+        {
+            var zoids = LoadZoids("ConvertedZoidStats.json");
+            var battleType = PickBattleType();
+            var filtered = FilterZoids(zoids, battleType);
+            CharacterData playerData = new CharacterData();
+            if (!filtered.Any())
+            {
+                Console.WriteLine("No Zoids available for that environment!");
+                return;
+            }
+
+            Console.WriteLine("\nChoose opponent type:");
+            Console.WriteLine("1: Player vs Player");
+            Console.WriteLine("2: Player vs AI");
+            int opponentType = 0;
+            while (true)
+            {
+                Console.Write("Enter choice: ");
+                var input = Console.ReadLine();
+                if (input == "1" || input == "2")
+                {
+                    opponentType = int.Parse(input);
+                    break;
+                }
+                Console.WriteLine("Invalid input. Try again.");
+            }
+            bool aiMode = opponentType == 2;
+            AIPersonality personality = random.Next(0, 2) == 0 ? AIPersonality.Aggressive : AIPersonality.Defensive;
+
+            Zoid z1 = new Zoid();
+
+            if (!aiMode) { z1 = ChooseZoid(filtered, 1); }
+            else
+            {
+                string saveFile = "save1.json";
+                if (File.Exists(saveFile))
+                {
+                    try
+                    {
+                        playerData = CharacterData.LoadFromFile(saveFile);
+                        Console.WriteLine("Loaded character save data");
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine($"Error loading character data: {ex.Message}");
+                        playerData = NewCharacter(saveFile);
+                    }
+                }
+                else
+                {
+                    playerData = NewCharacter(saveFile);
+                }
+                if (playerData.Zoids.Count > 0)
+                {
+                    Console.WriteLine("\nSelect a Zoid to use or buy a new one:");
+                    for (int i = 0; i < playerData.Zoids.Count; i++)
+                    {
+                        Console.WriteLine($"{i + 1}: {playerData.Zoids[i].Name} (PL {playerData.Zoids[i].PowerLevel})");
+                    }
+                    Console.WriteLine($"{playerData.Zoids.Count + 1}: Buy a new Zoid");
+                    int choice;
+                    while (true)
+                    {
+                        Console.Write("Enter your choice: ");
+                        if (int.TryParse(Console.ReadLine(), out choice) && choice >= 1 && choice <= playerData.Zoids.Count + 1)
+                            break;
+                        Console.WriteLine("Invalid input. Try again.");
+                    }
+                    if (choice == playerData.Zoids.Count + 1)
+                    {
+                        z1 = ChooseZoid(filtered, 1);
+                        playerData.Zoids.Add(new Zoid
+                        {
+                            Name = z1.Name,
+                            Fighting = z1.Fighting,
+                            Strength = z1.Strength,
+                            Dexterity = z1.Dexterity,
+                            Agility = z1.Agility,
+                            Awareness = z1.Awareness
+                            ,
+                            
+                                Toughness = z1.Toughness,
+                                Parry = z1.Parry,
+                                Dodge = z1.Dodge
+                            ,
+                           
+                                Land = z1.Land,
+                                Water = z1.Water,
+                                Air = z1.Air
+                            ,
+                            Powers = z1.Powers,
+                            PowerLevel = z1.PowerLevel
+                        });
+                        playerData.SaveToFile(saveFile);
+                    }
+                    else
+                    {
+                        z1 = (playerData.Zoids[choice - 1]);
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("You have no Zoids. Please buy a new one.");
+                    z1 = ChooseZoid(filtered, 1);
+                    playerData.Zoids.Add(new Zoid (new ZoidData
+                    {
+                        Name = z1.Name,
+                        Stats = new Stats
+                        {
+                            Fighting = z1.Fighting,
+                            Strength = z1.Strength,
+                            Dexterity = z1.Dexterity,
+                            Agility = z1.Agility,
+                            Awareness = z1.Awareness
+                        },
+                        Defenses = new Defenses
+                        {
+                            Toughness = z1.Toughness,
+                            Parry = z1.Parry,
+                            Dodge = z1.Dodge
+                        },
+                        Movement = new MovementStats
+                        {
+                            Land = z1.Land,
+                            Water = z1.Water,
+                            Air = z1.Air
+                        },
+                        Powers = z1.Powers,
+                        PowerLevel = z1.PowerLevel
+                    }));
+                    playerData.SaveToFile(saveFile);
+                }
+                   
+
+            }
+            Zoid z2 = new Zoid();
+            if (!aiMode)
+            {
+                z2 = ChooseZoid(filtered, 2);
+            }
+            else
+            {
+                // AI chooses a Zoid within one power level of the player
+                var aiCandidates = filtered
+                    .Where(z => Math.Abs(z.PowerLevel - z1.PowerLevel) <= 1)
+                    .ToList();
+
+                if (!aiCandidates.Any())
+                {
+                    // fallback: pick any zoid
+                    aiCandidates = filtered.ToList();
+                }
+
+                ZoidData aiPick;
+                if (personality == AIPersonality.Defensive)
+                {
+                    // Prefer Zoids with shields
+                    aiPick = aiCandidates
+                        .OrderByDescending(z => z.Powers.Any(p => p.Type == "E-Shield" && p.Rank.HasValue && p.Rank.Value > 0))
+                        .ThenBy(z => Math.Abs(z.PowerLevel - z1.PowerLevel))
+                        .ThenBy(z => z.Name)
+                        .First();
+                }
+                else
+                {
+                    // Prefer Zoids with highest weapon damage
+                    aiPick = aiCandidates
+                        .OrderByDescending(z =>
+                            z.Powers.Where(p =>
+                                p.Type == "Melee" || p.Type == "Close-Range" || p.Type == "Mid-Range" || p.Type == "Long-Range")
+                            .Select(p => p.Rank ?? 0).DefaultIfEmpty(0).Max())
+                        .ThenBy(z => Math.Abs(z.PowerLevel - z1.PowerLevel))
+                        .ThenBy(z => z.Name)
+                        .First();
+                }
+
+                z2 = new Zoid(aiPick);
+                Console.WriteLine($"AI ({personality}) selects: {z2.Name} (PL {z2.PowerLevel})");
+            }
+
+            Console.WriteLine($"\nPlayer 1: {z1.Name} vs Player 2: {z2.Name}");
+            GameLoop(z1, z2, battleType, aiMode, personality);
+        }
+
+        private static CharacterData NewCharacter(string saveFile)
+        {
+            CharacterData playerData = new CharacterData();
+            Console.WriteLine("Created new character data");
+            playerData.SaveToFile(saveFile);
+            return playerData;
+        }
+
+        private static List<ZoidData> LoadZoids(string path)
         {
             var json = File.ReadAllText(path);
             return JsonSerializer.Deserialize<List<ZoidData>>(json)!;
         }
 
-        public static List<ZoidData> LoadZoidsFromCsv(string path)
+        private static string PickBattleType()
         {
-            var zoids = new List<ZoidData>();
-            var lines = File.ReadAllLines(path);
-            
-            if (lines.Length == 0) return zoids;
-            
-            // Parse header to find column indices
-            var header = lines[0].Split(',');
-            var columnMap = new Dictionary<string, int>();
-            
-            for (int i = 0; i < header.Length; i++)
+            Console.WriteLine("\nChoose battle type:");
+            Console.WriteLine("1: Land");
+            Console.WriteLine("2: Water");
+            Console.WriteLine("3: Air");
+            while (true)
             {
-                columnMap[header[i].Trim().ToLower()] = i;
+                Console.Write("Battle type: ");
+                var choice = Console.ReadLine();
+                if (choice == "1") return "land";
+                if (choice == "2") return "water";
+                if (choice == "3") return "air";
+                Console.WriteLine("Invalid input. Try again.");
             }
-            
-            // Process data rows
-            for (int i = 1; i < lines.Length; i++)
+        }
+
+        private static IEnumerable<ZoidData> FilterZoids(IEnumerable<ZoidData> zoids, string battleType)
+        {
+            return zoids.Where(z => battleType switch
             {
-                try
-                {
-                    var fields = ParseCsvLine(lines[i]);
-                    if (fields.Length < header.Length) continue;
-                    
-                    var zoid = new ZoidData
-                    {
-                        Name = GetCsvValue(fields, columnMap, "name", ""),
-                        PowerLevel = int.Parse(GetCsvValue(fields, columnMap, "power level", "0")),
-                        Cost = double.Parse(GetCsvValue(fields, columnMap, "cost", "0")),
-                        Faction = GetCsvValue(fields, columnMap, "faction", "Civilian")
-                    };
-                    
-                    // Validate faction value
-                    if (!IsValidFaction(zoid.Faction))
-                    {
-                        zoid.Faction = "Civilian";
-                    }
-                    
-                    // Parse Stats if available
-                    zoid.Stats = new Stats
-                    {
-                        Fighting = int.Parse(GetCsvValue(fields, columnMap, "fighting", "0")),
-                        Strength = int.Parse(GetCsvValue(fields, columnMap, "strength", "0")),
-                        Dexterity = int.Parse(GetCsvValue(fields, columnMap, "dexterity", "0")),
-                        Agility = int.Parse(GetCsvValue(fields, columnMap, "agility", "0")),
-                        Awareness = int.Parse(GetCsvValue(fields, columnMap, "awareness", "0"))
-                    };
-                    
-                    // Parse Movement if available
-                    zoid.Movement = new MovementStats
-                    {
-                        Land = double.Parse(GetCsvValue(fields, columnMap, "land", "0")),
-                        Water = double.Parse(GetCsvValue(fields, columnMap, "water", "0")),
-                        Air = double.Parse(GetCsvValue(fields, columnMap, "air", "0"))
-                    };
-                    
-                    // Parse Defenses if available
-                    zoid.Defenses = new Defenses
-                    {
-                        Toughness = int.Parse(GetCsvValue(fields, columnMap, "toughness", "0")),
-                        Parry = int.Parse(GetCsvValue(fields, columnMap, "parry", "0")),
-                        Dodge = int.Parse(GetCsvValue(fields, columnMap, "dodge", "0"))
-                    };
-                    
-                    zoids.Add(zoid);
-                }
-                catch (Exception ex)
-                {
-                    // Skip invalid rows with a simple log
-                    Console.WriteLine($"Warning: Could not parse row {i + 1}: {ex.Message}");
-                }
+                "land" => z.Movement.Land > 0,
+                "water" => z.Movement.Water > 0,
+                "air" => z.Movement.Air > 0,
+                _ => false
+            });
+        }
+
+        private static Zoid ChooseZoid(IEnumerable<ZoidData> zoids, int playerNum)
+        {
+            var sorted = zoids.OrderBy(z => (z.PowerLevel, z.Name)).ToList();
+            Console.WriteLine("\nAvailable Zoids:");
+            for (int i = 0; i < sorted.Count; i++)
+            {
+                Console.WriteLine($"{i + 1}: {sorted[i].Name} (PL {sorted[i].PowerLevel})");
             }
-            
-            return zoids;
-        }
-        
-        private static bool IsValidFaction(string faction)
-        {
-            var validFactions = new[] { "Republic", "Empire", "Civilian" };
-            return validFactions.Contains(faction, StringComparer.OrdinalIgnoreCase);
-        }
-        
-        private static string GetCsvValue(string[] fields, Dictionary<string, int> columnMap, string columnName, string defaultValue)
-        {
-            if (columnMap.TryGetValue(columnName, out int index) && index < fields.Length)
+            while (true)
             {
-                return fields[index].Trim().Trim('"');
-            }
-            return defaultValue;
-        }
-        
-        private static string[] ParseCsvLine(string line)
-        {
-            var result = new List<string>();
-            var inQuotes = false;
-            var currentField = "";
-            
-            for (int i = 0; i < line.Length; i++)
-            {
-                char c = line[i];
-                
-                if (c == '"')
+                Console.Write($"\nEnter number for Player {playerNum}: ");
+                if (int.TryParse(Console.ReadLine(), out int idx) && idx >= 1 && idx <= sorted.Count)
                 {
-                    inQuotes = !inQuotes;
+                    return new Zoid(sorted[idx - 1]);
                 }
-                else if (c == ',' && !inQuotes)
+                Console.WriteLine("Invalid input. Try again.");
+            }
+        }
+
+        private static (int, int) PickFirst(Zoid z1, Zoid z2)
+        {
+            int first = random.Next(1, 3);
+            Console.WriteLine($"\n{(first == 1 ? z1.Name : z2.Name)} goes first!\n");
+            return first == 1 ? (1, 2) : (2, 1);
+        }
+
+        private static double GetStartingDistance()
+        {
+            while (true)
+            {
+                Console.Write("\nEnter starting distance between Zoids in meters: ");
+                if (double.TryParse(Console.ReadLine(), out double dist) && dist >= 0)
+                    return dist;
+                Console.WriteLine("Invalid input. Try again.");
+            }
+        }
+
+        private static Ranges GetRange(double distance)
+        {
+            if (distance == 0) return Ranges.Melee;
+            if (distance <= 500) return Ranges.Close;
+            if (distance <= 1000) return Ranges.Mid;
+            return Ranges.Long;
+        }
+
+        private static bool IsAttackInShieldArc(Zoid attacker, Zoid defender)
+        {
+            double rel = (attacker.Angle - defender.Angle) % 360;
+            if (rel > 180) rel = 360 - rel;
+            return Math.Abs(rel) <= 45;
+        }
+
+        private static int RollD20() => random.Next(1, 21);
+
+        private static bool SearchCheck(Zoid searcher, Zoid target)
+        {
+            int roll = RollD20();
+            int total = roll + searcher.Awareness;
+            int dc = (target.HasStealth() && target.StealthOn && target.StealthRank > 0) ? 5 + target.StealthRank : 0;
+            Console.WriteLine($"  Search Check: d20({roll}) + Awareness({searcher.Awareness}) = {total} vs DC {dc}");
+            if (total >= dc)
+            {
+                Console.WriteLine("  Enemy detected!");
+                return true;
+            }
+            Console.WriteLine("  You fail to locate the enemy!");
+            return false;
+        }
+
+        private static double MaxCirclingAngle(int speed, double distance)
+        {
+            if (distance <= 0.1) return 360;
+            return Math.Min(360, (speed * 180.0) / (Math.PI * distance));
+        }
+
+        private static void ShieldAndStealth(Zoid zoid)
+        {
+            if (zoid.HasShield())
+            {
+                Console.WriteLine($"  Shield is currently {(zoid.ShieldOn ? "ON" : "OFF")}");
+                Console.Write("  Toggle shield? (y/n): ");
+                if (Console.ReadLine()?.ToLower().StartsWith('y') == true)
+                    zoid.ShieldOn = !zoid.ShieldOn;
+            }
+            if (zoid.HasStealth())
+            {
+                Console.WriteLine($"  Stealth is currently {(zoid.StealthOn ? "ON" : "OFF")}");
+                Console.Write("  Toggle stealth? (y/n): ");
+                if (Console.ReadLine()?.ToLower().StartsWith('y') == true)
+                    zoid.StealthOn = !zoid.StealthOn;
+            }
+        }
+
+        private static void Movement(string battleType, double distance, ref bool didMove, ref bool enemyDetected, Zoid zoid, Zoid enemy, out double newDistance)
+        {
+            double moveDistance = 0;
+            newDistance = distance;
+
+            int speed = battleType switch
+            {
+                "land" => zoid.GetSpeed("land"),
+                "water" => zoid.GetSpeed("water"),
+                "air" => zoid.GetSpeed("air"),
+                _ => 0
+            };
+            if (!enemyDetected)
+            {
+                Console.Write("Enemy is concealed! 1: Search for Enemy  2: Stand Still\nChoice: ");
+                string? move = Console.ReadLine();
+                if (move == "1")
                 {
-                    result.Add(currentField);
-                    currentField = "";
+                    bool closer = random.Next(0, 2) == 0;
+                    if (closer)
+                        newDistance = Math.Max(0, distance - speed * 0.5);
+                    else
+                        distance += speed * 0.5;
+                    didMove = true;
+                    enemyDetected = SearchCheck(zoid, enemy);
                 }
                 else
                 {
-                    currentField += c;
+                    enemyDetected = SearchCheck(zoid, enemy);
+                    didMove = false;
+                }
+                return;
+            }
+
+            Console.WriteLine("Choose maneuver:");
+            Console.Write("  1: Close\n  2: Retreat\n  3: Circle Left\n  4: Circle Right\n  5: Stand Still\n  Choice: ");
+            string? choice = Console.ReadLine();
+            switch (choice)
+            {
+                case "1":
+                    while (true)
+                    {
+                        Console.Write($"Enter distance to move (0 to {speed}): ");
+                        if (double.TryParse(Console.ReadLine(), out moveDistance) && moveDistance >= 0 && moveDistance <= speed)
+                            break;
+                        Console.WriteLine("Invalid distance. Try again.");
+                    }
+                    newDistance = Math.Max(0, distance - moveDistance);
+                    zoid.Position = "close";
+                    didMove = true;
+                    break;
+                case "2":
+                    while (true)
+                    {
+                        Console.Write($"Enter distance to move (0 to {speed}): ");
+                        if (double.TryParse(Console.ReadLine(), out moveDistance) && moveDistance >= 0 && moveDistance <= speed)
+                            break;
+                        Console.WriteLine("Invalid distance. Try again.");
+                    }
+                    newDistance += moveDistance;
+                    zoid.Position = "retreat";
+                    didMove = true;
+                    break;
+                case "3":
+                case "4":
+                    {
+                        double maxAngle = MaxCirclingAngle(speed, distance);
+                        double angleChange;
+                        while (true)
+                        {
+                            Console.Write($"How many degrees do you want to circle? (0 to {maxAngle:F1}): ");
+                            if (double.TryParse(Console.ReadLine(), out angleChange) && angleChange >= 0 && angleChange <= maxAngle)
+                                break;
+                            Console.WriteLine("Invalid angle. Try again.");
+                        }
+                        if (choice == "3")
+                            zoid.Angle = (zoid.Angle + angleChange) % 360;
+                        else
+                            zoid.Angle = (zoid.Angle - angleChange + 360) % 360;
+                        zoid.Position = "circle";
+                        didMove = true;
+                    }
+                    break;
+                case "5":
+                    zoid.Position = "stand still";
+                    didMove = false;
+                    break;
+                default:
+                    didMove = false;
+                    break;
+            }
+        }
+
+        private static void AIMovement(string battleType, Zoid zoid, Zoid enemy, double distance, ref bool enemyDetected, AIPersonality personality, out bool didMove)
+        {
+            double moveDistance = 0;
+            int speed = battleType switch
+            {
+                "land" => zoid.GetSpeed("land"),
+                "water" => zoid.GetSpeed("water"),
+                "air" => zoid.GetSpeed("air"),
+                _ => 0
+            };
+            Ranges currentRange = GetRange(distance);
+            if (enemy.StealthOn && !enemyDetected)
+            {
+                Console.WriteLine($"{zoid.Name} is searching for {enemy.Name}...");
+                enemyDetected = SearchCheck(zoid, enemy);
+                if (!enemyDetected)
+                {
+                    Console.WriteLine($"{zoid.Name} cannot locate {enemy.Name}!");
+                    int direction = random.Next(0, 2);
+                    if (direction == 0)
+                    {
+                        moveDistance = Math.Max(0, distance - speed * 0.5);
+                        Console.WriteLine($"{zoid.Name} is moving closer to the last known location of {enemy.Name}.");
+                    }
+                    else
+                    {
+                        moveDistance = distance + speed * 0.5;
+                        Console.WriteLine($"{zoid.Name} is moving away from the last known location of {enemy.Name}.");
+                    }
+                    didMove = true;
+                    return;
+                }
+                else { }
+            }
+            // If enemy is detected, try to move to the optimal range, based on personality
+            NormalMove(zoid, enemy, ref distance, personality, ref moveDistance, speed, out didMove);
+            return;
+
+        }
+
+        private static void NormalMove(Zoid zoid, Zoid enemy, ref double distance, AIPersonality personality, ref double moveDistance, int speed, out bool didMove)
+        {
+            didMove = false;
+            if (personality == AIPersonality.Aggressive)
+            {
+                // Agressive AI will try to move to its most powerful range
+                double targetDistance = zoid.BestRange switch
+                {
+                    Ranges.Melee => 0,
+                    Ranges.Close => 500,
+                    Ranges.Mid => 1000,
+                    Ranges.Long => 1500,
+                    _ => throw new NotImplementedException()
+                };
+
+                if (distance > targetDistance)
+                {
+                    moveDistance = Math.Min(speed, distance - targetDistance);
+                    Console.WriteLine($"{zoid.Name} moves closer by {moveDistance} meters.");
+                    distance -= moveDistance;
+                    didMove = true;
+                }
+                else if (distance < targetDistance)
+                {
+                    moveDistance = Math.Min(speed, targetDistance - distance);
+                    Console.WriteLine($"{zoid.Name} retreats by {moveDistance} meters.");
+                    distance += moveDistance;
+                    didMove = true;
+                }
+                else
+                {
+                    Console.WriteLine($"{zoid.Name} holds position.");
+                    didMove = false;
                 }
             }
-            
-            result.Add(currentField); // Add the last field
-            return result.ToArray();
+            else if (personality == AIPersonality.Defensive)
+            {
+                double targetDistance = enemy.WorstRange switch
+                {
+                    Ranges.Melee => 0,
+                    Ranges.Close => 500,
+                    Ranges.Mid => 1000,
+                    Ranges.Long => 1500,
+                    _ => throw new NotImplementedException()
+                };
+
+                // Defensive AI will try to move to enemy's worst range that it can attack from
+                if (!zoid.CanAttack(targetDistance))
+                {
+                    // Find the closest range that zoid can attack from among enemy's worst and further
+                    var possibleRanges = new[] { Ranges.Melee, Ranges.Close, Ranges.Mid, Ranges.Long }
+                        .Where(r => zoid.CanAttack(r switch
+                        {
+                            Ranges.Melee => 0,
+                            Ranges.Close => 500,
+                            Ranges.Mid => 1000,
+                            Ranges.Long => 1500,
+                            _ => 0
+                        }))
+                        .OrderBy(r => Math.Abs((r switch
+                        {
+                            Ranges.Melee => 0,
+                            Ranges.Close => 500,
+                            Ranges.Mid => 1000,
+                            Ranges.Long => 1500,
+                            _ => 0
+                        }) - targetDistance))
+                        .FirstOrDefault();
+
+                    targetDistance = possibleRanges switch
+                    {
+                        Ranges.Melee => 0,
+                        Ranges.Close => 500,
+                        Ranges.Mid => 1000,
+                        Ranges.Long => 1500,
+                        _ => targetDistance
+                    };
+                }
+
+                if (distance > targetDistance)
+                {
+                    moveDistance = Math.Min(speed, distance - targetDistance);
+                    Console.WriteLine($"{zoid.Name} moves closer by {moveDistance} meters.");
+                    distance -= moveDistance;
+                    didMove = true;
+                }
+                else if (distance < targetDistance)
+                {
+                    moveDistance = Math.Min(speed, targetDistance - distance);
+                    Console.WriteLine($"{zoid.Name} retreats by {moveDistance} meters.");
+                    distance += moveDistance;
+                    didMove = true;
+                }
+                else
+                {
+                    Console.WriteLine($"{zoid.Name} holds position.");
+                    didMove = false;
+                }
+            }
+        }
+
+        private static void AIStealthAndShield(Zoid zoid, Zoid enemy, AIPersonality personality, bool enemyDetected, double distance)
+        {
+            Ranges currentRange = GetRange(distance);
+            if (!zoid.StealthOn) zoid.StealthOn = true; // AI always tries to use stealth if available
+            Console.WriteLine($"{zoid.Name} activates stealth mode.");
+            if (zoid.HasShield())
+            {
+                if (personality == AIPersonality.Defensive)
+                {
+                    Ranges range = GetRange(distance);
+                    int myDamage = range switch
+                    {
+                        Ranges.Melee => zoid.Melee,
+                        Ranges.Close => zoid.CloseRange,
+                        Ranges.Mid => zoid.MidRange,
+                        _ => zoid.LongRange
+                    };
+                    int enemyDamage = range switch
+                    {
+                        Ranges.Melee => enemy.Melee,
+                        Ranges.Close => enemy.CloseRange,
+                        Ranges.Mid => enemy.MidRange,
+                        _ => enemy.LongRange
+                    };
+                    if (myDamage <= enemyDamage)
+                    {
+                        zoid.ShieldOn = true;
+                        Console.WriteLine($"{zoid.Name} activates its energy shield.");
+                    }
+                    else
+                    {
+                        if (zoid.ShieldOn)
+                        {
+                            Console.WriteLine($"{zoid.Name} deactivates its energy shield to attack.");
+                            zoid.ShieldOn = false;
+                        }
+                    }
+                }
+                else
+                {
+                    // Aggressive AI only activates shield if it can't attack from current range
+                    Ranges range = GetRange(distance);
+                    if (!zoid.CanAttack(distance))
+                    {
+                        if (!zoid.ShieldOn)
+                        {
+                            zoid.ShieldOn = true;
+                            Console.WriteLine($"{zoid.Name} activates its energy shield.");
+                        }
+                    }
+                    else
+                    {
+                        if (zoid.ShieldOn)
+                        {
+                            Console.WriteLine($"{zoid.Name} deactivates its energy shield.");
+                            zoid.ShieldOn = false;
+                        }
+                    }
+                }
+            }
+        }
+        private static void AIAttack(Zoid current, Zoid enemy, double distance, bool enemyDetected, bool didMove)
+        {
+            // AI will always attack if it can, unless it is stunned or dazed and moved
+            if (current.ShieldOn)
+            {
+                Console.WriteLine($"{current.Name} cannot attack while shield is on.");
+                return;
+            }
+            if (current.Status == "stunned")
+            {
+                Console.WriteLine($"{current.Name} is stunned and cannot attack this turn.");
+                return;
+            }
+            if (current.Status == "dazed" && didMove)
+            {
+                Console.WriteLine($"{current.Name} is dazed and cannot attack after moving.");
+                return;
+            }
+            Ranges range = GetRange(distance);
+            HandleAttack(current, enemy, range, enemyDetected);
+        }
+
+        private static void Attack(Zoid current, Zoid enemy, double distance, bool enemyDetected, bool didMove)
+        {
+            if (current.ShieldOn && current.HasShield())
+            {
+                Console.WriteLine($"{current.Name} cannot attack while shield is on.");
+                return;
+            }
+
+            if (!(current.Status == "dazed" && didMove))
+            {
+                Ranges range = GetRange(distance);
+                Console.WriteLine($"\n{current.Name} is in {range} range of {enemy.Name}.");
+                if (!current.CanAttack(distance))
+                {
+                    Console.WriteLine($"{current.Name} cannot attack {enemy.Name} from {range} range!");
+                    Console.WriteLine($"{current.Name} skips the attack phase.");
+                    return;
+                }
+                Console.Write("  Attack? (y/n): ");
+                if (Console.ReadLine()?.ToLower().StartsWith('y') == true)
+                {
+                    HandleAttack(current, enemy, range, enemyDetected);
+                }
+            }
+        }
+        private static void GameLoop(Zoid z1, Zoid z2, string battleType, bool aiMode = false, AIPersonality personality = AIPersonality.Aggressive)
+        {
+
+            var zoids = new Dictionary<int, Zoid> { { 1, z1 }, { 2, z2 } };
+
+            (int first, int second) = PickFirst(z1, z2);
+            int[] order = [first, second];
+
+            int turn = 0;
+            double distance = GetStartingDistance();
+            double movedDistance = 0;
+
+            while (z1.Status != "defeated" && z2.Status != "defeated")
+            {
+                int player = order[turn % 2];
+                var current = zoids[player];
+                var enemy = zoids[player == 1 ? 2 : 1];
+
+                bool enemyDetected = true;
+                bool didMove = false;
+
+                if (aiMode && player == 2)
+                {
+                    // AI will always try to move first
+                    enemyDetected = SearchCheck(current, enemy);
+                    AIMovement(battleType, current, enemy, distance, ref enemyDetected, personality, out didMove);
+                    AIStealthAndShield(current, enemy, personality, enemyDetected, distance);
+                    AIAttack(current, enemy, distance, enemyDetected, didMove);
+
+                    if (current.Status == "stunned") current.Status = "dazed";
+                    else if (current.Status == "dazed") current.Status = "intact";
+                    turn++;
+                    continue;
+                }
+
+                if (enemy.StealthOn)
+                {
+                    Console.WriteLine($"\n{enemy.Name} is in stealth mode!");
+                    enemyDetected = SearchCheck(current, enemy);
+                    if (!enemyDetected)
+                        Console.WriteLine($"{current.Name} cannot locate {enemy.Name}!");
+                }
+
+                current.PrintStatus(distance);
+                Console.WriteLine($"\nCurrent distance between Zoids: {distance:F1} meters");
+                Console.WriteLine($"{current.Name}'s turn!");
+
+                string priorStatus = current.Status;
+                if (current.Status == "stunned")
+                {
+                    Console.WriteLine("You are STUNNED! You cannot move or attack this turn.");
+                    ShieldAndStealth(current);
+                    current.Status = "dazed";
+                    turn++;
+                    continue;
+                }
+                if (current.Status == "dazed")
+                {
+                    Console.WriteLine("You are DAZED! You may move OR attack, not both.");
+                    Console.Write("  Move (m) or Attack (a) or Skip (s)? ");
+                    string? choice = Console.ReadLine();
+                    if (choice?.ToLower().StartsWith('m') == true)
+                        Movement(battleType, distance, ref didMove, ref enemyDetected, current, enemy, out movedDistance);
+                    else if (choice?.ToLower().StartsWith('a') == true)
+                        Attack(current, enemy, distance, enemyDetected, false);
+                    ShieldAndStealth(current);
+                }
+                else
+                {
+                    ShieldAndStealth(current);
+                    Console.WriteLine($"Your current engagement range is {distance} meters. Would you like to move or attack first?");
+                    string? choice = Console.ReadLine();
+                    if (choice?.ToLower().StartsWith('m') == true)
+                    {
+                        Movement(battleType, distance, ref didMove, ref enemyDetected, current, enemy, out movedDistance);
+                        distance = movedDistance;
+                        Attack(current, enemy, distance, enemyDetected, didMove);
+                    }
+                    else
+                    {
+                        Attack(current, enemy, distance, enemyDetected, didMove);
+                        Movement(battleType, distance, ref didMove, ref enemyDetected, current, enemy, out movedDistance);
+                        distance = movedDistance;
+                    }
+                }
+
+                //Status Cleanup and advance turn
+                if (priorStatus == "stunned") current.Status = "dazed";
+                else if (priorStatus == "dazed") current.Status = "intact";
+                turn++;
+            }
         }
     }
 }

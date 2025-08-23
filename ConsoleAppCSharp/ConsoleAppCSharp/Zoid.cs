@@ -1,11 +1,9 @@
-using System.Text.Json.Serialization;
-
 namespace ZoidsBattle
 {
      public class Zoid
     {
         // Basic Info
-        public string ZoidName { get; set; }
+        public string Name { get; set; }
 
         // Stats
         public int Fighting { get; set; }
@@ -25,7 +23,6 @@ namespace ZoidsBattle
         public int Air { get; set; }
 
         // Powers
-        [JsonPropertyName("Powers")]
         public List<Power> Powers { get; set; }
         public int Melee { get; set; }
         public int CloseRange { get; set; }
@@ -54,7 +51,7 @@ namespace ZoidsBattle
 
         public Zoid(ZoidData data)
         {
-            ZoidName = data.Name;
+            Name = data.Name;
             Fighting = data.Stats.Fighting;
             Strength = data.Stats.Strength;
             Dexterity = data.Stats.Dexterity;
@@ -102,8 +99,15 @@ namespace ZoidsBattle
                     LongRange = power.Rank.Value;
                 }
 
-               
-                CalculateBestAndWorstRange();
+                var rangeDamages = new Dictionary<Ranges, int>
+                {
+                    { Ranges.Melee, Melee },
+                    { Ranges.Close, CloseRange },
+                    { Ranges.Mid, MidRange },
+                    { Ranges.Long, LongRange }
+                };
+                BestRange = rangeDamages.OrderByDescending(kv => kv.Value).First().Key;
+                WorstRange = rangeDamages.OrderBy(kv => kv.Value).First().Key;
 
                 if (power.Type == "Close Combat" && power.Rank.HasValue)
                 {
@@ -117,38 +121,13 @@ namespace ZoidsBattle
             Cost = (int)data.Cost;
         }
 
-        public void CalculateBestAndWorstRange()
-        {
- var rangeDamages = new Dictionary<Ranges, int>
-                {
-                    { Ranges.Melee, Melee },
-                    { Ranges.Close, CloseRange },
-                    { Ranges.Mid, MidRange },
-                    { Ranges.Long, LongRange }
-                };
-
-            BestRange = rangeDamages.OrderByDescending(kv => kv.Value).First().Key;
-            WorstRange = rangeDamages.OrderBy(kv => kv.Value).First().Key;
-        }
-
         public Zoid()
         {
-            ZoidName = "Default Zoid";
+            Name = "Default Zoid";
             Powers = new List<Power>();
         }
 
-        public void ReturnToBaseState()
-        {
-            Status = "intact";
-            Dents = 0;
-            Position = "";
-            ShieldOn = false;
-            ShieldDisabled = false;
-            StealthOn = false;
-            Angle = 0;
-        }
-
-        public bool HasShield() => ShieldRank > 0 && !ShieldDisabled;
+        public bool HasShield() => ShieldRank>0 && !ShieldDisabled;
         public bool HasStealth() => StealthRank > 0;
         public int GetSpeed(string battleType) => battleType.ToLower() switch
         {
@@ -169,7 +148,7 @@ namespace ZoidsBattle
 
         public void PrintStatus(double distance)
         {
-            Console.WriteLine($"\n{ZoidName}'s status: Distance={distance}, Shield={(ShieldOn ? "ON" : "OFF")} (Rank={ShieldRank}), Stealth={(StealthOn ? "ON" : "OFF")} (Rank={StealthRank}), Dents={Dents}, Status={Status}");
+            Console.WriteLine($"\n{Name}'s status: Distance={distance}, Shield={(ShieldOn ? "ON" : "OFF")} (Rank={ShieldRank}), Stealth={(StealthOn ? "ON" : "OFF")} (Rank={StealthRank}), Dents={Dents}, Status={Status}");
             Console.WriteLine($"Accuracy: Melee={Fighting  + CloseCombat}, Ranged={Dexterity+ RangedCombat}");
             Console.WriteLine($"Attacks: Melee={Melee}, Close={CloseRange}, Mid={MidRange}, Long={LongRange}");
             Console.WriteLine($"Angle: {Angle}° (0° is facing enemy)");
