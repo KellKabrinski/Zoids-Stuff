@@ -212,7 +212,16 @@ namespace ZoidsBattle
             ExecuteAction(current, enemy, playerAction, gameState, ref enemyDetected);
             
             // Update status display after action execution to show any distance changes
-            DisplayZoidStatus(current, gameState.Distance);
+            // If there was an attack, show both Zoids' status to reflect any damage
+            if (playerAction.ActionSequence.Contains(ActionType.Attack))
+            {
+                DisplayZoidStatus(current, gameState.Distance);
+                DisplayZoidStatus(enemy, gameState.Distance);
+            }
+            else
+            {
+                DisplayZoidStatus(current, gameState.Distance);
+            }
         }
 
         protected virtual void ExecuteAITurn(Zoid current, Zoid enemy, GameState gameState)
@@ -224,7 +233,16 @@ namespace ZoidsBattle
             ExecuteAction(current, enemy, aiAction, gameState, ref enemyDetected);
             
             // Update status display after action execution to show any distance changes
-            DisplayZoidStatus(current, gameState.Distance);
+            // If there was an attack, show both Zoids' status to reflect any damage
+            if (aiAction.ActionSequence.Contains(ActionType.Attack))
+            {
+                DisplayZoidStatus(current, gameState.Distance);
+                DisplayZoidStatus(enemy, gameState.Distance);
+            }
+            else
+            {
+                DisplayZoidStatus(current, gameState.Distance);
+            }
         }
 
         protected virtual void ExecuteAction(Zoid current, Zoid enemy, PlayerAction action, GameState gameState, ref bool enemyDetected)

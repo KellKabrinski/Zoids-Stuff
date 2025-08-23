@@ -6,6 +6,7 @@ using System.Text.Json;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using Microsoft.Win32;
 
 namespace ZoidsBattle
 {
@@ -21,6 +22,7 @@ namespace ZoidsBattle
         private Zoid? _player1Zoid;
         private Zoid? _player2Zoid;
         private CharacterData _playerData = new CharacterData();
+        private string? _currentSaveFile = null; // Track the current save file for auto-save
         
         // Battle state
         private double _currentDistance = 1000.0;
@@ -70,6 +72,7 @@ namespace ZoidsBattle
             InitializeComponent();
             LoadZoids();
             InitializeGameEngine();
+            UpdateCharacterDisplay();
         }
 
         private void LoadZoids()
@@ -127,6 +130,20 @@ namespace ZoidsBattle
             // Capture debug mode setting
             _isDebugMode = DebugModeCheckBox.IsChecked == true;
 
+            // For AI mode, offer to load a character save file
+            if (_isAIMode)
+            {
+                var result = MessageBox.Show("Would you like to load a saved character with purchased Zoids and credits?", 
+                                           "Load Character", 
+                                           MessageBoxButton.YesNo, 
+                                           MessageBoxImage.Question);
+                
+                if (result == MessageBoxResult.Yes)
+                {
+                    LoadCharacterForAI();
+                }
+            }
+
             // Filter zoids based on battle type
             _filteredZoids = FilterZoids(_allZoids, _battleType).ToList();
 
@@ -158,11 +175,57 @@ namespace ZoidsBattle
             string playerText = _isPlayer1Turn ? "Player 1: Choose your Zoid" : "Player 2: Choose your Zoid";
             PlayerSelectionText.Text = playerText;
             
-            ZoidListGrid.ItemsSource = _filteredZoids;
-            ZoidListGrid.SelectedItem = null;
-            SelectZoidButton.IsEnabled = false;
+            // Check if we have a loaded character with save file for Player 1 in AI mode
+            if (_isAIMode && _isPlayer1Turn && !string.IsNullOrEmpty(_currentSaveFile))
+            {
+                ShowLoadedCharacterZoids();
+            }
+            else
+            {
+                // Normal mode - show all Zoids for purchase
+                ZoidListGrid.ItemsSource = _allZoids;
+                ZoidListGrid.SelectedItem = null;
+                SelectZoidButton.IsEnabled = false;
+                BuyZoidButton.IsEnabled = false;
+                
+                // Set button states to show "All Zoids" is selected
+                ShowAllZoidsButton.Background = System.Windows.Media.Brushes.LightBlue;
+                ShowOwnedZoidsButton.Background = System.Windows.Media.Brushes.LightGray;
+            }
             
             ClearZoidDetails();
+        }
+
+        private void ShowLoadedCharacterZoids()
+        {
+            // For loaded characters, show owned Zoids + affordable Zoids from all available
+            var availableZoids = new List<ZoidData>();
+            
+            // Add owned Zoids first
+            foreach (var ownedZoid in _playerData.Zoids)
+            {
+                var zoidData = _allZoids.FirstOrDefault(z => z.Name == ownedZoid.ZoidName);
+                if (zoidData != null)
+                {
+                    availableZoids.Add(zoidData);
+                }
+            }
+            
+            // Add affordable Zoids that aren't already owned
+            var ownedZoidNames = _playerData.Zoids.Select(z => z.ZoidName).ToHashSet();
+            foreach (var zoidData in _allZoids.Where(z => !ownedZoidNames.Contains(z.Name) && _playerData.credits >= z.Cost))
+            {
+                availableZoids.Add(zoidData);
+            }
+            
+            ZoidListGrid.ItemsSource = availableZoids;
+            ZoidListGrid.SelectedItem = null;
+            SelectZoidButton.IsEnabled = false;
+            BuyZoidButton.IsEnabled = false;
+            
+            // Set button states to show we're in loaded character mode
+            ShowAllZoidsButton.Background = System.Windows.Media.Brushes.LightGray;
+            ShowOwnedZoidsButton.Background = System.Windows.Media.Brushes.LightGray;
         }
 
         private void ZoidListGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -171,10 +234,16 @@ namespace ZoidsBattle
             {
                 SelectZoidButton.IsEnabled = true;
                 ShowZoidDetails(selectedZoid);
+                
+                // Enable buy button only if showing all Zoids and player can afford it
+                bool showingAllZoids = ZoidListGrid.ItemsSource == _allZoids;
+                bool canAfford = _playerData.credits >= selectedZoid.Cost;
+                BuyZoidButton.IsEnabled = showingAllZoids && canAfford;
             }
             else
             {
                 SelectZoidButton.IsEnabled = false;
+                BuyZoidButton.IsEnabled = false;
                 ClearZoidDetails();
             }
         }
@@ -183,6 +252,43 @@ namespace ZoidsBattle
         {
             if (ZoidListGrid.SelectedItem is ZoidData selectedZoidData)
             {
+                // Check if this is a loaded character in AI mode and they don't own this Zoid
+                bool needsToPurchase = false;
+                if (_isAIMode && _isPlayer1Turn && !string.IsNullOrEmpty(_currentSaveFile))
+                {
+                    var ownedZoidNames = _playerData.Zoids.Select(z => z.ZoidName).ToHashSet();
+                    needsToPurchase = !ownedZoidNames.Contains(selectedZoidData.Name);
+                }
+                
+                // If they need to purchase, handle the purchase first
+                if (needsToPurchase)
+                {
+                    if (_playerData.credits >= selectedZoidData.Cost)
+                    {
+                        var result = MessageBox.Show($"You don't own {selectedZoidData.Name}. Purchase it now for {selectedZoidData.Cost:N0} credits?", 
+                                                   "Purchase Required", MessageBoxButton.YesNo, MessageBoxImage.Question);
+                        
+                        if (result == MessageBoxResult.Yes)
+                        {
+                            var newZoid = new Zoid(selectedZoidData);
+                            _playerData.Zoids.Add(newZoid);
+                            _playerData.credits -= (int)selectedZoidData.Cost;
+                            UpdateCharacterDisplay();
+                            AutoSave();
+                        }
+                        else
+                        {
+                            return; // User cancelled purchase
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show($"Not enough credits! You need {selectedZoidData.Cost:N0} credits but only have {_playerData.credits:N0}.", 
+                                      "Insufficient Credits", MessageBoxButton.OK, MessageBoxImage.Warning);
+                        return;
+                    }
+                }
+                
                 var selectedZoid = new Zoid(selectedZoidData);
                 
                 if (_isPlayer1Turn)
@@ -330,6 +436,9 @@ namespace ZoidsBattle
                         BattleControlsPanel.Visibility = Visibility.Collapsed;
                         NewBattleButton.Visibility = Visibility.Visible;
                         AddBattleLogMessage("\n=== BATTLE COMPLETE ===");
+                        
+                        // Auto-save after battle completion
+                        AutoSave();
                     });
                 }
                 catch (Exception ex)
@@ -455,6 +564,349 @@ namespace ZoidsBattle
         private void Exit_Click(object sender, RoutedEventArgs e)
         {
             Close();
+        }
+
+        private void NewCharacter_Click(object sender, RoutedEventArgs e)
+        {
+            var result = MessageBox.Show("Create a new character? This will clear current character data.", 
+                                       "New Character", MessageBoxButton.YesNo, MessageBoxImage.Question);
+            if (result == MessageBoxResult.Yes)
+            {
+                // Prompt for character name
+                string? characterName = PromptForCharacterName();
+                if (string.IsNullOrEmpty(characterName))
+                {
+                    return; // User cancelled
+                }
+
+                _playerData = new CharacterData();
+                _playerData.Name = characterName;
+                _currentSaveFile = null; // Clear any loaded save file
+                UpdateCharacterDisplay();
+                StatusText.Text = $"New character '{characterName}' created";
+            }
+        }
+
+        private void RenameCharacter_Click(object sender, RoutedEventArgs e)
+        {
+            string? newName = PromptForCharacterName(_playerData.Name);
+            if (!string.IsNullOrEmpty(newName) && newName != _playerData.Name)
+            {
+                _playerData.Name = newName;
+                UpdateCharacterDisplay();
+                AutoSave(); // Auto-save if we have a save file
+                StatusText.Text = $"Character renamed to '{newName}'";
+            }
+        }
+
+        private void LoadCharacter_Click(object sender, RoutedEventArgs e)
+        {
+            var openFileDialog = new OpenFileDialog
+            {
+                Title = "Load Character",
+                Filter = "JSON Files (*.json)|*.json|All Files (*.*)|*.*",
+                DefaultExt = "json"
+            };
+
+            if (openFileDialog.ShowDialog() == true)
+            {
+                try
+                {
+                    _playerData = CharacterData.LoadFromFile(openFileDialog.FileName);
+                    UpdateCharacterDisplay();
+                    StatusText.Text = $"Loaded character: {_playerData.Name}";
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error loading character: {ex.Message}", "Load Error", 
+                                  MessageBoxButton.OK, MessageBoxImage.Error);
+                    StatusText.Text = "Failed to load character";
+                }
+            }
+        }
+
+        private void SaveCharacter_Click(object sender, RoutedEventArgs e)
+        {
+            var saveFileDialog = new SaveFileDialog
+            {
+                Title = "Save Character",
+                Filter = "JSON Files (*.json)|*.json|All Files (*.*)|*.*",
+                DefaultExt = "json",
+                FileName = _playerData.Name.Replace(" ", "_") + ".json"
+            };
+
+            if (saveFileDialog.ShowDialog() == true)
+            {
+                try
+                {
+                    _playerData.SaveToFile(saveFileDialog.FileName);
+                    StatusText.Text = $"Saved character: {_playerData.Name}";
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error saving character: {ex.Message}", "Save Error", 
+                                  MessageBoxButton.OK, MessageBoxImage.Error);
+                    StatusText.Text = "Failed to save character";
+                }
+            }
+        }
+
+        private void About_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Zoids Battle Game\n\nA turn-based battle simulation featuring Zoids mechs.\n\nFeatures:\n• Character save/load system\n• AI opponents\n• Strategic movement and combat\n• Customizable battle conditions", 
+                          "About Zoids Battle Game", MessageBoxButton.OK, MessageBoxImage.Information);
+        }
+
+        private void LoadCharacterForAI()
+        {
+            var openFileDialog = new OpenFileDialog
+            {
+                Title = "Load Character for AI Battle",
+                Filter = "JSON Files (*.json)|*.json|All Files (*.*)|*.*",
+                DefaultExt = "json",
+                InitialDirectory = Environment.CurrentDirectory
+            };
+
+            if (openFileDialog.ShowDialog() == true)
+            {
+                try
+                {
+                    _playerData = CharacterData.LoadFromFile(openFileDialog.FileName);
+                    _currentSaveFile = openFileDialog.FileName;
+                    UpdateCharacterDisplay();
+                    MessageBox.Show($"Loaded character: {_playerData.Name}\nCredits: {_playerData.credits:N0}\nOwned Zoids: {_playerData.Zoids.Count}", 
+                                  "Character Loaded", MessageBoxButton.OK, MessageBoxImage.Information);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error loading character: {ex.Message}", "Load Error", 
+                                  MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+            }
+        }
+
+        private void UpdateCharacterDisplay()
+        {
+            CharacterNameText.Text = $"Character: {_playerData.Name}";
+            CharacterCreditsText.Text = $"Credits: {_playerData.credits:N0}";
+        }
+
+        private void AutoSave()
+        {
+            if (!string.IsNullOrEmpty(_currentSaveFile))
+            {
+                try
+                {
+                    _playerData.SaveToFile(_currentSaveFile);
+                }
+                catch (Exception ex)
+                {
+                    // Silent save failure - don't interrupt gameplay with error messages
+                    // Could add logging here if needed
+                    Console.WriteLine($"Auto-save failed: {ex.Message}");
+                }
+            }
+        }
+
+        private string? PromptForCharacterName(string defaultName = "Zoid Pilot")
+        {
+            // Create a simple input dialog
+            var inputDialog = new Window
+            {
+                Title = "Character Name",
+                Width = 350,
+                Height = 180,
+                WindowStartupLocation = WindowStartupLocation.CenterOwner,
+                Owner = this,
+                ResizeMode = ResizeMode.NoResize
+            };
+
+            var grid = new Grid();
+            grid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Auto) });
+            grid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Auto) });
+            grid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Auto) });
+            grid.Margin = new Thickness(20);
+
+            var label = new Label
+            {
+                Content = "Enter your character name:",
+                FontSize = 14,
+                Margin = new Thickness(0, 0, 0, 10)
+            };
+            Grid.SetRow(label, 0);
+            grid.Children.Add(label);
+
+            var textBox = new TextBox
+            {
+                FontSize = 14,
+                Padding = new Thickness(5),
+                Margin = new Thickness(0, 0, 0, 15),
+                Text = defaultName
+            };
+            Grid.SetRow(textBox, 1);
+            grid.Children.Add(textBox);
+
+            var buttonPanel = new StackPanel
+            {
+                Orientation = Orientation.Horizontal,
+                HorizontalAlignment = HorizontalAlignment.Right
+            };
+
+            var okButton = new Button
+            {
+                Content = "OK",
+                Width = 75,
+                Height = 25,
+                Margin = new Thickness(0, 0, 10, 0),
+                IsDefault = true
+            };
+
+            var cancelButton = new Button
+            {
+                Content = "Cancel",
+                Width = 75,
+                Height = 25,
+                IsCancel = true
+            };
+
+            buttonPanel.Children.Add(okButton);
+            buttonPanel.Children.Add(cancelButton);
+            Grid.SetRow(buttonPanel, 2);
+            grid.Children.Add(buttonPanel);
+
+            inputDialog.Content = grid;
+
+            string? result = null;
+            okButton.Click += (s, e) => 
+            {
+                var name = textBox.Text.Trim();
+                if (!string.IsNullOrEmpty(name))
+                {
+                    result = name;
+                    inputDialog.DialogResult = true;
+                }
+                else
+                {
+                    MessageBox.Show("Please enter a character name.", "Invalid Name", MessageBoxButton.OK, MessageBoxImage.Warning);
+                }
+            };
+
+            cancelButton.Click += (s, e) => 
+            {
+                inputDialog.DialogResult = false;
+            };
+
+            textBox.SelectAll();
+            textBox.Focus();
+
+            return inputDialog.ShowDialog() == true ? result : null;
+        }
+
+        private void AddZoidToCollection(ZoidData zoidData)
+        {
+            // Create a new Zoid from the selected ZoidData
+            var newZoid = new Zoid(zoidData);
+            
+            // Check if player can afford this Zoid
+            if (_playerData.credits >= zoidData.Cost)
+            {
+                var result = MessageBox.Show($"Purchase {zoidData.Name} for {zoidData.Cost:N0} credits?", 
+                                           "Purchase Zoid", MessageBoxButton.YesNo, MessageBoxImage.Question);
+                
+                if (result == MessageBoxResult.Yes)
+                {
+                    _playerData.Zoids.Add(newZoid);
+                    _playerData.credits -= (int)zoidData.Cost;
+                    UpdateCharacterDisplay();
+                    StatusText.Text = $"Purchased {zoidData.Name}";
+                    
+                    // Auto-save after purchase
+                    AutoSave();
+                }
+            }
+            else
+            {
+                MessageBox.Show($"Not enough credits! You need {zoidData.Cost:N0} credits but only have {_playerData.credits:N0}.", 
+                              "Insufficient Credits", MessageBoxButton.OK, MessageBoxImage.Warning);
+            }
+        }
+
+        private void ShowOwnedZoids()
+        {
+            if (_playerData.Zoids.Count == 0)
+            {
+                MessageBox.Show("You don't own any Zoids yet. Purchase Zoids from the available list to add them to your collection.", 
+                              "No Zoids Owned", MessageBoxButton.OK, MessageBoxImage.Information);
+                ShowAllZoidsButton.Background = System.Windows.Media.Brushes.LightBlue;
+                ShowOwnedZoidsButton.Background = System.Windows.Media.Brushes.LightGray;
+                ZoidListGrid.ItemsSource = _allZoids;
+                StatusText.Text = "Showing all available Zoids";
+                return;
+            }
+
+            var ownedZoidData = _playerData.Zoids.Select(z => new ZoidData
+            {
+                Name = z.ZoidName,
+                PowerLevel = z.PowerLevel,
+                Cost = z.Cost,
+                Stats = new Stats
+                {
+                    Fighting = z.Fighting,
+                    Strength = z.Strength,
+                    Dexterity = z.Dexterity,
+                    Agility = z.Agility,
+                    Awareness = z.Awareness
+                },
+                Defenses = new Defenses
+                {
+                    Toughness = z.Toughness,
+                    Parry = z.Parry,
+                    Dodge = z.Dodge
+                },
+                Movement = new MovementStats
+                {
+                    Land = z.Land,
+                    Water = z.Water,
+                    Air = z.Air
+                },
+                Powers = z.Powers
+            }).ToList();
+
+            ShowAllZoidsButton.Background = System.Windows.Media.Brushes.LightGray;
+            ShowOwnedZoidsButton.Background = System.Windows.Media.Brushes.LightBlue;
+            ZoidListGrid.ItemsSource = ownedZoidData;
+            StatusText.Text = $"Showing {_playerData.Zoids.Count} owned Zoids";
+        }
+
+        private void ShowAllZoids_Click(object sender, RoutedEventArgs e)
+        {
+            ShowAllZoidsButton.Background = System.Windows.Media.Brushes.LightBlue;
+            ShowOwnedZoidsButton.Background = System.Windows.Media.Brushes.LightGray;
+            
+            // If we have a loaded character, show only owned and affordable Zoids
+            if (!string.IsNullOrEmpty(_currentSaveFile))
+            {
+                ShowLoadedCharacterZoids();
+                StatusText.Text = "Showing owned and affordable Zoids";
+            }
+            else
+            {
+                ZoidListGrid.ItemsSource = _allZoids;
+                StatusText.Text = "Showing all available Zoids";
+            }
+        }
+
+        private void ShowOwnedZoids_Click(object sender, RoutedEventArgs e)
+        {
+            ShowOwnedZoids();
+        }
+
+        private void BuyZoid_Click(object sender, RoutedEventArgs e)
+        {
+            if (ZoidListGrid.SelectedItem is ZoidData selectedZoid)
+            {
+                AddZoidToCollection(selectedZoid);
+            }
         }
 
         private void ExecuteAction_Click(object sender, RoutedEventArgs e)
