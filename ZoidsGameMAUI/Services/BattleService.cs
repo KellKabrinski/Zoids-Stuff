@@ -11,24 +11,35 @@ namespace ZoidsGameMAUI.Services
             _zoidDataService = zoidDataService;
         }
 
-        public async Task<Zoid> CreateRandomEnemyAsync(int? powerLevelRange = null)
+        public async Task<Zoid> CreateRandomEnemyAsync(int? powerLevelRange = null, int? costRange = null)
         {
             var allZoids = await _zoidDataService.LoadZoidDataAsync();
             
             // Filter by power level if specified
             var availableZoids = powerLevelRange.HasValue 
-                ? allZoids.Where(z => Math.Abs(z.PowerLevel - powerLevelRange.Value) <= 2).ToList()
+                ? allZoids.Where(z => Math.Abs(z.PowerLevel - powerLevelRange.Value) <= 1).ToList()
                 : allZoids;
             
             if (!availableZoids.Any())
             {
                 availableZoids = allZoids; // Fallback to all zoids
             }
-            
+            var tempAvailableZoids = costRange.HasValue ?
+                availableZoids.Where(z => Math.Abs(z.Cost - costRange.Value) <= 5000).ToList() :
+                availableZoids;
+            if (tempAvailableZoids.Any())
+            {
+                availableZoids = tempAvailableZoids;
+            }
             var random = new Random();
             var selectedZoidData = availableZoids[random.Next(availableZoids.Count)];
             
-            return new Zoid(selectedZoidData);
+            var enemy = new Zoid(selectedZoidData);
+            
+            // Assign random AI personality
+            enemy.AIPersonality = random.Next(2) == 0 ? AIPersonality.Aggressive : AIPersonality.Defensive;
+            
+            return enemy;
         }
 
         public async Task<Zoid> CreateEnemyByNameAsync(string zoidName)
@@ -39,7 +50,13 @@ namespace ZoidsGameMAUI.Services
                 throw new ArgumentException($"Zoid '{zoidName}' not found.");
             }
             
-            return new Zoid(zoidData);
+            var enemy = new Zoid(zoidData);
+            
+            // Assign random AI personality
+            var random = new Random();
+            enemy.AIPersonality = random.Next(2) == 0 ? AIPersonality.Aggressive : AIPersonality.Defensive;
+            
+            return enemy;
         }
 
         public BattleScenario CreateBattleScenario(Zoid playerZoid, Zoid enemyZoid, string? terrain = null)

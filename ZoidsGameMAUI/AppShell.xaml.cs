@@ -11,5 +11,6 @@ public partial class AppShell : Shell
 		Routing.RegisterRoute("battle", typeof(Views.BattlePage));
 		Routing.RegisterRoute("test", typeof(Views.TestPage));
 		Routing.RegisterRoute("saveload", typeof(Views.SaveLoadPage));
+		Routing.RegisterRoute("zoidupgrade", typeof(Views.ZoidUpgradePage));
 	}
 }

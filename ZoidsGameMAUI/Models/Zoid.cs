@@ -51,6 +51,9 @@ namespace ZoidsGameMAUI.Models
         public Ranges WorstRange { get; set; }
         public int PowerLevel { get; set; }
         public int Cost { get; set; }
+        
+        // AI Behavior
+        public AIPersonality AIPersonality { get; set; } = AIPersonality.Aggressive;
 
         public Zoid(ZoidData data)
         {

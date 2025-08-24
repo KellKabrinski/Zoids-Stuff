@@ -46,6 +46,9 @@ C:\Users\dwh19\Downloads\Mutants and Masterminds\Zoids-Stuff\ZoidsGameMAUI\obj\D
 C:\Users\dwh19\Downloads\Mutants and Masterminds\Zoids-Stuff\ZoidsGameMAUI\obj\Debug\net9.0-ios\iossimulator-x64\ZoidsGameMAUI.AssemblyInfo.cs
 C:\Users\dwh19\Downloads\Mutants and Masterminds\Zoids-Stuff\ZoidsGameMAUI\obj\Debug\net9.0-ios\iossimulator-x64\ZoidsGameMAUI.csproj.CoreCompileInputs.cache
 C:\Users\dwh19\Downloads\Mutants and Masterminds\Zoids-Stuff\ZoidsGameMAUI\obj\Debug\net9.0-ios\iossimulator-x64\ZoidsGameMAUI.sourcelink.json
+C:\Users\dwh19\Downloads\Mutants and Masterminds\Zoids-Stuff\ZoidsGameMAUI\obj\Debug\net9.0-ios\iossimulator-x64\ZoidsGameMAUI.dll
+C:\Users\dwh19\Downloads\Mutants and Masterminds\Zoids-Stuff\ZoidsGameMAUI\obj\Debug\net9.0-ios\iossimulator-x64\refint\ZoidsGameMAUI.dll
+C:\Users\dwh19\Downloads\Mutants and Masterminds\Zoids-Stuff\ZoidsGameMAUI\obj\Debug\net9.0-ios\iossimulator-x64\ZoidsGameMAUI.pdb
 C:\Users\dwh19\Downloads\Mutants and Masterminds\Zoids-Stuff\ZoidsGameMAUI\bin\Debug\net9.0-ios\iossimulator-x64\ZoidsGameMAUI.runtimeconfig.json
 C:\Users\dwh19\Downloads\Mutants and Masterminds\Zoids-Stuff\ZoidsGameMAUI\bin\Debug\net9.0-ios\iossimulator-x64\ZoidsGameMAUI.dll
 C:\Users\dwh19\Downloads\Mutants and Masterminds\Zoids-Stuff\ZoidsGameMAUI\bin\Debug\net9.0-ios\iossimulator-x64\ZoidsGameMAUI.pdb
@@ -301,8 +304,5 @@ C:\Users\dwh19\Downloads\Mutants and Masterminds\Zoids-Stuff\ZoidsGameMAUI\bin\D
 C:\Users\dwh19\Downloads\Mutants and Masterminds\Zoids-Stuff\ZoidsGameMAUI\bin\Debug\net9.0-ios\iossimulator-x64\libxamarin-dotnet.dylib
 C:\Users\dwh19\Downloads\Mutants and Masterminds\Zoids-Stuff\ZoidsGameMAUI\obj\Debug\net9.0-ios\iossimulator-x64\XamlC.stamp
 C:\Users\dwh19\Downloads\Mutants and Masterminds\Zoids-Stuff\ZoidsGameMAUI\obj\Debug\net9.0-ios\iossimulator-x64\ZoidsGam.29492E2F.Up2Date
-C:\Users\dwh19\Downloads\Mutants and Masterminds\Zoids-Stuff\ZoidsGameMAUI\obj\Debug\net9.0-ios\iossimulator-x64\ZoidsGameMAUI.dll
-C:\Users\dwh19\Downloads\Mutants and Masterminds\Zoids-Stuff\ZoidsGameMAUI\obj\Debug\net9.0-ios\iossimulator-x64\refint\ZoidsGameMAUI.dll
-C:\Users\dwh19\Downloads\Mutants and Masterminds\Zoids-Stuff\ZoidsGameMAUI\obj\Debug\net9.0-ios\iossimulator-x64\ZoidsGameMAUI.pdb
 C:\Users\dwh19\Downloads\Mutants and Masterminds\Zoids-Stuff\ZoidsGameMAUI\obj\Debug\net9.0-ios\iossimulator-x64\ZoidsGameMAUI.genruntimeconfig.cache
 C:\Users\dwh19\Downloads\Mutants and Masterminds\Zoids-Stuff\ZoidsGameMAUI\obj\Debug\net9.0-ios\iossimulator-x64\ref\ZoidsGameMAUI.dll

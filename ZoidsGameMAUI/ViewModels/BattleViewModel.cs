@@ -146,8 +146,8 @@ namespace ZoidsGameMAUI.ViewModels
         public string DistanceText => $"Distance: {_currentDistance:F0}m";
         public string RangeText => $"Range: {_gameEngine.DetermineRange(_currentDistance)}";
 
-        public string PlayerPositionText => $"Player: {_playerZoid?.Position ?? "Unknown"} ({_playerZoid?.Angle ?? 0:F0}°)";
-        public string EnemyPositionText => $"Enemy: {_enemyZoid?.Position ?? "Unknown"} ({_enemyZoid?.Angle ?? 0:F0}°)";
+        public string PlayerPositionText => $"Player Position: {_playerZoid?.Position ?? "Unknown"}";
+        public string EnemyPositionText => $"Enemy Position: {_enemyZoid?.Position ?? "Unknown"}";
 
         public bool CanTakeAction => _isPlayerTurn && !_battleEnded && _playerZoid?.Status != "defeated";
         public bool CanEndTurn => _isPlayerTurn && !_battleEnded;
@@ -178,14 +178,12 @@ namespace ZoidsGameMAUI.ViewModels
         {
             // Reset battle state
             _playerZoid.Position = "neutral";
-            _playerZoid.Angle = 0.0;
             _playerZoid.Dents = 0;
             _playerZoid.Status = "intact";
             _playerZoid.ShieldOn = false;
             _playerZoid.StealthOn = false;
 
             _enemyZoid.Position = "defensive";
-            _enemyZoid.Angle = 180.0;
             _enemyZoid.Dents = 0;
             _enemyZoid.Status = "intact";
             _enemyZoid.ShieldOn = false;
@@ -221,7 +219,7 @@ namespace ZoidsGameMAUI.ViewModels
             return Task.FromResult(true);
         }
 
-        public void QueueMove(string moveType, double? angle = null)
+        public void QueueMove(string moveType)
         {
             if (!CanTakeAction) return;
 
@@ -229,8 +227,6 @@ namespace ZoidsGameMAUI.ViewModels
             {
                 "Close" => "Move: Close Distance",
                 "Away" => "Move: Increase Distance", 
-                "Flank" => "Move: Flanking Maneuver",
-                "Face" when angle.HasValue => $"Move: Face {angle:F0}°",
                 _ => "Move: Unknown"
             };
 
@@ -326,7 +322,7 @@ namespace ZoidsGameMAUI.ViewModels
 
             if (attackDamage > 0)
             {
-                var result = _gameEngine.ProcessAttack(_enemyZoid, _playerZoid, range, CurrentDistance, _enemyZoid.Angle);
+                var result = _gameEngine.ProcessAttack(_enemyZoid, _playerZoid, range, CurrentDistance, 0);
                 LogMessage(result.Message);
 
                 if (result.Success)
@@ -352,7 +348,7 @@ namespace ZoidsGameMAUI.ViewModels
             if (action.StartsWith("Attack"))
             {
                 var range = _gameEngine.DetermineRange(CurrentDistance);
-                var result = _gameEngine.ProcessAttack(actor, target, range, CurrentDistance, actor.Angle);
+                var result = _gameEngine.ProcessAttack(actor, target, range, CurrentDistance, 0);
                 LogMessage($"{actorName}: {result.Message}");
             }
             else if (action.StartsWith("Move: Close"))
@@ -368,15 +364,6 @@ namespace ZoidsGameMAUI.ViewModels
                 var oldDistance = CurrentDistance;
                 CurrentDistance += moveDistance;
                 LogMessage($"{actorName} moves away. Distance: {oldDistance:F0}m → {CurrentDistance:F0}m");
-            }
-            else if (action.StartsWith("Move: Face"))
-            {
-                var parts = action.Split(' ');
-                if (parts.Length > 2 && double.TryParse(parts[2].Replace("°", ""), out double angle))
-                {
-                    actor.Angle = angle;
-                    LogMessage($"{actorName} turns to face {angle:F0}°");
-                }
             }
             else if (action.StartsWith("Shield:"))
             {

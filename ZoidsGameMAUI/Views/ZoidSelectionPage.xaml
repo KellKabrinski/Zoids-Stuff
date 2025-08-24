@@ -182,6 +182,7 @@
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
 
             <!-- Main Action Buttons -->
@@ -213,6 +214,14 @@
                     Clicked="OnSaveGameClicked" />
 
             <Button Grid.Row="1" Grid.Column="1"
+                    x:Name="UpgradeZoidsButton"
+                    Text="Upgrade Zoids"
+                    BackgroundColor="#708090"
+                    TextColor="White"
+                    Margin="1.25,0,1.25,0"
+                    Clicked="OnUpgradeZoidsClicked" />
+
+            <Button Grid.Row="1" Grid.Column="2"
                     x:Name="BackButton"
                     Text="Back to Menu"
                     BackgroundColor="#708090"

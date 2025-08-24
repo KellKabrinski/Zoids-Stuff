@@ -23,6 +23,7 @@ public static class MauiProgram
 		builder.Services.AddSingleton<SaveSystem>();
 		builder.Services.AddTransient<GameEngine>();
 		builder.Services.AddTransient<BattleService>();
+		builder.Services.AddTransient<UpgradeService>();
 
 		// Register pages and view models
 		builder.Services.AddTransient<MainPage>();
@@ -32,6 +33,7 @@ public static class MauiProgram
 		builder.Services.AddTransient<BattleViewModel>();
 		builder.Services.AddTransient<TestPage>();
 		builder.Services.AddTransient<SaveLoadPage>();
+		builder.Services.AddTransient<ZoidUpgradePage>();
 
 #if DEBUG
 		builder.Logging.AddDebug();

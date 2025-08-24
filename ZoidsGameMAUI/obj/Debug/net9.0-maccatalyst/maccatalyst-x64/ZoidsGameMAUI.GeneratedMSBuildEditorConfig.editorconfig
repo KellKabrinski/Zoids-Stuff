@@ -71,3 +71,9 @@ build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = ZoidsGameMAUI.Views.ZoidSelectionPage.xaml
 build_metadata.AdditionalFiles.TargetPath = Views\ZoidSelectionPage.xaml
 build_metadata.AdditionalFiles.RelativePath = Views\ZoidSelectionPage.xaml
+
+[C:/Users/dwh19/Downloads/Mutants and Masterminds/Zoids-Stuff/ZoidsGameMAUI/Views/ZoidUpgradePage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = ZoidsGameMAUI.Views.ZoidUpgradePage.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\ZoidUpgradePage.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\ZoidUpgradePage.xaml

@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage x:Class="ZoidsGameMAUI.Views.ZoidUpgradePage"
+             xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             Title="Zoid Upgrades"
+             BackgroundColor="#1a1a1a">
+
+    <ScrollView>
+        <VerticalStackLayout Spacing="20" Padding="20">
+            
+            <!-- Header -->
+            <Label Text="ZOID UPGRADE SYSTEM" 
+                   FontSize="24" 
+                   FontAttributes="Bold" 
+                   TextColor="#4CAF50" 
+                   HorizontalOptions="Center" />
+            
+            <!-- Credits Display -->
+            <Border BackgroundColor="#2a2a2a" 
+                    Stroke="#4CAF50" 
+                    StrokeThickness="2"
+                    Padding="15">
+                <Label x:Name="CreditsLabel" 
+                       Text="Credits: 0" 
+                       FontSize="18" 
+                       FontAttributes="Bold" 
+                       TextColor="#FFD700" 
+                       HorizontalOptions="Center" />
+            </Border>
+
+            <!-- Zoid Selection -->
+            <Label Text="Select Zoid to Upgrade:" 
+                   FontSize="18" 
+                   TextColor="White" />
+            
+            <Picker x:Name="ZoidPicker" 
+                    Title="Choose a Zoid..."
+                    BackgroundColor="#2a2a2a"
+                    TextColor="White"
+                    SelectedIndexChanged="OnZoidSelected" />
+
+            <!-- Selected Zoid Info -->
+            <Border x:Name="ZoidInfoFrame" 
+                    BackgroundColor="#2a2a2a" 
+                    Stroke="#708090" 
+                    StrokeThickness="1"
+                    Padding="15"
+                    IsVisible="False">
+                <VerticalStackLayout Spacing="10">
+                    <Label x:Name="ZoidNameLabel" 
+                           Text="Zoid Name" 
+                           FontSize="20" 
+                           FontAttributes="Bold" 
+                           TextColor="White" 
+                           HorizontalOptions="Center" />
+                    
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        
+                        <Label Grid.Column="0" 
+                               x:Name="PowerLevelLabel" 
+                               Text="Power Level: 0" 
+                               FontSize="16" 
+                               TextColor="White" />
+                        
+                        <Label Grid.Column="1" 
+                               x:Name="PowerLevelCapLabel" 
+                               Text="Cap: 0" 
+                               FontSize="16" 
+                               TextColor="#FFD700" 
+                               HorizontalOptions="End" />
+                    </Grid>
+                </VerticalStackLayout>
+            </Border>
+
+            <!-- Stats Upgrade Section -->
+            <Border x:Name="StatsUpgradeFrame" 
+                    BackgroundColor="#2a2a2a" 
+                    Stroke="#708090" 
+                    StrokeThickness="1"
+                    Padding="15"
+                    IsVisible="False">
+                <VerticalStackLayout Spacing="15">
+                    <Label Text="Upgrade Stats" 
+                           FontSize="18" 
+                           FontAttributes="Bold" 
+                           TextColor="#4CAF50" 
+                           HorizontalOptions="Center" />
+                    
+                    <Grid x:Name="StatsGrid" 
+                          RowSpacing="10" 
+                          ColumnSpacing="10">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="100" />
+                            <ColumnDefinition Width="60" />
+                            <ColumnDefinition Width="60" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        
+                        <!-- Headers -->
+                        <Label Grid.Column="0" 
+                               Text="Stat" 
+                               FontAttributes="Bold" 
+                               TextColor="White" />
+                        <Label Grid.Column="1" 
+                               Text="Current" 
+                               FontAttributes="Bold" 
+                               TextColor="White" />
+                        <Label Grid.Column="2" 
+                               Text="Cost" 
+                               FontAttributes="Bold" 
+                               TextColor="White" />
+                        <Label Grid.Column="3" 
+                               Text="Action" 
+                               FontAttributes="Bold" 
+                               TextColor="White" />
+                    </Grid>
+                </VerticalStackLayout>
+            </Border>
+
+            <!-- Powers Section -->
+            <Border x:Name="PowersFrame" 
+                    BackgroundColor="#2a2a2a" 
+                    Stroke="#708090" 
+                    StrokeThickness="1"
+                    Padding="15"
+                    IsVisible="False">
+                <VerticalStackLayout Spacing="15">
+                    <Label Text="Add Powers" 
+                           FontSize="18" 
+                           FontAttributes="Bold" 
+                           TextColor="#4CAF50" 
+                           HorizontalOptions="Center" />
+                    
+                    <!-- Power Type Selection -->
+                    <Label Text="Select Power:" 
+                           FontSize="16" 
+                           TextColor="White" />
+                    
+                    <Picker x:Name="PowerTypePicker" 
+                            Title="Choose power..."
+                            BackgroundColor="#333333"
+                            TextColor="White"
+                            SelectedIndexChanged="OnPowerTypeChanged" />
+                    
+                    <!-- Power Rank Selection -->
+                    <Label Text="Select Rank:" 
+                           FontSize="16" 
+                           TextColor="White" />
+                           
+                    <Entry x:Name="RankEntry"
+                           Placeholder="Enter rank (1-20)"
+                           Keyboard="Numeric"
+                           BackgroundColor="#333333"
+                           TextColor="White"
+                           TextChanged="OnRankTextChanged" />
+
+                    <!-- Power Cost Display -->
+                    <HorizontalStackLayout Spacing="10" 
+                                           HorizontalOptions="Center">
+                        <Label Text="Cost:" 
+                               FontSize="16" 
+                               TextColor="White" />
+                        <Label x:Name="PowerCostLabel" 
+                               Text="0 credits" 
+                               FontSize="16" 
+                               FontAttributes="Bold" 
+                               TextColor="#FFD700" />
+                    </HorizontalStackLayout>
+                    
+                    <!-- Upgrade Power Button -->
+                    <Button x:Name="UpgradePowerButton" 
+                            Text="Add Power" 
+                            BackgroundColor="#4CAF50" 
+                            TextColor="White" 
+                            FontAttributes="Bold"
+                            Clicked="OnUpgradePowerClicked" 
+                            IsEnabled="False" />
+                </VerticalStackLayout>
+            </Border>
+
+            <!-- Current Powers Display -->
+            <Border x:Name="CurrentPowersFrame" 
+                    BackgroundColor="#2a2a2a" 
+                    Stroke="#708090" 
+                    StrokeThickness="1"
+                    Padding="15"
+                    IsVisible="False">
+                <VerticalStackLayout Spacing="10">
+                    <Label Text="Current Powers" 
+                           FontSize="18" 
+                           FontAttributes="Bold" 
+                           TextColor="#4CAF50" 
+                           HorizontalOptions="Center" />
+                    
+                    <CollectionView x:Name="CurrentPowersCollection">
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                <Grid Padding="5">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="Auto" />
+                                    </Grid.ColumnDefinitions>
+                                    
+                                    <Label Grid.Column="0" 
+                                           Text="{Binding Name}" 
+                                           TextColor="White" 
+                                           VerticalOptions="Center" />
+                                    
+                                    <Label Grid.Column="1" 
+                                           Text="{Binding Cost, StringFormat='{0} PP'}" 
+                                           TextColor="#FFD700" 
+                                           VerticalOptions="Center" />
+                                </Grid>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+                </VerticalStackLayout>
+            </Border>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

@@ -440,4 +440,17 @@ public partial class ZoidSelectionPage : ContentPage
         // Navigate to the save/load page in save mode
         await Shell.Current.GoToAsync("saveload?mode=save");
     }
+
+    private async void OnUpgradeZoidsClicked(object sender, EventArgs e)
+    {
+        if (_currentCharacter?.Zoids == null || !_currentCharacter.Zoids.Any())
+        {
+            await DisplayAlert("No Zoids to Upgrade", 
+                "You need to own at least one Zoid to access the upgrade system.", 
+                "OK");
+            return;
+        }
+
+        await Shell.Current.GoToAsync("zoidupgrade");
+    }
 }

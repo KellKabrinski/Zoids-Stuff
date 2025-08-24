@@ -62,7 +62,6 @@ public partial class BattlePage : ContentPage
                 _playerZoid = new Zoid(selectedZoidData);
                 // Set battle state
                 _playerZoid.Position = "neutral";
-                _playerZoid.Angle = 0.0;
                 _playerZoid.Dents = 0;
                 _playerZoid.Status = "intact";
                 _playerZoid.ShieldOn = false;
@@ -91,7 +90,6 @@ public partial class BattlePage : ContentPage
             _playerZoid = new Zoid(shieldLigerData);
             // Set battle state
             _playerZoid.Position = "neutral";
-            _playerZoid.Angle = 0.0;
             _playerZoid.Dents = 0;
             _playerZoid.Status = "intact";
             _playerZoid.ShieldOn = false;
@@ -109,7 +107,6 @@ public partial class BattlePage : ContentPage
             
             // Set battle state
             _enemyZoid.Position = "defensive"; 
-            _enemyZoid.Angle = 180.0;
             _enemyZoid.Dents = 0;
             _enemyZoid.Status = "intact";
             
@@ -132,7 +129,6 @@ public partial class BattlePage : ContentPage
             {
                 _enemyZoid = new Zoid(enemyData);
                 _enemyZoid.Position = "defensive"; 
-                _enemyZoid.Angle = 180.0;
                 _enemyZoid.Dents = 0;
                 _enemyZoid.Status = "intact";
                 LogMessage($"Fallback enemy selected: {_enemyZoid.Name}");
@@ -155,9 +151,7 @@ public partial class BattlePage : ContentPage
 
         // Initialize positions
         _playerZoid.Position = "neutral";
-        _playerZoid.Angle = 0.0;
         _enemyZoid.Position = "defensive";
-        _enemyZoid.Angle = 180.0;
         
         // Reset battle state
         _playerZoid.Dents = 0;
@@ -207,8 +201,8 @@ public partial class BattlePage : ContentPage
                 DistanceLabel.Text = $"Distance: {_currentDistance:F0}m";
                 RangeLabel.Text = $"Range: {_gameEngine.DetermineRange(_currentDistance)}";
                 
-                PlayerPositionLabel.Text = $"Player: {_playerZoid.Position} ({_playerZoid.Angle:F0}°)";
-                EnemyPositionLabel.Text = $"Enemy: {_enemyZoid.Position} ({_enemyZoid.Angle:F0}°)";
+                PlayerPositionLabel.Text = $"Player Position: {_playerZoid.Position}";
+                EnemyPositionLabel.Text = $"Enemy Position: {_enemyZoid.Position}";
                 
                 // Update button states
                 var canAct = _isPlayerTurn && !_battleEnded && _playerZoid.Status != "defeated";
@@ -292,12 +286,10 @@ public partial class BattlePage : ContentPage
         // Get maximum move speed for this Zoid
         var maxMoveSpeed = _playerZoid.GetSpeed("land");
         
-        // Show movement type options first
+        // Show simplified movement options
         var moveType = await DisplayActionSheet("Movement Type", "Cancel", null, 
             "Close Distance (Move In)", 
-            "Increase Distance (Move Out)", 
-            "Change Position (Flanking)", 
-            "Change Angle (Facing)");
+            "Increase Distance (Move Out)");
 
         if (moveType == "Cancel" || moveType == null) return;
 
@@ -383,23 +375,6 @@ public partial class BattlePage : ContentPage
                 UpdatePredictedDistanceDisplay();
             }
         }
-        else if (moveType == "Change Position (Flanking)")
-        {
-            _actionQueue.Add("Move: Flanking Maneuver");
-            LogMessage("Queued: Flanking maneuver");
-            UpdatePredictedDistanceDisplay();
-        }
-        else if (moveType == "Change Angle (Facing)")
-        {
-            var angle = await DisplayPromptAsync("Change Facing", "Enter new angle (0-359):", "OK", "Cancel", "0");
-            if (angle != null && double.TryParse(angle, out double newAngle))
-            {
-                newAngle = ((newAngle % 360) + 360) % 360;
-                _actionQueue.Add($"Move: Face {newAngle:F0}°");
-                LogMessage($"Queued: Turn to face {newAngle:F0}°");
-                UpdatePredictedDistanceDisplay();
-            }
-        }
     }
 
     private void OnShieldClicked(object sender, EventArgs e)
@@ -474,31 +449,230 @@ public partial class BattlePage : ContentPage
 
     private async Task ExecuteEnemyTurn()
     {
-        LogMessage("Enemy is thinking...");
+        LogMessage($"Enemy {_enemyZoid.Name} ({_enemyZoid.AIPersonality} personality) is thinking...");
         await Task.Delay(1000);
         
-        // Simple AI: Attack if in range, otherwise move closer
-        var range = _gameEngine.DetermineRange(_currentDistance);
-        var attackDamage = GetAttackDamage(_enemyZoid, range);
+        // Personality-based AI decision making
+        var decision = MakeAIDecision(_enemyZoid, _playerZoid);
         
-        if (attackDamage > 0)
+        switch (decision.Action)
         {
-            var result = _gameEngine.ProcessAttack(_enemyZoid, _playerZoid, range, _currentDistance, _enemyZoid.Angle);
-            LogMessage(result.Message);
-            
-            if (result.Success)
-            {
-                UpdateUI();
-            }
-        }
-        else
-        {
-            // Move closer
-            _currentDistance = Math.Max(0, _currentDistance - _enemyZoid.GetSpeed("land"));
-            LogMessage($"Enemy moves closer. New distance: {_currentDistance:F0}m");
+            case "Attack":
+                await ExecuteEnemyAttack(decision);
+                break;
+            case "Move":
+                await ExecuteEnemyMove(decision);
+                break;
+            case "Shield":
+                await ExecuteEnemyShield();
+                break;
+            case "Stealth":
+                await ExecuteEnemyStealth();
+                break;
+            default:
+                LogMessage("Enemy decides to wait this turn.");
+                break;
         }
         
         UpdateUI();
+    }
+
+    private AIDecision MakeAIDecision(Zoid aiZoid, Zoid targetZoid)
+    {
+        var range = _gameEngine.DetermineRange(_currentDistance);
+        var attackDamage = GetAttackDamage(aiZoid, range);
+        var aiHealthPercent = CalculateHpPercent(aiZoid);
+        var targetHealthPercent = CalculateHpPercent(targetZoid);
+        
+        // Decision weights based on personality
+        var decision = new AIDecision();
+        
+        if (aiZoid.AIPersonality == AIPersonality.Aggressive)
+        {
+            // Aggressive AI: Prioritize offense and closing distance
+            if (attackDamage > 0)
+            {
+                // Can attack - always prefer attacking when aggressive
+                decision.Action = "Attack";
+                decision.Reasoning = $"Aggressive: Attack available at {range} range for {attackDamage} damage";
+            }
+            else
+            {
+                // Can't attack - move aggressively closer
+                var optimalDistance = GetOptimalAttackDistance(aiZoid);
+                if (optimalDistance < _currentDistance)
+                {
+                    decision.Action = "Move";
+                    decision.MoveDistance = Math.Min(aiZoid.GetSpeed("land"), (int)(_currentDistance - optimalDistance));
+                    decision.Reasoning = $"Aggressive: Moving {decision.MoveDistance}m closer to attack range";
+                }
+                else
+                {
+                    // Already too close, back up slightly but stay aggressive
+                    decision.Action = "Move";
+                    decision.MoveDistance = -(int)(aiZoid.GetSpeed("land") * 0.3); // Small retreat
+                    decision.Reasoning = "Aggressive: Minor repositioning to optimize attack";
+                }
+            }
+            
+            // Override with defensive actions only in critical health
+            if (aiHealthPercent < 25 && !aiZoid.ShieldOn && aiZoid.HasShield())
+            {
+                decision.Action = "Shield";
+                decision.Reasoning = "Aggressive: Critical health - emergency shield activation";
+            }
+        }
+        else // Defensive personality
+        {
+            // Defensive AI: Prioritize survival and optimal positioning
+            if (aiHealthPercent < 50)
+            {
+                // Low health - prioritize defense
+                if (!aiZoid.ShieldOn && aiZoid.HasShield())
+                {
+                    decision.Action = "Shield";
+                    decision.Reasoning = "Defensive: Low health - activating shield";
+                }
+                else if (!aiZoid.StealthOn && aiZoid.HasStealth())
+                {
+                    decision.Action = "Stealth";
+                    decision.Reasoning = "Defensive: Low health - activating stealth";
+                }
+                else if (attackDamage > 0 && targetHealthPercent < aiHealthPercent)
+                {
+                    // Only attack if target is weaker
+                    decision.Action = "Attack";
+                    decision.Reasoning = $"Defensive: Calculated strike - target at {targetHealthPercent}% health";
+                }
+                else
+                {
+                    // Move to safer distance
+                    decision.Action = "Move";
+                    decision.MoveDistance = -(int)(aiZoid.GetSpeed("land") * 0.7); // Retreat
+                    decision.Reasoning = "Defensive: Retreating to safer distance";
+                }
+            }
+            else
+            {
+                // Healthy - measured approach
+                var optimalDistance = GetOptimalAttackDistance(aiZoid);
+                
+                if (Math.Abs(_currentDistance - optimalDistance) > 200) // Not at optimal range
+                {
+                    decision.Action = "Move";
+                    var targetMove = optimalDistance < _currentDistance ? 
+                        Math.Min(aiZoid.GetSpeed("land"), (int)(_currentDistance - optimalDistance)) :
+                        -Math.Min(aiZoid.GetSpeed("land"), (int)(optimalDistance - _currentDistance));
+                    decision.MoveDistance = targetMove;
+                    decision.Reasoning = $"Defensive: Moving to optimal range ({optimalDistance}m)";
+                }
+                else if (attackDamage > 0)
+                {
+                    // At good range and can attack
+                    decision.Action = "Attack";
+                    decision.Reasoning = $"Defensive: Positioned well - attacking for {attackDamage} damage";
+                }
+                else
+                {
+                    // Fine-tune positioning
+                    decision.Action = "Move";
+                    decision.MoveDistance = (int)(aiZoid.GetSpeed("land") * 0.2);
+                    decision.Reasoning = "Defensive: Fine-tuning position";
+                }
+            }
+        }
+        
+        return decision;
+    }
+
+    private double GetOptimalAttackDistance(Zoid zoid)
+    {
+        // Find the range with the best damage output
+        var ranges = new[]
+        {
+            (Range: Ranges.Melee, Distance: 50.0, Damage: GetAttackDamage(zoid, Ranges.Melee)),
+            (Range: Ranges.Close, Distance: 300.0, Damage: GetAttackDamage(zoid, Ranges.Close)),
+            (Range: Ranges.Mid, Distance: 800.0, Damage: GetAttackDamage(zoid, Ranges.Mid)),
+            (Range: Ranges.Long, Distance: 1500.0, Damage: GetAttackDamage(zoid, Ranges.Long))
+        };
+        
+        var bestRange = ranges.OrderByDescending(r => r.Damage).FirstOrDefault();
+        return bestRange.Distance;
+    }
+
+    private async Task ExecuteEnemyAttack(AIDecision decision)
+    {
+        var range = _gameEngine.DetermineRange(_currentDistance);
+        var result = _gameEngine.ProcessAttack(_enemyZoid, _playerZoid, range, _currentDistance, 0);
+        LogMessage($"Enemy: {result.Message} - {decision.Reasoning}");
+        
+        if (result.Success)
+        {
+            UpdateUI();
+        }
+        
+        await Task.CompletedTask; // Satisfy async requirement
+    }
+
+    private async Task ExecuteEnemyMove(AIDecision decision)
+    {
+        var oldDistance = _currentDistance;
+        
+        if (decision.MoveDistance > 0)
+        {
+            _currentDistance = Math.Max(0, _currentDistance - decision.MoveDistance);
+            LogMessage($"Enemy moves {decision.MoveDistance}m closer. Distance: {oldDistance:F0}m → {_currentDistance:F0}m - {decision.Reasoning}");
+        }
+        else
+        {
+            _currentDistance += Math.Abs(decision.MoveDistance);
+            LogMessage($"Enemy moves {Math.Abs(decision.MoveDistance)}m away. Distance: {oldDistance:F0}m → {_currentDistance:F0}m - {decision.Reasoning}");
+        }
+        
+        await Task.CompletedTask; // Satisfy async requirement
+    }
+
+    private async Task ExecuteEnemyShield()
+    {
+        if (_enemyZoid.HasShield() && !_enemyZoid.ShieldOn)
+        {
+            _gameEngine.ProcessShieldToggle(_enemyZoid);
+            LogMessage($"Enemy activates shield! Shield strength: {_enemyZoid.ShieldRank}");
+        }
+        else
+        {
+            LogMessage("Enemy attempted to activate shield but it's not available or already active.");
+        }
+        
+        await Task.CompletedTask; // Satisfy async requirement
+    }
+
+    private async Task ExecuteEnemyStealth()
+    {
+        if (_enemyZoid.HasStealth() && !_enemyZoid.StealthOn)
+        {
+            _gameEngine.ProcessStealthToggle(_enemyZoid);
+            LogMessage($"Enemy activates stealth! Concealment rank: {_enemyZoid.StealthRank}");
+        }
+        else
+        {
+            LogMessage("Enemy attempted to activate stealth but it's not available or already active.");
+        }
+        
+        await Task.CompletedTask; // Satisfy async requirement
+    }
+
+    private int CalculateHpPercent(Zoid zoid)
+    {
+        return Math.Max(0, 100 - (zoid.Dents * 10)); // Rough HP calculation
+    }
+
+    // Helper class for AI decision making
+    public class AIDecision
+    {
+        public string Action { get; set; } = "Wait";
+        public int MoveDistance { get; set; } = 0;
+        public string Reasoning { get; set; } = "";
     }
 
     private Task ExecuteAction(Zoid actor, Zoid target, string action, bool isPlayer)
@@ -534,7 +708,7 @@ public partial class BattlePage : ContentPage
                 return Task.CompletedTask;
             }
             
-            var result = _gameEngine.ProcessAttack(actor, target, range, _currentDistance, actor.Angle);
+            var result = _gameEngine.ProcessAttack(actor, target, range, _currentDistance, 0);
             LogMessage($"{actorName}: {result.Message} (at {_currentDistance:F0}m, {range} range, {attackDamage} damage)");
         }
         else if (action.StartsWith("Move: Close"))
@@ -598,15 +772,6 @@ public partial class BattlePage : ContentPage
             // Update UI to show distance change immediately
             DistanceLabel.Text = $"Distance: {_currentDistance:F0}m";
             RangeLabel.Text = $"Range: {_gameEngine.DetermineRange(_currentDistance)}";
-        }
-        else if (action.StartsWith("Move: Face"))
-        {
-            var parts = action.Split(' ');
-            if (parts.Length > 2 && double.TryParse(parts[2].Replace("°", ""), out double angle))
-            {
-                actor.Angle = angle;
-                LogMessage($"{actorName} turns to face {angle:F0}°");
-            }
         }
         else if (action.StartsWith("Shield:"))
         {
@@ -776,7 +941,6 @@ public partial class BattlePage : ContentPage
                 
                 predictedDistance += moveDistance;
             }
-            // Note: Flanking and angle changes don't affect distance
         }
         
         return predictedDistance;
