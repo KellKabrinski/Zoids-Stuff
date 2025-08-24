@@ -13,6 +13,7 @@ public partial class BattlePage : ContentPage
     private readonly GameEngine _gameEngine;
     private readonly ZoidDataService _zoidDataService;
     private readonly SaveSystem _saveSystem;
+    private readonly BattleService _battleService;
     private Zoid _playerZoid = new();
     private Zoid _enemyZoid = new();
     private ObservableCollection<string> _battleLog = new();
@@ -27,12 +28,13 @@ public partial class BattlePage : ContentPage
     public string ZoidName { get; set; } = "";
     public string PowerLevel { get; set; } = "";
 
-    public BattlePage(GameEngine gameEngine, ZoidDataService zoidDataService, SaveSystem saveSystem)
+    public BattlePage(GameEngine gameEngine, ZoidDataService zoidDataService, SaveSystem saveSystem, BattleService battleService)
     {
         InitializeComponent();
         _gameEngine = gameEngine;
         _zoidDataService = zoidDataService;
         _saveSystem = saveSystem;
+        _battleService = battleService;
         
         // Set up the UI
         BattleLogView.ItemsSource = _battleLog;
@@ -99,19 +101,47 @@ public partial class BattlePage : ContentPage
 
     private async Task CreateDefaultEnemyZoid()
     {
-        // Create a default enemy Zoid (Command Wolf)
-        var enemyData = await _zoidDataService.GetZoidDataAsync("Command Wolf");
-        if (enemyData != null)
+        try
         {
-            _enemyZoid = new Zoid(enemyData);
+            // Use AI logic to select an appropriate enemy based on player's power level
+            int playerPowerLevel = _playerZoid?.PowerLevel ?? 15; // Default to 15 if no player zoid
+            _enemyZoid = await _battleService.CreateRandomEnemyAsync(playerPowerLevel);
+            
             // Set battle state
             _enemyZoid.Position = "defensive"; 
             _enemyZoid.Angle = 180.0;
             _enemyZoid.Dents = 0;
             _enemyZoid.Status = "intact";
-            _enemyZoid.ShieldOn = false;
-            _enemyZoid.StealthOn = false;
+            
+            LogMessage($"Enemy Zoid selected: {_enemyZoid.Name} (Power Level: {_enemyZoid.PowerLevel})");
+            if (_playerZoid != null)
+            {
+                LogMessage($"Battle begins! {_playerZoid.Name} vs {_enemyZoid.Name}");
+            }
+            else
+            {
+                LogMessage($"Battle begins! Player vs {_enemyZoid.Name}");
+            }
         }
+        catch (Exception ex)
+        {
+            // Fallback to hardcoded Command Wolf if AI selection fails
+            LogMessage($"Warning: AI enemy selection failed ({ex.Message}), using fallback enemy.");
+            var enemyData = await _zoidDataService.GetZoidDataAsync("Command Wolf");
+            if (enemyData != null)
+            {
+                _enemyZoid = new Zoid(enemyData);
+                _enemyZoid.Position = "defensive"; 
+                _enemyZoid.Angle = 180.0;
+                _enemyZoid.Dents = 0;
+                _enemyZoid.Status = "intact";
+                LogMessage($"Fallback enemy selected: {_enemyZoid.Name}");
+            }
+        }
+        
+        // Ensure proper battle initialization
+        _enemyZoid.ShieldOn = false;
+        _enemyZoid.StealthOn = false;
     }
 
     private void InitializeBattle()

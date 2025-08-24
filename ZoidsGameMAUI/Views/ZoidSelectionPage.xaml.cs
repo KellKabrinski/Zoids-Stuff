@@ -4,6 +4,8 @@ using System.Collections.ObjectModel;
 
 namespace ZoidsGameMAUI.Views;
 
+[QueryProperty(nameof(IsNewGame), "newgame")]
+[QueryProperty(nameof(CharacterName), "charactername")]
 public partial class ZoidSelectionPage : ContentPage
 {
     private readonly ZoidDataService _zoidDataService;
@@ -14,6 +16,10 @@ public partial class ZoidSelectionPage : ContentPage
     private ZoidData? _selectedZoid;
     private CharacterData? _currentCharacter;
     private bool _sortByName = true;
+    
+    // Query parameters for new game flow
+    public string IsNewGame { get; set; } = string.Empty;
+    public string CharacterName { get; set; } = string.Empty;
 
     public ZoidSelectionPage(ZoidDataService zoidDataService, SaveSystem saveSystem, BattleService battleService)
     {
@@ -65,21 +71,64 @@ public partial class ZoidSelectionPage : ContentPage
     {
         try
         {
-            // Try to load existing character data
-            _currentCharacter = await _saveSystem.LoadCharacterAsync("current_save");
+            // Check if this is a new game request
+            bool isNewGameRequest = !string.IsNullOrEmpty(IsNewGame) && IsNewGame.ToLower() == "true";
             
-            // If no save exists, create a default character
-            if (_currentCharacter == null)
+            if (isNewGameRequest)
             {
+                // Create new character with provided name
+                string newCharacterName = Uri.UnescapeDataString(CharacterName ?? "Player");
+                if (string.IsNullOrWhiteSpace(newCharacterName))
+                {
+                    newCharacterName = "Player";
+                }
+                
+                // Delete any existing save file first to ensure a completely fresh start
+                try
+                {
+                    await _saveSystem.DeleteSaveAsync("current_save");
+                }
+                catch (Exception ex)
+                {
+                    System.Diagnostics.Debug.WriteLine($"Note: Could not delete existing save (this is normal for first time): {ex.Message}");
+                }
+                
                 _currentCharacter = new CharacterData
                 {
-                    Name = "Player",
+                    Name = newCharacterName,
                     Credits = 40000,
                     Zoids = new List<Zoid>()
                 };
                 
-                // Save the default character
+                // Save the new character immediately
                 await _saveSystem.SaveCharacterAsync(_currentCharacter, "current_save");
+                
+                // Clear the query parameters so they don't trigger again
+                IsNewGame = string.Empty;
+                CharacterName = string.Empty;
+                
+                await DisplayAlert("Welcome!", 
+                    $"Welcome to Zoids Battle, {_currentCharacter.Name}! You start with {_currentCharacter.Credits:N0} credits. Use them wisely to purchase your first Zoid!", 
+                    "OK");
+            }
+            else
+            {
+                // Try to load existing character data
+                _currentCharacter = await _saveSystem.LoadCharacterAsync("current_save");
+                
+                // If no save exists, create a default character
+                if (_currentCharacter == null)
+                {
+                    _currentCharacter = new CharacterData
+                    {
+                        Name = "Player",
+                        Credits = 40000,
+                        Zoids = new List<Zoid>()
+                    };
+                    
+                    // Save the default character
+                    await _saveSystem.SaveCharacterAsync(_currentCharacter, "current_save");
+                }
             }
             
             UpdateCreditsDisplay();
@@ -262,10 +311,22 @@ public partial class ZoidSelectionPage : ContentPage
         // Check if the selected Zoid is owned for battle selection
         bool isZoidOwned = _currentCharacter?.Zoids?.Any(z => z.Name == _selectedZoid?.Name) ?? false;
         
-        SelectForBattleButton.IsEnabled = enabled && isZoidOwned;
-        PurchaseButton.IsEnabled = enabled && _selectedZoid != null && 
-                                   _currentCharacter != null && 
-                                   _selectedZoid.Cost <= _currentCharacter.Credits;
+        bool canSelectForBattle = enabled && isZoidOwned;
+        bool canPurchase = enabled && _selectedZoid != null && 
+                          _currentCharacter != null && 
+                          _selectedZoid.Cost <= _currentCharacter.Credits;
+        
+        SelectForBattleButton.IsEnabled = canSelectForBattle;
+        PurchaseButton.IsEnabled = canPurchase;
+        
+        // Update button colors based on enabled state
+        SelectForBattleButton.BackgroundColor = canSelectForBattle 
+            ? Color.FromArgb("#708090") // Steel color when enabled
+            : Color.FromArgb("#A9A9A9");  // Dark gray when disabled
+            
+        PurchaseButton.BackgroundColor = canPurchase 
+            ? Color.FromArgb("#708090") // Steel color when enabled
+            : Color.FromArgb("#A9A9A9");  // Dark gray when disabled
     }
 
     private async void OnSelectForBattleClicked(object sender, EventArgs e)

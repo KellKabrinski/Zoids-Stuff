@@ -16,19 +16,46 @@ public partial class MainPage : ContentPage
 
     private async void OnNewGameClicked(object sender, EventArgs e)
     {
-        // Navigate to Zoid Selection for starting a new game
-        await Shell.Current.GoToAsync("zoidselection");
+        // Confirm if user wants to start a new game
+        bool confirm = await DisplayAlert(
+            "New Game", 
+            "Are you sure you want to start a new game? This will create a new character with 40,000 credits.", 
+            "Yes, Create New Game", 
+            "Cancel"
+        );
+        
+        if (!confirm)
+            return;
+            
+        // Get character name from user
+        string characterName = await DisplayPromptAsync(
+            "Character Name", 
+            "Enter a name for your character:", 
+            "OK", 
+            "Cancel", 
+            "Player", 
+            maxLength: 20,
+            keyboard: Keyboard.Text
+        );
+        
+        // If user cancels the name prompt, abort the new game creation
+        if (characterName == null)
+        {
+            return;
+        }
+        
+        if (string.IsNullOrWhiteSpace(characterName))
+        {
+            characterName = "Player"; // Default if user enters empty name
+        }
+        
+        // Navigate to Zoid Selection with the character name
+        await Shell.Current.GoToAsync($"zoidselection?newgame=true&charactername={Uri.EscapeDataString(characterName)}");
     }
 
-    private async void OnLoadGameClicked(object sender, EventArgs e)
+    private async void OnContinueGameClicked(object sender, EventArgs e)
     {
-        // Navigate to the save/load page in load mode
-        await Shell.Current.GoToAsync("saveload?mode=load");
-    }
-
-    private async void OnZoidShopClicked(object sender, EventArgs e)
-    {
-        // Navigate to Zoid Selection for shopping
+        // Navigate to Zoid Selection to continue with existing save or create default character
         await Shell.Current.GoToAsync("zoidselection");
     }
 

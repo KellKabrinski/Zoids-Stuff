@@ -29,7 +29,7 @@
             <Button Grid.Column="1"
                     x:Name="NewSaveButton"
                     Text="New Save"
-                    BackgroundColor="#4CAF50"
+                    BackgroundColor="#708090"
                     TextColor="White"
                     Clicked="OnNewSaveClicked"
                     IsVisible="False"
@@ -38,7 +38,7 @@
             <Button Grid.Column="2"
                     x:Name="BackButton"
                     Text="Back"
-                    BackgroundColor="#757575"
+                    BackgroundColor="#708090"
                     TextColor="White"
                     Clicked="OnBackClicked" />
         </Grid>
@@ -82,7 +82,7 @@
                         <!-- Action Buttons -->
                         <Button Grid.Row="0" Grid.Column="1"
                                 Text="Load"
-                                BackgroundColor="#2196F3"
+                                BackgroundColor="#708090"
                                 TextColor="White"
                                 FontSize="14"
                                 Padding="10,5"
@@ -91,7 +91,7 @@
 
                         <Button Grid.Row="0" Grid.Column="2"
                                 Text="Delete"
-                                BackgroundColor="#F44336"
+                                BackgroundColor="#A9A9A9"
                                 TextColor="White"
                                 FontSize="14"
                                 Padding="10,5"
@@ -132,7 +132,7 @@
             <Button Grid.Column="0"
                     x:Name="QuickSaveButton"
                     Text="Quick Save"
-                    BackgroundColor="#FF9800"
+                    BackgroundColor="#708090"
                     TextColor="White"
                     FontSize="16"
                     Margin="0,0,5,0"
@@ -142,7 +142,7 @@
             <Button Grid.Column="1"
                     x:Name="QuickLoadButton"
                     Text="Quick Load"
-                    BackgroundColor="#9C27B0"
+                    BackgroundColor="#708090"
                     TextColor="White"
                     FontSize="16"
                     Margin="5,0,0,0"

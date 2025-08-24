@@ -21,7 +21,7 @@
                 HorizontalOptions="Center" />
 
             <Label
-                Text="Choose your option to get started"
+                Text="Start a new adventure or continue your journey"
                 FontSize="18"
                 HorizontalOptions="Center" />
 
@@ -29,42 +29,35 @@
             <Button x:Name="NewGameBtn"
                     Text="New Game"
                     FontSize="18"
-                    BackgroundColor="#512BD4"
+                    BackgroundColor="#708090"
                     TextColor="White"
                     Clicked="OnNewGameClicked" />
 
-            <Button x:Name="LoadGameBtn"
-                    Text="Load Game"
+            <Button x:Name="ContinueGameBtn"
+                    Text="Continue Game"
                     FontSize="18"
-                    BackgroundColor="#2E7D32"
+                    BackgroundColor="#708090"
                     TextColor="White"
-                    Clicked="OnLoadGameClicked" />
-
-            <Button x:Name="ZoidShopBtn"
-                    Text="Zoid Shop"
-                    FontSize="18"
-                    BackgroundColor="#F57C00"
-                    TextColor="White"
-                    Clicked="OnZoidShopClicked" />
+                    Clicked="OnContinueGameClicked" />
 
             <Button x:Name="SaveManagerBtn"
                     Text="Save Manager"
                     FontSize="18"
-                    BackgroundColor="#9C27B0"
+                    BackgroundColor="#708090"
                     TextColor="White"
                     Clicked="OnSaveManagerClicked" />
 
             <Button x:Name="SettingsBtn"
                     Text="Settings"
                     FontSize="18"
-                    BackgroundColor="#616161"
+                    BackgroundColor="#708090"
                     TextColor="White"
                     Clicked="OnSettingsClicked" />
 
             <Button x:Name="SystemTestBtn"
                     Text="System Test"
                     FontSize="16"
-                    BackgroundColor="#D32F2F"
+                    BackgroundColor="#A9A9A9"
                     TextColor="White"
                     Clicked="OnSystemTestClicked" />
 

@@ -1,42 +1,43 @@
 using ZoidsGameMAUI.Models;
+using System.Text.Json.Serialization;
 
 namespace ZoidsGameMAUI.Models
 {
     public class Zoid
     {
         // Basic Info
-        public string Name { get; private set; } = string.Empty;
+        public string Name { get; set; } = string.Empty;
 
         // Stats
-        public int Fighting { get; private set; }
-        public int Strength { get; private set; }
-        public int Dexterity { get; private set; }
-        public int Agility { get; private set; }
-        public int Awareness { get; private set; }
+        public int Fighting { get; set; }
+        public int Strength { get; set; }
+        public int Dexterity { get; set; }
+        public int Agility { get; set; }
+        public int Awareness { get; set; }
 
         // Defenses
-        public int Toughness { get; private set; }
-        public int Parry { get; private set; }
-        public int Dodge { get; private set; }
+        public int Toughness { get; set; }
+        public int Parry { get; set; }
+        public int Dodge { get; set; }
 
         // Movement
-        public int Land { get; private set; }
-        public int Water { get; private set; }
-        public int Air { get; private set; }
+        public int Land { get; set; }
+        public int Water { get; set; }
+        public int Air { get; set; }
 
         // Powers
-        public List<Power> Powers { get; private set; } = new List<Power>();
-        public int Melee { get; private set; }
-        public int CloseRange { get; private set; }
-        public int MidRange { get; private set; }
-        public int LongRange { get; private set; }
-        public int ShieldRank { get; private set; }
+        public List<Power> Powers { get; set; } = new List<Power>();
+        public int Melee { get; set; }
+        public int CloseRange { get; set; }
+        public int MidRange { get; set; }
+        public int LongRange { get; set; }
+        public int ShieldRank { get; set; }
         public bool ShieldDisabled { get; set; } = false;
-        public int StealthRank { get; private set; }
+        public int StealthRank { get; set; }
 
-        public int CloseCombat { get; private set; }
-        public int RangedCombat { get; private set; }
-        public int Armor { get; private set; }
+        public int CloseCombat { get; set; }
+        public int RangedCombat { get; set; }
+        public int Armor { get; set; }
 
         // Battle state
         public string Position { get; set; } = "neutral";
@@ -69,7 +70,8 @@ namespace ZoidsGameMAUI.Models
             Water = (int)data.Movement.Water;
             Air = (int)data.Movement.Air;
 
-            Powers = data.Powers;
+            // Create a deep copy of the Powers list to avoid reference issues
+            Powers = new List<Power>(data.Powers);
             foreach (Power power in Powers)
             {
                 if (power.Type == "E-Shield" && power.Rank.HasValue)

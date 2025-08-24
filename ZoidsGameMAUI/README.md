@@ -131,7 +131,7 @@ ZoidsGameMAUI/
 
 ## Game Flow
 
-1. **Main Menu**: Choose New Game, Load Game, or Zoid Shop
+1. **Main Menu**: Choose New Game, Continue Game, or Save Manager
 2. **Zoid Selection**: Browse and select Zoids for battle or purchase
 3. **Battle Setup**: Select "Start Battle" to enter combat
 4. **Turn-Based Combat**: 
@@ -139,7 +139,7 @@ ZoidsGameMAUI/
    - **Execution Phase**: Watch actions resolve with detailed feedback
    - **Enemy Turn**: AI opponent takes actions automatically
    - **Victory/Defeat**: Battle ends when a Zoid is defeated
-5. **Progression**: Earn credits and expand Zoid collection (Coming Soon)
+5. **Progression**: Earn credits and expand Zoid collection
 
 ---
 
