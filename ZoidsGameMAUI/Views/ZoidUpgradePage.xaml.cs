@@ -286,7 +286,7 @@ public partial class ZoidUpgradePage : ContentPage
         if (string.IsNullOrEmpty(powerType) || targetRank <= 0) return;
 
         var existingPower = _selectedZoid.Powers.FirstOrDefault(p => p.Type == powerType);
-        var cost = _upgradeService.CalculatePowerUpgradeCost(existingPower?.Rank, targetRank);
+        var cost = _upgradeService.CalculatePowerUpgradeCost(powerType, existingPower?.Rank, targetRank);
         
         PowerCostLabel.Text = $"{cost:N0} credits";
         UpgradePowerButton.IsEnabled = _currentCharacter?.Credits >= cost;
@@ -344,5 +344,17 @@ public partial class ZoidUpgradePage : ContentPage
         }).ToList();
 
         CurrentPowersCollection.ItemsSource = powerDisplayList;
+    }
+
+    private async void OnBackToShopClicked(object sender, EventArgs e)
+    {
+        // Navigate back to ZoidSelectionPage
+        await Shell.Current.GoToAsync("//zoidselection");
+    }
+
+    private async void OnStartBattleClicked(object sender, EventArgs e)
+    {
+        // Navigate to BattlePage
+        await Shell.Current.GoToAsync("//battle");
     }
 }

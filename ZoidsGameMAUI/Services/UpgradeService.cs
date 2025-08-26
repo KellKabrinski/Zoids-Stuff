@@ -53,21 +53,73 @@ namespace ZoidsGameMAUI.Services
             return powerPointsNeeded * CREDITS_PER_POWER_POINT;
         }
 
-        public int CalculateDefenseUpgradeCost(int currentValue, int targetValue)
+        public int CalculateDefenseUpgradeCost(string statName, int currentValue, int targetValue)
         {
             if (targetValue <= currentValue) return 0;
+            
+            // Toughness cannot be upgraded directly - it equals armor rank
+            if (statName.ToLower() == "toughness") 
+            {
+                return 0; // Cannot upgrade toughness directly
+            }
             
             // Each defense point costs 1 power point
             int powerPointsNeeded = targetValue - currentValue;
             return powerPointsNeeded * CREDITS_PER_POWER_POINT;
         }
 
-        public int CalculatePowerUpgradeCost(int? currentRank, int targetRank,int modifier=1)
+        public int CalculatePowerUpgradeCost(string powerType, int? currentRank, int targetRank)
         {
             if (targetRank <= (currentRank ?? 0)) return 0;
             
             int rankDifference = targetRank - (currentRank ?? 0);
-            return rankDifference * CREDITS_PER_POWER_POINT * modifier;
+            int totalCost = 0;
+            
+            // Calculate base cost and any first-rank bonus costs
+            switch (powerType.ToLower())
+            {
+                case "close-range":
+                    // First rank costs extra 5 points, then 2 points per additional rank
+                    if (currentRank == null || currentRank == 0)
+                    {
+                        totalCost += 5 + 2; // First rank: base cost + 5 extra + 2 for the rank
+                        rankDifference--; // Already handled first rank
+                    }
+                    totalCost += rankDifference * 2; // 2 points per rank for remaining ranks
+                    break;
+                    
+                case "mid-range":
+                    // First rank costs extra 6 points, then 2 points per additional rank
+                    if (currentRank == null || currentRank == 0)
+                    {
+                        totalCost += 6 + 2; // First rank: base cost + 6 extra + 2 for the rank
+                        rankDifference--; // Already handled first rank
+                    }
+                    totalCost += rankDifference * 2; // 2 points per rank for remaining ranks
+                    break;
+                    
+                case "long-range":
+                    // First rank costs extra 7 points, then 2 points per additional rank
+                    if (currentRank == null || currentRank == 0)
+                    {
+                        totalCost += 7 + 2; // First rank: base cost + 7 extra + 2 for the rank
+                        rankDifference--; // Already handled first rank
+                    }
+                    totalCost += rankDifference * 2; // 2 points per rank for remaining ranks
+                    break;
+                    
+                case "concealment":
+                    // Half point per rank (round up)
+                    totalCost = (int)Math.Ceiling(rankDifference * 0.5);
+                    break;
+                    
+                default:
+                    // Standard powers cost 1 point per rank
+                    totalCost = rankDifference;
+                    break;
+            }
+            
+            return totalCost * CREDITS_PER_POWER_POINT;
         }
 
         public int CalculateMovementUpgradeCost(double currentValue, double targetValue)
@@ -83,15 +135,182 @@ namespace ZoidsGameMAUI.Services
             return Math.Max(0, powerPointsNeeded) * CREDITS_PER_POWER_POINT;
         }
 
+        private bool IsDefenseStat(string statName)
+        {
+            var defenseStats = new HashSet<string>(StringComparer.OrdinalIgnoreCase)
+            {
+                "Parry", "Dodge", "Toughness"
+            };
+            return defenseStats.Contains(statName);
+        }
+
         public bool CanUpgradeZoid(Zoid zoid, int additionalPowerPoints)
         {
-            int currentPowerLevel = CalculateCurrentPowerLevel(zoid);
-            int maxPowerLevel = GetPowerLevelCap(zoid.PowerLevel);
+            // New power cap logic: Accuracy + Highest Damage ≤ 2 × Power Level
+            return CheckAccuracyDamageCap(zoid, additionalPowerPoints);
+        }
+
+        private bool CheckAccuracyDamageCap(Zoid zoid, int additionalPowerPoints)
+        {
+            int powerCap = 2 * zoid.PowerLevel;
             
-            // Rough estimate: 15 power points = 1 power level
-            int projectedPowerLevel = currentPowerLevel + (additionalPowerPoints / 15);
+            // Check melee: Fighting + Melee damage
+            int meleeTotal = zoid.Fighting + GetMeleeWeaponDamage(zoid);
             
-            return projectedPowerLevel <= maxPowerLevel;
+            // Check ranged: Dexterity + highest ranged damage
+            int rangedTotal = zoid.Dexterity + GetHighestRangedWeaponDamage(zoid);
+            
+            // Get the higher of the two combinations
+            int currentMax = Math.Max(meleeTotal, rangedTotal);
+            
+            // For upgrades, we need to consider the potential impact
+            // This is a conservative estimate - we assume the worst case
+            int estimatedIncrease = Math.Min(additionalPowerPoints / 2, 5); // Conservative estimate
+            
+            int projectedMax = currentMax + estimatedIncrease;
+            
+            return projectedMax <= powerCap;
+        }
+
+        private int GetMeleeWeaponDamage(Zoid zoid)
+        {
+            int meleeDamage = zoid.Melee;
+            
+            // Also check powers for melee weapons
+            foreach (var power in zoid.Powers)
+            {
+                if (power.Type == "Melee")
+                {
+                    meleeDamage = Math.Max(meleeDamage, power.Rank ?? 0);
+                }
+            }
+            
+            return meleeDamage;
+        }
+
+        private int GetHighestRangedWeaponDamage(Zoid zoid)
+        {
+            int highestRanged = 0;
+            
+            // Check ranged weapon stats
+            highestRanged = Math.Max(highestRanged, zoid.CloseRange);
+            highestRanged = Math.Max(highestRanged, zoid.MidRange);
+            highestRanged = Math.Max(highestRanged, zoid.LongRange);
+            
+            // Also check powers for ranged weapons
+            foreach (var power in zoid.Powers)
+            {
+                if (power.Type == "Close-Range" || power.Type == "Mid-Range" || power.Type == "Long-Range")
+                {
+                    highestRanged = Math.Max(highestRanged, power.Rank ?? 0);
+                }
+            }
+            
+            return highestRanged;
+        }
+
+        private int GetHighestWeaponDamage(Zoid zoid)
+        {
+            int highestDamage = 0;
+            
+            // Check all weapon ranks
+            highestDamage = Math.Max(highestDamage, zoid.Melee);
+            highestDamage = Math.Max(highestDamage, zoid.CloseRange);
+            highestDamage = Math.Max(highestDamage, zoid.MidRange);
+            highestDamage = Math.Max(highestDamage, zoid.LongRange);
+            
+            // Also check powers for weapon-type powers
+            foreach (var power in zoid.Powers)
+            {
+                if (power.Type == "Melee" || power.Type == "Close-Range" || 
+                    power.Type == "Mid-Range" || power.Type == "Long-Range")
+                {
+                    highestDamage = Math.Max(highestDamage, power.Rank ?? 0);
+                }
+            }
+            
+            return highestDamage;
+        }
+
+        private bool ValidateAccuracyUpgrade(Zoid zoid, int newAccuracy)
+        {
+            int powerCap = 2 * zoid.PowerLevel;
+            
+            // Check both melee and ranged combinations with the new accuracy
+            int meleeTotal = newAccuracy + GetMeleeWeaponDamage(zoid);
+            int rangedTotal = newAccuracy + GetHighestRangedWeaponDamage(zoid);
+            
+            // Both combinations must be within the cap
+            return meleeTotal <= powerCap && rangedTotal <= powerCap;
+        }
+
+        private bool ValidateDexterityUpgrade(Zoid zoid, int newDexterity)
+        {
+            int powerCap = 2 * zoid.PowerLevel;
+            
+            // Check ranged combination with the new dexterity
+            int rangedTotal = newDexterity + GetHighestRangedWeaponDamage(zoid);
+            
+            return rangedTotal <= powerCap;
+        }
+
+        private bool ValidateParryUpgrade(Zoid zoid, int newParry)
+        {
+            int powerCap = 2 * zoid.PowerLevel;
+            
+            // Check parry + toughness combination
+            int defenseTotal = newParry + zoid.Toughness;
+            
+            return defenseTotal <= powerCap;
+        }
+
+        private bool ValidateDodgeUpgrade(Zoid zoid, int newDodge)
+        {
+            int powerCap = 2 * zoid.PowerLevel;
+            
+            // Check dodge + toughness combination
+            int defenseTotal = newDodge + zoid.Toughness;
+            
+            return defenseTotal <= powerCap;
+        }
+
+        private bool ValidateArmorUpgrade(Zoid zoid, int newArmorRank)
+        {
+            int powerCap = 2 * zoid.PowerLevel;
+            
+            // Since Toughness = Armor rank, check both defense combinations with new toughness
+            int newToughness = newArmorRank;
+            int parryTotal = zoid.Parry + newToughness;
+            int dodgeTotal = zoid.Dodge + newToughness;
+            
+            // Both combinations must be within the cap
+            return parryTotal <= powerCap && dodgeTotal <= powerCap;
+        }
+
+        private bool ValidateWeaponUpgrade(Zoid zoid, string powerType, int newDamage)
+        {
+            int powerCap = 2 * zoid.PowerLevel;
+            
+            if (powerType == "Melee")
+            {
+                // For melee weapons, use Fighting as accuracy
+                int meleeTotal = zoid.Fighting + newDamage;
+                return meleeTotal <= powerCap;
+            }
+            else if (powerType == "Close-Range" || powerType == "Mid-Range" || powerType == "Long-Range")
+            {
+                // For ranged weapons, use Dexterity as accuracy
+                int rangedTotal = zoid.Dexterity + newDamage;
+                return rangedTotal <= powerCap;
+            }
+            
+            return true; // Non-weapon powers don't affect this cap
+        }
+
+        private bool IsWeaponPower(string powerType)
+        {
+            return powerType == "Melee" || powerType == "Close-Range" || 
+                   powerType == "Mid-Range" || powerType == "Long-Range";
         }
 
         public int CalculateCurrentPowerLevel(Zoid zoid)
@@ -107,9 +326,41 @@ namespace ZoidsGameMAUI.Services
             if (ownedZoid == null) return false;
 
             int currentValue = GetStatValue(ownedZoid, statName);
-            int upgradeCost = CalculateStatUpgradeCost(currentValue, newValue);
+            
+            // Determine if this is an attribute or defense and calculate cost accordingly
+            int upgradeCost;
+            if (IsDefenseStat(statName))
+            {
+                upgradeCost = CalculateDefenseUpgradeCost(statName, currentValue, newValue);
+            }
+            else
+            {
+                upgradeCost = CalculateStatUpgradeCost(currentValue, newValue);
+            }
 
             if (character.Credits < upgradeCost) return false;
+
+            // Check power cap before applying stat upgrade
+            if (statName.ToLower() == "fighting")
+            {
+                // For Fighting upgrades, check melee weapon combinations
+                if (!ValidateAccuracyUpgrade(ownedZoid, newValue)) return false;
+            }
+            else if (statName.ToLower() == "dexterity")
+            {
+                // For Dexterity upgrades, check ranged weapon combinations
+                if (!ValidateDexterityUpgrade(ownedZoid, newValue)) return false;
+            }
+            else if (statName.ToLower() == "parry")
+            {
+                // For Parry upgrades, check parry + toughness combination
+                if (!ValidateParryUpgrade(ownedZoid, newValue)) return false;
+            }
+            else if (statName.ToLower() == "dodge")
+            {
+                // For Dodge upgrades, check dodge + toughness combination
+                if (!ValidateDodgeUpgrade(ownedZoid, newValue)) return false;
+            }
 
             // Calculate power points used
             int powerPointsUsed = upgradeCost / CREDITS_PER_POWER_POINT;
@@ -129,9 +380,23 @@ namespace ZoidsGameMAUI.Services
             if (ownedZoid == null) return false;
 
             var existingPower = ownedZoid.Powers.FirstOrDefault(p => p.Type == powerType);
-            int upgradeCost = CalculatePowerUpgradeCost(existingPower?.Rank, newRank);
+            int upgradeCost = CalculatePowerUpgradeCost(powerType, existingPower?.Rank, newRank);
 
             if (character.Credits < upgradeCost) return false;
+
+            // Check power cap for weapon-type powers
+            if (IsWeaponPower(powerType))
+            {
+                int finalRank = existingPower != null ? (existingPower.Rank ?? 0) + newRank : newRank;
+                if (!ValidateWeaponUpgrade(ownedZoid, powerType, finalRank)) return false;
+            }
+            
+            // Check power cap for armor upgrades (affects toughness and defense combinations)
+            if (powerType.ToLower() == "armor")
+            {
+                int finalRank = existingPower != null ? (existingPower.Rank ?? 0) + newRank : newRank;
+                if (!ValidateArmorUpgrade(ownedZoid, finalRank)) return false;
+            }
 
             // Calculate power points used
             int powerPointsUsed = upgradeCost / CREDITS_PER_POWER_POINT;
@@ -140,7 +405,7 @@ namespace ZoidsGameMAUI.Services
             // Apply upgrade
             if (existingPower != null)
             {
-                existingPower.Rank += newRank;
+                existingPower.Rank = (existingPower.Rank ?? 0) + newRank;
             }
             else
             {
@@ -191,9 +456,15 @@ namespace ZoidsGameMAUI.Services
         {
             return new List<string>
             {
-                "Armor", "Melee", "Close-Range", "Mid-Range", "Long-Range", 
-                "E-Shield", "Concealment", "Enhanced Speed", "Enhanced Senses",
-                "Flight", "Swimming", "Burrowing", "Leaping", "Wall-Crawling"
+                "Close Combat",      // Melee accuracy bonus
+                "Ranged Combat",     // Ranged accuracy bonus  
+                "Melee",            // Melee weapon damage
+                "Close-Range",      // Close range weapon damage
+                "Mid-Range",        // Mid range weapon damage
+                "Long-Range",       // Long range weapon damage
+                "E-Shield",         // Shield protection
+                "Armor",           // Armor protection
+                "Concealment"      // Stealth capability
             };
         }
 
@@ -202,7 +473,8 @@ namespace ZoidsGameMAUI.Services
             return new List<string>
             {
                 "Fighting", "Strength", "Dexterity", "Agility", "Awareness",
-                "Toughness", "Parry", "Dodge"
+                "Parry", "Dodge"
+                // Note: Toughness is not directly upgradeable - it equals armor rank
             };
         }
     }
