@@ -380,21 +380,23 @@ namespace ZoidsGameMAUI.Services
             if (ownedZoid == null) return false;
 
             var existingPower = ownedZoid.Powers.FirstOrDefault(p => p.Type == powerType);
-            int upgradeCost = CalculatePowerUpgradeCost(powerType, existingPower?.Rank, newRank);
+            int currentRank = existingPower?.Rank ?? 0;
+                
+            int upgradeCost = CalculatePowerUpgradeCost(powerType, currentRank, currentRank + newRank);
 
             if (character.Credits < upgradeCost) return false;
 
             // Check power cap for weapon-type powers
             if (IsWeaponPower(powerType))
             {
-                int finalRank = existingPower != null ? (existingPower.Rank ?? 0) + newRank : newRank;
+                int finalRank = currentRank + newRank;
                 if (!ValidateWeaponUpgrade(ownedZoid, powerType, finalRank)) return false;
             }
             
             // Check power cap for armor upgrades (affects toughness and defense combinations)
             if (powerType.ToLower() == "armor")
             {
-                int finalRank = existingPower != null ? (existingPower.Rank ?? 0) + newRank : newRank;
+                int finalRank = currentRank + newRank;
                 if (!ValidateArmorUpgrade(ownedZoid, finalRank)) return false;
             }
 

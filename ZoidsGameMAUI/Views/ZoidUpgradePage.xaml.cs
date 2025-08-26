@@ -243,6 +243,12 @@ public partial class ZoidUpgradePage : ContentPage
             
             if (success)
             {
+                LoadCharacterData(); // Reload character data to get updated credits
+                // Update the selected zoid reference after reloading character data
+                if (_selectedZoid != null)
+                {
+                    _selectedZoid = _currentCharacter?.Zoids.FirstOrDefault(z => z.Name == _selectedZoid.Name);
+                }
                 UpdateCreditsDisplay();
                 UpdateZoidInfo();
                 CreateStatsUpgradeControls(); // Refresh the stats display
@@ -315,6 +321,12 @@ public partial class ZoidUpgradePage : ContentPage
             
             if (success)
             {
+                LoadCharacterData(); // Reload character data to get updated credits
+                // Update the selected zoid reference after reloading character data
+                if (_selectedZoid != null)
+                {
+                    _selectedZoid = _currentCharacter?.Zoids.FirstOrDefault(z => z.Name == _selectedZoid.Name);
+                }
                 UpdateCreditsDisplay();
                 UpdateZoidInfo();
                 UpdateCurrentPowersDisplay();
