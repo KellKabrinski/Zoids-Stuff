@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "6H0JeIEkrKk=",
+  "dgSpecHash": "4ogFKXXsVIc=",
   "success": true,
   "projectFilePath": "C:\\Users\\dwh19\\Downloads\\Mutants and Masterminds\\Zoids-Stuff\\ZoidsGameMAUI\\ZoidsGameMAUI.csproj",
   "expectedPackageFiles": [
@@ -121,6 +121,10 @@
     "C:\\Users\\dwh19\\.nuget\\packages\\microsoft.netcore.app.ref\\9.0.8\\microsoft.netcore.app.ref.9.0.8.nupkg.sha512",
     "C:\\Users\\dwh19\\.nuget\\packages\\microsoft.netcore.app.ref\\9.0.8\\microsoft.netcore.app.ref.9.0.8.nupkg.sha512",
     "C:\\Users\\dwh19\\.nuget\\packages\\microsoft.netcore.app.ref\\9.0.8\\microsoft.netcore.app.ref.9.0.8.nupkg.sha512",
+    "C:\\Users\\dwh19\\.nuget\\packages\\microsoft.netcore.app.runtime.win-x64\\9.0.7\\microsoft.netcore.app.runtime.win-x64.9.0.7.nupkg.sha512",
+    "C:\\Users\\dwh19\\.nuget\\packages\\microsoft.windowsdesktop.app.runtime.win-x64\\9.0.7\\microsoft.windowsdesktop.app.runtime.win-x64.9.0.7.nupkg.sha512",
+    "C:\\Users\\dwh19\\.nuget\\packages\\microsoft.aspnetcore.app.runtime.win-x64\\9.0.7\\microsoft.aspnetcore.app.runtime.win-x64.9.0.7.nupkg.sha512",
+    "C:\\Users\\dwh19\\.nuget\\packages\\microsoft.netcore.app.crossgen2.win-x64\\9.0.7\\microsoft.netcore.app.crossgen2.win-x64.9.0.7.nupkg.sha512",
     "C:\\Users\\dwh19\\.nuget\\packages\\microsoft.windows.sdk.net.ref\\10.0.19041.57\\microsoft.windows.sdk.net.ref.10.0.19041.57.nupkg.sha512"
   ],
   "logs": []

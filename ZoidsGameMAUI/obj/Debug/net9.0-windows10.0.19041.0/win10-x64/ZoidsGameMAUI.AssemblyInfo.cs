@@ -17,7 +17,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ZoidsGameMAUI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+f869904e12ebde29a6d1b8e80c2690a0ad6937f6")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+923b75a11a94224dfb743089505608cfd7d12cf8")]
 [assembly: System.Reflection.AssemblyProductAttribute("ZoidsGameMAUI")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ZoidsGameMAUI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
